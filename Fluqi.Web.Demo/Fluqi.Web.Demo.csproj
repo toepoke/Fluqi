@@ -286,14 +286,14 @@
     <Content Include="Views\Shared\Fluqi.Master" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\site\css\fonts\merriweather-bold-webfont.eot" />
-    <None Include="Content\site\css\fonts\merriweather-bold-webfont.svg" />
-    <None Include="Content\site\css\fonts\merriweather-bold-webfont.ttf" />
-    <None Include="Content\site\css\fonts\merriweather-bold-webfont.woff" />
-    <None Include="Content\site\css\fonts\merriweather-regular-webfont.eot" />
-    <None Include="Content\site\css\fonts\merriweather-regular-webfont.svg" />
-    <None Include="Content\site\css\fonts\merriweather-regular-webfont.ttf" />
-    <None Include="Content\site\css\fonts\merriweather-regular-webfont.woff" />
+    <Content Include="Content\site\css\fonts\merriweather-bold-webfont.eot" />
+    <Content Include="Content\site\css\fonts\merriweather-bold-webfont.svg" />
+    <Content Include="Content\site\css\fonts\merriweather-bold-webfont.ttf" />
+    <Content Include="Content\site\css\fonts\merriweather-bold-webfont.woff" />
+    <Content Include="Content\site\css\fonts\merriweather-regular-webfont.eot" />
+    <Content Include="Content\site\css\fonts\merriweather-regular-webfont.svg" />
+    <Content Include="Content\site\css\fonts\merriweather-regular-webfont.ttf" />
+    <Content Include="Content\site\css\fonts\merriweather-regular-webfont.woff" />
     <Content Include="Views\Shared\Demo.Parent.Master" />
     <Content Include="Views\Shared\Builder.Master" />
     <Content Include="WebForms\WebForms.Master" />
