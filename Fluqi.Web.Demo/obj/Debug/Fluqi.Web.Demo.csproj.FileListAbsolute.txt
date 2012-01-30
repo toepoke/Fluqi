@@ -6,3 +6,11 @@ S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\bin\Fluqi.xml
 S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\obj\Debug\ResolveAssemblyReference.cache
 S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\obj\Debug\Fluqi.Web.Demo.dll
 S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\obj\Debug\Fluqi.Web.Demo.pdb
+C:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\bin\Fluqi.Web.Demo.dll
+C:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\bin\Fluqi.Web.Demo.pdb
+C:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\bin\Fluqi.dll
+C:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\bin\Fluqi.pdb
+C:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\bin\Fluqi.xml
+C:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\obj\Debug\ResolveAssemblyReference.cache
+C:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\obj\Debug\Fluqi.Web.Demo.dll
+C:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Web.Demo\obj\Debug\Fluqi.Web.Demo.pdb
