@@ -46,10 +46,15 @@ namespace Fluqi.Models
 		public string renderAs { get; set; }
 		
 		public void ConfigureButton(PushButton btn) {
-			btn.Options
-				.SetDisabled(this.disabled)
-				.SetText(this.text)
-				.SetIcons(this.primaryIcon, this.secondaryIcon)
+			btn
+				.Rendering
+					.SetPrettyRender(true)
+				.Finish()
+				.Options
+					.SetDisabled(this.disabled)
+					.SetText(this.text)
+					.SetIcons(this.primaryIcon, this.secondaryIcon)
+				.Finish()
 			;
 
 			if (!string.IsNullOrEmpty(this.renderAs)) {

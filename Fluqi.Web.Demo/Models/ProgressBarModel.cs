@@ -37,9 +37,14 @@ namespace Fluqi.Models
 		public int value { get; set; }
 
 		public void ConfigureProgressBar(ProgressBar pb) {
-			pb.Options
-				.SetDisabled(this.disabled)
-				.SetValue(this.value)
+			pb
+				.Rendering
+					.SetPrettyRender(true)
+				.Finish()
+				.Options
+					.SetDisabled(this.disabled)
+					.SetValue(this.value)
+				.Finish()
 			;
 
 			if (this.showEvents) {

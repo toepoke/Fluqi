@@ -60,6 +60,9 @@ namespace Fluqi.Models
 
 		public void ConfigureAccordion(Accordion ac) {
 			ac
+				.Rendering
+					.SetPrettyRender(true)
+				.Finish()
 				.Options
 					.SetCollapsible(this.collapsible)
 					.SetDisabled(this.disabled)

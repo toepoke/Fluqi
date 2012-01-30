@@ -52,18 +52,22 @@ namespace Fluqi.Models
 		public string Size { get; set; }
 
 		public void ConfigureSlider(Slider sldr) {
-			sldr.Options
-				.SetAnimate(this.Animated)
-				.SetDisabled(this.Disabled)
-				.SetMin(this.Min)
-				.SetMax(this.Max)
-				.SetOrientation(this.Orientation)
-				.SetRange(this.Range)
-				.SetStep(this.Step)
-				.SetValue(this.Value)
-				.SetValues(this.Values)
-				.SetSize(this.Size)
-			.Finish();
+			sldr
+				.Rendering
+					.SetPrettyRender(true)
+				.Finish()
+				.Options
+					.SetAnimate(this.Animated)
+					.SetDisabled(this.Disabled)
+					.SetMin(this.Min)
+					.SetMax(this.Max)
+					.SetOrientation(this.Orientation)
+					.SetRange(this.Range)
+					.SetStep(this.Step)
+					.SetValue(this.Value)
+					.SetValues(this.Values)
+					.SetSize(this.Size)
+				.Finish();
 
 			if (this.showEvents) {
 				sldr

@@ -74,6 +74,23 @@ namespace Fluqi.Core {
 
 
 		/// <summary>
+		/// Specifies if the HTML/JavaScript which is rendered should be indented in a more readable 
+		/// manner (as opposed to when <see cref="Compress()"/> is active (i.e. PrettyRender=false)
+		/// which keeps everything in one line to keep the script size down)
+		/// </summary>
+		/// <param name="prettyRender">Flags pretty rendering on or off</param>
+		/// <remarks>
+		/// In DEBUG mode pretty rendering is ON by default.
+		/// In RELEASE mode pretty rendering is OFF by default.
+		/// This method is quite useful if you still want pretty rendering on when in RELEASE mode
+		/// (which we need for the appHarbor demonstrations).
+		/// </remarks>
+		public void SetPrettyRender(bool prettyRender) {
+			this.PrettyRender = prettyRender;
+		}
+		
+
+		/// <summary>
 		/// Writes full CSS to the browser (jQuery UI classes are expanded for non-JS users)
 		/// </summary>
 		/// <returns>Control for chainability</returns>
@@ -81,6 +98,16 @@ namespace Fluqi.Core {
 			this.RenderCSS = true;
 		}
 
+
+		/// <summary>
+		/// Specifies that the CSS class the jQuery UI library should be written as part of widget
+		/// rendering.  This is useful if you still want your pages to look "jQuery UI-ified" when
+		/// your user has JavaScript disabled.
+		/// </summary>
+		/// <param name="renderCSS">Flags writing CSS class names on or off</param>
+		public void SetRenderCSS(bool renderCSS) {
+			this.RenderCSS = renderCSS;
+		}
 
 		/// <summary>
 		/// Specifies that when writing in pretty HTML mode (see <see cref="Compress"/>) 

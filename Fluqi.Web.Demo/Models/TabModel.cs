@@ -47,6 +47,9 @@ namespace Fluqi.Models
 
 		public void ConfigureTabs(Tabs tabs) {
 			tabs
+				.Rendering
+					.SetPrettyRender(true)
+				.Finish()
 				.Options
 					.SetCollapsible(this.collapsible)
 					.SetDisabled(this.disabled)

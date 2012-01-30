@@ -67,6 +67,9 @@ namespace Fluqi.Models
 
 		public void ConfigureAutoComplete(AutoComplete ac) {
 			ac
+				.Rendering
+					.SetPrettyRender(true)
+				.Finish()
 				.Options
 					.SetDisabled(this.disabled)
 					.SetAppendTo(this.appendTo)

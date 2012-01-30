@@ -46,11 +46,35 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
+		/// Specifies if the HTML/JavaScript which is rendered should be indented in a more readable 
+		/// manner (as opposed to when <see cref="Compress()"/> is active (i.e. PrettyRender=false)
+		/// which keeps everything in one line to keep the script size down)
+		/// </summary>
+		/// <param name="prettyRender">Flags pretty rendering on or off</param>
+		new public Rendering SetPrettyRender(bool prettyRender) {
+			base.SetPrettyRender(prettyRender);
+			return this;
+		}
+
+
+		/// <summary>
 		/// Writes slim CSS to the browser (jQuery UI classes aren't expanded for non-JS users)
 		/// </summary>
 		/// <returns>Tabs object for chainability</returns>
 		new public Rendering ShowCSS() {
 			base.ShowCSS();
+			return this;
+		}
+
+
+		/// <summary>
+		/// Specifies that the CSS class the jQuery UI library should be written as part of widget
+		/// rendering.  This is useful if you still want your pages to look "jQuery UI-ified" when
+		/// your user has JavaScript disabled.
+		/// </summary>
+		/// <param name="renderCSS">Flags writing CSS class names on or off</param>
+		new public Rendering SetRenderCSS(bool renderCSS) {
+			base.SetRenderCSS(renderCSS);
 			return this;
 		}
 
