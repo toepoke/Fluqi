@@ -1,0 +1,68 @@
+.github {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100000;
+	border: none;
+}
+
+.ui-widget {
+	text-shadow: none;
+	font-size: 12px !important;
+	line-height: 20px !important;
+}
+
+.italic {
+	font-style: italic;
+}
+
+#themeswitcher {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#sample-widget {
+	margin-left: 3%;
+	width: 45%;
+	float: left;
+}
+
+#sample-code {
+	margin-left: 6%;
+	margin-top: -1em;
+	width: 45%;
+	float: left;
+}
+
+blockquote {
+	margin-top: 0px !important;
+	font-style: italic;
+	font-size: x-large;
+	line-height: 1.5;
+	float: right;
+	width: 350px;
+	-webkit-margin-before: 2em !important;
+	-webkit-margin-after: 2em !important;
+	-webkit-margin-start: 2em !important;
+	-webkit-margin-end: 0 !important;
+}
+
+blockquote p {
+	padding: 0 1em 0 1em;
+}
+
+.accordion-wrapper {
+	float: right;
+	position: relative;
+	margin-top: 30px;
+	margin-bottom: 13px;
+	width: 420px;
+	height: 300px;
+}
+
+.footnote {
+	font-size: x-small;
+	font-style: italic;
+	line-height: 1;
+}
+

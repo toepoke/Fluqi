@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" MasterPageFile="~/Views/Shared/Demo.Parent.Master" %>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+	<section id="main">
+		<asp:ContentPlaceHolder ID="Intro" runat="server">	
+			<p class="no-margin">
+				Simply play with the properties on the <strong>Widget Properties</strong> tab, click the
+				<strong>Update button</strong> to regenerate the C#, HTML and JavaScript.  Once the page 
+				has loaded have a look at the <strong>Widget Methods</strong> tab to see how you can 
+				interact with the widget.
+			</p>
+		</asp:ContentPlaceHolder>
+		<div id="logContainer">
+			<%Html.RenderPartial("ThemeSwitcher");%>
+			<%Html.RenderPartial("EventLog");%>
+		</div>
+		<div id="example">
+			<div id="control">
+				<asp:ContentPlaceHolder ID="DemoMainContent" runat="server">	
+				</asp:ContentPlaceHolder>
+				<div id="test-handler">
+					<%var tabs = 
+						Html.CreateTabs("testHarness")
+							.Panes
+								.Add("controlTab", "Widget Properties", true)
+								.Add("methodsTab", "Widget Methods")
+								.Add("DotNetCodeTab", "C# Code")
+								.Add("HtmlCodeTab", "HTML Code")
+								.Add("JavaScriptCodeTab", "JS Code")
+							.Finish()
+					; %>
+					<%using (tabs.RenderHeader()) {%>
+						<%using (tabs.Panes.RenderNextPane()) { %>
+							<div id="options">
+								<asp:ContentPlaceHolder ID="DemoExampleContent" runat="server">
+								</asp:ContentPlaceHolder>
+							</div><%--options--%>
+						<%} %>
+						<%using (tabs.Panes.RenderNextPane()) { %>
+							<div id="methods">
+								<p>
+									Here are the methods available for the jQuery UI control, have a click on the buttons and see 
+									how the behaviour of the control changes.
+								</p>
+								<asp:ContentPlaceHolder ID="DemoMethodsContent" runat="server">
+								</asp:ContentPlaceHolder>
+							</div><%--methods--%>
+						<%} %>
+						<%using (tabs.Panes.RenderNextPane()) { %>
+							<div id="cSharpCode" class="code">
+								<p>Below is the code required to use the options you have selected above.</p>
+								<pre class="brush: c#">
+									<asp:ContentPlaceHolder ID="DemoCodeContent" runat="server">
+									</asp:ContentPlaceHolder>
+								</pre>
+							</div><%--cSharpCode--%>
+						<%} %>
+						<%using (tabs.Panes.RenderNextPane()) { %>
+							<div id="htmlCode" class="code">
+								<p>Which produces the following HTML mark-up.</p>
+								<pre class="brush: html">
+									<asp:ContentPlaceHolder ID="DemoHtmlContent" runat="server">
+									</asp:ContentPlaceHolder>
+								</pre>
+							</div><%--htmlCode--%>	
+						<%} %>
+						<%using (tabs.Panes.RenderNextPane()) { %>
+							<div id="jsCode" class="code">
+								<p>Which initialises the control with the following [generated] JavaScript.</p>
+								<pre class="brush: javascript">
+									<asp:ContentPlaceHolder ID="DemoJavaScriptCodeContent" runat="server">
+									</asp:ContentPlaceHolder>
+								</pre>
+								<p class="footnote">
+									Notice how Fluqi generates the minimum JavaScript necessary to configure the 
+									widget, minimising the download to the browser.
+								</p>
+							</div><%--jsCode--%>
+						<%} %>
+					<%} %>
+				</div><%--test-handler--%>
+			</div><%--control--%>
+		</div><%--example--%>
+	</section><%--main--%>
+	<div class="clear"></div>
+	<asp:ContentPlaceHolder ID="Outro" runat="server">
+		<p class="small-top-margin">
+			You can also change the theme used by jQuery UI using the switcher.  Also note you can see
+			the events for the control as they happen in the <strong>jQuery Events log</strong> (this
+			also adds the event code to the <strong>JS Code</strong> tab ... uncheck the 
+			<strong>Show &amp; Render Events</strong> option to stop this).
+		</p>
+	</asp:ContentPlaceHolder>
+	<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
+</asp:Content>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Navigation" runat="server">
+	<ul>
+		<li><%=Html.ActionLink("Home", "Home", "Home")%></li>
+		<li><%=Html.ActionLink("Accordion", "Accordion")%></li>
+		<li><%=Html.ActionLink("AutoComplete", "AutoComplete")%></li>
+		<li><%=Html.ActionLink("PushButton", "PushButton")%></li>
+		<li><%=Html.ActionLink("DatePicker", "DatePicker")%></li>
+		<li><%=Html.ActionLink("Dialog", "Dialog")%></li>
+		<li><%=Html.ActionLink("ProgressBar", "ProgressBar")%></li>
+		<li><%=Html.ActionLink("Slider", "Slider")%></li>
+		<li><%=Html.ActionLink("Tabs", "Tabs")%></li>
+	</ul>
+</asp:Content>
+

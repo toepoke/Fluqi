@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{815EBE19-44A3-4986-8CB5-8F65E2E35A9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fluqi.Tests</RootNamespace>
+    <AssemblyName>Fluqi.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accordion\AccordionTests-Core.cs" />
+    <Compile Include="Accordion\AccordionTests-Options.cs" />
+    <Compile Include="Accordion\AccordionTests-Events.cs" />
+    <Compile Include="Accordion\AccordionTests-Methods.cs" />
+    <Compile Include="Accordion\AccordionTests-Methods-Options.cs" />
+    <Compile Include="AutoComplete\AutoCompleteTests-Core.cs" />
+    <Compile Include="AutoComplete\AutoCompleteTests-Options.cs" />
+    <Compile Include="AutoComplete\AutoCompleteTests-Events.cs" />
+    <Compile Include="AutoComplete\AutoCompleteTests-Methods.cs" />
+    <Compile Include="AutoComplete\AutoCompleteTests-Methods-Options.cs" />
+    <Compile Include="PushButton\ButtonTests-Core.cs" />
+    <Compile Include="PushButton\ButtonTests-Options.cs" />
+    <Compile Include="PushButton\ButtonTests-Events.cs" />
+    <Compile Include="PushButton\ButtonTests-Methods.cs" />
+    <Compile Include="PushButton\ButtonTests-Methods-Options.cs" />
+    <Compile Include="Cookie\CookieTests-Core.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cookie\CookieTests-Options.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DatePicker\DatePickerTests-Methods-Options.cs" />
+    <Compile Include="DatePicker\DatePickerTests-Methods.cs" />
+    <Compile Include="DatePicker\DatePickerTests-Core.cs" />
+    <Compile Include="DatePicker\DatePickerTests-Events.cs" />
+    <Compile Include="Dialog\DialogTests-Methods-Options.cs" />
+    <Compile Include="Dialog\DialogTests-Methods.cs" />
+    <Compile Include="Dialog\DialogTests-Buttons.cs" />
+    <Compile Include="Dialog\DialogTests-Core.cs" />
+    <Compile Include="Dialog\DialogTests-Events.cs" />
+    <Compile Include="Dialog\DialogTests-Options.cs" />
+    <Compile Include="Helpers\TestHelper.cs" />
+    <Compile Include="Position\PositionTests-Option.cs" />
+    <Compile Include="ProgressBar\ProgressBarTests-Methods.cs" />
+    <Compile Include="ProgressBar\ProgressBarTests-Events.cs" />
+    <Compile Include="ProgressBar\ProgressBarTests-Options.cs" />
+    <Compile Include="ProgressBar\ProgressBarTests-Core.cs" />
+    <Compile Include="DatePicker\DatePickerTests-Options.cs" />
+    <Compile Include="Position\PositionTests-Core.cs" />
+    <Compile Include="Slider\SliderTests-Methods-Options.cs" />
+    <Compile Include="Slider\SliderTests-Methods.cs" />
+    <Compile Include="Slider\SliderTests-Events.cs" />
+    <Compile Include="Slider\SliderTests-Options.cs" />
+    <Compile Include="Slider\SliderTests-Core.cs" />
+    <Compile Include="Tabs\TabTests-Methods-Options.cs" />
+    <Compile Include="Tabs\TabTests-Methods.cs" />
+    <Compile Include="Tabs\TabTests-Events.cs" />
+    <Compile Include="Tabs\TabTests-Options.cs" />
+    <Compile Include="Tabs\TabTests-Core.cs" />
+    <Compile Include="WIP.cs" />
+    <Compile Include="Helpers\Mocks.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fluqi.Web.Demo\Fluqi.Web.Demo.csproj">
+      <Project>{82C1C43B-0A57-4B17-BC16-DE5242B7B673}</Project>
+      <Name>Fluqi.Web.Demo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fluqi\Fluqi.csproj">
+      <Project>{26D94B83-7571-4953-873F-42DBA16DB202}</Project>
+      <Name>Fluqi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

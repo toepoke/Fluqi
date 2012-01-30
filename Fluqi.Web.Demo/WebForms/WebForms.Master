@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebForms.master.cs" Inherits="Fluqi.Web.Demo.WebForms.WebForms" %>
+<!DOCTYPE html>
+<!--[if IE 7 ]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+
+<head id="Head1" runat="server">
+<!--
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+-->
+	<meta charset="utf-8"/>
+	<meta name="description" content="asdf">
+	<meta name="author" content="asdf">
+	<title>Fluqi - Ease using jQuery UI with ASP.NET and ASP.NET MVC</title>
+	<link rel="stylesheet" href="../Content/site/css/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../Content/site/css/fluqi.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/start/jquery-ui.css" type="text/css" />
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">window.jQuery || document.write('<script src="../../Scripts/jquery-1.7.js"><\/script>')</script>
+	<script src="../Scripts/jquery-ui-1.8.16.custom.js" type="text/javascript"></script>	
+	<script src="../Scripts/syntax-highlighter.js" type="text/javascript"></script>
+	<link href="../Content/syntax-highlighter.css rel="stylesheet" type="text/css" />
+	<link href="../Content/builder.css" rel="stylesheet" type="text/css" />
+
+	<script src="../Scripts/fluqi-helpers.js" type="text/javascript"></script>	
+	
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+
+<body>
+	<div>
+		<a href="https://github.com/toepoke/fluqi">
+			<asp:Image ID="github" CssClass="github" runat="server" AlternateText="Fork me on Github" ImageUrl="~/Content/site/images/github.png" />
+		</a>
+	</div>
+	<form id="Form1" runat="server">
+	<div id="header-wrap">
+		<header>
+			<hgroup>
+				<h1><asp:HyperLink ID="HyperLink1" NavigateUrl="~/" Text="Home" runat="server"></asp:HyperLink></h1>
+				<h3>Ease jQuery UI development with a Fluqi library</h3>
+			</hgroup>
+			<nav>
+				<asp:ContentPlaceHolder ID="Navigation" runat="server">
+				</asp:ContentPlaceHolder>
+			</nav>
+		</header>
+	</div>
+	<div class="content-wrap">
+	<asp:ContentPlaceHolder ID="MainContent" runat="server">
+	</asp:ContentPlaceHolder>
+	</div><%--content-wrap--%>
+
+	<footer>
+		<div class="footer-content">
+			<ul class="footer-menu">
+				<li><asp:HyperLink ID="HyperLink2" NavigateUrl="~/" Text="Home" runat="server"></asp:HyperLink></li>
+				<li><asp:HyperLink ID="HyperLink3" NavigateUrl="~/#about" Text="What is Fluqi?" runat="server"></asp:HyperLink></li>
+				<li><asp:HyperLink ID="HyperLink4" NavigateUrl="~/#demos" Text="Demos" runat="server"></asp:HyperLink></li>
+				<li><a href="https://github.com/toepoke/fluqi">Github</a></li>
+				<li><a href="http://www.twitter.com/toepoke_co_uk" title="For updates, follow toepoke_co_uk">Follow</a></li>
+				<li><a href="http://toepoke.co.uk">Developed by toepoke.co.uk</a></li>
+			</ul>
+			<p class="footer-text">Copyright 2011 PageOne. &nbsp;&nbsp;&nbsp; Designed by <a href="http://www.styleshout.com/">Styleshout</a></p>
+			<p style="float: right !important">
+					<a id="toepoke" href="http://toepoke.co.uk" title="Fluqi was developed by toepoke.co.uk">
+						<img src="../Content/toepoke-badge.png" alt="logo" title="Organise your 5-a-side football with toepoke.co.uk" />
+					</a>
+			</p>
+		</div>
+	</footer>
+
+</form>
+</body>
+</html>

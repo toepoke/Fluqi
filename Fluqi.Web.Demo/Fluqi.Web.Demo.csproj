@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82C1C43B-0A57-4B17-BC16-DE5242B7B673}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fluqi.Web.Demo</RootNamespace>
+    <AssemblyName>Fluqi.Web.Demo</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BuilderController\Accordion.cs" />
+    <Compile Include="Controllers\BuilderController\AutoComplete.cs" />
+    <Compile Include="Controllers\BuilderController\PushButton.cs" />
+    <Compile Include="Controllers\BuilderController\DatePicker.cs" />
+    <Compile Include="Controllers\BuilderController\Dialog.cs" />
+    <Compile Include="Controllers\BuilderController\ProgressBar.cs" />
+    <Compile Include="Controllers\BuilderController\Slider.cs" />
+    <Compile Include="Controllers\BuilderController\Tabs.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\List.cs" />
+    <Compile Include="Helpers\Html.cs" />
+    <Compile Include="Models\PushButtonModel.cs" />
+    <Compile Include="Models\WizardModel.cs" />
+    <Compile Include="Models\DialogModel.cs" />
+    <Compile Include="Models\ProgressBarModel.cs" />
+    <Compile Include="Models\SliderModel.cs" />
+    <Compile Include="Models\_BaseModel.cs" />
+    <Compile Include="Models\AutoCompleteModel.cs" />
+    <Compile Include="Models\DatePickerModel.cs" />
+    <Compile Include="Models\TabModel.cs" />
+    <Compile Include="Models\AccordionModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForms\QuickDemo.aspx.cs">
+      <DependentUpon>QuickDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\QuickDemo.aspx.designer.cs">
+      <DependentUpon>QuickDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\WebForms.Master.cs">
+      <DependentUpon>WebForms.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\WebForms.Master.designer.cs">
+      <DependentUpon>WebForms.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\calendar_week.png" />
+    <Content Include="Content\Builder.css" />
+    <Content Include="Content\site\css\fluqi.css" />
+    <Content Include="Content\site\css\jquery.fancybox-1.3.4.css" />
+    <Content Include="Content\site\css\nivo-slider.css" />
+    <Content Include="Content\site\css\style.css" />
+    <Content Include="Content\site\images\arrows.png" />
+    <Content Include="Content\site\images\back-to-top.png" />
+    <Content Include="Content\site\images\bg.png" />
+    <Content Include="Content\site\images\btn-bg.png" />
+    <Content Include="Content\site\images\bullets.png" />
+    <Content Include="Content\site\images\fancybox\blank.gif" />
+    <Content Include="Content\site\images\fancybox\fancybox-x.png" />
+    <Content Include="Content\site\images\fancybox\fancybox-y.png" />
+    <Content Include="Content\site\images\fancybox\fancybox.png" />
+    <Content Include="Content\site\images\fancybox\fancy_close.png" />
+    <Content Include="Content\site\images\fancybox\fancy_loading.png" />
+    <Content Include="Content\site\images\fancybox\fancy_nav_left.png" />
+    <Content Include="Content\site\images\fancybox\fancy_nav_right.png" />
+    <Content Include="Content\site\images\fancybox\fancy_shadow_e.png" />
+    <Content Include="Content\site\images\fancybox\fancy_shadow_n.png" />
+    <Content Include="Content\site\images\fancybox\fancy_shadow_ne.png" />
+    <Content Include="Content\site\images\fancybox\fancy_shadow_nw.png" />
+    <Content Include="Content\site\images\fancybox\fancy_shadow_s.png" />
+    <Content Include="Content\site\images\fancybox\fancy_shadow_se.png" />
+    <Content Include="Content\site\images\fancybox\fancy_shadow_sw.png" />
+    <Content Include="Content\site\images\fancybox\fancy_shadow_w.png" />
+    <Content Include="Content\site\images\fancybox\fancy_title_left.png" />
+    <Content Include="Content\site\images\fancybox\fancy_title_main.png" />
+    <Content Include="Content\site\images\fancybox\fancy_title_over.png" />
+    <Content Include="Content\site\images\fancybox\fancy_title_right.png" />
+    <Content Include="Content\site\images\form-bg.png" />
+    <Content Include="Content\site\images\github.png" />
+    <Content Include="Content\site\images\header-bg.png" />
+    <Content Include="Content\site\images\loading.gif" />
+    <Content Include="Content\site\images\logo.png" />
+    <Content Include="Content\site\images\quote-open.png" />
+    <Content Include="Content\site\images\quote.png" />
+    <Content Include="Content\site\images\rss.png" />
+    <Content Include="Content\site\images\section-sep.png" />
+    <Content Include="Content\site\images\services\logo-design-and-branding.png" />
+    <Content Include="Content\site\images\services\newsletter.png" />
+    <Content Include="Content\site\images\services\print-design.png" />
+    <Content Include="Content\site\images\services\seo-services.png" />
+    <Content Include="Content\site\images\services\webdesign.png" />
+    <Content Include="Content\site\images\services\webdevelopment.png" />
+    <Content Include="Content\site\images\slider.png" />
+    <Content Include="Content\site\images\slides\slide1.png" />
+    <Content Include="Content\site\images\slides\slide2.png" />
+    <Content Include="Content\site\images\slides\slide3.png" />
+    <Content Include="Content\site\images\slides\slide4.png" />
+    <Content Include="Content\site\images\social\delicious.png" />
+    <Content Include="Content\site\images\social\dribble.png" />
+    <Content Include="Content\site\images\social\facebook.png" />
+    <Content Include="Content\site\images\social\flickr.png" />
+    <Content Include="Content\site\images\social\googleplus.png" />
+    <Content Include="Content\site\images\social\linkedin.png" />
+    <Content Include="Content\site\images\social\twitter.png" />
+    <Content Include="Content\site\images\thumb-bg.png" />
+    <Content Include="Content\site\images\thumb-frame.png" />
+    <Content Include="Content\site\images\thumb-pic.png" />
+    <Content Include="Content\site\images\thumbs\big\clouds-and-rainbow.jpg" />
+    <Content Include="Content\site\images\thumbs\big\dandelion.jpg" />
+    <Content Include="Content\site\images\thumbs\big\eiffel.jpg" />
+    <Content Include="Content\site\images\thumbs\big\hexagon.jpg" />
+    <Content Include="Content\site\images\thumbs\big\landscape.jpg" />
+    <Content Include="Content\site\images\thumbs\big\milk.jpg" />
+    <Content Include="Content\site\images\thumbs\big\sneakers.jpg" />
+    <Content Include="Content\site\images\thumbs\big\vector-flower-fullscreen.jpg" />
+    <Content Include="Content\site\images\thumbs\clouds-and-rainbow.jpg" />
+    <Content Include="Content\site\images\thumbs\dandelion.jpg" />
+    <Content Include="Content\site\images\thumbs\eiffel.jpg" />
+    <Content Include="Content\site\images\thumbs\hexagon.jpg" />
+    <Content Include="Content\site\images\thumbs\hillsong-united-aftermath.jpg" />
+    <Content Include="Content\site\images\thumbs\landscape.jpg" />
+    <Content Include="Content\site\images\thumbs\milk.jpg" />
+    <Content Include="Content\site\images\thumbs\sneakers.jpg" />
+    <Content Include="Content\site\images\thumbs\vector-flower-fullscreen.jpg" />
+    <Content Include="Content\toepoke-badge.png" />
+    <Content Include="Content\Wizard.css" />
+    <Content Include="Content\syntax-highlighter.css" />
+    <Content Include="Content\ui\images\ui-bg_flat_55_999999_40x100.png" />
+    <Content Include="Content\ui\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="Content\ui\images\ui-bg_glass_45_0078ae_1x400.png" />
+    <Content Include="Content\ui\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="Content\ui\images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="Content\ui\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="Content\ui\images\ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+    <Content Include="Content\ui\images\ui-bg_gloss-wave_75_2191c0_500x100.png" />
+    <Content Include="Content\ui\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\ui\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="Content\ui\images\ui-icons_056b93_256x240.png" />
+    <Content Include="Content\ui\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\ui\images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="Content\ui\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="Content\ui\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="Content\ui\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="Content\ui\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\autocomplete-results.js" />
+    <Content Include="Scripts\accordion.js" />
+    <Content Include="Scripts\auto-complete.js" />
+    <Content Include="Scripts\button.js" />
+    <Content Include="Scripts\js-src\jquery.cookie.js" />
+    <Content Include="Scripts\js-src\jquery.effects.blind.js" />
+    <Content Include="Scripts\js-src\jquery.effects.bounce.js" />
+    <Content Include="Scripts\js-src\jquery.effects.clip.js" />
+    <Content Include="Scripts\js-src\jquery.effects.core.js" />
+    <Content Include="Scripts\js-src\jquery.effects.drop.js" />
+    <Content Include="Scripts\js-src\jquery.effects.explode.js" />
+    <Content Include="Scripts\js-src\jquery.effects.fade.js" />
+    <Content Include="Scripts\js-src\jquery.effects.fold.js" />
+    <Content Include="Scripts\js-src\jquery.effects.highlight.js" />
+    <Content Include="Scripts\js-src\jquery.effects.pulsate.js" />
+    <Content Include="Scripts\js-src\jquery.effects.scale.js" />
+    <Content Include="Scripts\js-src\jquery.effects.shake.js" />
+    <Content Include="Scripts\js-src\jquery.effects.slide.js" />
+    <Content Include="Scripts\js-src\jquery.effects.transfer.js" />
+    <Content Include="Scripts\js-src\jquery.ui.accordion.js" />
+    <Content Include="Scripts\js-src\jquery.ui.autocomplete.js" />
+    <Content Include="Scripts\js-src\jquery.ui.button.js" />
+    <Content Include="Scripts\js-src\jquery.ui.core.js" />
+    <Content Include="Scripts\js-src\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\js-src\jquery.ui.dialog.js" />
+    <Content Include="Scripts\js-src\jquery.ui.draggable.js" />
+    <Content Include="Scripts\js-src\jquery.ui.droppable.js" />
+    <Content Include="Scripts\js-src\jquery.ui.mouse.js" />
+    <Content Include="Scripts\js-src\jquery.ui.position.js" />
+    <Content Include="Scripts\js-src\jquery.ui.progressbar.js" />
+    <Content Include="Scripts\js-src\jquery.ui.resizable.js" />
+    <Content Include="Scripts\js-src\jquery.ui.selectable.js" />
+    <Content Include="Scripts\js-src\jquery.ui.slider.js" />
+    <Content Include="Scripts\js-src\jquery.ui.sortable.js" />
+    <Content Include="Scripts\js-src\jquery.ui.tabs.js" />
+    <Content Include="Scripts\js-src\jquery.ui.widget.js" />
+    <Content Include="Scripts\site\init.js" />
+    <Content Include="Scripts\site\jquery.easing-1.3.pack.js" />
+    <Content Include="Scripts\site\jquery.fancybox-1.3.4.pack.js" />
+    <Content Include="Scripts\site\jquery.nivo.slider.pack.js" />
+    <Content Include="Scripts\site\jquery.smoothscroll.js" />
+    <Content Include="Scripts\wizard.js" />
+    <Content Include="Scripts\dialog.js" />
+    <Content Include="Scripts\progress-bar.js" />
+    <Content Include="Scripts\syntax-highlighter.js" />
+    <Content Include="Scripts\tabs.js" />
+    <Content Include="Scripts\date-picker.js" />
+    <Content Include="Scripts\slider.js" />
+    <Content Include="Scripts\fluqi-helpers.js" />
+    <Content Include="Scripts\jquery-1.7.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.custom.js" />
+    <Content Include="Views\Builder\Accordion.aspx" />
+    <Content Include="Views\Builder\AddTab.ascx" />
+    <Content Include="Views\Builder\AutoComplete.aspx" />
+    <Content Include="Views\Builder\PushButton.aspx" />
+    <Content Include="Views\Builder\DatePicker.aspx" />
+    <Content Include="Views\Builder\Dialog.aspx" />
+    <Content Include="Views\Builder\ProgressBar.aspx" />
+    <Content Include="Views\Builder\Slider.aspx" />
+    <Content Include="Views\Builder\Tabs.aspx" />
+    <Content Include="Views\Demo\Wizard.aspx" />
+    <Content Include="Views\Home\Home.aspx" />
+    <Content Include="Views\Shared\ThemeSwitcher.ascx" />
+    <Content Include="Views\Shared\EventLog.ascx" />
+    <Content Include="Views\Shared\GitHub.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Web.config" />
+    <Content Include="WebForms\QuickDemo.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fluqi\Fluqi.csproj">
+      <Project>{26D94B83-7571-4953-873F-42DBA16DB202}</Project>
+      <Name>Fluqi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Fluqi.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\site\css\fonts\merriweather-bold-webfont.eot" />
+    <None Include="Content\site\css\fonts\merriweather-bold-webfont.svg" />
+    <None Include="Content\site\css\fonts\merriweather-bold-webfont.ttf" />
+    <None Include="Content\site\css\fonts\merriweather-bold-webfont.woff" />
+    <None Include="Content\site\css\fonts\merriweather-regular-webfont.eot" />
+    <None Include="Content\site\css\fonts\merriweather-regular-webfont.svg" />
+    <None Include="Content\site\css\fonts\merriweather-regular-webfont.ttf" />
+    <None Include="Content\site\css\fonts\merriweather-regular-webfont.woff" />
+    <Content Include="Views\Shared\Demo.Parent.Master" />
+    <Content Include="Views\Shared\Builder.Master" />
+    <Content Include="WebForms\WebForms.Master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2322</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Fluqi.Web.Demo</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

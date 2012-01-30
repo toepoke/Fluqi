@@ -1,0 +1,11 @@
+S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Tests.dll.config
+S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Tests.dll
+S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Tests.pdb
+S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.dll
+S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Web.Demo.dll
+S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Web.Demo.pdb
+S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.pdb
+S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.xml
+S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Tests\obj\Debug\ResolveAssemblyReference.cache
+S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.dll
+S:\Dropbox\toepoke.project-files\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.pdb

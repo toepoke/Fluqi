@@ -1,0 +1,56 @@
+﻿/* STRUCTURE */
+ul {
+	list-style-type: none;
+}
+ul.horizontal li {
+	float: left;
+}
+.clear {
+	clear: both;
+}
+
+
+/* SPECIFIC */
+
+
+#sidebar-container {
+	float: left;
+	width: 20%;
+}
+#progress {
+	margin-bottom: 1em;
+}
+#wizard {
+	float: left;
+	width: 50%;
+	margin-left: 1%;
+	min-height: 300px;
+}
+#button-bar {
+	padding: 5px;
+	float: right;
+}
+#wizard-bar {
+	border-top: solid 1px silver;
+	position: absolute; bottom: 0; left: 0;
+	width: 100%;
+}
+#Age {
+	border: none;
+	width: 75px;
+	text-align: left;
+}
+li {
+	 list-style-type: none;
+}
+li input, li select {
+	margin-bottom: 20px;
+}
+li label {
+	display: block;
+}
+.footnote {
+	font-size: x-small;
+	font-style: italic;
+}
+

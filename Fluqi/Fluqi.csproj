@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26D94B83-7571-4953-873F-42DBA16DB202}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fluqi</RootNamespace>
+    <AssemblyName>Fluqi</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Fluqi.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Animation.cs" />
+    <Compile Include="Core\ControlBase.cs" />
+    <Compile Include="Core\BrowserEvent.cs" />
+    <Compile Include="Core\ButtonType.cs" />
+    <Compile Include="Core\Speed.cs" />
+    <Compile Include="Core\Methods.cs" />
+    <Compile Include="Core\RenderBase.cs" />
+    <Compile Include="Extensions\jButton_Extensions.cs" />
+    <Compile Include="Extensions\jProgressBar_Extensions.cs" />
+    <Compile Include="Core\Interfaces\IControl.cs" />
+    <Compile Include="Utilities\jCookie\CookieOptions.cs" />
+    <Compile Include="Utilities\jPosition\PositionOptions.cs" />
+    <Compile Include="Widget\jAccordion\ControlAttributes.cs" />
+    <Compile Include="Widget\jAccordion\Panel\ControlAttributes.cs" />
+    <Compile Include="Widget\jAccordion\Panel\Panels.cs" />
+    <Compile Include="Widget\jAccordion\Scripting.cs" />
+    <Compile Include="Widget\jAccordion\Methods\Methods.cs" />
+    <Compile Include="Widget\jAccordion\Rendering\Rendering.cs" />
+    <Compile Include="Widget\jAccordion\Events\Events-Core.cs" />
+    <Compile Include="Widget\jAccordion\Events\Events-Properties.cs" />
+    <Compile Include="Widget\jAccordion\Events\Events-Setters.cs" />
+    <Compile Include="Widget\jAutoComplete\ControlAttributes.cs" />
+    <Compile Include="Widget\jAutoComplete\Options\PositionOptions.cs" />
+    <Compile Include="Widget\jAutoComplete\Scripting.cs" />
+    <Compile Include="Widget\jAutoComplete\Events\Events-Core.cs" />
+    <Compile Include="Widget\jAutoComplete\Events\Events-Properties.cs" />
+    <Compile Include="Widget\jAutoComplete\Events\Events-Setters.cs" />
+    <Compile Include="Widget\jAutoComplete\Methods\Methods.cs" />
+    <Compile Include="Widget\jAutoComplete\Rendering\Rendering.cs" />
+    <Compile Include="Widget\jPushButton\PushButton.cs" />
+    <Compile Include="Widget\jPushButton\ControlAttributes.cs" />
+    <Compile Include="Widget\jPushButton\Scripting.cs" />
+    <Compile Include="Widget\jPushButton\Events\Events-Core.cs" />
+    <Compile Include="Widget\jPushButton\Events\Events-Properties.cs" />
+    <Compile Include="Widget\jPushButton\Events\Events-Setters.cs" />
+    <Compile Include="Widget\jPushButton\Methods\Methods.cs" />
+    <Compile Include="Widget\jPushButton\Options\Options-Core.cs" />
+    <Compile Include="Widget\jPushButton\Options\Options-Properties.cs" />
+    <Compile Include="Widget\jPushButton\Options\Options-Setters.cs" />
+    <Compile Include="Widget\jPushButton\Rendering\Rendering.cs" />
+    <Compile Include="Utilities\jCookie\Options\Options-Core.cs" />
+    <Compile Include="Utilities\jCookie\Options\Options-Properties.cs" />
+    <Compile Include="Utilities\jCookie\Options\Options-Setters.cs" />
+    <Compile Include="Utilities\jCookie\Cookie.cs" />
+    <Compile Include="Utilities\jCookie\Rendering\Rendering.cs" />
+    <Compile Include="Utilities\jCookie\Scripting.cs" />
+    <Compile Include="Widget\jDatePicker\ControlAttributes.cs" />
+    <Compile Include="Widget\jDatePicker\Scripting.cs" />
+    <Compile Include="Widget\jDatePicker\Events\Events-Core.cs" />
+    <Compile Include="Widget\jDatePicker\Events\Events-Properties.cs" />
+    <Compile Include="Widget\jDatePicker\Events\Events-Setters.cs" />
+    <Compile Include="Widget\jDatePicker\Methods\Methods.cs" />
+    <Compile Include="Widget\jDatePicker\Rendering\Rendering.cs" />
+    <Compile Include="Widget\jDialog\Button\Button-Options.cs" />
+    <Compile Include="Widget\jDialog\Button\Button.cs" />
+    <Compile Include="Widget\jDialog\ControlAttributes.cs" />
+    <Compile Include="Widget\jDialog\Scripting.cs" />
+    <Compile Include="Widget\jDialog\Events\Events-Core.cs" />
+    <Compile Include="Widget\jDialog\Events\Events-Properties.cs" />
+    <Compile Include="Widget\jDialog\Events\Events-Setters.cs" />
+    <Compile Include="Widget\jDialog\Methods\Methods.cs" />
+    <Compile Include="Widget\jDialog\Rendering\Rendering.cs" />
+    <Compile Include="Utilities\jPosition\Scripting.cs" />
+    <Compile Include="Utilities\jPosition\Rendering\Rendering.cs" />
+    <Compile Include="Widget\jProgressBar\ControlAttributes.cs" />
+    <Compile Include="Widget\jProgressBar\Scripting.cs" />
+    <Compile Include="Widget\jProgressBar\Events\Events-Core.cs" />
+    <Compile Include="Widget\jProgressBar\Events\Events-Properties.cs" />
+    <Compile Include="Widget\jProgressBar\Events\Events-Setters.cs" />
+    <Compile Include="Widget\jProgressBar\Methods\Methods.cs" />
+    <Compile Include="Widget\jProgressBar\Rendering\Rendering.cs" />
+    <Compile Include="Widget\jSlider\ControlAttributes.cs" />
+    <Compile Include="Widget\jSlider\Scripting.cs" />
+    <Compile Include="Widget\jSlider\Events\Events-Core.cs" />
+    <Compile Include="Widget\jSlider\Events\Events-Properties.cs" />
+    <Compile Include="Widget\jSlider\Events\Events-Setters.cs" />
+    <Compile Include="Widget\jSlider\Methods\Methods.cs" />
+    <Compile Include="Widget\jSlider\Rendering\Rendering.cs" />
+    <Compile Include="Widget\jTab\Options\CookieOptions.cs" />
+    <Compile Include="Widget\jTab\Pane\Panes.cs" />
+    <Compile Include="Widget\jTab\Scripting.cs" />
+    <Compile Include="Widget\jTab\Events\Events-Core.cs" />
+    <Compile Include="Widget\jTab\Events\Events-Properties.cs" />
+    <Compile Include="Widget\jTab\Events\Events-Setters.cs" />
+    <Compile Include="Widget\jTab\Methods\Methods.cs" />
+    <Compile Include="Widget\jTab\Rendering\Rendering.cs" />
+    <Compile Include="Widget\jTab\ControlAttributes.cs" />
+    <Compile Include="Widget\jTab\Pane\ControlAttributes.cs" />
+    <Compile Include="WIKI.cs" />
+    <Compile Include="Extensions\jDialog_Extensions.cs" />
+    <Compile Include="Widget\jDialog\Options\Options-Core.cs" />
+    <Compile Include="Widget\jDialog\Options\Options-Properties.cs" />
+    <Compile Include="Widget\jDialog\Options\Options-Setters.cs" />
+    <Compile Include="Widget\jDialog\Dialog.cs" />
+    <Compile Include="Widget\jProgressBar\ProgressBar.cs" />
+    <Compile Include="Widget\jProgressBar\Options\Options-Core.cs" />
+    <Compile Include="Widget\jProgressBar\Options\Options-Properties.cs" />
+    <Compile Include="Widget\jProgressBar\Options\Options-Setters.cs" />
+    <Compile Include="Core\Collision.cs" />
+    <Compile Include="Core\Orientation.cs" />
+    <Compile Include="Core\Position.cs" />
+    <Compile Include="Extensions\jSlider_Extensions.cs" />
+    <Compile Include="Extensions\Helpers\Utils.cs" />
+    <Compile Include="Core\Interfaces\IControlRenderer.cs" />
+    <Compile Include="Core\Interfaces\IScriptRenderer.cs" />
+    <Compile Include="Utilities\jPosition\Options\Options-Core.cs" />
+    <Compile Include="Utilities\jPosition\Options\Options-Properties.cs" />
+    <Compile Include="Utilities\jPosition\Options\Options-Setters.cs" />
+    <Compile Include="Utilities\jPosition\Position.cs" />
+    <Compile Include="Widget\jSlider\Options\Options-Core.cs" />
+    <Compile Include="Widget\jSlider\Options\Options-Properties.cs" />
+    <Compile Include="Widget\jSlider\Options\Options-Setters.cs" />
+    <Compile Include="Widget\jSlider\Slider.cs" />
+    <Compile Include="Widget\jTab\Options\Options-Core.cs" />
+    <Compile Include="Widget\jTab\Options\Options-Properties.cs" />
+    <Compile Include="Widget\jTab\Options\Options-Setters.cs" />
+    <Compile Include="ToDo.cs" />
+    <Compile Include="Extensions\jDatePicker_Extensions.cs" />
+    <Compile Include="Widget\jAccordion\Options\Options-Setters.cs" />
+    <Compile Include="Widget\jAccordion\Options\Options-Properties.cs" />
+    <Compile Include="Widget\jAutoComplete\Options\Options-Properties.cs" />
+    <Compile Include="Widget\jAutoComplete\Options\Options-Setters.cs" />
+    <Compile Include="Widget\jDatePicker\Options\Options-Core.cs" />
+    <Compile Include="Widget\jDatePicker\Options\Options-Setters.cs" />
+    <Compile Include="Widget\jDatePicker\DatePicker.cs" />
+    <Compile Include="Widget\jDatePicker\Options\Options-Properties.cs" />
+    <Compile Include="Core\Icons.cs" />
+    <Compile Include="Core\ScriptOptions.cs" />
+    <Compile Include="Core\ScriptOption.cs" />
+    <Compile Include="Core\Options.cs" />
+    <Compile Include="Extensions\jAutoComplete_Extensions.cs" />
+    <Compile Include="Extensions\Misc_Extensions.cs" />
+    <Compile Include="Extensions\jAccordion_Extensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensions\jTab_Extensions.cs" />
+    <Compile Include="Extensions\Helpers\HttpResponse.cs" />
+    <Compile Include="Extensions\Helpers\jStringBuilder.cs" />
+    <Compile Include="Widget\jAccordion\Panel\Panel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Widget\jAccordion\Accordion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Widget\jAccordion\Options\Options-Core.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Widget\jAutoComplete\AutoComplete.cs" />
+    <Compile Include="Widget\jAutoComplete\Options\Options-Core.cs" />
+    <Compile Include="Widget\jTab\Pane\Pane.cs" />
+    <Compile Include="Widget\jTab\Tabs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+			 Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>
