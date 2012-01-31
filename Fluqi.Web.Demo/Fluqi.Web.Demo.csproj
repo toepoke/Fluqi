@@ -72,6 +72,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Url.cs" />
     <Compile Include="Helpers\List.cs" />
     <Compile Include="Helpers\Html.cs" />
     <Compile Include="Models\PushButtonModel.cs" />

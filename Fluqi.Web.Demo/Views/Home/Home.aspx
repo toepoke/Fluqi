@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Fluqi.Master" Inherits="System.Web.Mvc.ViewPage" %>
+<%@ Import Namespace="Fluqi.Web.Demo.Helpers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">	
 </asp:Content>
@@ -329,10 +330,10 @@ Bundle.JavaScript()
 <section id="share">
 	<h1>Share</h1>
 	<ul class="link-list social">
-		<li class="facebook"><a href='http://www.facebook.com/sharer.php?u=<%=Url.Action("Home", "Home", null, "http", "")%>&t=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Facebook</a></li>
-		<li class="googleplus"><a href='https://plusone.google.com/_/+1/confirm?hl=en&url=<%=Url.Action("Home", "Home", null, "http", "")%>'>Google+</a></li>
-		<li class="twitter"><a href='http://twitter.com/intent/tweet?status=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk : <%=Url.Action("Home", "Home", null, "http", "")%>'>Twitter</a></li>
-		<li class="delicious"><a href='http://del.icio.us/post?url=<%=Url.Action("Home", "Home", null, "http", "")%>&title=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Delicious</a></li>
+		<li class="facebook"><a href='http://www.facebook.com/sharer.php?u=<%=Url.Home(true)%>&t=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Facebook</a></li>
+		<li class="googleplus"><a href='https://plusone.google.com/_/+1/confirm?hl=en&url=<%=Url.Home(true)%>'>Google+</a></li>
+		<li class="twitter"><a href='http://twitter.com/intent/tweet?status=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk : <%=Url.Home(true)%>'>Twitter</a></li>
+		<li class="delicious"><a href='http://del.icio.us/post?url=<%=Url.Home(true)%>&title=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Delicious</a></li>
 	</ul>
 </section>
 
@@ -340,10 +341,7 @@ Bundle.JavaScript()
 
 	<script type="text/javascript">
 	$(document).ready(function() {
-		// hide the bits here so non-js/spiders see them
 		SyntaxHighlighter.all();
-		$('#sample-code').hide();
-		//$('#demos').hide();
 	});
 	</script>
 </asp:Content>
