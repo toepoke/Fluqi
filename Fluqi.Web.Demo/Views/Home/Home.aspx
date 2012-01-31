@@ -330,10 +330,10 @@ Bundle.JavaScript()
 <section id="share">
 	<h1>Share</h1>
 	<ul class="link-list social">
-		<li class="facebook"><a href='http://www.facebook.com/sharer.php?u=<%=Url.SiteRoot()%>&t=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Facebook</a></li>
-		<li class="googleplus"><a href='https://plusone.google.com/_/+1/confirm?hl=en&url=<%=Url.SiteRoot()%>'>Google+</a></li>
-		<li class="twitter"><a href='http://twitter.com/intent/tweet?status=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk : <%=Url.SiteRoot()%>'>Twitter</a></li>
-		<li class="delicious"><a href='http://del.icio.us/post?url=<%=Url.SiteRoot()%>&title=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Delicious</a></li>
+		<li class="facebook"><a href='http://www.facebook.com/sharer.php?u=<%=Url.Home()%>&t=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Facebook</a></li>
+		<li class="googleplus"><a href='https://plusone.google.com/_/+1/confirm?hl=en&url=<%=Url.Home()%>'>Google+</a></li>
+		<li class="twitter"><a href='http://twitter.com/intent/tweet?status=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk : <%=Url.Home()%>'>Twitter</a></li>
+		<li class="delicious"><a href='http://del.icio.us/post?url=<%=Url.Home()%>&title=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Delicious</a></li>
 	</ul>
 </section>
 
