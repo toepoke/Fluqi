@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<system.web>
+		<pages>
+			<namespaces>
+				<add namespace="Fluqi"/>
+				<add namespace="Fluqi.Core"/>
+				<add namespace="Fluqi.Widget.jAccordion"/>
+				<add namespace="Fluqi.Widget.jPushButton"/>
+				<add namespace="Fluqi.Widget.jAutoComplete"/>
+				<add namespace="Fluqi.Widget.jDatePicker"/>
+				<add namespace="Fluqi.Widget.jDialog"/>
+				<add namespace="Fluqi.Widget.jProgressBar"/>
+				<add namespace="Fluqi.Widget.jSlider"/>
+				<add namespace="Fluqi.Widget.jTab"/>
+				<add namespace="Fluqi.Utilities.jCookie"/>
+				<add namespace="Fluqi.Utilities.jPosition"/>
+				<add namespace="Fluqi.Extension"/>
+			</namespaces>
+		</pages>  
+	</system.web>
+</configuration>
