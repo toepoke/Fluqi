@@ -10,20 +10,36 @@ namespace Fluqi.Web.Demo.Helpers {
 	
 	public static class Url {
 
-		public static string Home(this UrlHelper url) {
-			return url.Home(false);
-		}
-
-		public static string Home(this UrlHelper url, bool incProtocol) {
-			string homeUrl = url.Action("Home", "Home");
-
-			if (incProtocol)
-				// this isn't very nice, but there seems to be a difference in my local MVC and the one on appHarbor
-				homeUrl = "http:/" + homeUrl;
-
-			return homeUrl;
-		}
-
+		public static string SiteRoot(HttpContextBase context) {            
+			return SiteRoot(context, true);        
+		}        
+		
+		public static string SiteRoot(HttpContextBase context, bool usePort) {            
+			var Port = context.Request.ServerVariables["SERVER_PORT"];            
+			if (usePort) {                
+				if (Port == null || Port == "80" || Port == "443")                    
+					Port = "";                
+				else                    
+					Port = ":" + Port;            
+			}            
+			var Protocol = context.Request.ServerVariables["SERVER_PORT_SECURE"];            
+			if (Protocol == null || Protocol == "0")                
+				Protocol = "http://";            
+			else                
+				Protocol = "https://";            
+			var appPath = context.Request.ApplicationPath;            
+			if (appPath == "/")                
+				appPath = "";            
+			
+			var sOut = Protocol + context.Request.ServerVariables["SERVER_NAME"] + Port + appPath;            
+			
+			return sOut;        
+		}        
+		
+		public static string SiteRoot(this UrlHelper url) {            
+			return SiteRoot(url.RequestContext.HttpContext);        
+		}        
+		
 	}
-
+	
 }
