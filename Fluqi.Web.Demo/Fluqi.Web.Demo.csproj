@@ -56,6 +56,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\ProductVersion.cs">
+      <Link>ProductVersion.cs</Link>
+    </Compile>
     <Compile Include="Controllers\BuilderController\Accordion.cs" />
     <Compile Include="Controllers\BuilderController\AutoComplete.cs" />
     <Compile Include="Controllers\BuilderController\PushButton.cs" />
