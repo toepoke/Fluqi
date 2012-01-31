@@ -31,6 +31,7 @@
 	
 	<asp:ContentPlaceHolder ID="head" runat="server">
 	</asp:ContentPlaceHolder>
+	<%Html.RenderPartial("Analytics");%>
 </head>
 
 <body>
