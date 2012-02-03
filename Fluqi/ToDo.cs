@@ -6,7 +6,7 @@ namespace Fluqi
 	/// </summary>
 	public class ToDo
 	{
-		// ToDo: Google analytics (need to upload to appHarbour first).
+		// ToDo: Integrate appHarbor for integration with github source code.
 		// ToDo: Check the source that comes out of the demo still matches the actual code required (copy and paste somewhere).
 		// ToDo: Enhance the DiscoverOptions to use the child version everywhere (add it to the Core.Options base class too).  This way
 		//       a) we're consistent, and b) every control options can be passed in as options to everything else.
@@ -22,14 +22,14 @@ namespace Fluqi
 		//       plus we could have all the demos have a button to show the code in a dialog?  Extension method?
 		//       - Not convinced that's the right thing to do.
 		// DONE: Fast, Normal & Slow should really be enums
-		// DONE: Add fork me on github badge (this looks like a good layout: http://www.phantomjs.org/).
+		// DONE: Add fork me on github badge
 		// DONE: Re-organise the controllers and views so we have /Demo/Tabs, /Demo/DatePicker, /Demo/Wizard as it's a bit of a mess at the moment.
 		// DONE: Rename Button to just "Btn" - renamed to "PushButton" (as it clashes with UI.Button from the .NET framework)
 		// FIXED: Think there's a problem with setting the caption on the button example (see http://localhost:2322/Home/Button)
 		// DONE: Need to change the Tabs control to support dynamic loading of tabs, see http://jqueryui.com/demos/tabs/#Ajax_mode for details
 		//       - Added "AsDynamic" fluent entry point to configure dynamic loading.
 		// DONE: Also knock up a toepoke icon we can still in the footer.
-		//       - Done but I reckon we'll create a dedicate page, see http://www.styleshout.com/templates/preview/PageOne10/index.html#about-us)
+		//       - Done but I reckon we'll create a dedicated page
 		// SKIP: Really need a "GetAltField", etc for the properties now we've made them protected.  
 		//       - I don't think we get enough back by doing this.  As the end of the day the user know what they set anyway :)
 		// SKIP: Test the EndAccordions, etc methods work as desired.
@@ -60,10 +60,9 @@ namespace Fluqi
 		// DONE: Position class
 		// DONE: Fix issue with offset both
 		// DONE: Move events to dock on right
-		// DONE: http://cdn1.iconfinder.com/data/icons/splashyIcons/calendar_week.png
 		// DONE: download image and use locally
 		// DONE: Put Update buttons at top and bottom on all screens
-		// DONE: Name = Fluqi (something about Fluent [j] Query UI interface (bit tenuous, but sod it)
+		// DONE: Name = Fluqi (something about Fluent [j] Query UI interface (bit tenuous, but it' catchy)
 		// DONE: Output javascript (capture the render and replace <> with &gt; &lt;
 		// DONE: Refactor the Enums better
 		// DONE: Need tests for the Dialog Buttons
