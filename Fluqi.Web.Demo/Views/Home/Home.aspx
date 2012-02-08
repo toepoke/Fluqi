@@ -335,6 +335,7 @@ Bundle.JavaScript()
 		<li class="twitter"><a href='http://twitter.com/intent/tweet?status=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk : <%=Url.Home()%>'>Twitter</a></li>
 		<li class="delicious"><a href='http://del.icio.us/post?url=<%=Url.Home()%>&title=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Delicious</a></li>
 	</ul>
+	<%Html.RenderPartial("Disqus");%>
 </section>
 
 </div> <%--content-wrap--%>

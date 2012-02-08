@@ -264,6 +264,7 @@
     <Content Include="Views\Demo\Wizard.aspx" />
     <Content Include="Views\Home\Home.aspx" />
     <Content Include="Views\Shared\Analytics.ascx" />
+    <Content Include="Views\Shared\Disqus.ascx" />
     <Content Include="Views\Shared\ThemeSwitcher.ascx" />
     <Content Include="Views\Shared\EventLog.ascx" />
     <Content Include="Views\Shared\GitHub.ascx" />
