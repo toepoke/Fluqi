@@ -12,6 +12,7 @@ namespace Fluqi
 		//       a) we're consistent, and b) every control options can be passed in as options to everything else.
 		// ToDo: Verify that the CSS is compliant with the "Themeing" tab in the jQuery UI documentation against each control.
 		// ToDo: Look at refactoring the ScriptOption as it's got dual purpose at the moment ... plus the name's a bit crap.
+		// ToDo: Fix razor integration, see razor.txt
 		
 
 		// DONE: Fix warnings (mainly XML documentation)

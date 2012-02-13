@@ -4,7 +4,6 @@ S:\Dropbox\toepoke.project-files\Fluqi\Fluqi\bin\Debug\Fluqi.dll
 S:\Dropbox\toepoke.project-files\Fluqi\Fluqi\bin\Debug\Fluqi.pdb
 S:\Dropbox\toepoke.project-files\Fluqi\Fluqi\obj\Debug\Fluqi.dll
 S:\Dropbox\toepoke.project-files\Fluqi\Fluqi\obj\Debug\Fluqi.pdb
-C:\Dropbox\toepoke.project-files\Fluqi\Fluqi\bin\Debug\Fluqi.XML
 C:\Dropbox\toepoke.project-files\Fluqi\Fluqi\bin\Debug\Fluqi.dll
 C:\Dropbox\toepoke.project-files\Fluqi\Fluqi\bin\Debug\Fluqi.pdb
 C:\Dropbox\toepoke.project-files\Fluqi\Fluqi\obj\Debug\ResolveAssemblyReference.cache
