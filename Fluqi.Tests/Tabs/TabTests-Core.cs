@@ -170,6 +170,7 @@ namespace Fluqi.Tests
 			tabs
 				.Rendering
 					.SetAutoScript(false)
+					.SetPrettyRender(true)
 			;
 
 			TestHelper.ForceRender(tabs);
@@ -225,6 +226,7 @@ namespace Fluqi.Tests
 			tabs
 				.Rendering
 					.SetAutoScript(false)
+					.SetPrettyRender(true)
 			;
 
 			using (tabs.RenderHeader()) {

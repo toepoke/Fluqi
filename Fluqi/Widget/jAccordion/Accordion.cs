@@ -152,11 +152,15 @@ namespace Fluqi.Widget.jAccordion
 			_Panels.ResolveActivePane();
 
 			if (renderCss) {
-				this.WithCss("ui-accordion ui-widget ui-helper-reset ui-accordion-icons");
+				this.WithCss("ui-accordion ui-widget ui-helper-reset");
+
+				if (this.Options.AreIconsEnabled()) 
+					// icons are on, so add the main CSS class for the icons as well as the normal classes
+					base.WithCss("ui-accordion-icons");
 			}
 			base.WithID(this.ID);
 
-			sb.Append("<div");
+			sb.AppendFormat("<{0}", this.Options.ContainerTag);
 			base.RenderAttributes(sb);
 			sb.Append(">");
 
@@ -198,7 +202,7 @@ namespace Fluqi.Widget.jAccordion
 
 			// Closing Accordion DIV
 			sb.AppendLineIf();
-			sb.AppendTabsLineIf("</div>");
+			sb.AppendTabsFormatLineIf("</{0}>", this.Options.ContainerTag);
 
 			this.Writer.Write(sb.ToString());
 

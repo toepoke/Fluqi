@@ -13,6 +13,8 @@ namespace Fluqi
 		// ToDo: Verify that the CSS is compliant with the "Themeing" tab in the jQuery UI documentation against each control.
 		// ToDo: Look at refactoring the ScriptOption as it's got dual purpose at the moment ... plus the name's a bit crap.
 		// ToDo: Fix razor integration, see razor.txt
+		// ToDo: Accordion with custom header doesn't work, you can't vary the content divs ... see FAQ in TP for example
+		// ToDo: Accordion shouldn't demand an "ID", it doesn't necessarily need one, we may just been formatting ... perhaps convert the first panel text into an id if necessary?
 		
 
 		// DONE: Fix warnings (mainly XML documentation)

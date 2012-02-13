@@ -21,9 +21,19 @@ namespace Fluqi.Widget.jAccordion
 	public partial class Options: Core.Options
 	{
 		/// <summary>
-		/// Default heading to use for the accordion widget.
+		/// Default HTML element to use for the accordion container
 		/// </summary>
-		public const string DEFAULT_HEADING = "h3";
+		public const string DEFAULT_CONTAINER_TAG = "div";
+
+		/// <summary>
+		/// Default heading to use for the accordion widget panel header.
+		/// </summary>
+		public const string DEFAULT_HEADING_TAG = "h3";
+
+		/// <summary>
+		/// Default tag to use for the accordion content HTML element.
+		/// </summary>
+		public const string DEFAULT_CONTENT_TAG = "div";
 
 		/// <summary>
 		/// Default header icon for the accordion widget.
@@ -70,6 +80,19 @@ namespace Fluqi.Widget.jAccordion
 		public Accordion Finish() {
 			return this.Accordion;
 		}
+
+
+		/// <summary>
+		/// Flags whether the panel header icons are going to be shown or not.
+		/// </summary>
+		/// <returns>true if (either) icon is on, false otherwise</returns>
+		protected internal bool AreIconsEnabled() {
+			return (
+				!string.IsNullOrEmpty(this.HeaderIconClass) 
+				|| 
+				!string.IsNullOrEmpty(this.HeaderSelectedIconClass)
+			);
+		}
 		
 
 		/// <summary>
@@ -83,16 +106,19 @@ namespace Fluqi.Widget.jAccordion
 			options.Add(!this.AutoHeight, "autoHeight", this.AutoHeight.JsBool());
 			options.Add(this.ClearStyle, "clearStyle", this.ClearStyle.JsBool());
 			options.Add(this.Collapsible, "collapsible", this.Collapsible.JsBool());
+			options.Add(!this.IsNullEmptyOrDefault(this.HeadingTag, DEFAULT_HEADING_TAG), "heading", this.HeadingTag.InDoubleQuotes());
 			options.Add(this.FillSpace, "fillSpace", this.FillSpace.JsBool());
 			options.Add(this.Navigation, "navigation", this.Navigation.JsBool());
 			options.Add(!this.IsNullOrEmpty(this.NavigationFilter),"navigationFilter", this.NavigationFilter);
 			options.Add(!this.IsNullEmptyOrDefault(this.Event, DEFAULT_EVENT), "event", this.Event.InSingleQuotes() );
 			
 			// icons have to be set as a pair
-			bool addNormalIcon = !string.IsNullOrEmpty(this.HeaderIconClass) && this.HeaderIconClass != DEFAULT_HEADER_ICON_CLASS;
-			bool addSelectedIcon = !string.IsNullOrEmpty(this.HeaderSelectedIconClass) && this.HeaderSelectedIconClass != DEFAULT_HEADER_SELECTED_ICON_CLASS;
-			if (addNormalIcon || addSelectedIcon) {
-				options.Add( "icons", "{{ 'header': '{0}', 'headerSelected': '{1}' }}", this.HeaderIconClass, this.HeaderSelectedIconClass );
+			if (AreIconsEnabled()) {
+				bool addNormalIcon = !string.IsNullOrEmpty(this.HeaderIconClass) && this.HeaderIconClass != DEFAULT_HEADER_ICON_CLASS;
+				bool addSelectedIcon = !string.IsNullOrEmpty(this.HeaderSelectedIconClass) && this.HeaderSelectedIconClass != DEFAULT_HEADER_SELECTED_ICON_CLASS;
+				if (addNormalIcon || addSelectedIcon) {
+					options.Add( "icons", "{{ 'header': '{0}', 'headerSelected': '{1}' }}", this.HeaderIconClass, this.HeaderSelectedIconClass );
+				}
 			}
 			
 			int activeIndex = this.Accordion.Panels.GetActivePaneIndex();
@@ -107,7 +133,9 @@ namespace Fluqi.Widget.jAccordion
 		/// </summary>
 		protected void Reset() {
 			// Set options to same defaults as jQuery UI
-			this.HeadingTag = DEFAULT_HEADING;
+			this.ContainerTag = DEFAULT_CONTAINER_TAG;
+			this.HeadingTag = DEFAULT_HEADING_TAG;
+			this.ContentTag = DEFAULT_CONTENT_TAG;
 			this.HeaderIconClass = DEFAULT_HEADER_ICON_CLASS;
 			this.HeaderSelectedIconClass = DEFAULT_HEADER_SELECTED_ICON_CLASS;
 			this.AutoHeight = true;

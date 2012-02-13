@@ -149,6 +149,7 @@ namespace Fluqi.Tests
 			// only testing raw output
 			dlg.Rendering
 				.SetAutoScript(false)
+				.SetPrettyRender(true)
 			;
 
 			TestHelper.ForceRender(dlg);

@@ -9,3 +9,13 @@ C:\Dropbox\toepoke.project-files\Fluqi\Fluqi\bin\Debug\Fluqi.pdb
 C:\Dropbox\toepoke.project-files\Fluqi\Fluqi\obj\Debug\ResolveAssemblyReference.cache
 C:\Dropbox\toepoke.project-files\Fluqi\Fluqi\obj\Debug\Fluqi.dll
 C:\Dropbox\toepoke.project-files\Fluqi\Fluqi\obj\Debug\Fluqi.pdb
+S:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\bin\Debug\Fluqi.dll
+S:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\bin\Debug\Fluqi.pdb
+S:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\obj\Debug\ResolveAssemblyReference.cache
+S:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\obj\Debug\Fluqi.dll
+S:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\obj\Debug\Fluqi.pdb
+C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\bin\Debug\Fluqi.dll
+C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\bin\Debug\Fluqi.pdb
+C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\obj\Debug\ResolveAssemblyReference.cache
+C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\obj\Debug\Fluqi.dll
+C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\obj\Debug\Fluqi.pdb

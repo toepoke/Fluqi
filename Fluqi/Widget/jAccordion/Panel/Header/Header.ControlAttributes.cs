@@ -14,16 +14,15 @@ namespace Fluqi.Widget.jAccordion
 	/// <summary>
 	/// A set of properties to apply to a set of jQuery UI Tab.
 	/// </summary>
-	public partial class Accordion
+	public partial class Header
 	{
-		
 		/// <summary>
 		/// Registers a set of CSS class names to be added to the control when it is rendered.
 		/// This is in addition to jQuery UI styles that may appear (see RenderCss property).
 		/// </summary>
 		/// <param name="cssClasses">Set of space separated CSS class names to add</param>
 		/// <returns>Returns this for chainability</returns>
-		new public Accordion WithCss(string cssClasses) {
+		new public Header WithCss(string cssClasses) {
 			base.WithCss(cssClasses);
 			return this;
 		}
@@ -37,8 +36,8 @@ namespace Fluqi.Widget.jAccordion
 		/// <param name="cssClassesWithFormat">Set of space separated CSS class names to add (which has formatting arguments ({0}{1], etc))</param>
 		/// <param name="args"></param>
 		/// <returns>Returns this for chainability</returns>
-		public Accordion WithCss(string cssClassesWithFormat, params Panel[] args) {
-			base.WithCss(cssClassesWithFormat, args);
+		new public Header WithCss(string cssClassesWithFormat, params object[] args) {
+			this.WithCss(cssClassesWithFormat, args);
 			return this;
 		}
 
@@ -49,7 +48,7 @@ namespace Fluqi.Widget.jAccordion
 		/// <param name="attrName">Name of the HTML attribute, e.g. "Tab" or "id" for example</param>
 		/// <param name="attrValue">Value to be applied when the attribute is rendered</param>
 		/// <returns>Returns this for chainability</returns>
-		new public Accordion WithAttribute(string attrName, string attrValue) {
+		new public Header WithAttribute(string attrName, string attrValue) {
 			base.WithAttribute(attrName, attrValue);
 			return this;
 		}
@@ -63,7 +62,7 @@ namespace Fluqi.Widget.jAccordion
 		/// <param name="attrValueWithFormat">Value to be applied when the attribute is rendered (which has formatting arguments ({0}{1], etc))</param>
 		/// <param name="args">Set of arguments to pass to String.Format</param>
 		/// <returns>Returns this for chainability</returns>
-		new public Accordion WithAttribute(string attrName, string attrValueWithFormat, params object[] args) {
+		new public Header WithAttribute(string attrName, string attrValueWithFormat, params object[] args) {
 			base.WithAttribute(attrName, attrValueWithFormat, args);
 			return this;
 		}
@@ -76,7 +75,7 @@ namespace Fluqi.Widget.jAccordion
 		/// <param name="styleName">Name of the style attribute to be added</param>
 		/// <param name="styleValue">Value of the style to be added</param>
 		/// <returns>Returns this for chainability</returns>
-		new public Accordion WithStyle(string styleName, string styleValue) {
+		new public Header WithStyle(string styleName, string styleValue) {
 			base.WithStyle(styleName, styleValue);
 			return this;
 		}
@@ -90,7 +89,7 @@ namespace Fluqi.Widget.jAccordion
 		/// <param name="styleValueWithFormat">Value of the style to be added (which has formatting arguments ({0}{1], etc))</param>
 		/// <param name="args">Set of arguments to pass to String.Format</param>
 		/// <returns>Returns this for chainability</returns>
-		public Accordion WithStyle(string styleName, string styleValueWithFormat, params Panel[] args) {
+		new public Header WithStyle(string styleName, string styleValueWithFormat, params object[] args) {
 			base.WithStyle(styleName, styleValueWithFormat, args);
 			return this;
 		}
@@ -101,20 +100,10 @@ namespace Fluqi.Widget.jAccordion
 		/// </summary>
 		/// <param name="idValue">Value for the ID</param>
 		/// <returns></returns>
-		new public Accordion WithID(string idValue) {
+		new public Header WithID(string idValue) {
 			base.WithID(idValue);
 			return this;
 		}
-
-
-		/// <summary>
-		/// Renders the registered attributes to the provided jStringBuilder object.  The registered
-		/// CSS classes and Style rules are also added at this point (as they're attributes as well really).
-		/// </summary>
-		new protected internal void RenderAttributes(jStringBuilder sb) {
-			base.RenderAttributes(sb);
-		}
-
 		
 	} // Tab
 	

@@ -135,23 +135,116 @@ namespace Fluqi.Tests
 		{
 		  // Arrange
 		  var resp = new MockWriter();
-			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
+			Accordion acc = new Accordion(resp, "myAccordion")
+				.Panels
+					.Add("Pane #1")
+						.Configure()
+							.Header
+								.WithStyle("font-size", "xx-large")
+							.Finish()
+						.Finish()
+					.Add("Pane #2")
+					.Add("Pane #3")
+				.Finish()
+			;
 
 		  // only testing raw output
-		  accordion
+			TestHelper.ForceRender(acc);
+
+			// Act
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.IsTrue(html.Contains("<h3 style=\"font-size:xx-large\">"));
+		}
+
+		[TestMethod]
+		public void Accordion_Can_Set_ID_On_Panel()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = new Accordion(resp, "myAccordion")
 				.Rendering
 					.Compress()
+					.SetRenderCSS(true)
 				.Finish()
-				.Panels.ToList()[0].WithAttribute("font-size", "xx-large")
+				.Panels
+					.Add("Panel #1")
+						.Configure()
+							.Header
+								.WithID("blog-header-id")
+								.Hyperlink
+									.SetTitle("blog")
+									.SetURL("http://blog.toepoke.co.uk")
+								.Finish()
+							.Finish()
+							.WithID("blog-content-id")
+						.Finish()
+					.Add("Panel #2")
+						.Configure()
+							.Header
+								.WithID("fluqi-header-id")
+								.Hyperlink									
+									.SetTitle("fluqi")
+									.SetURL("http://fluqi.apphb.com")
+								.Finish()
+							.Finish()
+							.WithID("fluqi-content-id")
+						.Finish()
+					.Finish()
 			;
-			
+
+		  // only testing raw output
 			TestHelper.ForceRender(accordion);
 
 			// Act
 		  string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.IsTrue(html.Contains("<h3 font-size=\"xx-large\""));
+			Assert.IsTrue(html.Contains("<div id=\"myAccordion\" class=\"ui-accordion ui-widget ui-helper-reset ui-accordion-icons\""));
+			Assert.IsTrue(html.Contains("<h3 id=\"blog-header-id\" class=\"ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top\""));
+			Assert.IsTrue(html.Contains("<div id=\"blog-content-id\" class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active\""));
+		}
+
+		[TestMethod]
+		public void Accordion_Can_Override_Container_HTML_And_Header_HTML_And_Content_HTML_Tags() 
+		{
+			// Arrange
+			var resp = new MockWriter();
+			var ac = new Accordion(resp, "myAccordion")
+				.Rendering
+					.Compress()
+				.Finish()
+				.Options
+					.SetContainerTag("dl")
+					.SetHeadingTag("dt")
+					.SetContentTag("dd")
+				.Finish()
+				.Panels
+					.Add("Panel #1")
+						.Configure()
+							.Header
+								.Hyperlink
+									.SetTitle("some external webpage")
+									.SetURL("http://toepoke.co.uk")
+								.Finish()
+							.Finish()
+						.Finish()
+					.Add("Panel #2")
+					.Add("Panel #3")
+				.Finish()
+			;
+
+			// Act 
+			TestHelper.ForceRender(ac);
+			string html = resp.Output.ToString();
+
+			// Assert
+			Assert.IsTrue(html.Contains("<dl id=\"myAccordion\""));
+			Assert.IsTrue(html.Contains("<dt><a href=\"http://toepoke.co.uk\">some external webpage</a>"));
+			Assert.IsTrue(html.Contains("<dd></dd>"));
+			// heading tag in the HTML should also change
+			Assert.IsTrue(html.Contains("$(document).ready( function() {$(\"#myAccordion\").accordion({heading: \"dt\"});});"));
 		}
 
 		[TestMethod]
@@ -193,6 +286,7 @@ namespace Fluqi.Tests
 		  accordion
 				.Rendering
 					.SetAutoScript(false)
+					.SetPrettyRender(true)
 				.Finish()
 			;
 
@@ -204,24 +298,24 @@ namespace Fluqi.Tests
 		  // Assert
 			string expected = 
 				"<div id=\"myAccordion\">\r\n" +
-				"	<h3>\r\n" +
-				"		<a href=\"#\">Pane #1</a>\r\n" +
-				"	</h3>\r\n" +
-				"	<div>\r\n" +
+				"\t<h3>\r\n" +
+				"\t\t<a href=\"#\">Pane #1</a>\r\n" +
+				"\t</h3>\r\n" +
+				"\t<div>\r\n" +
 				"\r\n" +
-				"	</div>\r\n\r\n" +
-				"	<h3>\r\n" +
-				"		<a href=\"#\">Pane #2</a>\r\n" +
-				"	</h3>\r\n" +
-				"	<div>\r\n" +
+				"\t</div>\r\n\r\n" +
+				"\t<h3>\r\n" +
+				"\t\t<a href=\"#\">Pane #2</a>\r\n" +
+				"\t</h3>\r\n" +
+				"\t<div>\r\n" +
 				"\r\n" +
-				"	</div>\r\n\r\n" +
-				"	<h3>\r\n" +
-				"		<a href=\"#\">Pane #3</a>\r\n" +
-				"	</h3>\r\n" +
-				"	<div>\r\n" +
+				"\t</div>\r\n\r\n" +
+				"\t<h3>\r\n" +
+				"\t\t<a href=\"#\">Pane #3</a>\r\n" +
+				"\t</h3>\r\n" +
+				"\t<div>\r\n" +
 				"\r\n" +
-				"	</div>\r\n" +
+				"\t</div>\r\n" +
 				"\r\n" +
 				"</div>\r\n";
 				

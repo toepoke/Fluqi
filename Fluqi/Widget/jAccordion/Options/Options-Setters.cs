@@ -117,11 +117,46 @@ namespace Fluqi.Widget.jAccordion
 		/// If set, the accordion completely fills the height of the parent element. Overrides autoheight.
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/accordion/#option-fillSpace for more details</remarks>
+		/// <returns>Options object for chainability</returns>
 		public Options SetFillSpace(bool fillSpace) {
 			this.FillSpace = fillSpace;
 			return this;
 		}
 
+
+		/// <summary>
+		/// Sets the container tag (outer accordion HTML element) that contains all panels.
+		/// By default this is DIV.
+		/// </summary>
+		/// <param name="containerTag">Container tag to use, e.g. DL, DIV, etc</param>
+		/// <returns>Options object for chainability</returns>
+		public Options SetContainerTag(string containerTag) {
+			this.ContainerTag = containerTag;
+			return this;
+		}
+
+
+		/// <summary>
+		/// Sets the tag to use for the heading of all panels, by default this is H3.
+		/// </summary>
+		/// <param name="headingTag">Heading tag to use, e.g. H2</param>
+		/// <returns>Options object for chainability</returns>
+		public Options SetHeadingTag(string headingTag) {
+			this.HeadingTag = headingTag;
+			return this;
+		}
+
+
+		/// <summary>
+		/// Sets the tag to use for the content of all panels, by default this is DIV.
+		/// </summary>
+		/// <param name="contentTag">Content tag to use, e.g. P or DT</param>
+		/// <returns>Options object for chainability</returns>
+		public Options SetContentTag(string contentTag) {
+			this.ContentTag = contentTag;
+			return this;
+		}
+		
 
 		/// <summary>
 		/// Icons to use for headers. Icons may be specified for 'header' and 'headerSelected', 

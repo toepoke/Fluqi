@@ -85,8 +85,21 @@ namespace Fluqi.Widget.jAccordion
 
 			this._Panels.Add(newPanel);
 
+			// hold a quick reference point for further configuration
+			_CurrentPane = this._Panels.Count() - 1;
+
 			return this;
 		}
+
+
+		/// <summary>
+		/// Allows further configuration of a panel that has just been added
+		/// </summary>
+		/// <returns>Added Panel</returns>
+		public Panel Configure() {
+			return _Panels[_CurrentPane];
+		}
+
 
 		/// <summary>
 		/// Renders the tab content pane to the Response.

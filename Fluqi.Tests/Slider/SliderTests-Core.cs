@@ -153,7 +153,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 			// Assert
-			string expected = "<div id=\"mySlider\"></div>" + Environment.NewLine;
+			string expected = "<div id=\"mySlider\"></div>";
 			Assert.AreEqual(expected, html);
 		}
 

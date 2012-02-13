@@ -25,7 +25,27 @@ namespace Fluqi.Widget.jAccordion
 		/// <summary>
 		/// Specifies the Title that should appear in the tab.
 		/// </summary>
-		public string Title { get; set; }
+		/// <remarks>
+		/// Note this just an interface to the header.hyperlink object (normally you won't want to use
+		/// the hyperlink as you just want a panel with an anchor (#) link within it).
+		/// </remarks>
+		public string Title { 
+			get { return Header.Hyperlink.Title; }
+			set { Header.Hyperlink.Title = value; }
+		}
+
+		/// <summary>
+		/// If set, clicking on the accordion panel header will open this URL
+		/// By default this is a link to a # anchor
+		/// </summary>
+		/// <remarks>
+		/// Note this just an interface to the header.hyperlink object (normally you won't want to use
+		/// the hyperlink as you just want a panel with an anchor (#) link within it).
+		/// </remarks>
+		public string URL { 
+			get { return Header.Hyperlink.URL; }
+			set { Header.Hyperlink.URL = value; }
+		}
 
 		/// <summary>
 		/// Flags whether this tab should be selected when the page is first loaded.
@@ -50,7 +70,12 @@ namespace Fluqi.Widget.jAccordion
 		/// <summary>
 		/// Holds a reference to the set of Tabs this tab is being rendered on.
 		/// </summary>
-		protected Accordion OnAccordion { get; set; }
+		protected internal Accordion OnAccordion { get; set; }
+
+		/// <summary>
+		/// Reference to the header of the panel.
+		/// </summary>
+		public Header Header { get; set; }
 
 		/// <summary>
 		/// Detailed constructor
@@ -61,11 +86,19 @@ namespace Fluqi.Widget.jAccordion
 		/// <param name="isActive">Flags whether this panel is the active one</param>
 		public Panel(TextWriter writer, Accordion owner, string title, bool isActive) {
 			this.OnAccordion = owner;
+			this.Header = new Header(this);
 			this._Writer = writer;
 			this.Title = title;
 			this.IsActive = isActive;
 		}
 
+		/// <summary>
+		/// Returns the fluent interface back to the Panels collection
+		/// </summary>
+		public Panels Finish() {
+			// Why didn't we add a Panels reference?!?!?  Duh!
+			return this.OnAccordion.Panels;
+		}
 
 		/// <summary>
 		/// Adds the panel HTML to the response stream.
@@ -86,52 +119,11 @@ namespace Fluqi.Widget.jAccordion
 			int tabDepth = this.OnAccordion.Rendering.TabDepth;
 			jStringBuilder sb = new jStringBuilder(prettyRender, tabDepth + 1);
 
-			this.RenderHeader(sb);
+			sb.Append(this.Header.GetTagHtml());
 			this.RenderBody(sb);
 
 			return sb.ToString();
 		}
-
-
-		/// <summary>
-		/// Renders the header of the accordion panel.
-		/// </summary>
-		/// <param name="sb">StringBuilder to render the object to</param>
-		internal void RenderHeader(jStringBuilder sb) {
-			bool prettyRender = this.OnAccordion.Rendering.PrettyRender;
-			bool renderCss = this.OnAccordion.Rendering.RenderCSS;
-			int tabDepth = this.OnAccordion.Rendering.TabDepth;
-			string headingTag = this.OnAccordion.Options.HeadingTag;
-
-			// H3 tag (or whatever if it's been overriden in the options)
-			sb.AppendLineIf();
-			sb.AppendTabsFormatIf("<{0}", headingTag);
-			if (renderCss) {
-				base.WithCss("ui-accordion-header ui-helper-reset ui-state-default");
-
-				if (this.IsActive)
-					base.WithCss("ui-state-active ui-corner-top");
-				else 
-					base.WithCss("ui-corner-all");
-			}
-			base.RenderAttributes(sb);
-			sb.Append(">");	
-			sb.AppendLineIf();
-
-			// Note we don't render the header or selected header class
-			// as jQuery adds these in.  If we add them we'll end up with the
-			// same attribute declared twice in the DOM and it will look weird
-			// (and be wrong)
-		
-			// Hyperlink for the title (same for active and non-active)
-			sb.IncIndent();
-			sb.AppendTabsFormatLineIf("<a href=\"#\">{0}</a>", this.Title);
-			sb.DecIndent();
-
-			// Closing heading (H3)
-			sb.AppendTabsFormatLineIf("</{0}>", headingTag);
-
-		} // RenderHeader
 
 
 		/// <summary>
@@ -142,8 +134,9 @@ namespace Fluqi.Widget.jAccordion
 			bool renderCss = this.OnAccordion.Rendering.RenderCSS;
 
 			// Opening pane container div
-			sb.AppendTabsIf("<div");
+			sb.AppendTabsFormatIf("<{0}", this.OnAccordion.Options.ContentTag);
 
+			base.RenderAttributes(sb);
 			if (renderCss) {
 				sb.Append(" class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom");
 
@@ -167,13 +160,14 @@ namespace Fluqi.Widget.jAccordion
 
 			this._Disposed = true;
 
-			bool prettyRender = this.OnAccordion.Rendering.PrettyRender;
-			int tabDepth = this.OnAccordion.Rendering.TabDepth + 1;
+			Accordion ac = this.OnAccordion;
+			bool prettyRender = ac.Rendering.PrettyRender;
+			int tabDepth = ac.Rendering.TabDepth + 1;
 			jStringBuilder sb = new jStringBuilder(prettyRender, tabDepth);
 
 			// Close pane container div
 			sb.AppendLineIf();
-			sb.AppendTabsLineIf("</div>");
+			sb.AppendTabsFormatLineIf("</{0}>", ac.Options.ContentTag);
 			
 			_Writer.Write(sb.ToString());
 

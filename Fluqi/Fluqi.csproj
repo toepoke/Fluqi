@@ -53,6 +53,7 @@
     <Compile Include="Core\ControlBase.cs" />
     <Compile Include="Core\BrowserEvent.cs" />
     <Compile Include="Core\ButtonType.cs" />
+    <Compile Include="Core\Hyperlink.cs" />
     <Compile Include="Core\Speed.cs" />
     <Compile Include="Core\Methods.cs" />
     <Compile Include="Core\RenderBase.cs" />
@@ -62,7 +63,11 @@
     <Compile Include="Utilities\jCookie\CookieOptions.cs" />
     <Compile Include="Utilities\jPosition\PositionOptions.cs" />
     <Compile Include="Widget\jAccordion\ControlAttributes.cs" />
-    <Compile Include="Widget\jAccordion\Panel\ControlAttributes.cs" />
+    <Compile Include="Widget\jAccordion\Panel\Hyperlink\Hyperlink.ControlAttributes.cs" />
+    <Compile Include="Widget\jAccordion\Panel\Header\Header.ControlAttributes.cs" />
+    <Compile Include="Widget\jAccordion\Panel\Hyperlink\Hyperlink.cs" />
+    <Compile Include="Widget\jAccordion\Panel\Panel.ControlAttributes.cs" />
+    <Compile Include="Widget\jAccordion\Panel\Header\Header.cs" />
     <Compile Include="Widget\jAccordion\Panel\Panels.cs" />
     <Compile Include="Widget\jAccordion\Scripting.cs" />
     <Compile Include="Widget\jAccordion\Methods\Methods.cs" />

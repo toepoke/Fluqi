@@ -16,5 +16,12 @@ namespace Fluqi.Controllers
 		{
 			return View();
 		}
+
+		[OutputCache(Duration=86000, VaryByParam="none")]
+		public ActionResult History() 
+		{
+			return View();
+		}
+
 	}
 }

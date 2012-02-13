@@ -21,10 +21,24 @@ namespace Fluqi.Widget.jAccordion
 	public partial class Options: Core.Options
 	{
 		/// <summary>
-		/// Tag used for the accordion header (by default this is an H3).
+		/// Tag used for the outer accordion HTML element (i.e. the parent element of all panels).
+		/// By default this is DIV
+		/// </summary>
+		protected internal string ContainerTag { get; set; }
+
+		/// <summary>
+		/// Tag used for the accordion panel header (by default this is an H3).
 		/// </summary>
 		protected internal string HeadingTag { get; set; }
 
+		/// <summary>
+		/// Tag used for the accordion panel content element (by default this is a DIV)
+		/// </summary>
+		/// <remarks>
+		/// Note that this is not detailed in the jQuery UI library, this is a property for Fluqi to
+		/// aid overriding the HTML mark-up of the content element of the panel.
+		/// </remarks>
+		protected internal string ContentTag { get; set; }
 
 		/// <summary>
 		/// Flags whether the "disabled" flag is on or off (default is "false").

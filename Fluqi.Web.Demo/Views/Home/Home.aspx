@@ -11,6 +11,7 @@
 		<li><a href="#demos">Demos</a></li>
 		<li><a href="#source">Download</a></li>
 		<li><%=Html.ActionLink("Builder", "Accordion", "Builder")%></li>
+		<li><%=Html.ActionLink("History", "History", "Home")%></li>
 		<li><a href="http://www.twitter.com/toepoke_co_uk" title="For updates, follow toepoke_co_uk">Follow</a></li>
 	</ul>
 </asp:Content>
