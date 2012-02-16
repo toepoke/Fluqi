@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Fluqi">
+</Property><Property Name="Solution File" Value="C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi.sln">
+</Property><Property Name="Date" Value="16 February 2012">
+</Property><Property Name="Time" Value="09:59">
+</Property></Properties><Event ErrorLevel="0" Project="Fluqi.Web.Demo" Source="Fluqi.Web.Demo\Fluqi.Web.Demo.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="Fluqi.Web.Demo" Source="Fluqi.Web.Demo\Fluqi.Web.Demo.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="Fluqi.Tests" Source="Fluqi.Tests\Fluqi.Tests.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Fluqi.Tests" Source="Fluqi.Tests\Fluqi.Tests.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Fluqi" Source="Fluqi\Fluqi.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="Fluqi" Source="Fluqi\Fluqi.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="Fluqi.sln" Description="The solution file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="" Source="Fluqi.sln" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="Fluqi.Tests" Source="Fluqi.Tests\App.config" Description="File converted successfully. All &lt;supportedRuntime&gt; and &lt;requiredRuntime&gt; tags were removed to enable the project to build and run with Visual Studio 2005.">
+</Event><Event ErrorLevel="3" Project="Fluqi.Tests" Source="Fluqi.Tests\App.config" Description="Converted">
+</Event></UpgradeLog>
