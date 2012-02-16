@@ -41,7 +41,7 @@
 	<ul>
 		<li>
 		Accordion panels can now be configured fluently more easily with the addition of a <strong>Configure()</strong>
-		method after the panel has been added.  Please see the <strong>Accordion_Can_Set_ID_On_Panel()</strong> test
+		method after the panel has been added.  Please see the <a href="https://raw.github.com/toepoke/Fluqi/master/Fluqi.Tests/Accordion/AccordionTests-Core.cs"><strong>Accordion_Can_Set_ID_On_Panel()</strong></a> test
 		for an illustration.
 		</li>
 		<li>
@@ -49,7 +49,7 @@
 		</li>
 		<li>
 		The HTML mark-up used by the Accordion control can now be overriden, see 
-		<strong>Accordion_Can_Override_Container_HTML_And_Header_HTML_And_Content_HTML_Tags</strong>
+		<a href="https://raw.github.com/toepoke/Fluqi/master/Fluqi.Tests/Accordion/AccordionTests-Core.cs"><strong>Accordion_Can_Override_Container_HTML_And_Header_HTML_And_Content_HTML_Tags</strong></a>
 		test for an illustration.
 		</li>
 	</ul>

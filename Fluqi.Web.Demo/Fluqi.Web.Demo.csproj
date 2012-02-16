@@ -102,6 +102,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\asp-net-front-page-thumb.jpg" />
+    <Content Include="Content\asp-net-front-page.jpg" />
     <Content Include="Content\calendar_week.png" />
     <Content Include="Content\Builder.css" />
     <Content Include="Content\site\css\fluqi.css" />
