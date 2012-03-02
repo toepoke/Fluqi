@@ -4,6 +4,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="DemoMainContent" runat="server">
 <script src="<%=Url.Content("~/Scripts/accordion.js")%>" type="text/javascript"></script>
 <%		
+	var iconCheatDlg = Html.CreateDialog("icon-cheat");
+	this.Model.ConfigureIconCheatSheetDialog(iconCheatDlg);
+
 	var ac = Html.CreateAccordion("ac");
 	this.Model.ConfigureAccordion(ac)	;
 
@@ -52,11 +55,30 @@
 		<%} %>
 	 
 <%} // using(accordion) %>
+
+<%using (iconCheatDlg.RenderDialog()) { %>
+	<%Html.RenderPartial("Icons");%>
+<%} %>
 </asp:Content>
 
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="DemoExampleContent" runat="server">
+<%
+	var showIcons1 = Html.CreateButton("showIcons1", "...")
+		.Rendering.SetPrettyRender(true).Finish()
+		.Events
+			.SetClickEvent("return openIconsDialog('headerIconClass');")
+		.Finish()
+	;
+
+	var showIcons2 = Html.CreateButton("showIcons2", "...")
+		.Rendering.SetPrettyRender(true).Finish()
+		.Events
+			.SetClickEvent("return openIconsDialog('headerSelectedIconClass');")
+		.Finish()
+	;
+%>
 <%using (Html.BeginForm("Accordion", "Builder")) {%>
 	<input type="submit" value="UPDATE" />
 	<ul>
@@ -70,8 +92,8 @@
 		<li><%=Html.LabelFor(vm=>vm.navigation)%>              <%=Html.CheckBoxFor(vm=>vm.navigation, "Looks for the anchor that matches location.href and activates it. Great for href-based state-saving. Use navigationFilter to implement your own matcher.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.navigationFilter)%>        <%=Html.TextBoxFor(vm=>vm.navigationFilter, "wide", "Overwrite the default location.href-matching with your own matcher.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.activePanel)%>             <%=Html.TextBoxFor(vm=>vm.activePanel, "Pick an alternative selected panel on page load, in this example pick between 0 and 2.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.headerIconClass) %>        <%=Html.DropDownTipListFor(vm=>vm.headerIconClass, List.IconListNames(), "Overrides the icon for the unselected panel, try 'ui-icon-plusthick' for example.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.headerSelectedIconClass)%> <%=Html.DropDownTipListFor(vm=>vm.headerSelectedIconClass, List.IconListNames(), "Overrides the icon for the selected panel, try 'ui-icon-minusthick' for example.")%></li>
+		<li><%=Html.LabelFor(vm=>vm.headerIconClass) %>        <%=Html.DropDownTipListFor(vm=>vm.headerIconClass, List.IconListNames(), "Overrides the icon for the unselected panel, try 'ui-icon-plusthick' for example.")%> <%showIcons1.Render();%>  </li> 
+		<li><%=Html.LabelFor(vm=>vm.headerSelectedIconClass)%> <%=Html.DropDownTipListFor(vm=>vm.headerSelectedIconClass, List.IconListNames(), "Overrides the icon for the selected panel, try 'ui-icon-minusthick' for example.")%> <%showIcons2.Render();%> </li>
 	</ul>
 
 	<hr />

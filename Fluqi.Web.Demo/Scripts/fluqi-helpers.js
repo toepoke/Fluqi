@@ -89,26 +89,67 @@ function clearLog() {
 	logElement.val("");
 }
 
-$(document).ready(function() {
+
+/// Wires up the icons cheatsheet into a UI dialog
+function openIconsDialog(originatingButton) {
+	// reference to the icons cheat sheet control
+	var dlg = $('#icon-cheat');
+	// find out what icon is currently selected in the dropdown
+	var selected = $('#' + originatingButton).val();
+	
+	// remove any currently selected icon
+	// (ok this is a little naff, but hey it's a demo :))
+	$('#icons li').removeClass('ui-state-active');
+
+	// show the item in the dropdown as the select icon in the dialog
+	if (selected) {
+		dlg.find('#icons li[title=\"' + selected + '\"]')
+			.addClass('ui-state-active')
+		;
+	}
+
+	// set the ID of the button that created the click (so we can sync up
+	// the dropdown when the selected icon changes)
+	jQuery.data(document.body, 'ddl', originatingButton );
+
+	// add a label to the dialog status bar so we can see what icon is being hovered over later on
+	var btnPane = $(dlg.parent().find(".ui-dialog-buttonpane"));
+	if (btnPane.find("#iconName").length == 0) {
+		$("<label>Icon name: </label><span id='iconName'></span>").appendTo(btnPane);
+	}
+
+	dlg.dialog('open');
+
+	return false;
+}
+
+function updateIconName(newName) {
+	$("#iconName").html("<strong>" + newName + "</strong>");
+}
+
+$(document).ready(function () {
 	var logH = $("#controlTab").height();
 
 	$("#log").css("min-height", logH);
 
 	$("#ResetLog").click(
-		function() { 
+		function () {
 			$("#log").html("");
 			return false;
-		} 
+		}
 	);
 
 	// activate the themeSwitcher widget
 	// jQuery UI site looks a bit unreliable, so it's commented out during dev
-	$('#themeswitcher').themeswitcher();
+	var ts = $('#themeswitcher');
+	if (ts.length > 0) {
+		$('#themeswitcher').themeswitcher();
+	}
 
 	// little bit lazy this .. just getting the log panel to line up with the example in the demo builder
 	var elements = window.location.href.toString().split("/");
 	if (elements != null && elements.length > 0) {
-		var demo = elements[ elements.length-1 ];
+		var demo = elements[elements.length - 1];
 		var newMargin = "";
 
 		if (demo == "AutoComplete")
@@ -127,5 +168,40 @@ $(document).ready(function() {
 		$("#switchPanel").css("margin-top", newMargin);
 	}
 
+	$("#icons li").hover(
+		function () {
+			$(this).addClass("ui-state-hover");
+
+			var title = $(this).attr("title");
+			updateIconName(title);
+		},
+		function () {
+			$(this).removeClass("ui-state-hover");
+
+			var currSel = $('#icons li.ui-state-active').attr("title");
+
+			updateIconName(currSel);
+		}
+	).click(function () {
+		// show what icon is selected in the icons cheatsheet
+		var me = $(this);
+		var title = me.attr("title");
+
+		$('#icons li').removeClass('ui-state-active');
+		updateIconName(title);
+
+		$(this).addClass("ui-state-active");
+
+		if (title) {
+			// if we're next to a "SELECT", set the val according to the class
+			// ... working on the premise it's a "class picker"
+			var id = jQuery.data(document.body).ddl;
+			var origin = $("#" + id);
+
+			// update the dropdown that triggered the icon change
+			origin.val(title);
+		}
+
+	});
 
 });

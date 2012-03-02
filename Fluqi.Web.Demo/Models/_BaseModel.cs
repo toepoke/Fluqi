@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Fluqi.Extension.Helpers;
 using System.IO;
+using Fluqi.Widget.jDialog;
 
 namespace Fluqi.Models
 {
@@ -41,6 +42,23 @@ namespace Fluqi.Models
 		/// </summary>
 		[DisplayName("Show readable layout")]
 		public bool prettyRender { get; set; }
+
+		public Dialog ConfigureIconCheatSheetDialog(Dialog csDlg) {
+			csDlg
+				.Rendering
+					.SetPrettyRender(true)
+					.Finish()
+				.Options
+					.SetTitle("jQuery UI Icons Cheat Sheet")
+					.SetAutoOpen(false)
+					.SetWidth(600)
+					.SetHeight(320)
+					.AddButton("OK", " $(this).dialog('close');" )
+				.Finish()
+			;
+
+			return csDlg;
+		}
 
 		public TextWriter Writer { get; set; }
 

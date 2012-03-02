@@ -59,3 +59,18 @@ blockquote p {
 	line-height: 1;
 }
 
+
+ul#icons {
+	margin: 0;
+	padding: 0;
+}
+
+ul#icons li {
+	margin: 2px;
+	position: relative;
+	padding: 4px 0;
+	float: left;
+	list-style: none;
+	cursor: pointer;	
+}
+
