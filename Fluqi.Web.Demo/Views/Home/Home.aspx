@@ -328,7 +328,7 @@ Bundle.JavaScript()
 		Written an article about <%=Html.ActionLink("Fluqi", "Home", "Home")%>?  <a href="mailto:contact[at]toepoke.co.uk">Let us know</a> 
 		and we'll add it here.
 	</p>
-	<a class="back-to-top" href="#header-wrap">Back to Top</a>
+	<a class="back-to-top" href="#header-wrap">Back to Top</a> 
 </section><%--articles--%>
 
 <section id="source">
