@@ -2,6 +2,7 @@
 <%@ Import Namespace="Fluqi.Web.Demo.Helpers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">	
+	<script type="text/javascript" src="<%=Url.Content("~/Scripts/fluqi-helpers.js")%>"></script>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="Navigation" runat="server">	
@@ -41,7 +42,7 @@
 	<ul>
 		<li>
 		Accordion panels can now be configured fluently more easily with the addition of a <strong>Configure()</strong>
-		method after the panel has been added.  Please see the <a href="https://raw.github.com/toepoke/Fluqi/master/Fluqi.Tests/Accordion/AccordionTests-Core.cs"><strong>Accordion_Can_Set_ID_On_Panel()</strong></a> test
+		method after the panel has been added.  Please see the <a href="https://raw.github.com/toepoke/Fluqi/master/Fluqi.Tests/Accordion/AccordionTests-Core.cs">Accordion_Can_Set_ID_On_Panel()</a> test
 		for an illustration.
 		</li>
 		<li>
@@ -49,7 +50,7 @@
 		</li>
 		<li>
 		The HTML mark-up used by the Accordion control can now be overriden, see 
-		<a href="https://raw.github.com/toepoke/Fluqi/master/Fluqi.Tests/Accordion/AccordionTests-Core.cs"><strong>Accordion_Can_Override_Container_HTML_And_Header_HTML_And_Content_HTML_Tags</strong></a>
+		<a href="https://raw.github.com/toepoke/Fluqi/master/Fluqi.Tests/Accordion/AccordionTests-Core.cs">Accordion_Can_Override_Container_HTML_And_Header_HTML_And_Content_HTML_Tags</a>
 		test for an illustration.
 		</li>
 	</ul>
