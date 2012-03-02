@@ -87,11 +87,32 @@ namespace Fluqi.Widget.jAccordion
 		/// </summary>
 		/// <returns>true if (either) icon is on, false otherwise</returns>
 		protected internal bool AreIconsEnabled() {
-			return (
-				!string.IsNullOrEmpty(this.HeaderIconClass) 
-				|| 
-				!string.IsNullOrEmpty(this.HeaderSelectedIconClass)
-			);
+			bool areEnabled = true;
+
+			if (string.IsNullOrEmpty(this.HeaderIconClass) && string.IsNullOrEmpty(this.HeaderSelectedIconClass))
+				areEnabled = false;
+
+			return areEnabled;
+		}
+
+
+		/// <summary>
+		/// Flags whether the panel header icons are set to the defaults (that is if they are we don't need
+		/// to render the javascript to render them as it's wasted)
+		/// </summary>
+		/// <returns>
+		/// Returns true if icons are set to the jQuery UI defaults
+		/// Returns false otherwise
+		/// </returns>
+		protected internal bool AreIconsDefaults() {
+			if (!AreIconsEnabled())
+				// can't be the defaults are they aren't enabled
+				return false;
+
+			if (this.HeaderIconClass == DEFAULT_HEADER_ICON_CLASS && this.HeaderSelectedIconClass == DEFAULT_HEADER_SELECTED_ICON_CLASS)
+				return true;
+
+			return false;
 		}
 		
 
@@ -112,13 +133,12 @@ namespace Fluqi.Widget.jAccordion
 			options.Add(!this.IsNullOrEmpty(this.NavigationFilter),"navigationFilter", this.NavigationFilter);
 			options.Add(!this.IsNullEmptyOrDefault(this.Event, DEFAULT_EVENT), "event", this.Event.InSingleQuotes() );
 			
-			// icons have to be set as a pair
 			if (AreIconsEnabled()) {
-				bool addNormalIcon = !string.IsNullOrEmpty(this.HeaderIconClass) && this.HeaderIconClass != DEFAULT_HEADER_ICON_CLASS;
-				bool addSelectedIcon = !string.IsNullOrEmpty(this.HeaderSelectedIconClass) && this.HeaderSelectedIconClass != DEFAULT_HEADER_SELECTED_ICON_CLASS;
-				if (addNormalIcon || addSelectedIcon) {
+				if (!AreIconsDefaults())
 					options.Add( "icons", "{{ 'header': '{0}', 'headerSelected': '{1}' }}", this.HeaderIconClass, this.HeaderSelectedIconClass );
-				}
+			} else {
+				// icons disabled
+				options.Add("icons", false.JsBool());
 			}
 			
 			int activeIndex = this.Accordion.Panels.GetActivePaneIndex();

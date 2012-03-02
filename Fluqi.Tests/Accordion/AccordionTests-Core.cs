@@ -81,6 +81,67 @@ namespace Fluqi.Tests
 		  Assert.AreEqual(2, Utils.NumberOfMatches(html, "<div class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom\">") );
 		}
 
+		[TestMethod]
+		public void Accordion_With_Default_Icons_Correct_CSS_Classes()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
+
+		  // only testing raw output
+		  accordion
+				.Rendering
+					.Compress()
+					.ShowCSS()
+			;
+			
+			TestHelper.ForceRender(accordion);
+
+			// Act
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.IsTrue(html.Contains("id=\"myAccordion\""));
+
+		  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<div id=\"myAccordion\" class=\"ui-accordion ui-widget ui-helper-reset ui-accordion-icons\">") );
+
+			// Test the Active panel
+		  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<h3 class=\"ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top\">") );
+		  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<div class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active\">") );
+
+			// We can't test the span has the correct icon as this has to be added by jQuery UI
+
+			// Test the InActive panel(s)
+		  Assert.AreEqual(2, Utils.NumberOfMatches(html, "<h3 class=\"ui-accordion-header ui-helper-reset ui-state-default ui-corner-all\">") );
+		  Assert.AreEqual(2, Utils.NumberOfMatches(html, "<div class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom\">") );
+		}
+
+		[TestMethod]
+		public void Accordion_With_Disabled_Icons_Correct_CSS_Classes()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
+
+		  // only testing raw output
+		  accordion
+				.Rendering
+					.Compress()
+					.ShowCSS()
+					.Finish()
+				.Options
+					.SetIconsOff()
+				.Finish()
+			;
+			
+			TestHelper.ForceRender(accordion);
+
+			// Act
+		  string html = resp.Output.ToString();
+
+			// Disabled icons should not have the "ui-accordion-icons" class on the accordion DIV
+		  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<div id=\"myAccordion\" class=\"ui-accordion ui-widget ui-helper-reset\">") );
+		}
 
 		[TestMethod]
 		public void Accordion_With_Custom_Attribute_CSS_Delivers_Correct_CSS_Classes()
@@ -174,6 +235,7 @@ namespace Fluqi.Tests
 							.Header
 								.WithID("blog-header-id")
 								.Hyperlink
+									.WithID("blog-link-id")
 									.SetTitle("blog")
 									.SetURL("http://blog.toepoke.co.uk")
 								.Finish()
@@ -185,6 +247,7 @@ namespace Fluqi.Tests
 							.Header
 								.WithID("fluqi-header-id")
 								.Hyperlink									
+									.WithID("fluqi-link-id")
 									.SetTitle("fluqi")
 									.SetURL("http://fluqi.apphb.com")
 								.Finish()
@@ -203,6 +266,7 @@ namespace Fluqi.Tests
 		  // Assert
 			Assert.IsTrue(html.Contains("<div id=\"myAccordion\" class=\"ui-accordion ui-widget ui-helper-reset ui-accordion-icons\""));
 			Assert.IsTrue(html.Contains("<h3 id=\"blog-header-id\" class=\"ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top\""));
+			Assert.IsTrue(html.Contains("<a id=\"blog-link-id\" href=\"http://blog.toepoke.co.uk\">blog</a>"));
 			Assert.IsTrue(html.Contains("<div id=\"blog-content-id\" class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active\""));
 		}
 

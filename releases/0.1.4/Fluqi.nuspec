@@ -7,7 +7,7 @@
 		<owners>Franz Junge</owners>
 		<projectUrl>http://fluqi.apphb.com/</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>Ease jQuery UI development wiht the Fluqi fluent interface library.</description>
+		<description>Ease jQuery UI development with the Fluqi fluent interface library.</description>
 		<releaseNotes>Initial version.</releaseNotes>
 		<copyright>Copyright 2012</copyright>
 		<tags>jQuery jQueryUI ASP.NET MVC plugins</tags>

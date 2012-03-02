@@ -2,13 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Fluqi</id>
-		<version>0.1.3</version>
+		<version>0.1.5</version>
 		<authors>Franz Junge</authors>
 		<owners>Franz Junge</owners>
 		<projectUrl>http://fluqi.apphb.com/</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Ease jQuery UI development with the Fluqi fluent interface library.</description>
-		<releaseNotes>Initial version.</releaseNotes>
+		<releaseNotes>Fixed issues with accordion icons</releaseNotes>
 		<copyright>Copyright 2012</copyright>
 		<tags>jQuery jQueryUI ASP.NET MVC plugins</tags>
 		<frameworkAssemblies>

@@ -145,6 +145,7 @@ namespace Fluqi.Tests
 			// only testing raw output
 			sldr.Rendering
 				.SetAutoScript(false)
+				.SetPrettyRender(false)
 			;
 
 			TestHelper.ForceRender(sldr);

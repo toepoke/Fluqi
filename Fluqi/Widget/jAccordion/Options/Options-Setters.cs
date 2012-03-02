@@ -187,6 +187,17 @@ namespace Fluqi.Widget.jAccordion
 
 
 		/// <summary>
+		/// Turns panel header icons off
+		/// </summary>
+		public Options SetIconsOff() {
+			// just set both to empty strings to signify they are off ... the rendering phase will deal with this
+			this.HeaderIconClass = "";
+			this.HeaderSelectedIconClass = "";
+			return this;
+		}
+
+
+		/// <summary>
 		/// If set, looks for the anchor that matches location.href and activates it. 
 		/// Great for href-based state-saving. Use navigationFilter to implement your own 
 		/// matcher.

@@ -67,8 +67,10 @@ namespace Fluqi.Widget.jAccordion {
 			int tabDepth = ac.Rendering.TabDepth;
 			jStringBuilder sb = new jStringBuilder(prettyRender, tabDepth); 
 
-			sb.AppendTabsFormatIf("<a href=\"{0}\">", this.URL);
+			base.AddAttribute("href", this.URL);
+			sb.AppendTabsFormatIf("<a", this.URL);
 			base.RenderAttributes(sb);
+			sb.Append(">");
 			sb.Append(this.Title);
 			sb.Append("</a>");
 

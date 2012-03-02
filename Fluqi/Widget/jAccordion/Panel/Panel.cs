@@ -140,8 +140,10 @@ namespace Fluqi.Widget.jAccordion
 			if (renderCss) {
 				sb.Append(" class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom");
 
-				if (this.IsActive)
-					sb.Append(" ui-accordion-content-active");
+				// may seem strange, but when renderCss is on, we always need the "ui-accordion-content-active"
+				// presented otherwise the panel will be collapsed (hidden) and if JavaScript isn't on, the user
+				// will have no way of seeing the content !
+				sb.Append(" ui-accordion-content-active");
 
 				sb.Append("\"");
 			}
