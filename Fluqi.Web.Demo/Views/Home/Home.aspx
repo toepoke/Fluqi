@@ -319,6 +319,18 @@ Bundle.JavaScript()
 	<a class="back-to-top" href="#header-wrap">Back to Top</a>
 </section><%--demos--%>
 
+<section id="articles">
+	<h1>Articles</h1>
+	<ul>
+		<li><a href="http://blog.toepoke.co.uk/enhancing-the-non-javascript-user-experience">Enhancing the non-JS user experience with Fluqi</a></li>
+	</ul>
+	<p>
+		Written an article about <%=Html.ActionLink("Fluqi", "Home", "Home")%>?  <a href="mailto:contact[at]toepoke.co.uk">Let us know</a> 
+		and we'll add it here.
+	</p>
+	<a class="back-to-top" href="#header-wrap">Back to Top</a>
+</section><%--articles--%>
+
 <section id="source">
 	<h1>Download</h1>
 	<p>
