@@ -38,6 +38,26 @@
 	</div>
 	<div class="clearfix"></div>
 
+	<h2>0.1.6</h2>
+	<ul>
+		<li>
+		Fix for <a href="https://github.com/toepoke/Fluqi/issues/1">Issue #1</a>.
+		</li>
+		<li>
+		Added <i>cheat sheet</i> in the Accordion and PushButton builder screens so you can pick the icon from a dialog rather than
+		<i>guess</i> through the dropdown list.
+		</li>
+		<li>
+		Added <strong>Articles</strong> to the home page to add any articles referencing Fluqi.  Got one?  
+		<a href="mailto:contact[at]toepoke.co.uk">Let us know :)</a>
+		</li>
+	</ul>
+
+	<h2>0.1.5</h2>
+	<p>
+		0.1.5 was a bad build, please ignore.  Use 0.1.6 instead.
+	</p>
+
 	<h2>0.1.4</h2>
 	<ul>
 		<li>

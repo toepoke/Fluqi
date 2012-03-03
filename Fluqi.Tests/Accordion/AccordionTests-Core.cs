@@ -74,11 +74,12 @@ namespace Fluqi.Tests
 
 			// Test the Active panel
 		  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<h3 class=\"ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top\">") );
-		  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<div class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active\">") );
 
 			// Test the InActive panel(s)
 		  Assert.AreEqual(2, Utils.NumberOfMatches(html, "<h3 class=\"ui-accordion-header ui-helper-reset ui-state-default ui-corner-all\">") );
-		  Assert.AreEqual(2, Utils.NumberOfMatches(html, "<div class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom\">") );
+
+			// Test the content panels, which _always_ have "ui-accordion-content-active" (see https://github.com/toepoke/Fluqi/issues/1)
+		  Assert.AreEqual(3, Utils.NumberOfMatches(html, "<div class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active\">") );
 		}
 
 		[TestMethod]
@@ -107,13 +108,14 @@ namespace Fluqi.Tests
 
 			// Test the Active panel
 		  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<h3 class=\"ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top\">") );
-		  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<div class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active\">") );
 
 			// We can't test the span has the correct icon as this has to be added by jQuery UI
 
 			// Test the InActive panel(s)
 		  Assert.AreEqual(2, Utils.NumberOfMatches(html, "<h3 class=\"ui-accordion-header ui-helper-reset ui-state-default ui-corner-all\">") );
-		  Assert.AreEqual(2, Utils.NumberOfMatches(html, "<div class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom\">") );
+
+			// Test the content panels which _always_ have "ui-accordion-content-active" (see https://github.com/toepoke/Fluqi/issues/1)
+		  Assert.AreEqual(3, Utils.NumberOfMatches(html, "<div class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active\">") );
 		}
 
 		[TestMethod]
