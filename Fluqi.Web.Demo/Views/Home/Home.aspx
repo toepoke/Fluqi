@@ -305,13 +305,18 @@ Bundle.JavaScript()
 				to build a pseudo application with many <a href="http://jqueryui.com/demos/">widgets</a>
 				working together.
 			</p>
-			<%=Html.ActionLink("Wizard Demo", "Wizard", "Demo", null, new {@class = "align-right"})%>
+			<%=Html.ActionLink("Wizard Demo", "Wizard", "Demo", null, new {@class = "align-right", @style="margin-top: 3em"})%>
 		</section>
 		<section class="col mid" style="width: 420px">
 			<h2><a href="<%=Url.Content("~/WebForms/QuickDemo.aspx")%>">WebForms</a></h2>
 			<p>
 				Not into ASP.NET MVC?  No problem, you can use <%=Html.ActionLink("Fluqi", "Home", "Home")%>
 				in <a href="http://www.asp.net/web-forms">WebForms</a> too.
+			</p>
+			<p class="footnote">
+				We're all about <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progress enhacement</a> <%=Html.ActionLink("here", "Home", "Home")%>.
+				If you're wanting <a href="http://www.asp.net/web-forms/videos/building-35-applications/submit-and-postback">postbacks</a>,
+				check out <a href="http://juiceui.com/">JuiceUI</a>.				
 			</p>
 			<a href="<%=Url.Content("~/WebForms/QuickDemo.aspx")%>" class="align-right">WebForms Demo</a>
 		</section>
@@ -323,6 +328,7 @@ Bundle.JavaScript()
 	<h1>Articles</h1>
 	<ul>
 		<li><a href="http://blog.toepoke.co.uk/enhancing-the-non-javascript-user-experience">Enhancing the non-JS user experience with Fluqi</a></li>
+		<li>Wanting PostBack support with jQuery UI and WebForms? <a href="http://juiceui.com/">Check out JuiceUI as well</a>.</li>
 	</ul>
 	<p>
 		Written an article about <%=Html.ActionLink("Fluqi", "Home", "Home")%>?  <a href="mailto:contact[at]toepoke.co.uk">Let us know</a> 

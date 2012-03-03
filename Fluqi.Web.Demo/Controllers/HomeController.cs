@@ -17,6 +17,7 @@ namespace Fluqi.Controllers
 			return View();
 		}
 
+		// cache the output for a day
 		[OutputCache(Duration=86000, VaryByParam="none")]
 		public ActionResult History() 
 		{
