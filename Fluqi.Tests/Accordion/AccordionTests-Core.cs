@@ -273,6 +273,39 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
+		public void Ensure_Invisible_Accordion_Panel_Is_Not_Rendered()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = new Accordion(resp, "myAccordion")
+				.Rendering
+					.Compress()
+					.SetRenderCSS(true)
+				.Finish()
+				.Panels
+					.Add("Panel #1")
+					.Add("Panel #2")
+						.Configure()
+						  .SetVisibility(false)
+						  .Finish()
+					.Add("Panel #3")
+				.Finish()
+			;
+
+		  // only testing raw output
+			TestHelper.ForceRender(accordion);
+
+			// Act
+		  string html = resp.Output.ToString();
+
+		  // Assert
+			Assert.IsTrue (html.Contains("<div id=\"myAccordion\" class=\"ui-accordion ui-widget ui-helper-reset ui-accordion-icons\""));
+			Assert.IsTrue (html.Contains("<a href=\"#\">Panel #1</a>"));
+			Assert.IsFalse(html.Contains("<a href=\"#\">Panel #2</a>"));
+			Assert.IsTrue (html.Contains("<a href=\"#\">Panel #3</a>"));
+		}
+
+		[TestMethod]
 		public void Accordion_Can_Override_Container_HTML_And_Header_HTML_And_Content_HTML_Tags() 
 		{
 			// Arrange

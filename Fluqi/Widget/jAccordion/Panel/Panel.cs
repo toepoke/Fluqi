@@ -48,6 +48,28 @@ namespace Fluqi.Widget.jAccordion
 		}
 
 		/// <summary>
+		/// Flags whether this Panel is to be rendered or not.
+		/// </summary>
+		/// <remarks>
+		/// Note this is very different to show/hide as you would in jQuery.  This is really a server-side thing.
+		/// If you mark a Panel as !Visible the Panel is not rendered to the page at all.  So you will actually have
+		/// less Panes rendered on the page (also the indexes will be different as there's one missing).
+		/// This is so you can programmatically remove a Pane dynamically from a set of Panes in an Accordion.
+		/// </remarks>
+		public bool Visible { get; set; }
+
+
+		/// <summary>
+		/// Flags whether this Accordion Pane is visible or not.
+		/// </summary>
+		/// <param name="isVisible">Flags whether this Accordion Pane is visible or not.</param>
+		/// <returns>Panel (for chainability)</returns>
+		public Panel SetVisibility(bool isVisible) {
+			this.Visible = isVisible;
+			return this;
+		}
+
+		/// <summary>
 		/// Flags whether this tab should be selected when the page is first loaded.
 		/// </summary>
 		/// <remarks>
@@ -90,6 +112,7 @@ namespace Fluqi.Widget.jAccordion
 			this._Writer = writer;
 			this.Title = title;
 			this.IsActive = isActive;
+			this.Visible = true;
 		}
 
 		/// <summary>
@@ -104,6 +127,10 @@ namespace Fluqi.Widget.jAccordion
 		/// Adds the panel HTML to the response stream.
 		/// </summary>
 		internal void Render() {
+			if (!this.Visible)
+				// there is literally nothing to see here
+				return;
+
 			string tagHtml = this.GetTagHtml();
 
 			_Writer.Write(tagHtml);
@@ -158,6 +185,9 @@ namespace Fluqi.Widget.jAccordion
 		/// <param name="disposing"></param>
 		protected virtual void Dispose(bool disposing) {
 			if (this._Disposed)
+				return;
+			if (!this.Visible)
+				// there is literally nothing to see here
 				return;
 
 			this._Disposed = true;
