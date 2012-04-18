@@ -22,6 +22,12 @@ namespace Fluqi.Widget.jTab
 		protected internal Dictionary<string, Pane> _Panes = null;
 
 		/// <summary>
+		/// Holds a reference to the Pane which has just been added, in case further configuration
+		/// of the Pane is required.
+		/// </summary>
+		protected internal Pane _CurrentPane = null;
+
+		/// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="tabs">Tabs object the panels belong to</param>
@@ -82,7 +88,19 @@ namespace Fluqi.Widget.jTab
 			newTab.Index = this._Panes.Count();
 			this._Panes.Add(newTab.IDOrLocation, newTab);
 
+			// hold a quick reference to the Pane in case further configuration is required
+			_CurrentPane = newTab;
+
 			return this;
+		}
+
+
+		/// <summary>
+		/// Allows further configuration of a tab pane that has just been added.
+		/// </summary>
+		/// <returns>Added tab Pane.</returns>
+		public Pane Configure() {
+			return _CurrentPane;
 		}
 
 		/// <summary>
@@ -105,6 +123,46 @@ namespace Fluqi.Widget.jTab
 			}
 		
 			return tb;
+		}
+
+
+		/// <summary>
+		/// Gets the Pane at a given index.
+		/// </summary>
+		/// <param name="index">Index to find</param>
+		/// <remarks>
+		/// The index is based on the <see cref="Pane.Index"/> property
+		/// </remarks>
+		public Pane this[int index] {
+			get {
+				Pane foundPane = null;
+
+				foreach (Pane currPane in _Panes.Values) {
+					if (currPane.Index == index) { 
+						foundPane = currPane;
+						continue;
+					}
+				}
+
+				return foundPane;
+			}
+			// no set implementation
+		}
+
+
+		/// <summary>
+		/// Gets a Pane with a given key (the key allocated when the Tabs was first built.
+		/// </summary>
+		/// <param name="key">Key index to the pane</param>
+		public Pane this[string key] {
+			get {
+				if (!_Panes.ContainsKey(key))
+					// nothing to see here
+					return null;
+
+				return _Panes[key];
+			}
+			// no set implementation			
 		}
 
 

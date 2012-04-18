@@ -876,6 +876,70 @@ namespace Fluqi.Tests
 			Assert.IsTrue(html.Contains(expected));
 		}
 
+		[TestMethod]
+		public void Ensure_Invisible_Tab_Is_Not_Rendered()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = new Tabs(resp, "myTabs")
+				.Panes
+					.Add("tab1", "Tab #1")
+					.Add("tab2", "Tab #2")
+						.Configure()
+							// Mark the middle one as a non-render
+							.SetVisibility(false)
+							.Finish()							
+					.Add("tab3", "Tab #3")
+					.Finish()
+				.Rendering
+					.Compress()
+				.Finish()
+			;
+
+			TestHelper.ForceRender(tabs);
+			
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			// 2 content panels (2nd is no longer rendered)
+			Assert.IsTrue (html.Contains("<div id=\"tab1\"></div>") );
+			Assert.IsFalse(html.Contains("<div id=\"tab2\"></div>") );
+			Assert.IsTrue (html.Contains("<div id=\"tab3\"></div>") );
+		}
+
+		[TestMethod]
+		public void Ensure_Title_Of_Tab_Can_Be_Changed_After_Tab_Is_Created()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = new Tabs(resp, "myTabs")
+				.Panes
+					.Add("tab1", "Tab #1")
+					.Add("tab2", "Tab #2")
+					.Add("tab3", "Tab #3")
+						.Configure()
+							// Test we can change the title from the detault if we wish
+							.SetTitle("Changed Title")
+							.Finish()
+					.Finish()
+				.Rendering
+					.Compress()
+				.Finish()
+			;
+
+			TestHelper.ForceRender(tabs);
+			
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			// 2 content panels (2nd is no longer rendered)
+			Assert.IsTrue (html.Contains("<a href=\"#tab1\" title=\"Tab #1\">Tab #1</a>") );
+			Assert.IsTrue (html.Contains("<a href=\"#tab2\" title=\"Tab #2\">Tab #2</a>") );
+			Assert.IsTrue (html.Contains("<a href=\"#tab3\" title=\"Changed Title\">Changed Title</a>") );
+		}
+
 	} // jTab_Tests
 
 } // ns

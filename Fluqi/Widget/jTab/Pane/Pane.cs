@@ -62,6 +62,47 @@ namespace Fluqi.Widget.jTab
 		public int Index { get; set; }
 
 		/// <summary>
+		/// Flags whether this Pane is to be rendered or not.
+		/// </summary>
+		/// <remarks>
+		/// Note this is very different to show/hide as you would in jQuery.  This is really a server-side thing.
+		/// If you mark a Pane as !Visible the Pane is not rendered at all to the page.  So you will actually have
+		/// less panes on the rendered page.
+		/// This is so you can programmatically remove a Pane from a set of Tabs.  You still define the rendering 
+		/// area, however it won't be rendered if Visible=False.
+		/// </remarks>
+		public bool Visible { get; set; }
+
+
+		/// <summary>
+		/// Flags whether this tab Pane is visble or not.
+		/// </summary>
+		/// <param name="isVisble">Flags whether this tab Pane is visble or not.</param>
+		/// <returns>Pane (for chainability)</returns>
+		public Pane SetVisibility(bool isVisble) {
+			this.Visible = isVisble;
+			return this;
+		}
+
+
+		/// <summary>
+		/// Sets the title to appear in the tab Pane header.
+		/// </summary>
+		/// <param name="title">Title of the tab</param>
+		/// <returns>Pane (for chainability)</returns>
+		public Pane SetTitle(string title) {
+			this.Title = title;
+			return this;
+		}
+
+		/// <summary>
+		/// Returns the fluent interface back to the Panes collection (i.e. the Parent object to the tab Pane).
+		/// </summary>
+		public Panes Finish() {
+			return this.Panes;
+		}
+
+		/// <summary>
 		/// Holds a reference to the set of tab Panels this pane is being rendered on.
 		/// </summary>
 		protected Panes Panes { get; set; }
@@ -85,6 +126,7 @@ namespace Fluqi.Widget.jTab
 			this.Title = title;
 			this.IsSelected = isSelected;
 			this.Index = 0;
+			this.Visible = true;
 		}
 
 
@@ -92,6 +134,10 @@ namespace Fluqi.Widget.jTab
 		/// Writes out the content pane of the Tab to the response
 		/// </summary>
 		internal Pane Render() {
+			if (!this.Visible)
+				// literally nothing to see here!
+				return this;
+
 			int tabDepth = this.Panes.Tabs.Rendering.TabDepth;
 			bool prettyRender = this.Panes.Tabs.Rendering.PrettyRender;
 			jStringBuilder sb = new jStringBuilder(prettyRender, tabDepth);
@@ -107,6 +153,10 @@ namespace Fluqi.Widget.jTab
 		/// Writes out the opening part of a jQuery UI tab (the LI)
 		/// </summary>
 		internal void RenderHeader(jStringBuilder sb) {
+			if (!this.Visible)
+				// literally nothing to see here!
+				return;
+
 			string selected = "";
 			bool prettyRender = this.Panes.Tabs.Rendering.PrettyRender;
 			bool renderCss = this.Panes.Tabs.Rendering.RenderCSS;
@@ -169,11 +219,13 @@ namespace Fluqi.Widget.jTab
 				int tabDepth = this.Panes.Tabs.Rendering.TabDepth + 1;
 				jStringBuilder sb = new jStringBuilder(prettyRender, tabDepth);
 
-				// Close pane
-				sb.AppendLineIf();
-				sb.AppendTabsLineIf("</div>");
+				if (this.Visible) { 
+					// Close pane
+					sb.AppendLineIf();
+					sb.AppendTabsLineIf("</div>");
 				
-				_Writer.Write(sb.ToString());
+					_Writer.Write(sb.ToString());
+				}
 			}
 		}
 
