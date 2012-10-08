@@ -42,3 +42,14 @@ C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.xml
 C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.dll
 C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.pdb
+C:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Tests.dll.config
+C:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Tests.dll
+C:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Tests.pdb
+C:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.dll
+C:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Web.Demo.dll
+C:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Web.Demo.pdb
+C:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.pdb
+C:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.xml
+C:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.csprojResolveAssemblyReference.cache
+C:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.dll
+C:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.pdb

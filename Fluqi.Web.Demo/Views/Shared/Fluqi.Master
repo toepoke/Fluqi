@@ -39,6 +39,7 @@
 </head>
 
 <body>
+	<%Html.RenderPartial("Banner");%>
 	<%Html.RenderPartial("GitHub");%>
 	<div id="header-wrap">
 		<header>
