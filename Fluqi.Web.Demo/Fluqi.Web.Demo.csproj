@@ -108,6 +108,7 @@
     <Content Include="Content\asp-net-front-page.jpg" />
     <Content Include="Content\calendar_week.png" />
     <Content Include="Content\Builder.css" />
+    <Content Include="Content\leaderboard-banner.gif" />
     <Content Include="Content\site\css\fluqi.css" />
     <Content Include="Content\site\css\jquery.fancybox-1.3.4.css" />
     <Content Include="Content\site\css\nivo-slider.css" />
