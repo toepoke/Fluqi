@@ -210,6 +210,7 @@
     <Content Include="Scripts\accordion.js" />
     <Content Include="Scripts\auto-complete.js" />
     <Content Include="Scripts\button.js" />
+    <Content Include="Scripts\jquery-theme-switcher.js" />
     <Content Include="Scripts\js-src\jquery.cookie.js" />
     <Content Include="Scripts\js-src\jquery.effects.blind.js" />
     <Content Include="Scripts\js-src\jquery.effects.bounce.js" />

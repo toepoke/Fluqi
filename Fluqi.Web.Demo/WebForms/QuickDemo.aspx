@@ -173,7 +173,7 @@
 
 	<%} %>
 	</section>
-	<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
+	<script src="../Scripts/jquery-theme-switcher.js" type="text/javascript"></script>
 </asp:Content>
 
 

@@ -121,7 +121,7 @@
 		initView();
 	});
 </script>
-<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
+<script src="<%=Url.Content("~/Scripts/jquery-theme-switcher.js")%>" type="text/javascript"></script>
 </asp:Content>
 
 
