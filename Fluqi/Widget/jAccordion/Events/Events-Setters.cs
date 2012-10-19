@@ -42,8 +42,8 @@ namespace Fluqi.Widget.jAccordion
 		/// This event is triggered every time the accordion starts to change.
 		/// </summary>
 		/// <returns>Events object for chainability</returns>
-		public Events SetChangeStartEvent(string methodSource) {
-			this.ChangeStartEvent = methodSource;
+		public Events SetBeforeActivateEvent(string methodSource) {
+			this.BeforeActivateEvent = methodSource;
 			return this;	
 		}
 

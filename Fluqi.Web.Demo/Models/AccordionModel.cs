@@ -85,7 +85,7 @@ namespace Fluqi.Models
 				ac.Events
 					.SetCreateEvent("return createEvent(event, ui);")
 					.SetChangeEvent("return changeEvent(event, ui);")
-					.SetChangeStartEvent("return changeStartEvent(event, ui);")
+					.SetBeforeActivateEvent("return beforeActivateEvent(event, ui);")
 				;
 			}
 			if (!this.prettyRender)
@@ -206,7 +206,7 @@ namespace Fluqi.Models
 			jStringBuilder sb = new jStringBuilder(true/*includeWhitespace*/, 2);
 			sb.AppendTabsLineIf(".SetCreateEvent(\"return createEvent(event, ui);\")");
 			sb.AppendTabsLineIf(".SetChangeEvent(\"return changeEvent(event, ui);\")");
-			sb.AppendTabsLineIf(".SetChangeStartEvent(\"return changeStartEvent(event, ui);\")");
+			sb.AppendTabsLineIf(".SetBeforeActivateEvent(\"return beforeActivateEvent(event, ui);\")");
 
 			return sb.ToString();
 		}

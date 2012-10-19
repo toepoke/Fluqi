@@ -32,8 +32,8 @@ namespace Fluqi.Widget.jAccordion
 		/// <summary>
 		/// This event is triggered every time the accordion starts to change.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#event-changestart for details</remarks>
-		protected internal string ChangeStartEvent { get; set; }
+		/// <remarks>See http://api.jqueryui.com/accordion/#event-beforeActivate for details</remarks>
+		protected internal string BeforeActivateEvent { get; set; }
 
 	} // Options
 

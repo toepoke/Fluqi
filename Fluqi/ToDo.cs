@@ -6,6 +6,9 @@ namespace Fluqi
 	/// </summary>
 	public class ToDo
 	{
+		// jQuery 1.9.0 upgrade
+		// ToDo: Need to modify links in documentation as the location is now api.jqueryui.com
+
 		// ToDo: Integrate appHarbor for integration with github source code.
 		// ToDo: Check the source that comes out of the demo still matches the actual code required (copy and paste somewhere).
 		// ToDo: Enhance the DiscoverOptions to use the child version everywhere (add it to the Core.Options base class too).  This way
@@ -15,6 +18,7 @@ namespace Fluqi
 		// ToDo: Fix razor integration, see razor.txt
 		// ToDo: Accordion with custom header doesn't work, you can't vary the content divs ... see FAQ in TP for example
 		// ToDo: Accordion shouldn't demand an "ID", it doesn't necessarily need one, we may just been formatting ... perhaps convert the first panel text into an id if necessary?
+		
 		
 
 		// DONE: Fix warnings (mainly XML documentation)

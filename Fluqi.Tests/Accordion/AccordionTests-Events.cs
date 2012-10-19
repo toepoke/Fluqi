@@ -98,7 +98,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Accordion_With_ChangeStart_EventHandler_Wired_Up_Renders_Correctly()
+		public void Accordion_With_BeforeActivate_EventHandler_Wired_Up_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
@@ -110,7 +110,7 @@ namespace Fluqi.Tests
 					.Compress()
 					.Finish()
 				.Events
-					.SetChangeStartEvent("addToLog('ChangeStart event called');")
+					.SetBeforeActivateEvent("addToLog('BeforeActivate event called');")
 			;
 
 			TestHelper.ForceRender(accordion);
@@ -119,7 +119,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  string expected = "changestart: function(event, ui) {addToLog('ChangeStart event called');}";
+		  string expected = "beforeActivate: function(event, ui) {addToLog('BeforeActivate event called');}";
 		  Assert.IsTrue(html.Contains(expected));
 		}
 
