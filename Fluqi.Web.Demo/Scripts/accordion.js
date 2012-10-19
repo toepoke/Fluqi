@@ -1,6 +1,10 @@
 ﻿
 function createEvent(event, ui) {
-	addToLog("CREATE EVENT");
+	addToLog(
+		"CREATE EVENT"
+		+ "<br/>- ui.header ..."
+		+ "<br/>- ui.content ..."
+	);
 }
 
 function changeEvent(event, ui) {
