@@ -19,6 +19,13 @@ function changeEvent(event, ui) {
 }
 
 function beforeActivateEvent(event, ui) {
+	if (ui.newHeader.text() == "My Panel 3") {
+		// new functionality in 1.9.0 which allows cancelling of the panel opening
+		alert("My Panel 3 is set-up to illustrate a cancellation.");
+		event.preventDefault();
+		return;
+	}
+
 	addToLog(
 		"BEFORE_ACTIVATE EVENT"
 		+ "<br/>- " + buildKeyValue("event.type", event.type, 28)
