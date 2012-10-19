@@ -173,7 +173,7 @@
 
 	<%} %>
 	</section>
-	<script src="../Scripts/jquery-theme-switcher.js" type="text/javascript"></script>
+	<script src="../Scripts/jquery.themeswitcher.min.js" type="text/javascript"></script>
 </asp:Content>
 
 

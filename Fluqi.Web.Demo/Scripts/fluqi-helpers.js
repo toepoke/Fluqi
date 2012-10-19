@@ -143,7 +143,9 @@ $(document).ready(function () {
 	// jQuery UI site looks a bit unreliable, so it's commented out during dev
 	var ts = $('#themeswitcher');
 	if (ts.length > 0) {
-		$('#themeswitcher').themeswitcher();
+		ts.themeswitcher({
+			imgpath: "../Content/switcher-images/"
+		});
 	}
 
 	// little bit lazy this .. just getting the log panel to line up with the example in the demo builder

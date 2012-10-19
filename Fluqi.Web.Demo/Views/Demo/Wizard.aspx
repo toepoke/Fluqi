@@ -121,7 +121,7 @@
 		initView();
 	});
 </script>
-<script src="<%=Url.Content("~/Scripts/jquery-theme-switcher.js")%>" type="text/javascript"></script>
+<script src="<%=Url.Content("~/Scripts/jquery.themeswitcher.min.js")%>" type="text/javascript"></script>
 </asp:Content>
 
 
