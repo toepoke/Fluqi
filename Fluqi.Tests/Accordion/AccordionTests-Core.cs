@@ -39,12 +39,12 @@ namespace Fluqi.Tests
 			Assert.IsTrue(html.Contains("id=\"myAccordion\""));
 
 			// 3 content panels
-			Assert.AreEqual(3, Utils.NumberOfMatches(html, "<h3><a href=\"#\"") );
+			Assert.AreEqual(3, Utils.NumberOfMatches(html, "<h3>") );
 			Assert.AreEqual(3, Utils.NumberOfMatches(html, "</h3><div>") );
 
-			Assert.AreEqual(1, Utils.NumberOfMatches(html, "<a href=\"#\">Pane #1</a>") );
-			Assert.AreEqual(1, Utils.NumberOfMatches(html, "<a href=\"#\">Pane #2</a>") );
-			Assert.AreEqual(1, Utils.NumberOfMatches(html, "<a href=\"#\">Pane #3</a>") );
+			Assert.AreEqual(1, Utils.NumberOfMatches(html, "<h3>Pane #1</h3>") );
+			Assert.AreEqual(1, Utils.NumberOfMatches(html, "<h3>Pane #2</h3>") );
+			Assert.AreEqual(1, Utils.NumberOfMatches(html, "<h3>Pane #3</h3>") );
 		}
 
 
@@ -226,52 +226,35 @@ namespace Fluqi.Tests
 		{
 		  // Arrange
 		  var resp = new MockWriter();
-			var accordion = new Accordion(resp, "myAccordion")
-				.Rendering
-					.Compress()
-					.SetRenderCSS(true)
-				.Finish()
-				.Panels
-					.Add("Panel #1")
+		  var accordion = new Accordion(resp, "myAccordion")
+		    .Rendering
+		      .Compress()
+		      .SetRenderCSS(true)
+		    .Finish()
+		    .Panels
+		      .Add("<a href=\"http://blog.toepoke.co.uk\" id=\"blog-link-id\">blog</a>")
 						.Configure()
 							.Header
 								.WithID("blog-header-id")
-								.Hyperlink
-									.WithID("blog-link-id")
-									.SetTitle("blog")
-									.SetURL("http://blog.toepoke.co.uk")
-								.Finish()
 							.Finish()
-							.WithID("blog-content-id")
 						.Finish()
-					.Add("Panel #2")
-						.Configure()
-							.Header
-								.WithID("fluqi-header-id")
-								.Hyperlink									
-									.WithID("fluqi-link-id")
-									.SetTitle("fluqi")
-									.SetURL("http://fluqi.apphb.com")
-								.Finish()
-							.Finish()
-							.WithID("fluqi-content-id")
-						.Finish()
-					.Finish()
-			;
+		      .Add("Panel #2")
+		    .Finish()
+		  ;
 
 		  // only testing raw output
-			TestHelper.ForceRender(accordion);
+		  TestHelper.ForceRender(accordion);
 
-			// Act
+		  // Act
 		  string html = resp.Output.ToString();
 
 		  // Assert
-			Assert.IsTrue(html.Contains("<div id=\"myAccordion\" class=\"ui-accordion ui-widget ui-helper-reset ui-accordion-icons\""));
-			Assert.IsTrue(html.Contains("<h3 id=\"blog-header-id\" class=\"ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top\""));
-			Assert.IsTrue(html.Contains("<a id=\"blog-link-id\" href=\"http://blog.toepoke.co.uk\">blog</a>"));
-			Assert.IsTrue(html.Contains("<div id=\"blog-content-id\" class=\"ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active\""));
-		}
+		  Assert.IsTrue(html.Contains("<div id=\"myAccordion\" class=\"ui-accordion ui-widget ui-helper-reset ui-accordion-icons\""));
+		  Assert.IsTrue(html.Contains("<h3 id=\"blog-header-id\" class=\"ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top\""));
+		  Assert.IsTrue(html.Contains("<a href=\"http://blog.toepoke.co.uk\" id=\"blog-link-id\">blog</a>"));
+		}		
 
+		
 		[TestMethod]
 		public void Ensure_Invisible_Accordion_Panel_Is_Not_Rendered()
 		{
@@ -300,9 +283,9 @@ namespace Fluqi.Tests
 
 		  // Assert
 			Assert.IsTrue (html.Contains("<div id=\"myAccordion\" class=\"ui-accordion ui-widget ui-helper-reset ui-accordion-icons\""));
-			Assert.IsTrue (html.Contains("<a href=\"#\">Panel #1</a>"));
-			Assert.IsFalse(html.Contains("<a href=\"#\">Panel #2</a>"));
-			Assert.IsTrue (html.Contains("<a href=\"#\">Panel #3</a>"));
+			Assert.IsTrue (html.Contains("<h3 class=\"ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top\">Panel #1</h3>"));
+			Assert.IsFalse(html.Contains("<h3 class=\"ui-accordion-header ui-helper-reset ui-state-default ui-corner-all\">Panel #2</h3>"));
+			Assert.IsTrue (html.Contains("<h3 class=\"ui-accordion-header ui-helper-reset ui-state-default ui-corner-all\">Panel #3</h3>"));
 		}
 
 		[TestMethod]
@@ -321,14 +304,6 @@ namespace Fluqi.Tests
 				.Finish()
 				.Panels
 					.Add("Panel #1")
-						.Configure()
-							.Header
-								.Hyperlink
-									.SetTitle("some external webpage")
-									.SetURL("http://toepoke.co.uk")
-								.Finish()
-							.Finish()
-						.Finish()
 					.Add("Panel #2")
 					.Add("Panel #3")
 				.Finish()
@@ -340,7 +315,7 @@ namespace Fluqi.Tests
 
 			// Assert
 			Assert.IsTrue(html.Contains("<dl id=\"myAccordion\""));
-			Assert.IsTrue(html.Contains("<dt><a href=\"http://toepoke.co.uk\">some external webpage</a>"));
+			Assert.IsTrue(html.Contains("<dt>Panel #1</dt>"));
 			Assert.IsTrue(html.Contains("<dd></dd>"));
 			// heading tag in the HTML should also change
 			Assert.IsTrue(html.Contains("$(document).ready( function() {$(\"#myAccordion\").accordion({heading: \"dt\"});});"));
@@ -397,21 +372,15 @@ namespace Fluqi.Tests
 		  // Assert
 			string expected = 
 				"<div id=\"myAccordion\">\r\n" +
-				"\t<h3>\r\n" +
-				"\t\t<a href=\"#\">Pane #1</a>\r\n" +
-				"\t</h3>\r\n" +
+				"\t<h3>Pane #1</h3>\r\n" +
 				"\t<div>\r\n" +
 				"\r\n" +
 				"\t</div>\r\n\r\n" +
-				"\t<h3>\r\n" +
-				"\t\t<a href=\"#\">Pane #2</a>\r\n" +
-				"\t</h3>\r\n" +
+				"\t<h3>Pane #2</h3>\r\n" +
 				"\t<div>\r\n" +
 				"\r\n" +
 				"\t</div>\r\n\r\n" +
-				"\t<h3>\r\n" +
-				"\t\t<a href=\"#\">Pane #3</a>\r\n" +
-				"\t</h3>\r\n" +
+				"\t<h3>Pane #3</h3>\r\n" +
 				"\t<div>\r\n" +
 				"\r\n" +
 				"\t</div>\r\n" +

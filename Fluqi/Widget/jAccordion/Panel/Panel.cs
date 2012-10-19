@@ -25,27 +25,7 @@ namespace Fluqi.Widget.jAccordion
 		/// <summary>
 		/// Specifies the Title that should appear in the tab.
 		/// </summary>
-		/// <remarks>
-		/// Note this just an interface to the header.hyperlink object (normally you won't want to use
-		/// the hyperlink as you just want a panel with an anchor (#) link within it).
-		/// </remarks>
-		public string Title { 
-			get { return Header.Hyperlink.Title; }
-			set { Header.Hyperlink.Title = value; }
-		}
-
-		/// <summary>
-		/// If set, clicking on the accordion panel header will open this URL
-		/// By default this is a link to a # anchor
-		/// </summary>
-		/// <remarks>
-		/// Note this just an interface to the header.hyperlink object (normally you won't want to use
-		/// the hyperlink as you just want a panel with an anchor (#) link within it).
-		/// </remarks>
-		public string URL { 
-			get { return Header.Hyperlink.URL; }
-			set { Header.Hyperlink.URL = value; }
-		}
+		public string Title { get; set; }
 
 		/// <summary>
 		/// Flags whether this Panel is to be rendered or not.

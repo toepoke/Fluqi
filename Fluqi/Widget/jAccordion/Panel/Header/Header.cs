@@ -9,16 +9,6 @@ namespace Fluqi.Widget.jAccordion {
 	public partial class Header: Core.ControlBase {
 
 		/// <summary>
-		/// Hyperlink to render in the panel header.
-		/// </summary>
-		public Hyperlink Hyperlink { get; set; }
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public string MarkUp { get; set; }
-
-		/// <summary>
 		/// Holds a reference to the Panel the header is on
 		/// </summary>
 		protected internal Panel OnPanel { get; set; }
@@ -29,7 +19,6 @@ namespace Fluqi.Widget.jAccordion {
 		/// <param name="panel">Panel the header is for</param>
 		public Header(Panel panel) {
 			this.OnPanel = panel;
-			this.Hyperlink = new Hyperlink(this);
 		}
 
 
@@ -69,15 +58,12 @@ namespace Fluqi.Widget.jAccordion {
 			base.RenderAttributes(sb);
 
 			// and close off the starting H3 tag
-			sb.AppendLineIf(">");
+			sb.Append(">");
 
-			// now add in the hyperlink that lives inside the H3
-			sb.IncIndent();
-			sb.AppendTabsLineIf(this.Hyperlink.GetTagHtml());
-			sb.DecIndent();
+			sb.Append(this.OnPanel.Title);
 
 			// Closing heading (H3)
-			sb.AppendTabsFormatLineIf("</{0}>", ac.Options.HeadingTag);
+			sb.AppendFormatLineIf("</{0}>", ac.Options.HeadingTag);
 
 			return sb.ToString();
 		}
