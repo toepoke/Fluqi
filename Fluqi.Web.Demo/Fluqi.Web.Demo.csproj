@@ -284,7 +284,7 @@
     <Content Include="Scripts\slider.js" />
     <Content Include="Scripts\fluqi-helpers.js" />
     <Content Include="Scripts\jquery-1.7.js" />
-    <Content Include="Scripts\jquery-ui-1.8.16.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.9.0.custom.js" />
     <Content Include="Views\Builder\Accordion.aspx" />
     <Content Include="Views\Builder\AddTab.ascx" />
     <Content Include="Views\Builder\AutoComplete.aspx" />
