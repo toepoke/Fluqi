@@ -100,6 +100,34 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
+		public void AutoComplete_With_Response_EventHandler_Wired_Up_Renders_Correctly()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			AutoComplete ac = TestHelper.SetupSimpleAutoCompleteObject(resp);
+
+			// only testing raw output
+			ac
+				.Options
+					.Finish()
+				.Rendering
+					.Compress()
+				.ShowCSS()
+			;
+			ac.Events
+				.SetResponseEvent("addToLog('Response event called');")
+			;
+
+			// Act - Force output we'd see on the web page
+			ac.Render();
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = "response: function(event, ui) {addToLog('Response event called');}";
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
 		public void AutoComplete_With_Open_EventHandler_Wired_Up_Renders_Correctly()
 		{
 			// Arrange

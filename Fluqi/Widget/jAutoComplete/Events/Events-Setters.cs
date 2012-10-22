@@ -40,6 +40,19 @@ namespace Fluqi.Widget.jAutoComplete
 
 
 		/// <summary>
+		/// Triggered after a search completes, but before the menu is shown. Useful for local manipuation
+		/// of suggestion data, where a custom "source" option callback is not required. This event is always
+		/// triggered when a search completes, even if the menu will not be shown because there are no results or
+		/// the Autocomplete is disabled.
+		/// </summary>
+		/// <returns>Events object for chainability</returns>
+		public Events SetResponseEvent(string methodSource) {
+			this.ResponseEvent = methodSource;
+			return this;
+		}
+
+
+		/// <summary>
 		/// Triggered when the suggestion menu is opened.
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
@@ -99,6 +112,7 @@ namespace Fluqi.Widget.jAutoComplete
 			this.ChangeEvent = methodSource;
 			return this;	
 		}
+
 
 	} // Events
 

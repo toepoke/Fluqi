@@ -54,6 +54,7 @@ namespace Fluqi.Widget.jAutoComplete
 		override protected internal void DiscoverOptions(Core.ScriptOptions options) {
 			options.AddEventHandler("create", "event, ui", this.CreateEvent);
 			options.AddEventHandler("search", "event, ui", this.SearchEvent);
+			options.AddEventHandler("response", "event, ui", this.ResponseEvent);
 			options.AddEventHandler("open", "event, ui", this.OpenEvent);
 			options.AddEventHandler("focus", "event, ui", this.FocusEvent);
 			options.AddEventHandler("select", "event, ui", this.SelectEvent);
@@ -69,9 +70,9 @@ namespace Fluqi.Widget.jAutoComplete
 		protected void Reset() {
 			this.CreateEvent = "";
 			this.SearchEvent = "";
+			this.ResponseEvent = "";
 			this.OpenEvent = "";
 			this.FocusEvent = "";
-			this.SearchEvent = "";
 			this.CloseEvent = "";
 			this.ChangeEvent = "";
 		}

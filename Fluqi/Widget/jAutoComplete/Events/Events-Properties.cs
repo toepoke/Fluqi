@@ -22,6 +22,15 @@ namespace Fluqi.Widget.jAutoComplete
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/autocomplete/#event-search for details</remarks>
 		protected internal string SearchEvent { get; set; }
+
+		/// <summary>
+		/// Triggered after a search completes, but before the menu is shown. Useful for local manipuation
+		/// of suggestion data, where a custom "source" option callback is not required. This event is always
+		/// triggered when a search completes, even if the menu will not be shown because there are no results or
+		/// the Autocomplete is disabled.
+		/// </summary>
+		/// <remarks>See http://api.jqueryui.com/autocomplete/#event-response for details</remarks>
+		protected internal string ResponseEvent { get; set; }
 		
 		/// <summary>
 		/// This event is triggered when autocomplete is created.

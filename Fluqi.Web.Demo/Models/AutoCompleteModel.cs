@@ -89,6 +89,7 @@ namespace Fluqi.Models
 				ac.Events
 					.SetCreateEvent("createEvent(event, ui);")
 					.SetSearchEvent("searchEvent(event, ui);")
+					.SetResponseEvent("responseEvent(event, ui);")
 					.SetOpenEvent("openEvent(event, ui);")
 					.SetFocusEvent("focusEvent(event, ui);")
 					.SetSelectEvent("selectEvent(event, ui);")
@@ -223,6 +224,7 @@ namespace Fluqi.Models
 
 			sb.AppendTabsLineIf(".SetCreateEvent(\"createEvent(event, ui);\")");
 			sb.AppendTabsLineIf(".SetSearchEvent(\"searchEvent(event, ui);\")");
+			sb.AppendTabsLineIf(".SetResponseEvent(\"responseEvent(event, ui);\")");
 			sb.AppendTabsLineIf(".SetOpenEvent(\"openEvent(event, ui);\")");
 			sb.AppendTabsLineIf(".SetFocusEvent(\"focusEvent(event, ui);\")");
 			sb.AppendTabsLineIf(".SetSelectEvent(\"selectEvent(event, ui);\")");

@@ -11,6 +11,13 @@ function searchEvent(event, ui) {
 	);
 }
 
+function responseEvent(event, ui) {
+	ui.content.push({ label: "fluqi", value: "response event added this!" });
+	addToLog("RESPONSE EVENT"
+		+"<br/>- " + buildKeyValue("event.type", event.type, 28)
+	);
+}
+
 function openEvent(event, ui) {
 	addToLog("OPEN EVENT"
 		+ "<br/>- " + buildKeyValue("event.type", event.type, 28)
