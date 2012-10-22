@@ -157,6 +157,17 @@ namespace Fluqi.Utilities.jPosition
 
 
 		/// <summary>
+		/// Element to position within, affecting collision detection. If you provide a selector or 
+		/// jQuery object, the first matching element will be used.
+		/// </summary>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
+		public Options SetWithin(string within) {
+			this.Within = within;
+			return this;
+		}
+
+
+		/// <summary>
 		/// Add these left-top values to the calculated position, eg. "50 50" (left top) 
 		/// A single value such as "50" will apply to both.
 		/// </summary>

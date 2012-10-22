@@ -295,6 +295,38 @@ namespace Fluqi.Tests
 			Assert.IsTrue(html.Contains(expected));
 		}
 
+		[TestMethod]
+		public void Ensure_Within_Option_With_Is_Added_To_Script_Definition()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Position pos = TestHelper.SetupSimplePositionObject(resp);
+
+			// only testing raw output
+			pos
+				.Rendering
+					.Compress()
+					.Finish()
+				.Options
+					.SetWithin("#container")
+			;
+
+			TestHelper.ForceRender(pos);
+
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myPosition\").position({within: \"#container\"})" + 
+					";});" + 
+				"</script>";
+
+			Assert.IsTrue(html.Contains(expected));
+		}
+
 		[TestMethod, ExpectedException(typeof(ArgumentException))]
 		public void Ensure_At_Option_With_Unknown_Position_Enum_Throws_Error()
 		{

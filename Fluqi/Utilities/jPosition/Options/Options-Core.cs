@@ -90,6 +90,10 @@ namespace Fluqi.Utilities.jPosition
 				posOptions.Add("of", this.Of.InDoubleQuotes());
 			else 
 				posOptions.Add(!this.IsNullOrEmpty(this.Of), "of", this.Of);
+			if (this.IsSelector(this.Within))
+				posOptions.Add("within", this.Within.InDoubleQuotes());
+			else 
+				posOptions.Add(!this.IsNullOrEmpty(this.Within), "within", this.Within);
 			if (this.Offset.Count > 0) {
 				if (this.Offset[0] != 0) offsets += this.Offset[0];
 				if (this.Offset.Count > 1 && this.Offset[1] != 0)

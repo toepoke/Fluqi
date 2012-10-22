@@ -47,6 +47,13 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/position/#option-of for details</remarks>
 		protected internal string Of { get; set; }
+		
+		/// <summary>
+		/// Element to position within, affecting collision detection. If you provide a selector or 
+		/// jQuery object, the first matching element will be used.
+		/// </summary>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
+		protected internal string Within { get; set; }
 
 		/// <summary>
 		/// Add these left-top values to the calculated position, eg. "50 50" (left top) A 
