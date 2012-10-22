@@ -73,13 +73,13 @@ namespace Fluqi.Tests
 		  var resp = new MockWriter();
 			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
 
-		  accordion.Methods.Activate(2);
+		  accordion.Methods.Active(2);
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"activate\",2)", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"active\",2)", html);
 		}
 
 		[TestMethod]
@@ -96,7 +96,7 @@ namespace Fluqi.Tests
 
 		  // Assert - Note the "Select" method is the same as the "Activate" method and is merely
 			//          present in the API as it's arguably more discoverable than "Activate".
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"activate\",2)", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"active\",2)", html);
 		}
 
 		[TestMethod]
@@ -112,7 +112,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"activate\",false)", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"active\",false)", html);
 		}
 
 		[TestMethod]

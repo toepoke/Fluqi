@@ -67,8 +67,8 @@ namespace Fluqi.Widget.jAccordion {
 		/// </param>
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/accordion/#method-activate for details.</remarks>
-		public void Activate(int panelIndex) {
-			this.RenderMethodCall("activate", panelIndex);
+		public void Active(int panelIndex) {
+			this.RenderMethodCall("active", panelIndex);
 		}
 
 		/// <summary>
@@ -80,7 +80,7 @@ namespace Fluqi.Widget.jAccordion {
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/accordion/#method-activate for details.</remarks>
 		public void Select(int panelIndex) {
-			this.Activate(panelIndex);
+			this.Active(panelIndex);
 		}
 
 		/// <summary>
@@ -88,7 +88,7 @@ namespace Fluqi.Widget.jAccordion {
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/accordion/#method-activate for details.</remarks>
 		public void CollapseAll() {
-			this.RenderMethodCall("activate", "false");
+			this.RenderMethodCall("active", "false");
 		}
 		
 		/// <summary>

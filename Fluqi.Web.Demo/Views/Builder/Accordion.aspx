@@ -163,9 +163,9 @@
 %>	
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$("#activate-1").click(function() { <%ac.Methods.Activate(0);%>; });
-		$("#activate-2").click(function() { <%ac.Methods.Activate(1);%>; });
-		$("#activate-3").click(function() { <%ac.Methods.Activate(2);%>; });
+		$("#activate-1").click(function() { <%ac.Methods.Active(0);%>; });
+		$("#activate-2").click(function() { <%ac.Methods.Active(1);%>; });
+		$("#activate-3").click(function() { <%ac.Methods.Active(2);%>; });
 		$("#enable").click(function() { <%ac.Methods.Enable();%>; });
 		$("#disable").click(function() { <%ac.Methods.Disable();%>; });
 		$("#destroy").click(function() {  if (confirm("are you sure you want to destroy the accordion?")) <%ac.Methods.Destroy();%>; });
