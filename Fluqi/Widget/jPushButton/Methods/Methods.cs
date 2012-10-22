@@ -107,7 +107,7 @@ namespace Fluqi.Widget.jPushButton {
 		}
 
 		/// <summary>
-		/// Icons to use for headers. Icons may be specified for 'header' and 'headerSelected', 
+		/// Icons to use for headers. Icons may be specified for 'header' and 'activeHeader', 
 		/// and we recommend using the icons native to the jQuery UI CSS Framework manipulated by jQuery UI ThemeRoller
 		/// </summary>
 		/// <param name="primary">new unselected header setting</param>

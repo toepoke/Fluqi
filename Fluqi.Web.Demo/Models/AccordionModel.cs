@@ -38,7 +38,7 @@ namespace Fluqi.Models
 			this.clearStyle = false;
 			this.fillSpace = false;
 			this.headerIconClass = Core.Icons.IconToString( Core.Icons.eIconClass.triangle_1_e );
-			this.headerSelectedIconClass = Core.Icons.IconToString( Core.Icons.eIconClass.triangle_1_s );
+			this.activeHeaderIconClass = Core.Icons.IconToString( Core.Icons.eIconClass.triangle_1_s );
 			this.navigation = false;
 			this.navigationFilter = "";
 			this.activePanel = 0;
@@ -52,7 +52,7 @@ namespace Fluqi.Models
 		public bool clearStyle { get; set; }
 		public bool fillSpace { get; set; }
 		public string headerIconClass { get; set; }
-		public string headerSelectedIconClass { get; set; }
+		public string activeHeaderIconClass { get; set; }
 		public bool navigation { get; set; }
 		public string navigationFilter { get; set; }
 		public int activePanel { get; set; }
@@ -71,7 +71,7 @@ namespace Fluqi.Models
 					.SetAutoHeight(this.autoHeight)
 					.SetClearStyle(this.clearStyle)
 					.SetFillSpace(this.fillSpace)
-					.SetIcons(this.headerIconClass, this.headerSelectedIconClass)
+					.SetIcons(this.headerIconClass, this.activeHeaderIconClass)
 					.SetNavigation(this.navigation)
 					.SetNavigationFilter(this.navigationFilter)
 				.Finish()
@@ -84,7 +84,7 @@ namespace Fluqi.Models
 			if (this.showEvents) {
 				ac.Events
 					.SetCreateEvent("return createEvent(event, ui);")
-					.SetActivateEvent("return changeEvent(event, ui);")
+					.SetActivateEvent("return activateEvent(event, ui);")
 					.SetBeforeActivateEvent("return beforeActivateEvent(event, ui);")
 				;
 			}
@@ -186,9 +186,9 @@ namespace Fluqi.Models
 
 			// icons have to be set as a pair
 			bool addNormalIcon = !string.IsNullOrEmpty(this.headerIconClass) && this.headerIconClass != Widget.jAccordion.Options.DEFAULT_HEADER_ICON_CLASS;
-			bool addSelectedIcon = !string.IsNullOrEmpty(this.headerSelectedIconClass) && this.headerSelectedIconClass != Widget.jAccordion.Options.DEFAULT_HEADER_SELECTED_ICON_CLASS;
+			bool addSelectedIcon = !string.IsNullOrEmpty(this.activeHeaderIconClass) && this.activeHeaderIconClass != Widget.jAccordion.Options.DEFAULT_ACTIVE_HEADER_ICON_CLASS;
 			if (addNormalIcon || addSelectedIcon) {
-				 sb.AppendTabsFormatLineIf(".SetIcons(\"{0}\", \"{1}\")", this.headerIconClass, this.headerSelectedIconClass);
+				 sb.AppendTabsFormatLineIf(".SetIcons(\"{0}\", \"{1}\")", this.headerIconClass, this.activeHeaderIconClass);
 			}
 			if (this.navigation)
 				sb.AppendTabsLineIf(".SetNavigation(true)");
@@ -205,7 +205,7 @@ namespace Fluqi.Models
 
 			jStringBuilder sb = new jStringBuilder(true/*includeWhitespace*/, 2);
 			sb.AppendTabsLineIf(".SetCreateEvent(\"return createEvent(event, ui);\")");
-			sb.AppendTabsLineIf(".SetChangeEvent(\"return changeEvent(event, ui);\")");
+			sb.AppendTabsLineIf(".SetActivateEvent(\"return activateEvent(event, ui);\")");
 			sb.AppendTabsLineIf(".SetBeforeActivateEvent(\"return beforeActivateEvent(event, ui);\")");
 
 			return sb.ToString();

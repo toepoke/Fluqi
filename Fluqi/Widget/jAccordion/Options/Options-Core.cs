@@ -43,7 +43,7 @@ namespace Fluqi.Widget.jAccordion
 		/// <summary>
 		/// Default selected header icon for the accordion widget.
 		/// </summary>
-		public const string DEFAULT_HEADER_SELECTED_ICON_CLASS = "ui-icon-triangle-1-s";		
+		public const string DEFAULT_ACTIVE_HEADER_ICON_CLASS = "ui-icon-triangle-1-s";		
 
 		/// <summary>
 		/// Default animation for the accordion widget.
@@ -89,7 +89,7 @@ namespace Fluqi.Widget.jAccordion
 		protected internal bool AreIconsEnabled() {
 			bool areEnabled = true;
 
-			if (string.IsNullOrEmpty(this.HeaderIconClass) && string.IsNullOrEmpty(this.HeaderSelectedIconClass))
+			if (string.IsNullOrEmpty(this.HeaderIconClass) && string.IsNullOrEmpty(this.activeHeaderIconClass))
 				areEnabled = false;
 
 			return areEnabled;
@@ -109,7 +109,7 @@ namespace Fluqi.Widget.jAccordion
 				// can't be the defaults are they aren't enabled
 				return false;
 
-			if (this.HeaderIconClass == DEFAULT_HEADER_ICON_CLASS && this.HeaderSelectedIconClass == DEFAULT_HEADER_SELECTED_ICON_CLASS)
+			if (this.HeaderIconClass == DEFAULT_HEADER_ICON_CLASS && this.activeHeaderIconClass == DEFAULT_ACTIVE_HEADER_ICON_CLASS)
 				return true;
 
 			return false;
@@ -135,7 +135,7 @@ namespace Fluqi.Widget.jAccordion
 			
 			if (AreIconsEnabled()) {
 				if (!AreIconsDefaults())
-					options.Add( "icons", "{{ 'header': '{0}', 'headerSelected': '{1}' }}", this.HeaderIconClass, this.HeaderSelectedIconClass );
+					options.Add( "icons", "{{ 'header': '{0}', 'activeHeader': '{1}' }}", this.HeaderIconClass, this.activeHeaderIconClass );
 			} else {
 				// icons disabled
 				options.Add("icons", false.JsBool());
@@ -157,7 +157,7 @@ namespace Fluqi.Widget.jAccordion
 			this.HeadingTag = DEFAULT_HEADING_TAG;
 			this.ContentTag = DEFAULT_CONTENT_TAG;
 			this.HeaderIconClass = DEFAULT_HEADER_ICON_CLASS;
-			this.HeaderSelectedIconClass = DEFAULT_HEADER_SELECTED_ICON_CLASS;
+			this.activeHeaderIconClass = DEFAULT_ACTIVE_HEADER_ICON_CLASS;
 			this.AutoHeight = true;
 			this.Animate = DEFAULT_ANIMATE;
 			this.ClearStyle = false;

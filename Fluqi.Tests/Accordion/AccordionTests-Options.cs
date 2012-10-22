@@ -355,7 +355,7 @@ namespace Fluqi.Tests
 		  string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myAccordion\").accordion({icons: { 'header': 'ui-icon-circle-plus', 'headerSelected': 'ui-icon-circle-minus' }});" + 
+						"$(\"#myAccordion\").accordion({icons: { 'header': 'ui-icon-circle-plus', 'activeHeader': 'ui-icon-circle-minus' }});" + 
 					"});" + 
 				"</script>";
 		  Assert.IsTrue(html.Contains(expected));
@@ -386,7 +386,7 @@ namespace Fluqi.Tests
 		  string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myAccordion\").accordion({icons: { 'header': 'ui-icon-circle-plus', 'headerSelected': 'ui-icon-circle-minus' }});" + 
+						"$(\"#myAccordion\").accordion({icons: { 'header': 'ui-icon-circle-plus', 'activeHeader': 'ui-icon-circle-minus' }});" + 
 					"});" + 
 				"</script>";
 		  Assert.IsTrue(html.Contains(expected));
@@ -417,7 +417,7 @@ namespace Fluqi.Tests
 		  string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myAccordion\").accordion({icons: { 'header': 'my-primary-icon', 'headerSelected': 'my-secondary-icon' }});" + 
+						"$(\"#myAccordion\").accordion({icons: { 'header': 'my-primary-icon', 'activeHeader': 'my-secondary-icon' }});" + 
 					"});" + 
 				"</script>";
 		  Assert.IsTrue(html.Contains(expected));
@@ -479,7 +479,7 @@ namespace Fluqi.Tests
 		  string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myAccordion\").accordion({icons: { 'header': 'ui-icon-plusthick', 'headerSelected': 'ui-icon-minusthick' }});" + 
+						"$(\"#myAccordion\").accordion({icons: { 'header': 'ui-icon-plusthick', 'activeHeader': 'ui-icon-minusthick' }});" + 
 					"});" + 
 				"</script>";
 		  Assert.IsTrue(html.Contains(expected));

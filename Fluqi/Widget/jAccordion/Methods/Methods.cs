@@ -346,7 +346,7 @@ namespace Fluqi.Widget.jAccordion {
 		}
 				
 		/// <summary>
-		/// Icons to use for headers. Icons may be specified for 'header' and 'headerSelected', 
+		/// Icons to use for headers. Icons may be specified for 'header' and 'activeHeader', 
 		/// and we recommend using the icons native to the jQuery UI CSS Framework manipulated by jQuery UI ThemeRoller
 		/// </summary>
 		/// <param name="unselectedHeader">new unselected header setting</param>
@@ -355,12 +355,12 @@ namespace Fluqi.Widget.jAccordion {
 			unselectedHeader = unselectedHeader ?? "";
 			selectedHeader = selectedHeader ?? "";
 			this.RenderSetOptionCall("icons", 
-				string.Format("{{ 'header': '{0}', 'headerSelected': '{1}' }}", unselectedHeader, selectedHeader) 
+				string.Format("{{ 'header': '{0}', 'activeHeader': '{1}' }}", unselectedHeader, selectedHeader) 
 			);
 		}
 
 		/// <summary>
-		/// Icons to use for headers. Icons may be specified for 'header' and 'headerSelected', 
+		/// Icons to use for headers. Icons may be specified for 'header' and 'activeHeader', 
 		/// and we recommend using the icons native to the jQuery UI CSS Framework manipulated by jQuery UI ThemeRoller
 		/// </summary>
 		/// <param name="unselectedHeader">new unselected header setting</param>

@@ -75,7 +75,7 @@
 	var showIcons2 = Html.CreateButton("showIcons2", "...")
 		.Rendering.SetPrettyRender(true).Finish()
 		.Events
-			.SetClickEvent("return openIconsDialog('headerSelectedIconClass');")
+			.SetClickEvent("return openIconsDialog('activeHeaderIconClass');")
 		.Finish()
 	;
 %>
@@ -93,7 +93,7 @@
 		<li><%=Html.LabelFor(vm=>vm.navigationFilter)%>        <%=Html.TextBoxFor(vm=>vm.navigationFilter, "wide", "Overwrite the default location.href-matching with your own matcher.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.activePanel)%>             <%=Html.TextBoxFor(vm=>vm.activePanel, "Pick an alternative selected panel on page load, in this example pick between 0 and 2.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.headerIconClass) %>        <%=Html.DropDownTipListFor(vm=>vm.headerIconClass, List.IconListNames(), "Overrides the icon for the unselected panel, try 'ui-icon-plusthick' for example.")%> <%showIcons1.Render();%>  </li> 
-		<li><%=Html.LabelFor(vm=>vm.headerSelectedIconClass)%> <%=Html.DropDownTipListFor(vm=>vm.headerSelectedIconClass, List.IconListNames(), "Overrides the icon for the selected panel, try 'ui-icon-minusthick' for example.")%> <%showIcons2.Render();%> </li>
+		<li><%=Html.LabelFor(vm=>vm.activeHeaderIconClass)%>   <%=Html.DropDownTipListFor(vm=>vm.activeHeaderIconClass, List.IconListNames(), "Overrides the icon for the selected panel, try 'ui-icon-minusthick' for example.")%> <%showIcons2.Render();%> </li>
 	</ul>
 
 	<hr />

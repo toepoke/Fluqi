@@ -95,13 +95,13 @@ namespace Fluqi.Widget.jAccordion
 		protected internal string HeaderIconClass { get; set; }
 			
 		/// <summary>
-		/// Icons to use for selected accordion header icon class.  This equates to the 'headerSelected' 
+		/// Icons to use for selected accordion header icon class.  This equates to the 'activeHeader' 
 		/// class.
 		/// We recommend using the icons native to the jQuery UI CSS Framework manipulated 
 		/// by jQuery UI ThemeRoller
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/accordion/#option-icons for more details</remarks>
-		protected internal string HeaderSelectedIconClass { get; set; }
+		protected internal string activeHeaderIconClass { get; set; }
 
 		/// <summary>
 		/// If set, looks for the anchor that matches location.href and activates it. 

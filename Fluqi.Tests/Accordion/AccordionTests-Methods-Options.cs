@@ -402,7 +402,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"icons\",{ 'header': 'ui-icon-triangle-1-e', 'headerSelected': 'ui-icon-triangle-1-s' })", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"icons\",{ 'header': 'ui-icon-triangle-1-e', 'activeHeader': 'ui-icon-triangle-1-s' })", html);
 		}
 
 		[TestMethod]
@@ -418,7 +418,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"icons\",{ 'header': 'ui-icon-triangle-1-e', 'headerSelected': 'ui-icon-triangle-1-s' })", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"icons\",{ 'header': 'ui-icon-triangle-1-e', 'activeHeader': 'ui-icon-triangle-1-s' })", html);
 		}
 
 		[TestMethod]

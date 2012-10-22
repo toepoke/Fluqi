@@ -159,29 +159,29 @@ namespace Fluqi.Widget.jAccordion
 		
 
 		/// <summary>
-		/// Icons to use for headers. Icons may be specified for 'header' and 'headerSelected', 
+		/// Icons to use for headers. Icons may be specified for 'header' and 'activeHeader', 
 		/// and we recommend using the icons native to the jQuery UI CSS Framework manipulated 
 		/// by jQuery UI ThemeRoller
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/accordion/#option-icons for more details</remarks>
-		public Options SetIcons(string headerIconClass, string headerSelectedIconClass) {
+		public Options SetIcons(string headerIconClass, string activeHeaderIconClass) {
 			this.HeaderIconClass = headerIconClass ?? "";
-			this.HeaderSelectedIconClass = headerSelectedIconClass ?? "";
+			this.activeHeaderIconClass = activeHeaderIconClass ?? "";
 			return this;
 		}
 
 
 		/// <summary>
-		/// Icons to use for headers. Icons may be specified for 'header' and 'headerSelected', 
+		/// Icons to use for headers. Icons may be specified for 'header' and 'activeHeader', 
 		/// and we recommend using the icons native to the jQuery UI CSS Framework manipulated 
 		/// by jQuery UI ThemeRoller
 		/// </summary>
 		/// <remarks>
 		/// Overload for specifying icons through an enumeration (so you get the itellisense when finding them).
 		/// </remarks>
-		public Options SetIcons(Core.Icons.eIconClass headerIconClass, Core.Icons.eIconClass headerSelectedIconClass) {
+		public Options SetIcons(Core.Icons.eIconClass headerIconClass, Core.Icons.eIconClass activeHeaderIconClass) {
 			this.HeaderIconClass = Core.Icons.ByEnum(headerIconClass);
-			this.HeaderSelectedIconClass = Core.Icons.ByEnum(headerSelectedIconClass);
+			this.activeHeaderIconClass = Core.Icons.ByEnum(activeHeaderIconClass);
 			return this;
 		}
 
@@ -192,7 +192,7 @@ namespace Fluqi.Widget.jAccordion
 		public Options SetIconsOff() {
 			// just set both to empty strings to signify they are off ... the rendering phase will deal with this
 			this.HeaderIconClass = "";
-			this.HeaderSelectedIconClass = "";
+			this.activeHeaderIconClass = "";
 			return this;
 		}
 
