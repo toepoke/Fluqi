@@ -88,21 +88,6 @@ namespace Fluqi.Widget.jAccordion
 		/// <remarks>See http://jqueryui.com/demos/accordion/#option-icons for more details</remarks>
 		protected internal string activeHeaderIconClass { get; set; }
 
-		/// <summary>
-		/// If set, looks for the anchor that matches location.href and activates it. 
-		/// Great for href-based state-saving. Use navigationFilter to implement your own 
-		/// matcher (default is "false").
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-navigation for more details</remarks>
-		protected internal bool Navigation { get; set; }
-
-		/// <summary>
-		/// Overwrite the default location.href-matching with your own matcher.
-		/// (see also "Navigation" above) (default is "")..
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-navigationFilter for more details</remarks>
-		protected internal string NavigationFilter { get; set; }
-		
 	} // Options
 
 } // ns Fluqi.jTab

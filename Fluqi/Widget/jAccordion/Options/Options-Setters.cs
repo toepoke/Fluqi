@@ -187,29 +187,6 @@ namespace Fluqi.Widget.jAccordion
 			return this;
 		}
 
-
-		/// <summary>
-		/// If set, looks for the anchor that matches location.href and activates it. 
-		/// Great for href-based state-saving. Use navigationFilter to implement your own 
-		/// matcher.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-navigation for more details</remarks>
-		public Options SetNavigation(bool navigation) {
-			this.Navigation = navigation;
-			return this;
-		}
-
-
-		/// <summary>
-		/// Overwrite the default location.href-matching with your own matcher.
-		/// (see also "Navigation" above).
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-navigationFilter for more details</remarks>
-		public Options SetNavigationFilter(string navigationFilter) {
-			this.NavigationFilter = navigationFilter ?? "";
-			return this;
-		}
-
 	} // Options
 
 } // ns Fluqi.jTab

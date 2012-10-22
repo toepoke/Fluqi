@@ -132,8 +132,6 @@ namespace Fluqi.Widget.jAccordion
 			options.Add(this.Collapsible, "collapsible", this.Collapsible.JsBool());
 			options.Add(!this.IsNullEmptyOrDefault(this.HeadingTag, DEFAULT_HEADING_TAG), "heading", this.HeadingTag.InDoubleQuotes());
 			options.Add(!this.IsNullEmptyOrDefault(this.HeightStyle, DEFAULT_HEIGHT_STYLE), "heightStyle", this.HeightStyle.InDoubleQuotes());
-			options.Add(this.Navigation, "navigation", this.Navigation.JsBool());
-			options.Add(!this.IsNullOrEmpty(this.NavigationFilter),"navigationFilter", this.NavigationFilter);
 			options.Add(!this.IsNullEmptyOrDefault(this.Event, DEFAULT_EVENT), "event", this.Event.InSingleQuotes() );
 			
 			if (AreIconsEnabled()) {
@@ -165,8 +163,6 @@ namespace Fluqi.Widget.jAccordion
 			this.Collapsible = false;
 			this.Event = DEFAULT_EVENT;
 			this.HeightStyle = DEFAULT_HEIGHT_STYLE;
-			this.Navigation = false;
-			this.NavigationFilter = "";
 			this.Disabled = false;
 		}
 

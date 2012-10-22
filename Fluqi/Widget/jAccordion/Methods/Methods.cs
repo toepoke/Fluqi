@@ -347,49 +347,6 @@ namespace Fluqi.Widget.jAccordion {
 			this.SetIcons(unselected, selected);
 		}
 
-		/// <summary>
-		/// Returns [in JavaScript] the current "header" setting.
-		/// </summary>
-		public void GetNavigation() {
-			this.RenderGetOptionCall("navigation");
-		}
-
-		/// <summary>
-		/// If set, looks for the anchor that matches location.href and activates it. 
-		/// Great for href-based state-saving. Use navigationFilter to implement your own matcher.
-		/// </summary>
-		/// <param name="newValue">New navigation value</param>
-		public void SetNavigation(bool newValue) {
-			this.RenderSetOptionCall("navigation", newValue);
-		}
-
-		/// <summary>
-		/// Returns [in JavaScript] the current "navigationFilter" setting.
-		/// </summary>
-		public void GetNavigationFilter() {
-			this.RenderGetOptionCall("navigationFilter");
-		}
-
-		/// <summary>
-		/// Overwrite the default location.href-matching with your own matcher.
-		/// This entry point does _not_ add quotes to the input value and is indended for passing JavaScript
-		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
-		/// </summary>
-		/// <param name="newValue">New navigationFilter value</param>
-		public void SetNavigationFilterJS(string newValue) {
-			this.RenderSetOptionCall("navigationFilter", newValue);
-		}
-				
-		/// <summary>
-		/// Overwrite the default location.href-matching with your own matcher.
-		/// </summary>
-		/// <param name="newValue">New navigationFilter value</param>
-		public void SetNavigationFilter(string newValue) {
-			// It's not appropriate to have a quoted version of the NavigationFilter, so this
-			// entry point is merely to be consistent from a method signature perspective.
-			this.SetNavigationFilterJS(newValue);
-		}
-
 	}
 
 }

@@ -455,68 +455,6 @@ namespace Fluqi.Tests
 		  Assert.IsTrue(html.Contains(expected));
 		}
 
-		[TestMethod]
-		public void Ensure_Navigation_Option_Is_Added_To_Script_Definition()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
-
-		  // only testing raw output
-		  accordion
-				.Rendering
-					.Compress()
-					.Finish()
-				.Options
-					.SetNavigation(true)
-			;
-
-			TestHelper.ForceRender(accordion);
-
-		  // Act - Force output we'd see on the web page
-		  string html = resp.Output.ToString();
-
-		  // Assert
-		  string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myAccordion\").accordion({navigation: true});" + 
-					"});" + 
-				"</script>";
-		  Assert.IsTrue(html.Contains(expected));
-		}
-
-		[TestMethod]
-		public void Ensure_NavigationFilter_Option_Is_Added_To_Script_Definition()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
-
-		  // only testing raw output
-		  accordion
-				.Rendering
-					.Compress()
-					.Finish()
-				.Options
-					.SetNavigationFilter("function(bob){alert(bob);}")
-			;
-
-			TestHelper.ForceRender(accordion);
-
-		  // Act - Force output we'd see on the web page
-		  string html = resp.Output.ToString();
-
-		  // Assert
-		  string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myAccordion\").accordion({navigationFilter: function(bob){alert(bob);}});" + 
-					"});" + 
-				"</script>";
-		  Assert.IsTrue(html.Contains(expected));
-		}
-
 	} // jAccordion_Tests
 
 } // ns

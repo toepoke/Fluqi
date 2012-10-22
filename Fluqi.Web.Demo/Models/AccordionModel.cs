@@ -37,8 +37,6 @@ namespace Fluqi.Models
 			this.heightStyle = Core.HeightStyle.HeightStyleToString(Core.HeightStyle.eHeightStyle.Auto);
 			this.headerIconClass = Core.Icons.IconToString( Core.Icons.eIconClass.triangle_1_e );
 			this.activeHeaderIconClass = Core.Icons.IconToString( Core.Icons.eIconClass.triangle_1_s );
-			this.navigation = false;
-			this.navigationFilter = "";
 			this.activePanel = 0;
 		}
 
@@ -49,8 +47,6 @@ namespace Fluqi.Models
 		public string heightStyle { get; set; }
 		public string headerIconClass { get; set; }
 		public string activeHeaderIconClass { get; set; }
-		public bool navigation { get; set; }
-		public string navigationFilter { get; set; }
 		public int activePanel { get; set; }
 
 
@@ -66,8 +62,6 @@ namespace Fluqi.Models
 					.SetEvent(this.evt)
 					.SetHeightStyle(this.heightStyle)
 					.SetIcons(this.headerIconClass, this.activeHeaderIconClass)
-					.SetNavigation(this.navigation)
-					.SetNavigationFilter(this.navigationFilter)
 				.Finish()
 				.Panels
 					.Add("My Panel 1", (this.activePanel == 0) )
@@ -181,10 +175,6 @@ namespace Fluqi.Models
 			if (addNormalIcon || addSelectedIcon) {
 				 sb.AppendTabsFormatLineIf(".SetIcons(\"{0}\", \"{1}\")", this.headerIconClass, this.activeHeaderIconClass);
 			}
-			if (this.navigation)
-				sb.AppendTabsLineIf(".SetNavigation(true)");
-			if (!string.IsNullOrEmpty(this.navigationFilter))
-				sb.AppendTabsFormatLineIf(".SetNavigationFilter({0})", this.navigationFilter);
 
 			return sb.ToString();
 		}
