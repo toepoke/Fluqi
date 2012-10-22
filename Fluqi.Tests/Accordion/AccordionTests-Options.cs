@@ -144,67 +144,6 @@ namespace Fluqi.Tests
 		  Assert.IsTrue(html.Contains(expected));
 		}
 
-		[TestMethod]
-		public void Ensure_AutoHeight_Option_Is_Added_To_Script_Definition()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
-
-		  // only testing raw output
-		  accordion
-				.Rendering
-					.Compress()
-					.Finish()
-				.Options
-					.SetAutoHeight(false)
-			;
-
-			TestHelper.ForceRender(accordion);
-
-		  // Act - Force output we'd see on the web page
-		  string html = resp.Output.ToString();
-
-		  // Assert
-		  string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myAccordion\").accordion({autoHeight: false});" + 
-					"});" + 
-				"</script>";
-		  Assert.IsTrue(html.Contains(expected));
-		}
-
-		[TestMethod]
-		public void Ensure_ClearStyle_Option_Is_Added_To_Script_Definition()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
-
-		  // only testing raw output
-		  accordion
-				.Rendering
-					.Compress()
-					.Finish()
-				.Options
-					.SetClearStyle(true)
-			;
-
-			TestHelper.ForceRender(accordion);
-
-		  // Act - Force output we'd see on the web page
-		  string html = resp.Output.ToString();
-
-		  // Assert
-		  string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myAccordion\").accordion({clearStyle: true});" + 
-					"});" + 
-				"</script>";
-		  Assert.IsTrue(html.Contains(expected));
-		}
 
 		[TestMethod]
 		public void Ensure_Event_Option_By_String_Is_Added_To_Script_Definition()
@@ -269,7 +208,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_FillSpace_Option_Is_Added_To_Script_Definition()
+		public void Ensure_HeightStyle_Option_Is_Added_To_Script_Definition()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
@@ -281,7 +220,7 @@ namespace Fluqi.Tests
 					.Compress()
 					.Finish()
 				.Options
-					.SetFillSpace(true)
+					.SetHeightStyle(Core.HeightStyle.eHeightStyle.Content)
 			;
 
 			TestHelper.ForceRender(accordion);
@@ -293,7 +232,38 @@ namespace Fluqi.Tests
 		  string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myAccordion\").accordion({fillSpace: true});" + 
+						"$(\"#myAccordion\").accordion({heightStyle: \"content\"});" + 
+					"});" + 
+				"</script>";
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Ensure_HeightStyle_ByString_Option_Is_Added_To_Script_Definition()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
+
+		  // only testing raw output
+		  accordion
+				.Rendering
+					.Compress()
+					.Finish()
+				.Options
+					.SetHeightStyle("fill")
+			;
+
+			TestHelper.ForceRender(accordion);
+
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myAccordion\").accordion({heightStyle: \"fill\"});" + 
 					"});" + 
 				"</script>";
 		  Assert.IsTrue(html.Contains(expected));

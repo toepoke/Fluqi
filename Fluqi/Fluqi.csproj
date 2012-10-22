@@ -70,6 +70,7 @@
     <Compile Include="Core\ControlBase.cs" />
     <Compile Include="Core\BrowserEvent.cs" />
     <Compile Include="Core\ButtonType.cs" />
+    <Compile Include="Core\HeightStyle.cs" />
     <Compile Include="Core\Ease.cs" />
     <Compile Include="Core\Hyperlink.cs" />
     <Compile Include="Core\Speed.cs" />

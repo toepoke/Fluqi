@@ -55,7 +55,7 @@ namespace Fluqi.Models
 				.Finish()
 				.Options
 					.SetCollapsible(true)
-					.SetAutoHeight(false)
+					.SetHeightStyle(Core.HeightStyle.eHeightStyle.Fill)
 				.Finish()
 				.Rendering
 					.SetAutoScript(false)

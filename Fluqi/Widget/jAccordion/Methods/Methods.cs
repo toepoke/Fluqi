@@ -92,7 +92,7 @@ namespace Fluqi.Widget.jAccordion {
 		}
 		
 		/// <summary>
-		/// Recompute heights of the accordion contents when using the fillSpace option and the 
+		/// Recompute heights of the accordion contents when using the heightStyle option and the 
 		/// container height changed. For example, when the container is a resizable, this method 
 		/// should be called by its resize-event.
 		/// </summary>
@@ -199,39 +199,6 @@ namespace Fluqi.Widget.jAccordion {
 		}
 
 		/// <summary>
-		/// Returns [in JavaScript] the current "autoHeight" setting.
-		/// </summary>
-		public void GetAutoHeight() {
-			this.RenderGetOptionCall("autoHeight");
-		}
-
-		/// <summary>
-		/// If set, the highest content part is used as height reference for all other parts. 
-		/// Provides more consistent animations.
-		/// </summary>
-		/// <param name="value">New setting</param>
-		public void SetAutoHeight(bool value) {
-			base.RenderSetOptionCall("autoHeight", value);
-		}
-
-		/// <summary>
-		/// If set, clears height and overflow styles after finishing animations. 
-		/// This enables Accordion to work with dynamic content. Won't work together with autoHeight.
-		/// </summary>
-		public void GetClearStyle() {
-			this.RenderGetOptionCall("clearStyle");
-		}
-
-		/// <summary>
-		/// If set, clears height and overflow styles after finishing animations. 
-		/// This enables Accordion to work with dynamic content. Won't work together with autoHeight.
-		/// </summary>
-		/// <param name="newValue">New value</param>
-		public void SetClearStyle(bool newValue) {
-			this.RenderSetOptionCall("clearStyle", newValue);
-		}
-		
-		/// <summary>
 		/// Returns [in JavaScript] the current "collapsible" setting.
 		/// Whether all the sections can be closed at once. 
 		/// Allows collapsing the active section by the triggering event (click is the default).
@@ -287,18 +254,26 @@ namespace Fluqi.Widget.jAccordion {
 		}
 
 		/// <summary>
-		/// Returns [in JavaScript] the current "fillSpace" setting.
+		/// Returns [in JavaScript] the current "heightStyle" setting.
 		/// </summary>
-		public void GetFillSpace() {
-			this.RenderGetOptionCall("fillSpace");
+		public void GetHeightStyle() {
+			this.RenderGetOptionCall("heightStyle");
 		}
 
 		/// <summary>
-		/// If set, the accordion completely fills the height of the parent element. Overrides autoheight.
+		/// Sets the heightStyle of the accordion
 		/// </summary>
 		/// <param name="newValue">new value</param>
-		public void SetFillSpace(bool newValue) {
-			this.RenderSetOptionCall("fillSpace", newValue);
+		public void SetHeightStyle(Core.HeightStyle.eHeightStyle style) {
+			this.RenderSetOptionCall("heightStyle", Core.HeightStyle.HeightStyleToString(style), true/*inDoubleQuotes*/);
+		}
+		
+		/// <summary>
+		/// Sets the heightStyle of the accordion
+		/// </summary>
+		/// <param name="newValue">new value</param>
+		public void SetHeightStyle(string style) {
+			this.RenderSetOptionCall("heightStyle", style, true/*inDoubleQuotes*/);
 		}
 		
 		/// <summary>

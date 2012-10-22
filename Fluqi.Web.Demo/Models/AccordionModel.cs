@@ -34,9 +34,7 @@ namespace Fluqi.Models
 			this.disabled = false;
 			this.animate = "";
 			this.evt = Core.BrowserEvent.BrowserEventToString(Core.BrowserEvent.eBrowserEvent.Click);
-			this.autoHeight = true;
-			this.clearStyle = false;
-			this.fillSpace = false;
+			this.heightStyle = Core.HeightStyle.HeightStyleToString(Core.HeightStyle.eHeightStyle.Auto);
 			this.headerIconClass = Core.Icons.IconToString( Core.Icons.eIconClass.triangle_1_e );
 			this.activeHeaderIconClass = Core.Icons.IconToString( Core.Icons.eIconClass.triangle_1_s );
 			this.navigation = false;
@@ -48,9 +46,7 @@ namespace Fluqi.Models
 		public bool disabled { get; set; }
 		public string animate { get; set; }
 		public string evt { get; set; }
-		public bool autoHeight { get; set; }
-		public bool clearStyle { get; set; }
-		public bool fillSpace { get; set; }
+		public string heightStyle { get; set; }
 		public string headerIconClass { get; set; }
 		public string activeHeaderIconClass { get; set; }
 		public bool navigation { get; set; }
@@ -68,9 +64,7 @@ namespace Fluqi.Models
 					.SetDisabled(this.disabled)
 					.SetAnimate(this.animate)
 					.SetEvent(this.evt)
-					.SetAutoHeight(this.autoHeight)
-					.SetClearStyle(this.clearStyle)
-					.SetFillSpace(this.fillSpace)
+					.SetHeightStyle(this.heightStyle)
 					.SetIcons(this.headerIconClass, this.activeHeaderIconClass)
 					.SetNavigation(this.navigation)
 					.SetNavigationFilter(this.navigationFilter)
@@ -172,16 +166,13 @@ namespace Fluqi.Models
 				else if (!Helpers.Utils.IsNullEmptyOrDefault(this.animate, Widget.jAccordion.Options.DEFAULT_ANIMATE))
 					sb.AppendTabsFormatLineIf(".SetAnimate(\"{0}\")", this.animate);
 			}
-			if (!this.autoHeight)
-				sb.AppendTabsLineIf(".SetAutoHeight(false)");
-			if (this.clearStyle)
-				sb.AppendTabsLineIf(".SetClearStyle(true)");
 			if (this.collapsible)
 				sb.AppendTabsLineIf(".SetCollapsible(true)");
 			if (!Helpers.Utils.IsNullEmptyOrDefault(this.evt, Widget.jAccordion.Options.DEFAULT_EVENT))
 				sb.AppendTabsFormatLineIf(".SetEvent(\"{0}\")", this.evt);
-			if (this.fillSpace)
-				sb.AppendTabsLineIf(".SetFillSpace(true)");
+			if (!string.IsNullOrEmpty(this.heightStyle)) {
+				sb.AppendTabsFormatLineIf(".SetHeightStyle(\"{0}\")", this.heightStyle);
+			}
 
 
 			// icons have to be set as a pair
@@ -205,7 +196,7 @@ namespace Fluqi.Models
 
 			jStringBuilder sb = new jStringBuilder(true/*includeWhitespace*/, 2);
 			sb.AppendTabsLineIf(".SetCreateEvent(\"return createEvent(event, ui);\")");
-			sb.AppendTabsLineIf(".SetActivateEvent(\"return activateEvent(event, ui);\")");
+			sb.AppendTabsLineIf(".SetactivateEvent(\"return activateEvent(event, ui);\")");
 			sb.AppendTabsLineIf(".SetBeforeActivateEvent(\"return beforeActivateEvent(event, ui);\")");
 
 			return sb.ToString();

@@ -13,7 +13,7 @@
     <RootNamespace>Fluqi.Web.Demo</RootNamespace>
     <AssemblyName>Fluqi.Web.Demo</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <MvcBuildViews>false</MvcBuildViews>
+    <MvcBuildViews>true</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
     <TargetFrameworkProfile />
   </PropertyGroup>

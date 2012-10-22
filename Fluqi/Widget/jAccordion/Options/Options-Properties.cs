@@ -54,18 +54,9 @@ namespace Fluqi.Widget.jAccordion
 		protected internal string Animate { get; set; }
 
 		/// <summary>
-		/// Flags whether the highest content pane is used as a reference for all other
-		/// panes (provides more consistent animations).
-		/// (default is "true")
+		/// Specifies how the panels should expand (default is "auto")
 		/// </summary>
-		protected internal bool AutoHeight { get; set; }
-
-		/// <summary>
-		/// If set, clears height and overflow styles after finishing animations. This enables 
-		/// accordion to work with dynamic content. Won't work together with autoHeight (default is "false").
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-clearStyle for details</remarks>
-		protected internal bool ClearStyle { get; set; }
+		protected internal string HeightStyle { get; set; }
 
 		/// <summary>
 		/// Stores whether the panels are initialised with the collapsible option on or off (default is "false").
@@ -79,12 +70,6 @@ namespace Fluqi.Widget.jAccordion
 		/// <remarks>See http://jqueryui.com/demos/accordion/#option-event for details</remarks>
 		protected internal string Event { get; set; }
 	
-		/// <summary>
-		/// If set, the accordion completely fills the height of the parent element. Overrides autoheight (default is "false").
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-fillSpace for more details</remarks>
-		protected internal bool FillSpace { get; set; }
-		
 		/// <summary>
 		/// Icons to use for non-selected accordion headers icon class.  This equates to the 'header' 
 		/// class.

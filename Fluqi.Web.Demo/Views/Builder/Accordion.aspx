@@ -86,9 +86,7 @@
 		<li><%=Html.LabelFor(vm=>vm.disabled)%>                <%=Html.CheckBoxFor(vm=>vm.disabled, "Disables all panels, changing the opacity and stops the panels from being clickable.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.animate)%>                 <%=Html.TextBoxFor(vm=>vm.animate, "wide", "How panel opening/closing should be animated, for example 'easeOutBounce' (with quotes)")%></li>
 		<li><%=Html.LabelFor(vm=>vm.evt)%>                     <%=Html.DropDownTipListFor(vm=>vm.evt, List.BrowserEventItems(), "Event to use to expand/contract the panels.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.autoHeight)%>              <%=Html.CheckBoxFor(vm=>vm.autoHeight, "Makes all the panels the same height, so the rest of the content on the page stays in a consistent location.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.clearStyle)%>              <%=Html.CheckBoxFor(vm=>vm.clearStyle, "Clears height and overflow styles after finishing animations. This enables accordion to work with dynamic content. Won't work together with autoHeight")%></li>
-		<li><%=Html.LabelFor(vm=>vm.fillSpace)%>               <%=Html.CheckBoxFor(vm=>vm.fillSpace, "Accordion completely fills the height of the parent element. Overrides autoheight.")%></li>
+		<li><%=Html.LabelFor(vm=>vm.heightStyle)%>             <%=Html.DropDownTipListFor(vm=>vm.heightStyle, List.HeightStyleItems(), "Controls the height of the accordion and each panel.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.navigation)%>              <%=Html.CheckBoxFor(vm=>vm.navigation, "Looks for the anchor that matches location.href and activates it. Great for href-based state-saving. Use navigationFilter to implement your own matcher.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.navigationFilter)%>        <%=Html.TextBoxFor(vm=>vm.navigationFilter, "wide", "Overwrite the default location.href-matching with your own matcher.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.activePanel)%>             <%=Html.TextBoxFor(vm=>vm.activePanel, "Pick an alternative selected panel on page load, in this example pick between 0 and 2.")%></li>
@@ -157,7 +155,7 @@
 		<li><button id="enable" title="Enables the accordion.">Enable</button></li>
 		<li><button id="disable" title="Disables the accordion.">Disable</button></li>
 		<li><button id="destroy" title="Returns the accordion back to it's pre-init state.">Destroy</button></li>
-		<li><button id="refresh" title="Recomputes height of the accordion when using the fillSpace option.">Resize</button></li>
+		<li><button id="refresh" title="Recomputes height of the accordion when using the heightStyle option.">Resize</button></li>
 	</ul>
 <%
 	var ac = Html.CreateAccordion("ac");

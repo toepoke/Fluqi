@@ -95,6 +95,26 @@ namespace Fluqi.Web.Demo.Helpers {
 			return new SelectList(animations, "Key", "Value");
 		}
 
+		public static SelectList EasingItems() {
+			List<string> list = Core.Ease.ToList();
+			Dictionary<string, string> easing = 
+				list.ToDictionary(
+					v => (v == "None" ? "" : v.ToLower()), 
+					v => v.ToLower()
+				);
+			return new SelectList(easing, "Key", "Value");
+		}
+
+		public static SelectList HeightStyleItems() {
+			List<string> list = Core.HeightStyle.ToList();
+			Dictionary<string, string> styles = 
+				list.ToDictionary(
+					v => (v == "None" ? "" : v.ToLower()), 
+					v => v.ToLower()
+				);
+			return new SelectList(styles, "Key", "Value");
+		}
+
 	}
 
 }

@@ -59,27 +59,6 @@ namespace Fluqi.Widget.jAccordion
 		}
 
 
-		/// Flags whether the highest content pane is used as a reference for all other
-		/// panes (provides more consistent animations).
-		/// <param name="autoHeight">New setting</param>
-		/// <returns>Options object for chainability</returns>
-		public Options SetAutoHeight(bool autoHeight) {
-			this.AutoHeight = autoHeight;
-			return this;
-		}
-
-
-		/// <summary>
-		/// If set, clears height and overflow styles after finishing animations. This enables 
-		/// accordion to work with dynamic content. Won't work together with autoHeight.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-clearStyle for details</remarks>
-		public Options SetClearStyle(bool clearStyle) {
-			this.ClearStyle = clearStyle;
-			return this;
-		}
-
-
 		/// <summary>
 		/// Sets whether the selected panel is collapsible or not.
 		/// </summary>
@@ -113,13 +92,25 @@ namespace Fluqi.Widget.jAccordion
 			return this.SetEvent(evtName);
 		}
 
+
 		/// <summary>
-		/// If set, the accordion completely fills the height of the parent element. Overrides autoheight.
+		/// Controls the height of the accordion and each panel.  Possible values are "auto", "fill" and "content".
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-fillSpace for more details</remarks>
+		/// <param name="style">Style to use</param>
 		/// <returns>Options object for chainability</returns>
-		public Options SetFillSpace(bool fillSpace) {
-			this.FillSpace = fillSpace;
+		public Options SetHeightStyle(Core.HeightStyle.eHeightStyle style) {
+			this.HeightStyle = Core.HeightStyle.HeightStyleToString(style);
+			return this;
+		}
+
+
+		/// <summary>
+		/// Controls the height of the accordion and each panel.  Possible values are "auto", "fill" and "content".
+		/// </summary>
+		/// <param name="style">Style to use</param>
+		/// <returns>Options object for chainability</returns>
+		public Options SetHeightStyle(string style) {
+			this.HeightStyle = style;
 			return this;
 		}
 

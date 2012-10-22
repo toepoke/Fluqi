@@ -149,69 +149,6 @@ namespace Fluqi.Tests
 		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animate\",false)", html);
 		}
 		
-		[TestMethod]
-		public void Ensure_GetAutoHeight_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
-
-		  accordion.Methods.GetAutoHeight();
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"autoHeight\")", html);
-		}
-
-		[TestMethod]
-		public void Ensure_SetAutoHeight_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
-
-		  accordion.Methods.SetAutoHeight(false);
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"autoHeight\",false)", html);
-		}
-
-		[TestMethod]
-		public void Ensure_GetClearStyle_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
-
-		  accordion.Methods.GetClearStyle();
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"clearStyle\")", html);
-		}
-
-		[TestMethod]
-		public void Ensure_SetClearStyle_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
-
-		  accordion.Methods.SetClearStyle(false);
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"clearStyle\",false)", html);
-		}
 
 		[TestMethod]
 		public void Ensure_GetCollapsible_Renders_Correctly()
@@ -294,35 +231,86 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_GetFillSpace_Renders_Correctly()
+		public void Ensure_GetHeightStyle_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
 			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
 
-		  accordion.Methods.GetFillSpace();
+		  accordion.Methods.GetHeightStyle();
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"fillSpace\")", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"heightStyle\")", html);
 		}
 
 		[TestMethod]
-		public void Ensure_SetFillSpace_Renders_Correctly()
+		public void Ensure_SetHeightStyleEnum_With_Auto_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
 			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
 
-		  accordion.Methods.SetFillSpace(false);
+		  accordion.Methods.SetHeightStyle(HeightStyle.eHeightStyle.Auto);
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"fillSpace\",false)", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"heightStyle\",\"auto\")", html);
+		}
+
+
+		[TestMethod]
+		public void Ensure_SetHeightStyleEnum_WithContent_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
+
+		  accordion.Methods.SetHeightStyle(HeightStyle.eHeightStyle.Content);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"heightStyle\",\"content\")", html);
+		}
+
+
+		[TestMethod]
+		public void Ensure_SetHeightStyleEnum_With_Fill_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
+
+		  accordion.Methods.SetHeightStyle(HeightStyle.eHeightStyle.Fill);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"heightStyle\",\"fill\")", html);
+		}
+
+
+		[TestMethod]
+		public void Ensure_SetHeightStyle_ByString_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
+
+		  accordion.Methods.SetHeightStyle("auto");
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"heightStyle\",\"auto\")", html);
 		}
 
 		[TestMethod]

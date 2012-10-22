@@ -46,6 +46,11 @@ namespace Fluqi.Widget.jAccordion
 		public const string DEFAULT_ACTIVE_HEADER_ICON_CLASS = "ui-icon-triangle-1-s";		
 
 		/// <summary>
+		/// Default Height Style for panels.
+		/// </summary>
+		public const string DEFAULT_HEIGHT_STYLE = "auto";
+
+		/// <summary>
 		/// Default animation for the accordion widget.
 		/// </summary>
 		public const string DEFAULT_ANIMATE = "slide";
@@ -124,11 +129,9 @@ namespace Fluqi.Widget.jAccordion
 		override protected internal void DiscoverOptions(Core.ScriptOptions options) {
 			options.Add(this.Disabled, "disabled", this.Disabled.JsBool());
 			options.Add(!this.IsNullEmptyOrDefault(this.Animate, DEFAULT_ANIMATE), "animate", this.Animate.InDoubleQuotes());
-			options.Add(!this.AutoHeight, "autoHeight", this.AutoHeight.JsBool());
-			options.Add(this.ClearStyle, "clearStyle", this.ClearStyle.JsBool());
 			options.Add(this.Collapsible, "collapsible", this.Collapsible.JsBool());
 			options.Add(!this.IsNullEmptyOrDefault(this.HeadingTag, DEFAULT_HEADING_TAG), "heading", this.HeadingTag.InDoubleQuotes());
-			options.Add(this.FillSpace, "fillSpace", this.FillSpace.JsBool());
+			options.Add(!this.IsNullEmptyOrDefault(this.HeightStyle, DEFAULT_HEIGHT_STYLE), "heightStyle", this.HeightStyle.InDoubleQuotes());
 			options.Add(this.Navigation, "navigation", this.Navigation.JsBool());
 			options.Add(!this.IsNullOrEmpty(this.NavigationFilter),"navigationFilter", this.NavigationFilter);
 			options.Add(!this.IsNullEmptyOrDefault(this.Event, DEFAULT_EVENT), "event", this.Event.InSingleQuotes() );
@@ -158,12 +161,10 @@ namespace Fluqi.Widget.jAccordion
 			this.ContentTag = DEFAULT_CONTENT_TAG;
 			this.HeaderIconClass = DEFAULT_HEADER_ICON_CLASS;
 			this.activeHeaderIconClass = DEFAULT_ACTIVE_HEADER_ICON_CLASS;
-			this.AutoHeight = true;
 			this.Animate = DEFAULT_ANIMATE;
-			this.ClearStyle = false;
 			this.Collapsible = false;
 			this.Event = DEFAULT_EVENT;
-			this.FillSpace = false;
+			this.HeightStyle = DEFAULT_HEIGHT_STYLE;
 			this.Navigation = false;
 			this.NavigationFilter = "";
 			this.Disabled = false;
