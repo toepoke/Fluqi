@@ -84,7 +84,7 @@ namespace Fluqi.Models
 			if (this.showEvents) {
 				ac.Events
 					.SetCreateEvent("return createEvent(event, ui);")
-					.SetChangeEvent("return changeEvent(event, ui);")
+					.SetActivateEvent("return changeEvent(event, ui);")
 					.SetBeforeActivateEvent("return beforeActivateEvent(event, ui);")
 				;
 			}

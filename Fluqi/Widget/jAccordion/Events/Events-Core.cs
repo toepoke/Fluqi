@@ -53,7 +53,7 @@ namespace Fluqi.Widget.jAccordion
 		/// <param name="options">Collection to add the identified options to</param>
 		override protected internal void DiscoverOptions(Core.ScriptOptions options) {
 			options.AddEventHandler("create", "event, ui", this.CreateEvent);
-			options.AddEventHandler("change", "event, ui", this.ChangeEvent);
+			options.AddEventHandler("activate", "event, ui", this.ActivateEvent);
 			options.AddEventHandler("beforeActivate", "event, ui", this.BeforeActivateEvent);
 		}
 
@@ -63,7 +63,7 @@ namespace Fluqi.Widget.jAccordion
 		/// </summary>
 		protected void Reset() {
 			this.CreateEvent = "";
-			this.ChangeEvent = "";
+			this.ActivateEvent = "";
 			this.BeforeActivateEvent = "";
 		}
 

@@ -32,7 +32,7 @@ namespace Fluqi.Tests
 					.Finish()
 				.Events
 					.SetCreateEvent("addToLog('Create event called');")
-					.SetChangeEvent("addToLog('Change event called');")
+					.SetActivateEvent("addToLog('Activate event called');")
 			;
 
 			TestHelper.ForceRender(accordion);
@@ -41,7 +41,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  string expected = "create: function(event, ui) {addToLog('Create event called');},change: function(event, ui) {addToLog('Change event called');}";
+		  string expected = "create: function(event, ui) {addToLog('Create event called');},activate: function(event, ui) {addToLog('Activate event called');}";
 		  Assert.IsTrue(html.Contains(expected));
 		}
 
@@ -72,7 +72,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Accordion_With_Change_EventHandler_Wired_Up_Renders_Correctly()
+		public void Accordion_With_Activate_EventHandler_Wired_Up_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
@@ -84,7 +84,7 @@ namespace Fluqi.Tests
 					.Compress()
 					.Finish()
 				.Events
-					.SetChangeEvent("addToLog('Change event called');")
+					.SetActivateEvent("addToLog('Activate event called');")
 			;
 
 			TestHelper.ForceRender(accordion);
@@ -93,7 +93,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  string expected = "change: function(event, ui) {addToLog('Change event called');}";
+		  string expected = "activate: function(event, ui) {addToLog('Activate event called');}";
 		  Assert.IsTrue(html.Contains(expected));
 		}
 

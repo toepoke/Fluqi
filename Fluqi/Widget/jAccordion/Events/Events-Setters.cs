@@ -32,8 +32,8 @@ namespace Fluqi.Widget.jAccordion
 		/// it is triggered immediately.
 		/// </summary>
 		/// <returns>Events object for chainability</returns>
-		public Events SetChangeEvent(string methodSource) {
-			this.ChangeEvent = methodSource;
+		public Events SetActivateEvent(string methodSource) {
+			this.ActivateEvent = methodSource;
 			return this;	
 		}
 

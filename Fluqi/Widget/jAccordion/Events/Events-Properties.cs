@@ -26,13 +26,19 @@ namespace Fluqi.Widget.jAccordion
 		/// This event is triggered every time the accordion changes. If the accordion is animated, 
 		/// the event will be triggered upon completion of the animation; otherwise, it is triggered immediately.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#event-change for details</remarks>
-		protected internal string ChangeEvent { get; set; }
+		/// <remarks>
+		/// See http://jqueryui.com/demos/accordion/#event-change for details
+		/// Note previous to jQuery 1.9 this was called the "change" event
+		/// </remarks>
+		protected internal string ActivateEvent { get; set; }
 
 		/// <summary>
 		/// This event is triggered every time the accordion starts to change.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/accordion/#event-beforeActivate for details</remarks>
+		/// <remarks>
+		/// See http://api.jqueryui.com/accordion/#event-beforeActivate for details
+		/// Note previous to jQuery 1.9 this was called the "changestart" event
+		/// </remarks>
 		protected internal string BeforeActivateEvent { get; set; }
 
 	} // Options
