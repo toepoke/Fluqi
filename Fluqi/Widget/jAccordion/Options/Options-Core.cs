@@ -48,7 +48,7 @@ namespace Fluqi.Widget.jAccordion
 		/// <summary>
 		/// Default animation for the accordion widget.
 		/// </summary>
-		public const string DEFAULT_ANIMATED = "slide";
+		public const string DEFAULT_ANIMATE = "slide";
 
 		/// <summary>
 		/// Default event for changing panels for the accordion widget.
@@ -123,7 +123,7 @@ namespace Fluqi.Widget.jAccordion
 		/// <param name="options">Collection to add the identified options to</param>
 		override protected internal void DiscoverOptions(Core.ScriptOptions options) {
 			options.Add(this.Disabled, "disabled", this.Disabled.JsBool());
-			options.Add(!this.IsNullEmptyOrDefault(this.Animated, DEFAULT_ANIMATED), "animated", this.Animated.InDoubleQuotes());
+			options.Add(!this.IsNullEmptyOrDefault(this.Animate, DEFAULT_ANIMATE), "animate", this.Animate.InDoubleQuotes());
 			options.Add(!this.AutoHeight, "autoHeight", this.AutoHeight.JsBool());
 			options.Add(this.ClearStyle, "clearStyle", this.ClearStyle.JsBool());
 			options.Add(this.Collapsible, "collapsible", this.Collapsible.JsBool());
@@ -159,7 +159,7 @@ namespace Fluqi.Widget.jAccordion
 			this.HeaderIconClass = DEFAULT_HEADER_ICON_CLASS;
 			this.HeaderSelectedIconClass = DEFAULT_HEADER_SELECTED_ICON_CLASS;
 			this.AutoHeight = true;
-			this.Animated = DEFAULT_ANIMATED;
+			this.Animate = DEFAULT_ANIMATE;
 			this.ClearStyle = false;
 			this.Collapsible = false;
 			this.Event = DEFAULT_EVENT;

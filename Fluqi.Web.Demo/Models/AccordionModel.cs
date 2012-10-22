@@ -32,7 +32,7 @@ namespace Fluqi.Models
 		public AccordionModel() : base() {
 			this.collapsible = false;
 			this.disabled = false;
-			this.animated = "";
+			this.animate = "";
 			this.evt = Core.BrowserEvent.BrowserEventToString(Core.BrowserEvent.eBrowserEvent.Click);
 			this.autoHeight = true;
 			this.clearStyle = false;
@@ -46,7 +46,7 @@ namespace Fluqi.Models
 
 		public bool collapsible { get; set; }
 		public bool disabled { get; set; }
-		public string animated { get; set; }
+		public string animate { get; set; }
 		public string evt { get; set; }
 		public bool autoHeight { get; set; }
 		public bool clearStyle { get; set; }
@@ -66,7 +66,7 @@ namespace Fluqi.Models
 				.Options
 					.SetCollapsible(this.collapsible)
 					.SetDisabled(this.disabled)
-					.SetAnimated(this.animated)
+					.SetAnimate(this.animate)
 					.SetEvent(this.evt)
 					.SetAutoHeight(this.autoHeight)
 					.SetClearStyle(this.clearStyle)
@@ -166,11 +166,11 @@ namespace Fluqi.Models
 
 			if (this.disabled)
 				sb.AppendTabsLineIf(".SetDisabled(true)");
-			if (!string.IsNullOrEmpty(this.animated)) {
-				if (Helpers.Utils.IsBool(this.animated))
-					sb.AppendTabsFormatLineIf(".SetAnimated({0})", bool.Parse(this.animated).JsBool());
-				else if (!Helpers.Utils.IsNullEmptyOrDefault(this.animated, Widget.jAccordion.Options.DEFAULT_ANIMATED))
-					sb.AppendTabsFormatLineIf(".SetAnimated(\"{0}\")", this.animated);
+			if (!string.IsNullOrEmpty(this.animate)) {
+				if (Helpers.Utils.IsBool(this.animate))
+					sb.AppendTabsFormatLineIf(".SetAnimate({0})", bool.Parse(this.animate).JsBool());
+				else if (!Helpers.Utils.IsNullEmptyOrDefault(this.animate, Widget.jAccordion.Options.DEFAULT_ANIMATE))
+					sb.AppendTabsFormatLineIf(".SetAnimate(\"{0}\")", this.animate);
 			}
 			if (!this.autoHeight)
 				sb.AppendTabsLineIf(".SetAutoHeight(false)");

@@ -42,8 +42,8 @@ namespace Fluqi.Widget.jAccordion
 		/// </summary>
 		/// <param name="animated">Animation definition</param>
 		/// <returns>Options object for chainability</returns>
-		public Options SetAnimated(string animated) {
-			this.Animated = animated ?? "";
+		public Options SetAnimate(string animated) {
+			this.Animate = animated ?? "";
 			return this;
 		}
 
@@ -53,9 +53,9 @@ namespace Fluqi.Widget.jAccordion
 		/// </summary>
 		/// <param name="effect">Animation definition</param>
 		/// <returns>Options object for chainability</returns>
-		public Options SetAnimated(Core.Animation.eAnimation effect) {
-			string animationString = Core.Animation.AnimationToString(effect);
-			return this.SetAnimated(animationString);
+		public Options SetAnimate(Core.Ease.eEase effect) {
+			string easeString = Core.Ease.EaseToString(effect);
+			return this.SetAnimate(easeString);
 		}
 
 

@@ -30,7 +30,7 @@ namespace Fluqi.Web.Demo.WebForms {
 					.Add("Button Demo")
 				.Finish()
 				.Options
-					.SetAnimated("bounceslide")
+					.SetAnimate(Core.Ease.eEase.easeInOutBounce)
 				.Finish();
 			return ac;
 		}

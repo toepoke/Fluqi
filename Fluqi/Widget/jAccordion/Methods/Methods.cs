@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Fluqi.Extension;
+using Fluqi.Extension.Helpers;
 
 namespace Fluqi.Widget.jAccordion {
 	
@@ -107,47 +108,94 @@ namespace Fluqi.Widget.jAccordion {
 		/// Gets the animation currently being used.
 		/// </summary>
 		public void GetAnimation() {
-			this.RenderGetOptionCall("animated");
+			this.RenderGetOptionCall("animate");
 		}
 
 		/// <summary>
-		/// Choose your favorite animation, or disable them (set to false). In addition to the default, 
-		/// 'bounceslide' and all defined easing methods are supported ('bounceslide' requires UI Effects Core).
-		/// This entry point does _not_ add quotes to the input value and is indended for passing JavaScript
-		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
+		/// If and how to animate changing panels.
 		/// </summary>
 		/// <param name="value">new animation</param>
-		public void SetAnimationJS(string value) {
-			this.RenderSetOptionCall("animated", value);
+		public void SetAnimateJSON(string value) {
+			this.RenderSetOptionCall("animate", value);
 		}
 
 		/// <summary>
-		/// Choose your favorite animation, or disable them (set to false). In addition to the default, 
-		/// 'bounceslide' and all defined easing methods are supported ('bounceslide' requires UI Effects Core).
+		/// Shows the default animation for <paramref name="duration"/> milli-seconds.
+		/// </summary>
+		/// <param name="duration">Duration (in milli-seconds) of the animate</param>
+		public void SetAnimate(int duration) {
+			this.RenderSetOptionCall("animate", duration.ToString());
+		}
+
+		/// <summary>
+		/// If and how to animate changing panels.
 		/// </summary>
 		/// <param name="value">new animation</param>
 		public void SetAnimation(string value) {
-			this.SetAnimation(value, true/*doubleQuotes*/);
+			this.SetAnimate(value, true/*doubleQuotes*/);
 		}
 
 		/// <summary>
-		/// Choose your favorite animation, or disable them (set to false). In addition to the default, 
-		/// 'bounceslide' and all defined easing methods are supported ('bounceslide' requires UI Effects Core).
+		/// If and how to animate changing panels.
 		/// </summary>
 		/// <param name="value">new animation</param>
 		/// <param name="inDoubleQuotes">
 		/// true - double quotes(")
 		/// false - single quotes (')
 		/// </param>
-		public void SetAnimation(string value, bool inDoubleQuotes) {
-			this.RenderSetOptionCall("animated", value, inDoubleQuotes);
+		public void SetAnimate(string value, bool inDoubleQuotes) {
+			this.RenderSetOptionCall("animate", value, inDoubleQuotes);
+		}
+
+		/// <summary>
+		/// Sets the animation to the given easing method, using the default duration
+		/// </summary>
+		/// <param name="ease">Easing method to use</param>
+		public void SetAnimate(Core.Ease.eEase ease) {
+			this.RenderSetOptionCall("animate", Core.Ease.EaseToString(ease), true/*inDoubleQuotes*/);
+		}
+		
+		/// <summary>
+		/// Sets the animation to the given easing method and duration
+		/// </summary>
+		/// <param name="ease">Easing method to use</param>
+		/// <param name="duration">Duration to use</param>
+		public void SetAnimate(Core.Ease.eEase ease, int duration) {
+			string easeMethod = Core.Ease.EaseToString(ease);
+			string durationStr = duration.ToString();
+
+			this.RenderSetOptionCall("animate", 
+				string.Format("{{easing:\"{0}\",duration:{1}}}", easeMethod, durationStr)
+			);
+		}
+		
+		/// <summary>
+		/// Sets the up and down animations to the given easing method and duration
+		/// </summary>
+		/// <param name="easeUp">Easing method to use (on the up)</param>
+		/// <param name="durationUp">Duration to use (on the up)</param>
+		/// <param name="easeDown">Easing method to use (on the down)</param>
+		/// <param name="durationDown">Duration to use (on the down)</param>
+		public void SetAnimate(Core.Ease.eEase easeUp, int durationUp, Core.Ease.eEase easeDown, int durationDown) {
+			string easeUpMethod = Core.Ease.EaseToString(easeUp);
+			string easeDownMethod = Core.Ease.EaseToString(easeDown);
+			
+			if (easeUpMethod == "") easeUpMethod = Core.Ease.EaseToString(Core.Ease.eEase.linear);
+			if (easeDownMethod == "") easeUpMethod = Core.Ease.EaseToString(Core.Ease.eEase.linear);
+			
+			this.RenderSetOptionCall("animate",
+				string.Format("{{easing:\"{0}\",duration:{1},down:{{easing:\"{2}\",duration:{3}}}}}",
+					easeUpMethod, durationUp.ToString(),
+					easeDownMethod, durationDown.ToString()
+				)
+			);
 		}
 
 		/// <summary>
 		/// Disable animation
 		/// </summary>
 		public void DisableAnimation() {
-			this.RenderSetOptionCall("animated", false );
+			this.RenderSetOptionCall("animate", false );
 		}
 
 		/// <summary>

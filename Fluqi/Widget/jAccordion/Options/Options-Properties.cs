@@ -51,7 +51,7 @@ namespace Fluqi.Widget.jAccordion
 		/// Stores the animation to be used when opening/closing panels (default is "slide")
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/accordion/#option-animated for details</remarks>
-		protected internal string Animated { get; set; }
+		protected internal string Animate { get; set; }
 
 		/// <summary>
 		/// Flags whether the highest content pane is used as a reference for all other

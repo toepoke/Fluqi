@@ -84,7 +84,7 @@
 	<ul>
 		<li><%=Html.LabelFor(vm=>vm.collapsible)%>             <%=Html.CheckBoxFor(vm=>vm.collapsible, "Panels can be collapsed (hiding the content of the panel).")%></li>
 		<li><%=Html.LabelFor(vm=>vm.disabled)%>                <%=Html.CheckBoxFor(vm=>vm.disabled, "Disables all panels, changing the opacity and stops the panels from being clickable.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.animated)%>                <%=Html.TextBoxFor(vm=>vm.animated, "wide", "How panel opening/closing should be animated, for example 'bounceslide' (with quotes)")%></li>
+		<li><%=Html.LabelFor(vm=>vm.animate)%>                 <%=Html.TextBoxFor(vm=>vm.animate, "wide", "How panel opening/closing should be animated, for example 'easeOutBounce' (with quotes)")%></li>
 		<li><%=Html.LabelFor(vm=>vm.evt)%>                     <%=Html.DropDownTipListFor(vm=>vm.evt, List.BrowserEventItems(), "Event to use to expand/contract the panels.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.autoHeight)%>              <%=Html.CheckBoxFor(vm=>vm.autoHeight, "Makes all the panels the same height, so the rest of the content on the page stays in a consistent location.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.clearStyle)%>              <%=Html.CheckBoxFor(vm=>vm.clearStyle, "Clears height and overflow styles after finishing animations. This enables accordion to work with dynamic content. Won't work together with autoHeight")%></li>
@@ -157,7 +157,7 @@
 		<li><button id="enable" title="Enables the accordion.">Enable</button></li>
 		<li><button id="disable" title="Disables the accordion.">Disable</button></li>
 		<li><button id="destroy" title="Returns the accordion back to it's pre-init state.">Destroy</button></li>
-		<li><button id="resize" title="Recomputes height of the accordion when using the fillSpace option.">Resize</button></li>
+		<li><button id="refresh" title="Recomputes height of the accordion when using the fillSpace option.">Resize</button></li>
 	</ul>
 <%
 	var ac = Html.CreateAccordion("ac");
@@ -171,7 +171,7 @@
 		$("#enable").click(function() { <%ac.Methods.Enable();%>; });
 		$("#disable").click(function() { <%ac.Methods.Disable();%>; });
 		$("#destroy").click(function() {  if (confirm("are you sure you want to destroy the accordion?")) <%ac.Methods.Destroy();%>; });
-		$("#resize").click(function() { <%ac.Methods.Resize();%>; });
+		$("#refresh").click(function() { <%ac.Methods.Refresh();%>; });
 	});
 	</script>
 </asp:Content>

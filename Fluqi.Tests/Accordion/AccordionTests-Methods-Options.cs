@@ -19,7 +19,7 @@ namespace Fluqi.Tests
 	{
 
 		[TestMethod]
-		public void Ensure_GetAnimation_Renders_Correctly()
+		public void Ensure_GetAnimate_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
@@ -31,39 +31,106 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animated\")", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animate\")", html);
 		}
 
 		[TestMethod]
-		public void Ensure_SetAnimation_WithoutQuotes_Renders_Correctly()
+		public void Ensure_SetAnimate_WithoutQuotes_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
 			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
 
-		  accordion.Methods.SetAnimationJS("some_javascript");
+		  accordion.Methods.SetAnimateJSON("{ duration:200, down:{ easing: \"easeOutBounce\", duration: 1000} }");
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animated\",some_javascript)", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animate\",{ duration:200, down:{ easing: \"easeOutBounce\", duration: 1000} })", html);
 		}
 
 		[TestMethod]
-		public void Ensure_SetAnimation_WithQuotes_Renders_Correctly()
+		public void Ensure_SetAnimate_WithQuotes_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
 			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
 
-		  accordion.Methods.SetAnimation("myNewAnimation", true);
+		  accordion.Methods.SetAnimate("linear", true);
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animated\",\"myNewAnimation\")", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animate\",\"linear\")", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetAnimate_ByEaseMethod_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
+
+		  accordion.Methods.SetAnimate(Ease.eEase.easeInQuad);
+			
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animate\",\"easeInQuad\")", html);
+		}
+
+
+		[TestMethod]
+		public void Ensure_SetAnimate_ByEaseMethod_And_Duration_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
+
+		  accordion.Methods.SetAnimate(Ease.eEase.easeOutBounce, 1000);
+			
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animate\",{easing:\"easeOutBounce\",duration:1000})", html);
+		}
+
+
+		[TestMethod]
+		public void Ensure_SetAnimate_ByEaseMethod_And_Duration_And_With_Down_Override_Set_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
+
+		  accordion.Methods.SetAnimate(Ease.eEase.easeOutBounce, 1000, Ease.eEase.easeInBounce, 500);
+			
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animate\",{easing:\"easeOutBounce\",duration:1000,down:{easing:\"easeInBounce\",duration:500}})", html);
+		}
+
+
+		[TestMethod]
+		public void Ensure_SetAnimate_With_A_Number_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
+
+		  accordion.Methods.SetAnimate(15);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animate\",15)", html);
 		}
 
 		[TestMethod]
@@ -79,7 +146,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animated\",false)", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"animate\",false)", html);
 		}
 		
 		[TestMethod]

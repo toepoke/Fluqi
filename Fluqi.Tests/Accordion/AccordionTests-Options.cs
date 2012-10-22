@@ -114,7 +114,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_Animated_Option_Is_Added_To_Script_Definition()
+		public void Ensure_Animate_Option_Is_Added_To_Script_Definition()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
@@ -126,7 +126,7 @@ namespace Fluqi.Tests
 					.Compress()
 					.Finish()
 				.Options
-					.SetAnimated("bounceslide")
+					.SetAnimate("bounceslide")
 			;
 
 			TestHelper.ForceRender(accordion);
@@ -138,7 +138,7 @@ namespace Fluqi.Tests
 		  string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myAccordion\").accordion({animated: \"bounceslide\"});" + 
+						"$(\"#myAccordion\").accordion({animate: \"bounceslide\"});" + 
 					"});" + 
 				"</script>";
 		  Assert.IsTrue(html.Contains(expected));
