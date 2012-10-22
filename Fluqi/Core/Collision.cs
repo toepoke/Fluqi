@@ -35,6 +35,13 @@ namespace Fluqi.Core
 			/// fit: so the element keeps in the desired direction, but is re-positioned so it fits.
 			/// </summary>
 			Fit = 3,
+
+			/// <summary>
+			/// flipfit: First applies the flip logic, placing the element on whichever side allows more of the 
+			/// element to be visible. Then the fit logic is applied to ensure as much of the element is visible 
+			/// as possible.
+			/// </summary>
+			FlipFit = 4
 		}
 
 
@@ -48,6 +55,7 @@ namespace Fluqi.Core
 				case eCollision.None: return "none";
 				case eCollision.Fit: return "fit";
 				case eCollision.Flip: return "flip";
+				case eCollision.FlipFit: return "flipfit";
 			}
 
 			throw new ArgumentException(string.Format("Collision has an invalid value ({0}).", collision.ToString()));

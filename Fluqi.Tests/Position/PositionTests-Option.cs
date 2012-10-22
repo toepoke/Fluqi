@@ -572,9 +572,38 @@ namespace Fluqi.Tests
 		}
 
 
+		[TestMethod]
+		public void Ensure_Collision_Option_With_Position_AsFlipFit_Is_Added_To_Script_Definition()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Position pos = TestHelper.SetupSimplePositionObject(resp);
 
+			// only testing raw output
+			pos
+				.Rendering
+					.Compress()
+					.Finish()
+				.Options
+					.SetCollision(Fluqi.Core.Collision.eCollision.FlipFit)
+			;
 
+			TestHelper.ForceRender(pos);
 
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myPosition\").position({collision: \"flipfit\"})" + 
+					";});" + 
+				"</script>";
+
+			Assert.IsTrue(html.Contains(expected));
+		}
+		
 
 		[TestMethod]
 		public void Ensure_Collision_Option_With_Position_Enum_Is_Added_To_Script_Definition()
