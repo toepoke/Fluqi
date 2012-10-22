@@ -95,9 +95,12 @@ namespace Fluqi.Widget.jAccordion {
 		/// container height changed. For example, when the container is a resizable, this method 
 		/// should be called by its resize-event.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#method-resize for details.</remarks>
-		public void Resize() {
-			this.RenderMethodCall("resize");
+		/// <remarks>
+		/// See http://api.jqueryui.com/accordion/#method-refresh for details.
+		/// Note previous to jQuery 1.9 this was called the "resize" method
+		/// </remarks>
+		public void Refresh() {
+			this.RenderMethodCall("refresh");
 		}	
 
 		/// <summary>

@@ -122,13 +122,13 @@ namespace Fluqi.Tests
 		  var resp = new MockWriter();
 			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
 
-		  accordion.Methods.Resize();
+		  accordion.Methods.Refresh();
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"resize\")", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"refresh\")", html);
 		}
 
 		[TestMethod]
