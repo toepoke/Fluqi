@@ -44,7 +44,7 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myPosition\").position({my: \"right\",at: \"top left\"})" + 
+						"$(\"#myPosition\").position({my: \"right\",at: \"left top\"})" + 
 					";});" + 
 				"</script>";
 

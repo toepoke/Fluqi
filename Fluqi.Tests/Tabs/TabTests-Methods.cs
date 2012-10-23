@@ -114,6 +114,23 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
+		public void Ensure_Refresh_Method_Renders_Correctly()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
+
+			tabs.Methods.Refresh();
+
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"refresh\")", html);
+		}
+
+
+		[TestMethod]
 		public void Ensure_AddTab_Method_Renders_Correctly()
 		{
 			// Arrange

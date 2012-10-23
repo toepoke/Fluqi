@@ -128,6 +128,16 @@ namespace Fluqi.Widget.jTab {
 
 
 		/// <summary>
+		/// Process any tabs that were added or removed directly in the DOM and recompute the height of the 
+		/// tab panels. Results depend on the content and the heightStyle option.
+		/// </summary>
+		/// <remarks>See http://api.jqueryui.com/tabs/#method-refresh for details.</remarks>
+		public void Refresh() {
+			this.RenderMethodCall("refresh");
+		}
+
+
+		/// <summary>
 		/// Select a tab, as if it were clicked. The second argument is the zero-based index of the 
 		/// tab to be selected or the id selector of the panel the tab is associated with 
 		/// (the tab's href fragment identifier, e.g. hash, points to the panel's id)
@@ -586,6 +596,7 @@ namespace Fluqi.Widget.jTab {
 		public void SetTabTemplate(string newValue) {
 			this.SetTabTemplate(newValue, true/*doubleQuotes*/);
 		}
+
 	}
 
 }
