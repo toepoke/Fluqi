@@ -18,6 +18,7 @@ namespace Fluqi.Widget.jTab
 	{
 #pragma warning disable 1591
 		public const string DEFAULT_EVENT = "click";
+		public const string DEFAULT_HEIGHT_STYLE = "auto";
 		public const string DEFAULT_ID_PREFIX = "ui-tabs-";
 		public const string DEFAULT_PANEL_TEMPLATE = "<div></div>";
 		public const string DEFAULT_SPINNER = "<em>Loading&#8230;</em>";
@@ -83,6 +84,7 @@ namespace Fluqi.Widget.jTab
 			}
 			options.Add(!this.IsNullOrEmpty(this.Fx), "fx", this.Fx);
 			options.Add(!this.IsNullEmptyOrDefault(this.Evt, DEFAULT_EVENT), "event", this.Evt.InDoubleQuotes());
+			options.Add(!this.IsNullEmptyOrDefault(this.HeightStyle, DEFAULT_HEIGHT_STYLE), "heightStyle", this.HeightStyle.InDoubleQuotes());
 			options.Add(this.Cache, "cache", this.Cache.JsBool() );
 			options.Add(!this.IsNullOrEmpty(this.AjaxOptions), "ajaxOptions", this.AjaxOptions);
 			options.Add(this.Collapsible, "collapsible", this.Collapsible.JsBool() );

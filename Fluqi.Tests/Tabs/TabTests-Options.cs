@@ -179,6 +179,130 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
+		public void Ensure_HeightStyle_Option_ByString_Of_Fill_Is_Added_To_Script_Definition()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
+
+			// only testing raw output
+			tabs
+				.Options
+					.SetHeightStyle("fill")
+					.Finish()
+				.Rendering
+					.Compress();
+
+			TestHelper.ForceRender(tabs);
+
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myTabs\").tabs({heightStyle: \"fill\"})" + 
+					";});" + 
+				"</script>";
+
+			Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Ensure_HeightStyle_Option_ByEnum_Of_Auto_Is_Not_Added_To_Script_Definition_As_Its_The_Default()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
+
+			// only testing raw output
+			tabs
+				.Options
+					.SetHeightStyle(Core.HeightStyle.eHeightStyle.Auto)
+					.Finish()
+				.Rendering
+					.Compress();
+
+			TestHelper.ForceRender(tabs);
+
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myTabs\").tabs()" + 
+					";});" + 
+				"</script>";
+
+			Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Ensure_HeightStyle_Option_ByEnum_Of_Fill_Is_Added_To_Script_Definition()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
+
+			// only testing raw output
+			tabs
+				.Options
+					.SetHeightStyle(Core.HeightStyle.eHeightStyle.Fill)
+					.Finish()
+				.Rendering
+					.Compress();
+
+			TestHelper.ForceRender(tabs);
+
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myTabs\").tabs({heightStyle: \"fill\"})" + 
+					";});" + 
+				"</script>";
+
+			Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Ensure_HeightStyle_Option_ByEnum_Of_Content_Is_Added_To_Script_Definition()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
+
+			// only testing raw output
+			tabs
+				.Options
+					.SetHeightStyle(Core.HeightStyle.eHeightStyle.Content)
+					.Finish()
+				.Rendering
+					.Compress();
+
+			TestHelper.ForceRender(tabs);
+
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myTabs\").tabs({heightStyle: \"content\"})" + 
+					";});" + 
+				"</script>";
+
+			Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
 		public void Ensure_Cookie_Option_With_Number_Expiry_Is_Added_To_Script_Definition()
 		{
 		  // Arrange

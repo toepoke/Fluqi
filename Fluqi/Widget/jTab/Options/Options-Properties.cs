@@ -53,6 +53,12 @@ namespace Fluqi.Widget.jTab
 		protected internal string Evt { get; set; }
 
 		/// <summary>
+		/// Stores the height of the tab panel.  Possible values are "auto", "fill" and "content".
+		/// </summary>
+		/// <remarks>See http://api.jqueryui.com/tabs/#option-heightStyle for details</remarks>
+		protected internal string HeightStyle { get; set; }
+
+		/// <summary>
 		/// Stores the animation to be used when opening/closing tabs (default is "").
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/tabs/#option-fx for details</remarks>

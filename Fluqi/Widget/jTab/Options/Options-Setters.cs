@@ -110,6 +110,31 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
+		/// Controls the height of the accordion and each panel.  Possible values are "auto", "fill" and "content".
+		/// </summary>
+		/// <param name="style">Style to use</param>
+		/// <returns>Options object for chainability</returns>
+		public Options SetHeightStyle(Core.HeightStyle.eHeightStyle style) {
+			return this.SetHeightStyle( Core.HeightStyle.HeightStyleToString(style) );
+		}
+
+
+		/// <summary>
+		/// Controls the height of the accordion and each panel.  Possible values are "auto", "fill" and "content".
+		/// </summary>
+		/// <param name="style">Style to use</param>
+		/// <returns>Options object for chainability</returns>
+		public Options SetHeightStyle(string style) {
+			this.HeightStyle = style ?? "";
+
+			// we'll be adding our own quotes when we render
+			this.HeightStyle = this.HeightStyle.Trim(new char[] { '\"', '\'' });
+
+			return this;
+		}
+
+
+		/// <summary>
 		/// Sets the tab transition effect.  As this can have multiple arguments the
 		/// parameter is specified as JSON, so for example: 
 		///		myTabs.Options.SetEffect("{ opacity: 'toggle' }")

@@ -384,6 +384,30 @@ namespace Fluqi.Widget.jTab {
 		}
 
 		/// <summary>
+		/// Controls the height of the accordion and each panel.  Possible values are "auto", "fill" and "content".
+		/// </summary>
+		public void GetHeightStyle() {
+			this.RenderGetOptionCall("heightStyle");
+		}
+
+		/// <summary>
+		/// Controls the height of the accordion and each panel.  Possible values are "auto", "fill" and "content".
+		/// </summary>
+		/// <param name="style">Style to use</param>
+		public void SetHeightStyle(Core.HeightStyle.eHeightStyle style) {
+			string styleString = Core.HeightStyle.HeightStyleToString(style);
+			this.SetHeightStyle(styleString);
+		}
+
+		/// <summary>
+		/// Controls the height of the accordion and each panel.  Possible values are "auto", "fill" and "content".
+		/// </summary>
+		/// <param name="style">Style to use</param>
+		public void SetHeightStyle(string hs) {
+			this.RenderSetOptionCall("heightStyle", hs, true/*inDoubleQuotes*/);
+		}
+
+		/// <summary>
 		/// Returns [in JavaScript] the current "effect" setting.
 		/// </summary>
 		public void GetEffect() {

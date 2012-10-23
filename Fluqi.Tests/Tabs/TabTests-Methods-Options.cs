@@ -82,6 +82,54 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
+		public void Ensure_GetHeightStyle_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.GetHeightStyle();
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"heightStyle\")", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetHeightStyle_ByEnum_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetHeightStyle(Core.HeightStyle.eHeightStyle.Fill);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"heightStyle\",\"fill\")", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetHeightStyle_ByString_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetHeightStyle("fill");
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"heightStyle\",\"fill\")", html);
+		}
+
+		[TestMethod]
 		public void Ensure_GetCoookie_Renders_Correctly()
 		{
 		  // Arrange
