@@ -79,7 +79,6 @@ namespace Fluqi.Utilities.jPosition
 				IsChild = asChild
 			};
 			Core.ScriptOptions posOptions = posParent.ChildOptions;
-			string offsets = "";
 			string collisions = Core.Collision.CollisionsToString(this.Collision);
 
 			posOptions.Add(!string.IsNullOrEmpty(this.My), "my", this.My.ToLower().InDoubleQuotes());
@@ -92,13 +91,6 @@ namespace Fluqi.Utilities.jPosition
 				posOptions.Add("within", this.Within.InDoubleQuotes());
 			else 
 				posOptions.Add(!this.IsNullOrEmpty(this.Within), "within", this.Within);
-			if (this.Offset.Count > 0) {
-				if (this.Offset[0] != 0) offsets += this.Offset[0];
-				if (this.Offset.Count > 1 && this.Offset[1] != 0)
-					offsets += " " + this.Offset[1];
-				offsets = offsets.Trim();
-				posOptions.Add(!string.IsNullOrEmpty(offsets), "offset", offsets.InDoubleQuotes());
-			}
 			posOptions.Add(!string.IsNullOrEmpty(collisions), "collision", collisions.InDoubleQuotes());
 			posOptions.Add(!this.IsNullOrEmpty(this.UsingFunction), "using", this.UsingFunction);
 
@@ -115,7 +107,6 @@ namespace Fluqi.Utilities.jPosition
 			this.My = "";
 			this.At = "";
 			this.Of = "";
-			this.Offset = new List<int>();
 			this.Collision = new List<Core.Collision.eCollision>();
 		}
 

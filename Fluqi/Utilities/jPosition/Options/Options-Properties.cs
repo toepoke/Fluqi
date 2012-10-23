@@ -56,13 +56,6 @@ namespace Fluqi.Utilities.jPosition
 		protected internal string Within { get; set; }
 
 		/// <summary>
-		/// Add these left-top values to the calculated position, eg. "50 50" (left top) A 
-		/// single value such as "50" will apply to both.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-offset for details</remarks>
-		protected internal List<int> Offset { get; set; }
-
-		/// <summary>
 		/// When the positioned element overflows the window in some direction, move it to an 
 		/// alternative position. Similar to my and at, this accepts a single value or a pair for 
 		/// horizontal/vertical, eg. "flip", "fit", "fit flip", "fit none". 

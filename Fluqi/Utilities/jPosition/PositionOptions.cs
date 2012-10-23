@@ -160,31 +160,9 @@ namespace Fluqi.Utilities.jPosition {
 		/// will be used. If you provide a jQuery object, the first element will be used. If you 
 		/// provide an event object, the pageX and pageY properties will be used. Example: "#top-menu"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-offset for details</remarks>
+		/// <remarks>See http://jqueryui.com/demos/position/#option-of for details</remarks>
 		public PositionOptions SetOf(string of) {
 			Options.SetOf(of);
-			return this;
-		}
-
-
-		/// <summary>
-		/// Add these left-top values to the calculated position, eg. "50 50" (left top) 
-		/// A single value such as "50" will apply to both.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-offset for details</remarks>
-		public PositionOptions SetOffset(int both) {
-			Options.SetOffset(both);
-			return this;
-		}
-
-
-		/// <summary>
-		/// Add these left-top values to the calculated position, eg. "50 50" (left top) 
-		/// A single value such as "50" will apply to both.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-offset for details</remarks>
-		public PositionOptions SetOffset(int left, int top) {
-			Options.SetOffset(left, top);
 			return this;
 		}
 

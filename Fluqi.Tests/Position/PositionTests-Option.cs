@@ -31,7 +31,7 @@ namespace Fluqi.Tests
 					.Compress()
 					.Finish()
 				.Options
-					.SetOffset(10, 20)
+					.SetAt("left top")					
 					.SetMy(Fluqi.Core.Position.ePosition.Right)
 			;
 
@@ -44,7 +44,7 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myPosition\").position({my: \"right\",offset: \"10 20\"})" + 
+						"$(\"#myPosition\").position({my: \"right\",at: \"top left\"})" + 
 					";});" + 
 				"</script>";
 
@@ -570,71 +570,6 @@ namespace Fluqi.Tests
 
 			Assert.IsTrue(html.Contains(expected));
 		}
-
-		[TestMethod]
-		public void Ensure_Offset_Option_With_One_Param_Is_Added_To_Script_Definition_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Position pos = TestHelper.SetupSimplePositionObject(resp);
-
-			// only testing raw output
-			pos
-				.Rendering
-					.Compress()
-					.Finish()
-				.Options
-					.SetOffset(12)
-			;
-
-			TestHelper.ForceRender(pos);
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-			string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myPosition\").position({offset: \"12\"})" + 
-					";});" + 
-				"</script>";
-
-			Assert.IsTrue(html.Contains(expected));
-		}
-
-		[TestMethod]
-		public void Ensure_Offset_Option_With_Two_Params_Is_Added_To_Script_Definition_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Position pos = TestHelper.SetupSimplePositionObject(resp);
-
-			// only testing raw output
-			pos
-				.Rendering
-					.Compress()
-					.Finish()
-				.Options
-					.SetOffset(12, 50)
-			;
-
-			TestHelper.ForceRender(pos);
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-			string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myPosition\").position({offset: \"12 50\"})" + 
-					";});" + 
-				"</script>";
-
-			Assert.IsTrue(html.Contains(expected));
-		}
-
 
 		[TestMethod]
 		public void Ensure_Collision_Option_With_Position_AsFlipFit_Is_Added_To_Script_Definition()

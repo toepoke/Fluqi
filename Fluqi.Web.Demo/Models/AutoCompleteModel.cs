@@ -59,8 +59,6 @@ namespace Fluqi.Models
 		public string At2 { get; set; }
 		public string Collision1 { get; set; }
 		public string Collision2 { get; set; }
-		public int Offset1 { get; set; }
-		public int Offset2 { get; set; }
 
 		public bool useRemoteSource { get; set; }
 		public bool useJSCallBack { get; set; }
@@ -80,7 +78,6 @@ namespace Fluqi.Models
 						.SetAt(this.At1, this.At2)
 						.SetMy(this.My1, this.My2)
 						.SetCollision(this.Collision1, this.Collision2)
-						.SetOffset(this.Offset1, this.Offset2)
 					.Finish()				
 				.Finish()
 			;
@@ -194,14 +191,6 @@ namespace Fluqi.Models
 				sb.AppendTabsFormatLineIf(".SetMy(\"{0}\")", this.My1);
 			} else if (!string.IsNullOrEmpty(this.My2)) {
 				sb.AppendTabsFormatLineIf(".SetMy(\"{0}\")", this.My2);
-			}
-
-			if (this.Offset1 != 0 && this.Offset2 != 0) {
-				sb.AppendTabsFormatLineIf(".SetOffset({0}, {1})", this.Offset1, this.Offset2);				
-			} else if (this.Offset1 != 0) {
-				sb.AppendTabsFormatLineIf(".SetOffset({0})", this.Offset1);				
-			} else if (this.Offset2 != 0) {
-				sb.AppendTabsFormatLineIf(".SetOffset({0})", this.Offset2);				
 			}
 
 			if (!Utils.IsNullEmptyOrDefault(this.Collision1, "none") && !Utils.IsNullEmptyOrDefault(this.Collision2, "none")) {

@@ -492,39 +492,6 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void AutoComplete_Option_Position_With_Offset_Set_Renders_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			AutoComplete ac = TestHelper.SetupSimpleAutoCompleteObject(resp);
-
-			// only testing raw output
-			ac
-				.Options
-					.Position
-						.SetOffset(25, 75)
-					.Finish()
-				.Finish()
-				.Rendering
-					.Compress()
-				.ShowCSS()
-			;
-
-			// Act - Force output we'd see on the web page
-			ac.Render();
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  string expected = 
-		    "<script type=\"text/javascript\">" + 
-		      "$(document).ready( function() {" + 
-		        "$(\"#ac\").autocomplete({source: ['c++', 'java', 'php'],position: {offset: \"25 75\"}})" + 
-		      ";});" + 
-		    "</script>";
-		  Assert.IsTrue(html.Contains(expected));
-		}
-
-		[TestMethod]
 		public void AutoComplete_Option_Position_With_My_And_At_Set_Renders_Correctly()
 		{
 			// Arrange

@@ -23,7 +23,6 @@
 		<li><%=Html.LabelFor(vm=>vm.minLength) %><%=Html.TextBoxFor(vm=>vm.minLength, "Number of characters that must be typed before the menu of matches appears.")%></li>
 		<li><%=Html.Label("Position.at")       %><%=Html.DropDownTipListFor(vm=>vm.At1, List.DirectionItems(), positionTooltip)%> <%=Html.DropDownTipListFor(vm=>vm.At2, List.DirectionItems(), positionTooltip)%></li>
 		<li><%=Html.Label("Position.my")       %><%=Html.DropDownTipListFor(vm=>vm.My1, List.DirectionItems(), positionTooltip)%> <%=Html.DropDownTipListFor(vm=>vm.My2, List.DirectionItems(), positionTooltip)%></li>
-		<li><%=Html.Label("Position.offset")   %><%=Html.TextBoxFor(vm=>vm.Offset1, positionTooltip)%> <%=Html.TextBoxFor(vm=>vm.Offset2, positionTooltip)%></li>
 		<li><%=Html.Label("Position.collision")%><%=Html.DropDownTipListFor(vm=>vm.Collision1, List.CollisionItems(), positionTooltip)%> <%=Html.DropDownTipListFor(vm=>vm.Collision2, List.CollisionItems(), positionTooltip)%></li>
 	</ul>
 

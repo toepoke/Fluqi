@@ -143,7 +143,7 @@ namespace Fluqi.Utilities.jPosition
 		/// will be used. If you provide a jQuery object, the first element will be used. If you 
 		/// provide an event object, the pageX and pageY properties will be used. Example: "#top-menu"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-offset for details</remarks>
+		/// <remarks>See http://jqueryui.com/demos/position/#option-of for details</remarks>
 		public Options SetOf(string of) {
 			this.Of = of;
 			return this;
@@ -157,33 +157,6 @@ namespace Fluqi.Utilities.jPosition
 		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetWithin(string within) {
 			this.Within = within;
-			return this;
-		}
-
-
-		/// <summary>
-		/// Add these left-top values to the calculated position, eg. "50 50" (left top) 
-		/// A single value such as "50" will apply to both.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-offset for details</remarks>
-		public Options SetOffset(int both) {
-			this.Offset.Clear();
-			// just add the once to maintain the interface to jQuery
-			// jQuery will actually double them up for us
-			this.Offset.Add(both);
-			return this;
-		}
-
-
-		/// <summary>
-		/// Add these left-top values to the calculated position, eg. "50 50" (left top) 
-		/// A single value such as "50" will apply to both.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-offset for details</remarks>
-		public Options SetOffset(int left, int top) {
-			this.Offset.Clear();
-			this.Offset.Add(left);
-			this.Offset.Add(top);
 			return this;
 		}
 
