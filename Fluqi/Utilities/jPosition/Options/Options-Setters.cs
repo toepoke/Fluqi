@@ -29,8 +29,7 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
 		public Options SetMy(Core.Position.ePosition pos) {
-			this.My.Clear();
-			this.My.Add(pos);
+			this.My = Core.Position.PositionToString(pos);
 			return this;
 		}
 
@@ -44,9 +43,9 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
 		public Options SetMy(Core.Position.ePosition pos1, Core.Position.ePosition pos2) {
-			this.My.Clear();
-			this.My.Add(pos1);
-			this.My.Add(pos2);
+			string pos1String = Core.Position.PositionToString(pos1);
+			string pos2String = Core.Position.PositionToString(pos2);
+			this.My = string.Format("{0} {1}", pos1String, pos2String);
 			return this;
 		}
 
@@ -60,8 +59,9 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
 		public Options SetMy(string pos) {
-			this.My.Clear();
-			this.My.Add( Core.Position.StringToPosition(pos) );
+			//this.My.Clear();
+			//this.My.Add( Core.Position.StringToPosition(pos) );
+			this.My = pos;
 			return this;
 		}
 
@@ -75,9 +75,7 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
 		public Options SetMy(string pos1, string pos2) {
-			this.My.Clear();
-			this.My.Add( Core.Position.StringToPosition(pos1) );
-			this.My.Add( Core.Position.StringToPosition(pos2) );
+			this.My = string.Format("{0} {1}", pos1, pos2);
 			return this;
 		}
 

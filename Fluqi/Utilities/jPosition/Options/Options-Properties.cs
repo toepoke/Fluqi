@@ -27,7 +27,8 @@ namespace Fluqi.Utilities.jPosition
 		/// Example: "left top" or "center center"
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
-		protected internal List<Core.Position.ePosition> My { get; set; }
+		//protected internal List<Core.Position.ePosition> My { get; set; }
+		protected internal string My { get; set; }
 
 		/// <summary>
 		/// Defines which position on the target element to align the positioned element 
@@ -38,6 +39,7 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/position/#option-at for details</remarks>
 		protected internal List<Core.Position.ePosition> At { get; set; }
+		protected internal string AtString { get; set; }
 
 		/// <summary>
 		/// Element to position against. If you provide a selector, the first matching element 

@@ -79,12 +79,11 @@ namespace Fluqi.Utilities.jPosition
 				IsChild = asChild
 			};
 			Core.ScriptOptions posOptions = posParent.ChildOptions;
-			string myPositions = Core.Position.PositionsToString(this.My);
 			string atPositions = Core.Position.PositionsToString(this.At);
 			string offsets = "";
 			string collisions = Core.Collision.CollisionsToString(this.Collision);
 
-			posOptions.Add(!string.IsNullOrEmpty(myPositions), "my", myPositions.InDoubleQuotes());
+			posOptions.Add(!string.IsNullOrEmpty(this.My), "my", this.My.ToLower().InDoubleQuotes());
 			posOptions.Add(!string.IsNullOrEmpty(atPositions), "at", atPositions.InDoubleQuotes());
 			if (this.IsSelector(this.Of)) 
 				posOptions.Add("of", this.Of.InDoubleQuotes());
@@ -114,7 +113,7 @@ namespace Fluqi.Utilities.jPosition
 		/// defaults as documented by jQuery UI library
 		/// </summary>
 		protected void Reset() {
-			this.My = new List<Core.Position.ePosition>();
+			this.My = "";
 			this.At = new List<Core.Position.ePosition>();
 			this.Of = "";
 			this.Offset = new List<int>();

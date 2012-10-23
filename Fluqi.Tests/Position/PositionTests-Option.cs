@@ -200,6 +200,38 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
+		public void Ensure_My_Option_With_Percentage_Offset_Is_Added_To_Script_Definition()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Position pos = TestHelper.SetupSimplePositionObject(resp);
+
+			// only testing raw output
+			pos
+				.Rendering
+					.Compress()
+					.Finish()
+				.Options
+					.SetMy("left+10%")
+			;
+
+			TestHelper.ForceRender(pos);
+
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myPosition\").position({my: \"left+10%\"})" + 
+					";});" + 
+				"</script>";
+
+			Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
 		public void Ensure_My_Option_With_Two_Strings_Is_Added_To_Script_Definition()
 		{
 			// Arrange
