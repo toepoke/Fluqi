@@ -2,11 +2,9 @@
 function createEvent(event, ui) {
 	addToLog("CREATE EVENT"
 		+ "<br/>- " + buildKeyValue("event.type", event.type, 28)
-		+ "<br/>- " + buildKeyValue("ui.panel.text", ui.panel.text(), 20)
+		+ "<br/>- " + buildKeyValue("ui.tab", ui.tab[0].innerText, 20)
+		+ "<br/>- " + buildKeyValue("ui.panel", ui.panel.text(), 20)
 	);
-
-	// Note that there should also be "ui.header" too (according to the upgrade log)
-	// however at time of writing this isn't present.
 }
 
 function selectEvent(event, ui) {
