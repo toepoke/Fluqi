@@ -89,8 +89,7 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
 		public Options SetAt(Core.Position.ePosition pos) {
-			this.At.Clear();
-			this.At.Add(pos);
+			this.At = Core.Position.PositionToString(pos);
 			return this;
 		}
 
@@ -104,9 +103,9 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
 		public Options SetAt(Core.Position.ePosition pos1, Core.Position.ePosition pos2) {
-			this.At.Clear();
-			this.At.Add(pos1);
-			this.At.Add(pos2);
+			string pos1String = Core.Position.PositionToString(pos1);
+			string pos2String = Core.Position.PositionToString(pos2);
+			this.At = string.Format("{0} {1}", pos1String, pos2String);
 			return this;
 		}
 
@@ -120,8 +119,7 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
 		public Options SetAt(string pos) {
-			this.At.Clear();
-			this.At.Add( Core.Position.StringToPosition(pos) );
+			this.At = pos;
 			return this;
 		}
 
@@ -135,9 +133,7 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
 		public Options SetAt(string pos1, string pos2) {
-			this.At.Clear();
-			this.At.Add( Core.Position.StringToPosition(pos1) );
-			this.At.Add( Core.Position.StringToPosition(pos2) );
+			this.At = string.Format("{0} {1}", pos1, pos2);
 			return this;
 		}
 

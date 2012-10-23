@@ -79,12 +79,11 @@ namespace Fluqi.Utilities.jPosition
 				IsChild = asChild
 			};
 			Core.ScriptOptions posOptions = posParent.ChildOptions;
-			string atPositions = Core.Position.PositionsToString(this.At);
 			string offsets = "";
 			string collisions = Core.Collision.CollisionsToString(this.Collision);
 
 			posOptions.Add(!string.IsNullOrEmpty(this.My), "my", this.My.ToLower().InDoubleQuotes());
-			posOptions.Add(!string.IsNullOrEmpty(atPositions), "at", atPositions.InDoubleQuotes());
+			posOptions.Add(!string.IsNullOrEmpty(this.At), "at", this.At.ToLower().InDoubleQuotes());
 			if (this.IsSelector(this.Of)) 
 				posOptions.Add("of", this.Of.InDoubleQuotes());
 			else 
@@ -114,7 +113,7 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		protected void Reset() {
 			this.My = "";
-			this.At = new List<Core.Position.ePosition>();
+			this.At = "";
 			this.Of = "";
 			this.Offset = new List<int>();
 			this.Collision = new List<Core.Collision.eCollision>();
