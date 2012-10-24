@@ -220,15 +220,6 @@ namespace Fluqi.Widget.jTab {
 		
 
 		/// <summary>
-		/// Terminate all running tab ajax requests and animations.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-abort for details.</remarks>
-		public void Abort() {
-			this.RenderMethodCall("abort");
-		}	
-
-
-		/// <summary>
 		/// Set up an automatic rotation through tabs of a tab pane. 
 		/// The second argument is an amount of time in milliseconds until the next tab in the cycle gets activated. 
 		///		Use 0 or null to stop the rotation. 

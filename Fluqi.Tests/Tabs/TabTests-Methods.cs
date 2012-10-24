@@ -259,22 +259,6 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_Abort_Method_Renders_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			tabs.Methods.Abort();
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"abort\")", html);
-		}
-
-		[TestMethod]
 		public void Ensure_StartRotation_Method_Renders_Correctly()
 		{
 			// Arrange
