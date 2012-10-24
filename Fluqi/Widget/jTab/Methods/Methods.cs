@@ -386,49 +386,6 @@ namespace Fluqi.Widget.jTab {
 		}
 		
 		/// <summary>
-		/// Returns [in JavaScript] the current "idPrefix" setting.
-		/// </summary>
-		public void GetIdPrefix() {
-			this.RenderGetOptionCall("idPrefix");
-		}
-
-		/// <summary>
-		/// If the remote tab, its anchor element that is, has no title attribute to generate an id 
-		/// from, an id/fragment identifier is created from this prefix and a unique id returned 
-		/// by $.data(el), for example "ui-tabs-54".
-		/// This entry point does _not_ add quotes to the input value and is indended for passing JavaScript
-		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
-		/// </summary>
-		/// <param name="newValue">New idPrefix setting</param>
-		public void SetIdPrefixJS(string newValue) {
-			this.RenderSetOptionCall("idPrefix", newValue);
-		}
-
-		/// <summary>
-		/// If the remote tab, its anchor element that is, has no title attribute to generate an id 
-		/// from, an id/fragment identifier is created from this prefix and a unique id returned 
-		/// by $.data(el), for example "ui-tabs-54".
-		/// </summary>
-		/// <param name="newValue">New idPrefix setting</param>
-		/// <param name="inDoubleQuotes">
-		/// true  - double quotes (")
-		/// false - single quotes (')
-		/// </param>
-		public void SetIdPrefix(string newValue, bool inDoubleQuotes) {
-			this.RenderSetOptionCall("idPrefix", newValue, inDoubleQuotes);
-		}
-
-		/// <summary>
-		/// If the remote tab, its anchor element that is, has no title attribute to generate an id 
-		/// from, an id/fragment identifier is created from this prefix and a unique id returned 
-		/// by $.data(el), for example "ui-tabs-54".
-		/// </summary>
-		/// <param name="newValue">New idPrefix setting</param>
-		public void SetIdPrefix(string newValue) {
-			this.SetIdPrefix(newValue, true/*doubleQuotes*/);
-		}
-
-		/// <summary>
 		/// Returns [in JavaScript] the current "panelTemplate" setting.
 		/// </summary>
 		public void GetPanelTemplate() {

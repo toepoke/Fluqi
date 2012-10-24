@@ -610,54 +610,6 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_GetIdPrefix_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.GetIdPrefix();
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"idPrefix\")", html);
-		}
-
-		[TestMethod]
-		public void Ensure_SetIdPrefix_Without_Quotes_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.SetIdPrefixJS("some_javascript_variable");
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"idPrefix\",some_javascript_variable)", html);
-		}
-
-		[TestMethod]
-		public void Ensure_SetIdPrefix_With_Quotes_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.SetIdPrefix("ui-tabs-new");
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"idPrefix\",\"ui-tabs-new\")", html);
-		}
-
-		[TestMethod]
 		public void Ensure_GetPanelTemplate_Renders_Correctly()
 		{
 		  // Arrange

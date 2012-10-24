@@ -27,8 +27,8 @@ namespace Fluqi.Tests
 			// only testing raw output
 			tabs
 				.Options
-					.SetIdPrefix("my-tabs-prefix")
 					.SetCollapsible(true)
+					.SetHeightStyle(Core.HeightStyle.eHeightStyle.Fill)
 				.Finish()
 				.Rendering
 					.Compress();
@@ -42,7 +42,7 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs({collapsible: true,idPrefix: \"my-tabs-prefix\"})" + 
+						"$(\"#myTabs\").tabs({heightStyle: \"fill\",collapsible: true})" + 
 					";});" + 
 				"</script>";
 
@@ -813,68 +813,6 @@ namespace Fluqi.Tests
 					.Finish()
 				.Rendering
 				.Compress();
-
-			TestHelper.ForceRender(tabs);
-			
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-			string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs()" + 
-					";});" + 
-				"</script>";
-			Assert.IsTrue(html.Contains(expected));
-		}		
-
-
-		[TestMethod]
-		public void Ensure_IdPrefix_Option_Is_Added_To_Script_Definition()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			// only testing raw output
-			tabs
-				.Options
-					.SetIdPrefix("ui-tabs-primary")
-				.Finish()
-				.Rendering
-					.Compress();
-
-			TestHelper.ForceRender(tabs);
-			
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-			string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs({idPrefix: \"ui-tabs-primary\"})" + 
-					";});" + 
-				"</script>";
-			Assert.IsTrue(html.Contains(expected));
-		}		
-
-
-		[TestMethod]
-		public void Ensure_IdPrefix_Default_Option_Is_Not_Rendered()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			// only testing raw output
-			tabs
-				.Options	
-					.SetIdPrefix(Options.DEFAULT_ID_PREFIX)
-					.Finish()
-				.Rendering
-					.Compress();
 
 			TestHelper.ForceRender(tabs);
 			

@@ -61,14 +61,6 @@ namespace Fluqi.Widget.jTab
 		protected internal string HeightStyle { get; set; }
 
 		/// <summary>
-		/// If the remote tab, its anchor element that is, has no title attribute to generate an 
-		/// id from, an id/fragment identifier is created from this prefix and a unique id returned 
-		/// by $.data(el), for example "ui-tabs-54".
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#option-idPrefix for details</remarks>
-		protected internal string IdPrefix { get; set; }
-
-		/// <summary>
 		/// HTML template from which a new tab panel is created in case of adding a tab with the 
 		/// add method or when creating a panel for a remote tab on the fly.
 		/// </summary>

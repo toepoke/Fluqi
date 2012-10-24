@@ -112,18 +112,6 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
-		/// If the remote tab, its anchor element that is, has no title attribute to generate an 
-		/// id from, an id/fragment identifier is created from this prefix and a unique id returned 
-		/// by $.data(el), for example "ui-tabs-54".
-		/// </summary>
-		/// <returns>Options object for chainability</returns>
-		public Options SetIdPrefix(string idPrefix) {
-			this.IdPrefix = idPrefix ?? "";
-			return this;
-		}
-
-
-		/// <summary>
 		/// HTML template from which a new tab panel is created in case of adding a tab with the 
 		/// add method or when creating a panel for a remote tab on the fly.
 		/// </summary>
