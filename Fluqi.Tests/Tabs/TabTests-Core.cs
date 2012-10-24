@@ -78,7 +78,7 @@ namespace Fluqi.Tests
 			Assert.AreEqual(1, Utils.NumberOfMatches(html, "<ul class=\"ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all\">") );
 
 			// Should be 3 of these (one for each LI header, but first one is selected)
-			Assert.AreEqual(1, Utils.NumberOfMatches(html, "<li class=\"ui-state-default ui-corner-top ui-tabs-selected ui-state-active\">") );
+			Assert.AreEqual(1, Utils.NumberOfMatches(html, "<li class=\"ui-state-default ui-corner-top ui-tabs-active ui-state-active\">") );
 			Assert.AreEqual(2, Utils.NumberOfMatches(html, "<li class=\"ui-state-default ui-corner-top\">") );
 
 			// Should be 3 of these (one for each content pane)

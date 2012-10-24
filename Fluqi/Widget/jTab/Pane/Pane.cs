@@ -163,7 +163,7 @@ namespace Fluqi.Widget.jTab
 
 			if (renderCss) {
 				if (this.IsActive)
-					selected = " ui-tabs-selected ui-state-active";
+					selected = " ui-tabs-active ui-state-active";
 
 				sb.AppendTabsFormatLineIf("<li class=\"ui-state-default ui-corner-top{0}\">", selected);
 			} else {

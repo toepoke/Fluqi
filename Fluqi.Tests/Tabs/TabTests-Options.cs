@@ -73,7 +73,7 @@ namespace Fluqi.Tests
 
 			// Assert
 			// Check styling is correct
-			Assert.IsTrue(html.Contains("<li class=\"ui-state-default ui-corner-top ui-tabs-selected ui-state-active\">") );
+			Assert.IsTrue(html.Contains("<li class=\"ui-state-default ui-corner-top ui-tabs-active ui-state-active\">") );
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
