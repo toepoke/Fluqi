@@ -127,7 +127,6 @@
 		<li><button id="enableAll" title="Enables the tabs control (note this does not work - see jQuery UI issue #4386 http://bugs.jqueryui.com/ticket/4386) ">Enable All</button></li>
 		<li><button id="addTab" title="Adds a tab (note the 'beforeLoad' event won't fire until you click on the tab itself).">Add [dynamic] Tab</button></li>
 		<li><button id="removeTab" title="Removes the first tab.">Remove (1st) Tab</button></li>
-		<li><button id="length" title="Gets the number of tabs.">Length</button></li>
 		<li><button id="startRotate" title="Starts automatic rotation of tabs.">Start Rotate</button></li>
 		<li><button id="stopRotate" title="Stops automatic rotation of tabs.">Stop Rotate</button></li>
 		<li><button id="widget" title="Shows the HTML for the .ui-tabs element.">Widget</button></li>
@@ -166,7 +165,6 @@
 		});
 		$("#addTab").click(function() { addTab("New Tab", '<%=Url.Action("GetDynamicTab", "Builder")%>'); });
 		$("#removeTab").click(function() { removeTab(0); });
-		$("#length").click(function() { alert("Number of tabs is:\n\n" + <%tabs.Methods.Length();%>); });
 		$("#startRotate").click(function() { <%tabs.Methods.StartRotation();%>; });
 		$("#stopRotate").click(function() { <%tabs.Methods.StopRotation();%>; });
 		$("#widget").click(function() { alert( "Widget HTML:\n\n" + <%tabs.Methods.Widget();%>.html() ); });

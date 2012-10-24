@@ -29,7 +29,6 @@ namespace Fluqi.Widget.jTab {
 			this.RenderMethodCall("destroy");
 		}	
 
-
 		/// <summary>
 		/// Disable the tabs.
 		/// </summary>
@@ -37,7 +36,6 @@ namespace Fluqi.Widget.jTab {
 		public void Disable() {
 			this.RenderMethodCall("disable");
 		}	
-
 
 		/// <summary>
 		/// Disable a tab. The selected tab cannot be disabled. To disable more than one tab at once use:
@@ -52,7 +50,6 @@ namespace Fluqi.Widget.jTab {
 				this.RenderMethodCall("disable", indexes.JsArray() );
 		}	
 
-
 		/// <summary>
 		/// Enable the tabs.
 		/// </summary>
@@ -60,7 +57,6 @@ namespace Fluqi.Widget.jTab {
 		public void Enable() {
 			this.RenderMethodCall("enable");
 		}	
-
 
 		/// <summary>
 		/// Enable a disabled tab. The second argument is the zero-based index of the tab to be enabled.
@@ -70,7 +66,6 @@ namespace Fluqi.Widget.jTab {
 			this.RenderMethodCall("enable", index);
 		}	
 
-
 		/// <summary>
 		/// Returns the .ui-tabs element.
 		/// </summary>
@@ -78,7 +73,6 @@ namespace Fluqi.Widget.jTab {
 		public void Widget() {
 			this.RenderMethodCall("widget");
 		}	
-
 
 		/// <summary>
 		/// Process any tabs that were added or removed directly in the DOM and recompute the height of the 
@@ -88,7 +82,6 @@ namespace Fluqi.Widget.jTab {
 		public void Refresh() {
 			this.RenderMethodCall("refresh");
 		}
-
 
 		/// <summary>
 		/// Reload the content of an Ajax tab programmatically. This method always loads the tab content 
@@ -103,7 +96,6 @@ namespace Fluqi.Widget.jTab {
 			this.RenderMethodCall("load", index);
 		}	
 
-
 		/// <summary>
 		/// Change the url from which an Ajax (remote) tab will be loaded. The specified URL will be 
 		/// used for subsequent loads. 
@@ -116,16 +108,6 @@ namespace Fluqi.Widget.jTab {
 		public void Url(int index, string url) {
 			this.RenderMethodCall("url", index, url.InDoubleQuotes());
 		}
-
-		
-		/// <summary>
-		/// Retrieve the number of tabs of the first matched tab pane.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-length for details.</remarks>
-		public void Length() {
-			this.RenderMethodCall("length");
-		}	
-		
 
 		/// <summary>
 		/// Set up an automatic rotation through tabs of a tab pane. 
