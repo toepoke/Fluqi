@@ -38,18 +38,6 @@ namespace Fluqi.Widget.jTab
 		protected internal string ActivateEvent { get; set; }
 
 		/// <summary>
-		/// This event is triggered when a tab is enabled.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#event-enable for details</remarks>
-		protected internal string EnableEvent { get; set; }
-
-		/// <summary>
-		/// This event is triggered when a tab is disabled.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#event-disable for details</remarks>
-		protected internal string DisableEvent { get; set; }
-
-		/// <summary>
 		/// This event is triggered when a remote tab is about to be loaded, after the before the
 		/// beforeActivate event.  Can be cancelled to prevent the tab panel from loading content; 
 		/// though the panel will still be activated.

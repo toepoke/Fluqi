@@ -81,8 +81,6 @@ namespace Fluqi.Models
 					.SetBeforeActivateEvent("return beforeActivateEvent(event, ui);")
 					.SetLoadEvent("return loadEvent(event, ui);")
 					.SetActivateEvent("return activateEvent(event, ui);")
-					.SetEnableEvent("return enableEvent(event, ui);")
-					.SetDisableEvent("return disableEvent(event, ui);")
 					.SetBeforeLoadEvent("return beforeLoadEvent(event, ui);")
 				;
 			}
@@ -199,8 +197,6 @@ namespace Fluqi.Models
 			sb.AppendTabsLineIf(".SetActivateEvent(\"return activateEvent(event, ui);\")");
 			sb.AppendTabsLineIf(".SetAddEvent(\"return addEvent(event, ui);\")");
 			sb.AppendTabsLineIf(".SetRemoveEvent(\"return removeEvent(event, ui);\")");
-			sb.AppendTabsLineIf(".SetEnableEvent(\"return enableEvent(event, ui);\")");
-			sb.AppendTabsLineIf(".SetDisableEvent(\"return disableEvent(event, ui);\")");
 			sb.AppendTabsLineIf(".SetBeforeLoadEvent(\"return beforeEvent(event, ui);\")");
 
 			return sb.ToString();

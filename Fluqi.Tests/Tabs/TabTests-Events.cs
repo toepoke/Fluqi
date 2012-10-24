@@ -34,7 +34,7 @@ namespace Fluqi.Tests
 
 			tabs.Events
 				.SetCreateEvent("addToLog('Create event called');")
-				.SetDisableEvent("addToLog('Disable event called');")
+				.SetActivateEvent("addToLog('Activate event called');")
 			;
 
 			TestHelper.ForceRender(tabs);
@@ -43,7 +43,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  string expected = "create: function(event, ui) {addToLog('Create event called');},disable: function(event, ui) {addToLog('Disable event called');}";
+		  string expected = "create: function(event, ui) {addToLog('Create event called');},activate: function(event, ui) {addToLog('Activate event called');}";
 		  Assert.IsTrue(html.Contains(expected));
 		}
 
@@ -164,36 +164,6 @@ namespace Fluqi.Tests
 
 		  // Assert
 		  string expected = "activate: function(event, ui) {addToLog('Activate event called');}";
-		  Assert.IsTrue(html.Contains(expected));
-		}
-
-		[TestMethod]
-		public void Tabs_With_Enable_EventHandler_Wired_Up_Renders_Correctly()
-		{
-			// Arrange
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			// only testing raw output
-			tabs	
-				.Options
-					.SetEvent("mouseover")
-					.Finish()
-				.Rendering
-					.Compress();
-
-			tabs.Events
-				.SetEnableEvent("addToLog('Enable event called');")
-			;
-
-			TestHelper.ForceRender(tabs);
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  string expected = "enable: function(event, ui) {addToLog('Enable event called');}";
 		  Assert.IsTrue(html.Contains(expected));
 		}
 

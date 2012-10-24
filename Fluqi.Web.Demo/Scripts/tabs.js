@@ -54,22 +54,6 @@ function removeEvent(event, ui) {
 	);
 }
 
-function enableEvent(event, ui) {
-	addToLog("ENABLE EVENT"
-		+ "<br/>- " + buildKeyValue("event.type", event.type, 28)
-		+ "<br/>- " + buildKeyValue("ui.panel.id", ui.panel.id, 20)
-		+ "<br/>- " + buildKeyValue("ui.tab.text", ui.tab.innerText, 20)
-	);
-}
-
-function disableEvent(event, ui) {
-	addToLog("DISABLE EVENT"
-		+ "<br/>- " + buildKeyValue("event.type", event.type, 28)
-		+ "<br/>- " + buildKeyValue("ui.panel.id", ui.panel.id, 20)
-		+ "<br/>- " + buildKeyValue("ui.tab.text", ui.tab.innerText, 20)
-	);
-}
-
 function beforeLoadEvent(event, ui) {
 	addToLog("BEFORE_LOAD EVENT"
 		+ "<br/>- " + buildKeyValue("event.type", event.type, 28)
