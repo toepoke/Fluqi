@@ -89,7 +89,7 @@
 
 			childOpts.Add(!this.IsNullOrEmpty(this.Effect), "effect", this.Effect.InDoubleQuotes());
 			childOpts.Add(!this.IsNullOrEmpty(this.Easing), "easing", this.Easing.InDoubleQuotes());
-			childOpts.Add(this.Duration != DEFAULT_DURATION, "duration", durationString);				
+			childOpts.Add(!this.IsNullEmptyOrDefault(this.Duration, DEFAULT_DURATION), "duration", durationString);				
 
 			// Any of the above actually going to render?
 			parentOpts.Condition = childOpts.Where(x=>x.Condition).Any();

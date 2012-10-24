@@ -663,7 +663,39 @@ namespace Fluqi.Tests
 			Assert.IsTrue(html.Contains(expected));
 		}	
 		
-		
+		[TestMethod]
+		public void Ensure_ShowAnimation_Default_Duration_Options_Are_Added_Not_To_Script_Definition()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
+
+			// only testing raw output
+			tabs
+				.Options
+					.ShowAnimation
+						.SetEffect(Core.Animation.eAnimation.Fold)
+						.SetDuration(Fluqi.Utilities.jAnimation.Options.DEFAULT_DURATION)
+					.Finish()
+				.Finish()
+				.Rendering
+					.Compress();
+			
+			TestHelper.ForceRender(tabs);
+			
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myTabs\").tabs({show: {effect: \"fold\"}})" + 
+					";});" + 
+				"</script>";
+			Assert.IsTrue(html.Contains(expected));
+		}	
+				
 		[TestMethod]
 		public void Ensure_HideAnimation_Options_Are_Added_To_Script_Definition()
 		{
@@ -729,6 +761,39 @@ namespace Fluqi.Tests
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
 						"$(\"#myTabs\").tabs({show: {effect: \"highlight\",duration: 888},hide: {effect: \"fold\",duration: 999}})" + 
+					";});" + 
+				"</script>";
+			Assert.IsTrue(html.Contains(expected));
+		}	
+
+		[TestMethod]
+		public void Ensure_HideAnimation_Default_Duration_Options_Are_Added_Not_To_Script_Definition()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
+
+			// only testing raw output
+			tabs
+				.Options
+					.HideAnimation
+						.SetEffect(Core.Animation.eAnimation.Fold)
+						.SetDuration(Fluqi.Utilities.jAnimation.Options.DEFAULT_DURATION)
+					.Finish()
+				.Finish()
+				.Rendering
+					.Compress();
+			
+			TestHelper.ForceRender(tabs);
+			
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myTabs\").tabs({hide: {effect: \"fold\"}})" + 
 					";});" + 
 				"</script>";
 			Assert.IsTrue(html.Contains(expected));

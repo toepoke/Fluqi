@@ -290,6 +290,22 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
+		public void Ensure_SetDefaultShowDuration_Is_Rendered_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetShow(Fluqi.Utilities.jAnimation.Options.DEFAULT_DURATION);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert - Default should still be output because we may have set it to a non-default value after initialisation
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"show\",400)", html);
+		}
+
+		[TestMethod]
 		public void Ensure_SetHideEffect_ByEnum_Renders_Correctly()
 		{
 		  // Arrange
@@ -351,6 +367,22 @@ namespace Fluqi.Tests
 
 		  // Assert
 		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\",789)", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetDefaultHideDuration_Is_Rendered_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetHide(Fluqi.Utilities.jAnimation.Options.DEFAULT_DURATION);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert - Default should still be output because we may have set it to a non-default value after initialisation
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\",400)", html);
 		}
 
 		[TestMethod]

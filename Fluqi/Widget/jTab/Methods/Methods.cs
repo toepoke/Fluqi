@@ -427,7 +427,7 @@ namespace Fluqi.Widget.jTab {
 		/// </summary>
 		/// <param name="value">String/JSON object</param>
 		public void SetHide(string value) {
-			if (IsJSON(value))
+			if (IsJSON(value) || IsNumeric(value))
 				this.RenderSetOptionCall("hide", value);
 			else 
 				this.RenderSetOptionCall("hide", value.ToString(), true/*inDoubleQuotes*/);
