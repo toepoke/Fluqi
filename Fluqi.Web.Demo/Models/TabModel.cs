@@ -171,13 +171,15 @@ namespace Fluqi.Models
 			sb.AppendTabsLineIf(".ShowAnimation");
 			sb.IncIndent();
 			sb.AppendTabsFormatLineIf(".SetEffect(\"{0}\")", this.showEffect);
-			sb.AppendTabsFormatLineIf(".SetDuration(\"{0}\")", this.showDuration);
+			if (!Utils.IsNullEmptyOrDefault(this.showDuration, Fluqi.Utilities.jAnimation.Options.DEFAULT_DURATION))
+				sb.AppendTabsFormatLineIf(".SetDuration(\"{0}\")", this.showDuration);
 			sb.AppendTabsLineIf(".Finish()");
 			sb.DecIndent();
 			sb.AppendTabsLineIf(".HideAnimation");
 			sb.IncIndent();
 			sb.AppendTabsFormatLineIf(".SetEffect(\"{0}\")", this.hideEffect);
-			sb.AppendTabsFormatLineIf(".SetDuration(\"{0}\")", this.hideDuration);
+			if (!Utils.IsNullEmptyOrDefault(this.hideDuration, Fluqi.Utilities.jAnimation.Options.DEFAULT_DURATION))
+				sb.AppendTabsFormatLineIf(".SetDuration(\"{0}\")", this.hideDuration);
 			sb.AppendTabsLineIf(".Finish()");
 			sb.DecIndent();
 			if (!Utils.IsNullEmptyOrDefault(this.evt, Options.DEFAULT_EVENT))
