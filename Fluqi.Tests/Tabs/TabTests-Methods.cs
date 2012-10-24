@@ -161,54 +161,6 @@ namespace Fluqi.Tests
 		  Assert.AreEqual("$(\"#myTabs\").tabs(\"url\",1,\"http://someurl.html\")", html);
 		}
 
-		[TestMethod]
-		public void Ensure_StartRotation_Method_Renders_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			tabs.Methods.StartRotation();
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"rotate\",1000)", html);
-		}
-
-		[TestMethod]
-		public void Ensure_StartRotation_With_Duration_Specified_Method_Renders_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			tabs.Methods.StartRotation(999, false);
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"rotate\",999,false)", html);
-		}
-
-		[TestMethod]
-		public void Ensure_StopRotation_Method_Renders_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			tabs.Methods.StopRotation();
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"rotate\",0,false)", html);
-		}
-
 	} // jTab_Tests
 
 } // ns

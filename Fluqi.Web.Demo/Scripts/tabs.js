@@ -87,3 +87,26 @@ function removeTab(index) {
 	// Refresh the tabs widget
 	$("tabs").tabs("refresh");
 }
+
+
+/// <summary>
+/// Taken from upgrade guide 1.9:
+/// http://jqueryui.com/upgrade-guide/1.9/#removed-rotate-method 
+/// Which advises the following plug-in
+/// https://github.com/cmcculloh/jQuery-UI-Tabs-Rotate
+/// </summary
+function startRotation() {
+	$("#tabs").tabs().tabs("rotate", 1500, true);
+}
+
+/// <summary>
+/// Taken from upgrade guide 1.9:
+/// http://jqueryui.com/upgrade-guide/1.9/#removed-rotate-method 
+/// Which advises the following plug-in
+/// https://github.com/cmcculloh/jQuery-UI-Tabs-Rotate
+/// </summary
+function stopRotation() {
+	$("#tabs").tabs().tabs("rotate", 0, true);
+}
+
+

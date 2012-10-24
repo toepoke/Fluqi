@@ -110,35 +110,6 @@ namespace Fluqi.Widget.jTab {
 		}
 
 		/// <summary>
-		/// Set up an automatic rotation through tabs of a tab pane. 
-		/// The second argument is an amount of time in milliseconds until the next tab in the cycle gets activated. 
-		///		Use 0 or null to stop the rotation. 
-		///	The third controls whether or not to continue the rotation after a tab has been selected by a 
-		///	user. Default: false.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-rotate for details.</remarks>
-		public void StartRotation(int ms, bool cont) {
-			this.RenderMethodCall("rotate", ms, cont.JsBool());
-		}	
-
-		/// <summary>
-		/// Set up an automatic rotation through tabs of a tab pane, with a delay of 1 second between
-		/// transitions.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-rotate for details.</remarks>
-		public void StartRotation() {
-			this.RenderMethodCall("rotate", 1000/*1 second*/);
-		}	
-
-		/// <summary>
-		/// Stops the rotation effect
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-rotate for details.</remarks>
-		public void StopRotation() {
-			this.StartRotation( 0/*zero stops rotation*/, false/*continue*/);
-		}	
-		
-		/// <summary>
 		/// Returns [in JavaScript] the current "collapsible" setting.
 		/// </summary>
 		public void GetCollapsible() {

@@ -237,6 +237,7 @@
     <Content Include="Scripts\accordion.js" />
     <Content Include="Scripts\auto-complete.js" />
     <Content Include="Scripts\button.js" />
+    <Content Include="Scripts\jquery-ui-tabs-rotate.js" />
     <Content Include="Scripts\jquery.themeswitcher.min.js" />
     <Content Include="Scripts\js-src\jquery-ui.custom.js" />
     <Content Include="Scripts\js-src\jquery.ui.accordion.js" />

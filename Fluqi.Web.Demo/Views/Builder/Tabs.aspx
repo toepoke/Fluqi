@@ -3,6 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="DemoMainContent" runat="server">
 	<script src="<%=Url.Content("~/Scripts/tabs.js")%>" type="text/javascript"></script>
+	<script src="<%=Url.Content("~/Scripts/jquery-ui-tabs-rotate.js")%>" type="text/javascript"></script>
 <%
 	var tabs = Html.CreateTabs("tabs");
 
@@ -165,8 +166,8 @@
 		});
 		$("#addTab").click(function() { addTab("New Tab", '<%=Url.Action("GetDynamicTab", "Builder")%>'); });
 		$("#removeTab").click(function() { removeTab(0); });
-		$("#startRotate").click(function() { <%tabs.Methods.StartRotation();%>; });
-		$("#stopRotate").click(function() { <%tabs.Methods.StopRotation();%>; });
+		$("#startRotate").click(function() { startRotation(); });
+		$("#stopRotate").click(function() { stopRotation(); });
 		$("#widget").click(function() { alert( "Widget HTML:\n\n" + <%tabs.Methods.Widget();%>.html() ); });
 		$("#destroy").click(function() {  if (confirm("are you sure you want to destroy the tabs control?")) <%tabs.Methods.Destroy();%>; });
 
