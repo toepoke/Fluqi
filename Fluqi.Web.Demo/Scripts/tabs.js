@@ -7,12 +7,14 @@ function createEvent(event, ui) {
 	);
 }
 
-function selectEvent(event, ui) {
+function beforeActivateEvent(event, ui) {
 	addToLog(
-		"SELECT EVENT"
+		"BEFORE_ACTIVATE EVENT"
 		+ "<br/>- " + buildKeyValue("event.type", event.type, 28)
-		+ "<br/>- " + buildKeyValue("ui.tab.text", ui.tab.innerText, 20)
-		+ "<br/>- " + buildKeyValue("ui.panel.text", ui.panel.innerText, 20)
+		+ "<br/>- " + buildKeyValue("ui.oldTab.text", ui.oldTab.innerText, 20)
+		+ "<br/>- " + buildKeyValue("ui.oldPanel.text", ui.oldPanel.innerText, 20)
+		+ "<br/>- " + buildKeyValue("ui.newTab.text", ui.newTab.innerText, 20)
+		+ "<br/>- " + buildKeyValue("ui.newPanel.text", ui.newPanel.innerText, 20)
 		+ "<br/>- " + buildKeyValue("ui.index", ui.index, 20)
 	);
 }

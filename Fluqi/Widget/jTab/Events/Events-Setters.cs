@@ -24,11 +24,11 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
-		/// This event is triggered when clicking a tab.
+		/// This event is triggered after clicking a tab.
 		/// </summary>
 		/// <returns>Events object for chainability</returns>
-		public Events SetSelectEvent(string methodSource) {
-			this.SelectEvent = methodSource;
+		public Events SetBeforeActivateEvent(string methodSource) {
+			this.BeforeActivateEvent = methodSource;
 			return this;	
 		}
 

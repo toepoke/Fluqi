@@ -53,7 +53,7 @@ namespace Fluqi.Widget.jTab
 		/// <param name="options">Collection to add the identified options to</param>
 		override protected internal void DiscoverOptions(Core.ScriptOptions options) {
 			options.AddEventHandler("create", "event, ui", this.CreateEvent);
-			options.AddEventHandler("select", "event, ui", this.SelectEvent);
+			options.AddEventHandler("beforeActivate", "event, ui", this.BeforeActivateEvent);
 			options.AddEventHandler("load", "event, ui", this.LoadEvent);
 			options.AddEventHandler("show", "event, ui", this.ShowEvent);
 			options.AddEventHandler("add", "event, ui", this.AddEvent);

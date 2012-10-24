@@ -94,7 +94,7 @@ namespace Fluqi.Tests
 					.Compress();
 
 			tabs.Events
-				.SetSelectEvent("addToLog('Select event called');")
+				.SetBeforeActivateEvent("addToLog('beforeActivate event called');")
 			;
 
 			TestHelper.ForceRender(tabs);
@@ -103,7 +103,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  string expected = "select: function(event, ui) {addToLog('Select event called');}";
+		  string expected = "beforeActivate: function(event, ui) {addToLog('beforeActivate event called');}";
 		  Assert.IsTrue(html.Contains(expected));
 		}
 
