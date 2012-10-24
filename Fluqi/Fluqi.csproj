@@ -159,7 +159,6 @@
     <Compile Include="Widget\jSlider\Events\Events-Setters.cs" />
     <Compile Include="Widget\jSlider\Methods\Methods.cs" />
     <Compile Include="Widget\jSlider\Rendering\Rendering.cs" />
-    <Compile Include="Widget\jTab\Options\CookieOptions.cs" />
     <Compile Include="Widget\jTab\Options\AnimationOptions.cs" />
     <Compile Include="Widget\jTab\Pane\Panes.cs" />
     <Compile Include="Widget\jTab\Scripting.cs" />

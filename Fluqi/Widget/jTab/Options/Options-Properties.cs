@@ -14,13 +14,6 @@ namespace Fluqi.Widget.jTab
 	public partial class Options: Core.Options
 	{
 		/// <summary>
-		/// Store the latest active tab in a cookie. The cookie is then used to determine the 
-		/// initially active tab if the selected option is not defined. 
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#option-cookie for further details</remarks>
-		public CookieOptions Cookie { get; set; }
-
-		/// <summary>
 		/// Defines animation properties when the tab shows.
 		/// </summary>
 		public AnimationOptions ShowAnimation { get; set; }

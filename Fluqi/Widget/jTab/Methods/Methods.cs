@@ -156,51 +156,6 @@ namespace Fluqi.Widget.jTab {
 		/// <summary>
 		/// Returns [in JavaScript] the current "event" setting.
 		/// </summary>
-		public void GetCookie() {
-			this.RenderGetOptionCall("cookie");
-		}
-
-		/// <summary>
-		/// Specifies when the cookie should expire
-		/// </summary>
-		/// <param name="expiryInDays">Number of days in which the expiry page</param>
-		public void SetCookieExpiry(int expiryInDays) {
-			this.RenderSetOptionCall("cookie", "{{ expires: {0} }}", expiryInDays.ToString());
-		}
-
-		/// <summary>
-		/// Specifies the path the cookie is valid within.  So "/" means the whole site, "/demos" 
-		/// means it's only applicable in the "demos" subfolder.
-		/// </summary>
-		/// <param name="path">Path of the cookie</param>
-		public void SetCookiePath(string path) {
-			this.RenderSetOptionCall("cookie", "{{ path: '{0}' }}", path);
-		}
-
-		/// <summary>
-		/// Specifies the domain the cookie should be saved to.  So you could have a subdomain
-		/// so the cookie is only saved there.
-		/// </summary>
-		/// <param name="domain">Domain of the cookie</param>
-		public void SetCookieDomain(string domain) {
-			this.RenderSetOptionCall("cookie", "{{ domain: '{0}' }}", domain);
-		}
-
-		/// <summary>
-		/// If true, the secure attribute of the cookie will be set and the cookie transmission will
-		/// require a secure protocol (like HTTPS).
-		/// </summary>
-		/// <param name="secure">
-		/// true for a secure cookie
-		/// false for non-secure cookie
-		/// </param>
-		public void SetCookieSecure(bool secure) {
-			this.RenderSetOptionCall("cookie", "{{ secure: {0} }}", secure.JsBool() );
-		}
-
-		/// <summary>
-		/// Returns [in JavaScript] the current "event" setting.
-		/// </summary>
 		public void GetEvent() {
 			this.RenderGetOptionCall("event");
 		}

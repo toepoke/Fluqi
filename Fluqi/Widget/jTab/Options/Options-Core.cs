@@ -31,7 +31,6 @@ namespace Fluqi.Widget.jTab
 		 : base()
 		{
 			this.Tabs = tabs;
-			this.Cookie = new CookieOptions(this);
 			this.ShowAnimation = new AnimationOptions(this, "show");
 			this.HideAnimation = new AnimationOptions(this, "hide");
 			this.Evt = DEFAULT_EVENT;
@@ -78,8 +77,7 @@ namespace Fluqi.Widget.jTab
 			options.Add(!this.IsNullEmptyOrDefault(this.Evt, DEFAULT_EVENT), "event", this.Evt.InDoubleQuotes());
 			options.Add(!this.IsNullEmptyOrDefault(this.HeightStyle, DEFAULT_HEIGHT_STYLE), "heightStyle", this.HeightStyle.InDoubleQuotes());
 			options.Add(this.Collapsible, "collapsible", this.Collapsible.JsBool() );
-			// Cookie, show and hide are a little bit different because it's an object, so just add it's options in
-			options.Add(this.Cookie.Options.GetCookieScriptOption());
+			// Show and hide are a little bit different because it's an object, so just add it's options in
 			options.Add(this.ShowAnimation.Options.GetAnimationScriptOption());
 			options.Add(this.HideAnimation.Options.GetAnimationScriptOption());
 			if (this.Tabs.Panes.HasActiveTab() && this.Tabs.Panes.GetActiveTab().Index > 0) {
