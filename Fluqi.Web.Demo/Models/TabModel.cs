@@ -34,15 +34,22 @@ namespace Fluqi.Models
 		public TabModel() : base() {
 			this.collapsible = false;
 			this.disabled = false;
-			this.fx = "";
+			this.showEffect = "";
+			this.showEasing = "";
+			this.showDuration = "";
 			this.evt = Core.BrowserEvent.BrowserEventToString(Core.BrowserEvent.eBrowserEvent.Click);
 			this.selectedTab = 0;
 		}
 
 		public bool collapsible { get; set; }
 		public bool disabled { get; set; }
-		public string fx { get; set; }
 		public string evt { get; set; }
+		public string showEffect { get; set; }
+		public string showEasing { get; set; }
+		public string showDuration { get; set; }
+		public string hideEffect { get; set; }
+		public string hideEasing { get; set; }
+		public string hideDuration { get; set; }
 		public int selectedTab { get; set; }
 
 		public void ConfigureTabs(Tabs tabs) {
@@ -53,9 +60,17 @@ namespace Fluqi.Models
 				.Options
 					.SetCollapsible(this.collapsible)
 					.SetDisabled(this.disabled)
-					.SetEffect(this.fx)
-					.SetEvent(this.evt)
+					.ShowAnimation
+						.SetEffect(this.showEffect)
+						.SetEasing(this.showEasing)
+						.SetDuration(this.showDuration)
 					.Finish()
+					.HideAnimation
+						.SetEffect(this.hideEffect)
+						.SetEasing(this.hideEasing)
+						.SetDuration(this.hideDuration)
+					.Finish()
+				.Finish()
 				.Panes
 					.Add("tab1", "Tab #1", (this.selectedTab == 0) )
 					.Add("tab2", "Tab #2", (this.selectedTab == 1) )
@@ -155,8 +170,13 @@ namespace Fluqi.Models
 				sb.AppendTabsLineIf(".SetDisabled(true)");
 			if (this.collapsible)
 				sb.AppendTabsLineIf(".SetCollapsible(true)");
-			if (!string.IsNullOrEmpty(this.fx))
-				sb.AppendTabsFormatLineIf(".SetEffect(\"{0}\")", this.fx);
+			sb.AppendTabsLineIf(".ShowAnimation");
+			sb.IncIndent();
+			sb.AppendTabsFormatLineIf(".SetEffect(\"{0}\")", this.showEffect);
+			sb.AppendTabsFormatLineIf(".SetEasing(\"{0}\")", this.showEasing);
+			sb.AppendTabsFormatLineIf(".SetDuration(\"{0}\")", this.showDuration);
+			sb.AppendTabsLineIf(".Finish()");
+			sb.DecIndent();
 			if (!Utils.IsNullEmptyOrDefault(this.evt, Options.DEFAULT_EVENT))
 				sb.AppendTabsFormatLineIf(".SetEvent(\"{0}\")", this.evt);
 

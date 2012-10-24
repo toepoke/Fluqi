@@ -408,33 +408,105 @@ namespace Fluqi.Widget.jTab {
 		}
 
 		/// <summary>
-		/// Returns [in JavaScript] the current "effect" setting.
+		/// Returns [in JavaScript] the current "hide" setting.
 		/// </summary>
-		public void GetEffect() {
-			this.RenderGetOptionCall("fx");
+		public void GetHide() {
+			this.RenderGetOptionCall("hide");
 		}
 
 		/// <summary>
-		/// Enable animations for hiding and showing tab panels. The duration option can be 
-		/// a string representing one of the three predefined speeds ("slow", "normal", "fast") 
-		/// or the duration in milliseconds to run an animation (default is "normal").
+		/// Disables animation, panel is hidden immediately.
 		/// </summary>
-		/// <param name="newValue">New effect setting</param>
-		public void SetEffect(int newValue) {
-			this.RenderSetOptionCall("fx", newValue.ToString());
+		public void DisableHide() {
+			this.RenderSetOptionCall("hide", false);
 		}
 
 		/// <summary>
-		/// Enable animations for hiding and showing tab panels. The duration option can be 
-		/// a string representing one of the three predefined speeds ("slow", "normal", "fast") 
-		/// or the duration in milliseconds to run an animation (default is "normal").
+		/// When <paramref name="value"/> is a string, the panels are hidden using the specified [named] effect. 
+		/// When the value is a JSON object, it is passed directly to the hide method.
 		/// </summary>
-		/// <param name="newValue">New effect setting</param>
-		public void SetEffect(Core.Speed.eSpeed newValue) {
-			string speedStr = Core.Speed.SpeedToString(newValue);
-			this.RenderSetOptionCall("fx", speedStr.InDoubleQuotes());
+		/// <param name="value">String/JSON object</param>
+		public void SetHide(string value) {
+			if (IsJSON(value))
+				this.RenderSetOptionCall("hide", value);
+			else 
+				this.RenderSetOptionCall("hide", value.ToString(), true/*inDoubleQuotes*/);
 		}
 
+		/// <summary>
+		/// Panel will fade out with the specified duration and default easing.
+		/// </summary>
+		/// <param name="duration">Time in milliseconds for the animation to run</param>
+		public void SetHide(int duration) {
+			this.RenderSetOptionCall("hide", duration.ToString());
+		}
+
+		/// <summary>
+		/// Panel will be hidden using the specified parameters.
+		/// </summary>
+		/// <param name="effect">Effect to use, e.g. "slideUp" or "fold"</param>
+		/// <param name="easing">Easing property to adopt</param>
+		/// <param name="duration">Time (in milliseconds) the animation should execute for</param>
+		public void SetHide(Core.Animation.eAnimation effect, Core.Ease.eEase easing, int duration) {
+			string hiding = string.Format("{{ effect: \"{0}\", easing: \"{1}\", duration: {2} }}",
+				Core.Animation.AnimationToString(effect),
+				Core.Ease.EaseToString(easing),
+				duration
+			);
+
+			this.SetHide(hiding);
+		}
+
+		/// <summary>
+		/// Returns [in JavaScript] the current "show" setting.
+		/// </summary>
+		public void GetShow() {
+			this.RenderGetOptionCall("show");
+		}
+
+		/// <summary>
+		/// Disables animation, panel is shown immediately.
+		/// </summary>
+		public void DisableShow() {
+			this.RenderSetOptionCall("show", false);
+		}
+
+		/// <summary>
+		/// When <paramref name="value"/> is a string, the panels are shown using the specified [named] effect. 
+		/// When the value is a JSON object, it is passed directly to the show method.
+		/// </summary>
+		/// <param name="value">String/JSON object</param>
+		public void SetShow(string value) {
+			if (IsJSON(value) || IsNumeric(value))
+				this.RenderSetOptionCall("show", value);
+			else 
+				this.RenderSetOptionCall("show", value.ToString(), true/*inDoubleQuotes*/);
+		}
+
+		/// <summary>
+		/// Panel will fade in with the specified duration and default easing.
+		/// </summary>
+		/// <param name="duration">Time in milliseconds for the animation to run</param>
+		public void SetShow(int duration) {
+			this.RenderSetOptionCall("show", duration.ToString());
+		}
+
+		/// <summary>
+		/// Panel will be shown using the specified parameters.
+		/// </summary>
+		/// <param name="effect">Effect to use, e.g. "slideUp" or "fold"</param>
+		/// <param name="easing">Easing property to adopt</param>
+		/// <param name="duration">Time (in milliseconds) the animation should execute for</param>
+		public void SetShow(Core.Animation.eAnimation effect, Core.Ease.eEase easing, int duration) {
+			string hiding = string.Format("{{ effect: \"{0}\", easing: \"{1}\", duration: {2} }}",
+				Core.Animation.AnimationToString(effect),
+				Core.Ease.EaseToString(easing),
+				duration
+			);
+
+			this.SetShow(hiding);
+		}
+		
 		/// <summary>
 		/// Returns [in JavaScript] the current "idPrefix" setting.
 		/// </summary>

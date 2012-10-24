@@ -131,8 +131,8 @@ namespace Fluqi.Widget.jAccordion {
 		/// If and how to animate changing panels.
 		/// </summary>
 		/// <param name="value">new animation</param>
-		public void SetAnimation(string value) {
-			this.SetAnimate(value, true/*doubleQuotes*/);
+		public void SetEffect(string value) {
+			this.SetEffect(value, true/*doubleQuotes*/);
 		}
 
 		/// <summary>
@@ -143,7 +143,7 @@ namespace Fluqi.Widget.jAccordion {
 		/// true - double quotes(")
 		/// false - single quotes (')
 		/// </param>
-		public void SetAnimate(string value, bool inDoubleQuotes) {
+		public void SetEffect(string value, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("animate", value, inDoubleQuotes);
 		}
 

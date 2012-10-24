@@ -57,7 +57,7 @@ namespace Fluqi.Tests
 		  var resp = new MockWriter();
 			var accordion = TestHelper.SetupSimpleAccordionObject(resp);
 
-		  accordion.Methods.SetAnimate("linear", true);
+		  accordion.Methods.SetEffect("linear", true);
 
 		  // Act
 			string html = resp.Output.ToString();

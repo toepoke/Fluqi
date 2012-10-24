@@ -136,6 +136,19 @@ namespace Fluqi.Core
 		}
 
 		/// <summary>
+		/// Establishes whether the given value is considered to be a JSON string
+		/// </summary>
+		/// <param name="value">Value to be queried</param>
+		/// <returns>
+		/// Returns true if value is deemed to be a JSON object
+		/// Returns false otherwise
+		/// </returns>
+		/// <remarks>To determine this we simply look for the presence of "{", "}", "," or ":"</remarks>
+		protected bool IsJSON(string value) {
+			return Helpers.Utils.IsJSON(value);
+		}
+
+		/// <summary>
 		/// Entry point for a widget to add a list of options that the widget should render
 		/// when the JavaScript is written out.
 		/// </summary>

@@ -92,30 +92,6 @@ namespace Fluqi.Tests
 		  Assert.AreEqual("$.cookie({expires: 3});", html);
 		}
 
-		//[TestMethod]
-		//public void Cookie_SetExpiry_By_Date_At_Year_End_Options_Renders_Correctly()
-		//{
-		//  // Arrange
-		//  var resp = new MockWriter();
-		//  Cookie ctl = TestHelper.SetupSimpleCookieObject(resp);
-
-		//  // only testing raw output
-		//  ctl
-		//    .Options
-		//      .SetExpiry(new DateTime(2000, 12, 31))		// 31st Dec 2000
-		//      .Finish()
-		//    .Rendering
-		//      .SetAutoScript(false)
-		//      .Compress()
-		//  ;
-
-		//  // Act - Force output we'd see on the web page
-		//  ctl.Render();
-		//  string html = resp.Output.ToString();
-
-		//  // Assert
-		//  Assert.AreEqual("$.cookie({expires: new Date(2000, 11, 31)});", html);
-		//}
 
 		[TestMethod]
 		public void Cookie_SetExpiry_By_Number_Options_Renders_Correctly()

@@ -629,9 +629,9 @@ namespace Fluqi.Tests
 			Assert.IsTrue(html.Contains(expected));
 		}		
 
-
+		
 		[TestMethod]
-		public void Ensure_Effects_Option_Is_Added_To_Script_Definition()
+		public void Ensure_ShowAnimation_Options_Are_Added_To_Script_Definition()
 		{
 			// Arrange
 			var resp = new MockWriter();
@@ -640,7 +640,11 @@ namespace Fluqi.Tests
 			// only testing raw output
 			tabs
 				.Options
-					.SetEffect("{ opacity: 'toggle' }")
+					.ShowAnimation
+						.SetEffect(Core.Animation.eAnimation.Fold)
+						.SetDuration(999)
+						.SetEasing(Core.Ease.eEase.easeOutSine)
+					.Finish()
 				.Finish()
 				.Rendering
 					.Compress();
@@ -654,11 +658,85 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs({fx: { opacity: 'toggle' }})" + 
+						"$(\"#myTabs\").tabs({show: {effect: \"fold\",easing: \"easeOutSine\",duration: 999}})" + 
 					";});" + 
 				"</script>";
 			Assert.IsTrue(html.Contains(expected));
-		}		
+		}	
+		
+		
+		[TestMethod]
+		public void Ensure_HideAnimation_Options_Are_Added_To_Script_Definition()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
+
+			// only testing raw output
+			tabs
+				.Options
+					.HideAnimation
+						.SetEffect(Core.Animation.eAnimation.Fold)
+						.SetDuration(999)
+						.SetEasing(Core.Ease.eEase.easeOutSine)
+					.Finish()
+				.Finish()
+				.Rendering
+					.Compress();
+			
+			TestHelper.ForceRender(tabs);
+			
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myTabs\").tabs({hide: {effect: \"fold\",easing: \"easeOutSine\",duration: 999}})" + 
+					";});" + 
+				"</script>";
+			Assert.IsTrue(html.Contains(expected));
+		}						
+
+		[TestMethod]
+		public void Ensure_Show_And_Hide_Animation_Options_Are_Added_To_Script_Definition()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
+
+			// only testing raw output
+			tabs
+				.Options
+					.HideAnimation
+						.SetEffect(Core.Animation.eAnimation.Fold)
+						.SetDuration(999)
+						.SetEasing(Core.Ease.eEase.easeOutSine)
+					.Finish()
+					.ShowAnimation
+						.SetEffect(Core.Animation.eAnimation.Highlight)
+						.SetDuration(888)
+						.SetEasing(Core.Ease.eEase.easeOutElastic)
+					.Finish()
+				.Finish()
+				.Rendering
+					.Compress();
+			
+			TestHelper.ForceRender(tabs);
+			
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+					"$(document).ready( function() {" + 
+						"$(\"#myTabs\").tabs({show: {effect: \"highlight\",easing: \"easeOutElastic\",duration: 888},hide: {effect: \"fold\",easing: \"easeOutSine\",duration: 999}})" + 
+					";});" + 
+				"</script>";
+			Assert.IsTrue(html.Contains(expected));
+		}	
 
 		[TestMethod]
 		public void Ensure_Event_Option_By_Enum_Is_Added_To_Script_Definition()

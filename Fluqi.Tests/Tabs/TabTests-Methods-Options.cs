@@ -226,6 +226,134 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
+		public void Ensure_SetShowEffect_ByEnum_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetShow(Core.Animation.eAnimation.Blind, Core.Ease.eEase.easeInCirc, 222);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"show\",{ effect: \"blind\", easing: \"easeInCirc\", duration: 222 })", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetShowEffect_ByJSON_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetShow("{ effect: 'blind', easing: 'easeInCirc', duration: 456}");
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"show\",{ effect: 'blind', easing: 'easeInCirc', duration: 456})", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetShowEffect_ByString_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetShow("slideDown");
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"show\",\"slideDown\")", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetShowDuration_ByNumber_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetShow(789);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"show\",789)", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetHideEffect_ByEnum_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetHide(Core.Animation.eAnimation.Blind, Core.Ease.eEase.easeInCirc, 222);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\",{ effect: \"blind\", easing: \"easeInCirc\", duration: 222 })", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetHideEffect_ByJSON_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetHide("{ effect: 'blind', easing: 'easeInCirc', duration: 456}");
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\",{ effect: 'blind', easing: 'easeInCirc', duration: 456})", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetHideEffect_ByString_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetHide("slideDown");
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\",\"slideDown\")", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetHideDuration_ByNumber_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetHide(789);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\",789)", html);
+		}
+
+		[TestMethod]
 		public void Ensure_GetEvent_Renders_Correctly()
 		{
 		  // Arrange
@@ -290,51 +418,195 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_GetEffect_Renders_Correctly()
+		public void Ensure_GetShowEffect_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
 			var ctl = TestHelper.SetupSimpleTabObject(resp);
 
-		  ctl.Methods.GetEffect();
+		  ctl.Methods.GetShow();
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"fx\")", html);
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"show\")", html);
 		}
 
 		[TestMethod]
-		public void Ensure_SetEffect_By_Number_Renders_Correctly()
+		public void Ensure_GetHideEffect_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
 			var ctl = TestHelper.SetupSimpleTabObject(resp);
 
-		  ctl.Methods.SetEffect(123);
+		  ctl.Methods.GetHide();
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"fx\",123)", html);
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\")", html);
 		}
 
 		[TestMethod]
-		public void Ensure_SetEffect_By_Enum_Renders_Correctly()
+		public void Ensure_DisableShow_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
 			var ctl = TestHelper.SetupSimpleTabObject(resp);
 
-		  ctl.Methods.SetEffect(Core.Speed.eSpeed.Fast);
+		  ctl.Methods.DisableShow();
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"fx\",\"fast\")", html);
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"show\",false)", html);
+		}
+
+		[TestMethod]
+		public void Ensure_DisableHide_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.DisableHide();
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\",false)", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetShowEffect_By_String_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetShow("easeInOutBounce");
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"show\",\"easeInOutBounce\")", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetHideEffect_By_String_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetHide("easeInOutBounce");
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\",\"easeInOutBounce\")", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetShowEffect_By_Number_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetShow(123);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"show\",123)", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetHideEffect_By_Number_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetHide(123);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\",123)", html);
+		}
+		
+		[TestMethod]
+		public void Ensure_SetShowEffect_By_Enum_Parameters_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetShow(Core.Animation.eAnimation.Drop, Core.Ease.eEase.easeInOutBounce, 1500);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"show\",{ effect: \"drop\", easing: \"easeInOutBounce\", duration: 1500 })", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetHideEffect_By_Enum_Parameters_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetHide(Core.Animation.eAnimation.Drop, Core.Ease.eEase.easeInOutBounce, 1500);
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\",{ effect: \"drop\", easing: \"easeInOutBounce\", duration: 1500 })", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetShowEffect_By_JSON_Parameters_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetShow("{ effect: \"drop\", easing: \"easeInOutBounce\", duration: 1499 }");
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"show\",{ effect: \"drop\", easing: \"easeInOutBounce\", duration: 1499 })", html);
+		}
+
+		[TestMethod]
+		public void Ensure_SetHideEffect_By_JSON_Parameters_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+			var ctl = TestHelper.SetupSimpleTabObject(resp);
+
+		  ctl.Methods.SetHide("{ effect: \"drop\", easing: \"easeInOutBounce\", duration: 1499 }");
+
+		  // Act
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"hide\",{ effect: \"drop\", easing: \"easeInOutBounce\", duration: 1499 })", html);
 		}
 
 		[TestMethod]

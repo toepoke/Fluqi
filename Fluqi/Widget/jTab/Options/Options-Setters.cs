@@ -135,21 +135,6 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
-		/// Sets the tab transition effect.  As this can have multiple arguments the
-		/// parameter is specified as JSON, so for example: 
-		///		myTabs.Options.SetEffect("{ opacity: 'toggle' }")
-		/// See http://stackoverflow.com/questions/1350666/jquery-ui-tabs-available-fx-options for 
-		/// more details
-		/// </summary>
-		/// <param name="effect">Animation definition</param>
-		/// <returns>Options object for chainability</returns>
-		public Options SetEffect(string effect) {
-			this.Fx = effect ?? "";
-			return this;
-		}
-
-
-		/// <summary>
 		/// If the remote tab, its anchor element that is, has no title attribute to generate an 
 		/// id from, an id/fragment identifier is created from this prefix and a unique id returned 
 		/// by $.data(el), for example "ui-tabs-54".

@@ -14,6 +14,23 @@ namespace Fluqi.Widget.jTab
 	public partial class Options: Core.Options
 	{
 		/// <summary>
+		/// Store the latest selected tab in a cookie. The cookie is then used to determine the 
+		/// initially selected tab if the selected option is not defined. 
+		/// </summary>
+		/// <remarks>See http://jqueryui.com/demos/tabs/#option-cookie for further details</remarks>
+		public CookieOptions Cookie { get; set; }
+
+		/// <summary>
+		/// Defines animation properties when the tab shows.
+		/// </summary>
+		public AnimationOptions ShowAnimation { get; set; }
+
+		/// <summary>
+		/// Defines animation properties when the tab hides.
+		/// </summary>
+		public AnimationOptions HideAnimation { get; set; }
+
+		/// <summary>
 		/// Flags whether the "disabled" flag is on or off (default is "false").
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/tabs/#option-disabled for details</remarks>
@@ -57,12 +74,6 @@ namespace Fluqi.Widget.jTab
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/tabs/#option-heightStyle for details</remarks>
 		protected internal string HeightStyle { get; set; }
-
-		/// <summary>
-		/// Stores the animation to be used when opening/closing tabs (default is "").
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#option-fx for details</remarks>
-		protected internal string Fx { get; set; }
 
 		/// <summary>
 		/// If the remote tab, its anchor element that is, has no title attribute to generate an 

@@ -34,7 +34,8 @@ namespace Fluqi.Widget.jTab
 		{
 			this.Tabs = tabs;
 			this.Cookie = new CookieOptions(this);
-			this.Fx = "";
+			this.ShowAnimation = new AnimationOptions(this, "show");
+			this.HideAnimation = new AnimationOptions(this, "hide");
 			this.Evt = DEFAULT_EVENT;
 			this.Collapsible = false;			
 			this.DisabledArray = new List<int>();
@@ -45,12 +46,6 @@ namespace Fluqi.Widget.jTab
 		/// </summary>
 		public Tabs Tabs { get; set; }
 
-		/// <summary>
-		/// Store the latest selected tab in a cookie. The cookie is then used to determine the 
-		/// initially selected tab if the selected option is not defined. 
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#option-cookie for further details</remarks>
-		public CookieOptions Cookie { get; set; }
 
 		/// <summary>
 		/// Used to flag that configuration of <see cref="Options"/> has finished, and 
@@ -82,14 +77,15 @@ namespace Fluqi.Widget.jTab
 			if (this.DisabledArray != null && this.DisabledArray.Count() > 0) {
 				options.Add("disabled", this.DisabledArray.JsArray());
 			}
-			options.Add(!this.IsNullOrEmpty(this.Fx), "fx", this.Fx);
 			options.Add(!this.IsNullEmptyOrDefault(this.Evt, DEFAULT_EVENT), "event", this.Evt.InDoubleQuotes());
 			options.Add(!this.IsNullEmptyOrDefault(this.HeightStyle, DEFAULT_HEIGHT_STYLE), "heightStyle", this.HeightStyle.InDoubleQuotes());
 			options.Add(this.Cache, "cache", this.Cache.JsBool() );
 			options.Add(!this.IsNullOrEmpty(this.AjaxOptions), "ajaxOptions", this.AjaxOptions);
 			options.Add(this.Collapsible, "collapsible", this.Collapsible.JsBool() );
-			// Cookie is a little bit different because it's an object, so just add it's options in
+			// Cookie, show and hide are a little bit different because it's an object, so just add it's options in
 			options.Add(this.Cookie.Options.GetCookieScriptOption());
+			options.Add(this.ShowAnimation.Options.GetAnimationScriptOption());
+			options.Add(this.HideAnimation.Options.GetAnimationScriptOption());
 			options.Add(!this.IsNullEmptyOrDefault(this.IdPrefix, DEFAULT_ID_PREFIX), "idPrefix", this.IdPrefix.InDoubleQuotes());
 			options.Add(!this.IsNullEmptyOrDefault(this.PanelTemplate, DEFAULT_PANEL_TEMPLATE), "panelTemplate", this.PanelTemplate.InDoubleQuotes());
 			options.Add(!this.IsNullEmptyOrDefault(this.Spinner, DEFAULT_SPINNER), "spinner", this.Spinner.InDoubleQuotes());

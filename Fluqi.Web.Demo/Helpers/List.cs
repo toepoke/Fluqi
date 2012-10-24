@@ -99,8 +99,8 @@ namespace Fluqi.Web.Demo.Helpers {
 			List<string> list = Core.Ease.ToList();
 			Dictionary<string, string> easing = 
 				list.ToDictionary(
-					v => (v == "None" ? "" : v.ToLower()), 
-					v => v.ToLower()
+					v => (v == "None" ? "" : v), 
+					v => v
 				);
 			return new SelectList(easing, "Key", "Value");
 		}

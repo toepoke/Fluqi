@@ -197,7 +197,10 @@ namespace Fluqi.Helpers {
 		/// Establishes whether the given value is considered to be a [jQuery] selector string
 		/// </summary>
 		/// <param name="value">Value to be queried</param>
-		/// <returns></returns>
+		/// <returns>
+		/// Returns true if value is deemed to be a selector
+		/// Returns false otherwise
+		/// </returns>
 		public static bool IsSelector(string value) {
 			if (string.IsNullOrEmpty(value)) 
 				// nothing to see here
@@ -205,6 +208,28 @@ namespace Fluqi.Helpers {
 
 			char[] selectorChars = "$()#.~ >".ToCharArray();
 			if (value.IndexOfAny(selectorChars) >= 0)
+				return true;
+
+			return false;
+		}
+
+
+		/// <summary>
+		/// Establishes whether the given value is considered to be a JSON string
+		/// </summary>
+		/// <param name="value">Value to be queried</param>
+		/// <returns>
+		/// Returns true if value is deemed to be a JSON object
+		/// Returns false otherwise
+		/// </returns>
+		/// <remarks>To determine this we simply look for the presence of "{", "}", "," or ":"</remarks>
+		public static bool IsJSON(string value) {
+			if (string.IsNullOrEmpty(value))
+				// nothing to see here
+				return false;
+
+			char[] jsonChars = "{},:".ToCharArray();
+			if (value.IndexOfAny(jsonChars) >= 0)
 				return true;
 
 			return false;
