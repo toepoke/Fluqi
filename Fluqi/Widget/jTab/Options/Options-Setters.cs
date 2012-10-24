@@ -110,17 +110,6 @@ namespace Fluqi.Widget.jTab
 			return this;
 		}
 
-
-		/// <summary>
-		/// HTML template from which a new tab panel is created in case of adding a tab with the 
-		/// add method or when creating a panel for a remote tab on the fly.
-		/// </summary>
-		/// <returns>Options object for chainability</returns>
-		public Options SetPanelTemplate(string panelTemplate) {
-			this.PanelTemplate = panelTemplate ?? "";
-			return this;
-		}
-
 	} // Options
 
 } // ns Fluqi.jTab

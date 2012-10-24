@@ -60,13 +60,6 @@ namespace Fluqi.Widget.jTab
 		/// <remarks>See http://api.jqueryui.com/tabs/#option-heightStyle for details</remarks>
 		protected internal string HeightStyle { get; set; }
 
-		/// <summary>
-		/// HTML template from which a new tab panel is created in case of adding a tab with the 
-		/// add method or when creating a panel for a remote tab on the fly.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#option-panelTemplate for details</remarks>
-		protected internal string PanelTemplate { get; set; }
-
 	} // Options
 
 } // ns Fluqi.jTab

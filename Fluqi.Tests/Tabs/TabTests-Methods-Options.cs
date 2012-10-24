@@ -610,54 +610,6 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_GetPanelTemplate_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.GetPanelTemplate();
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"panelTemplate\")", html);
-		}
-
-		[TestMethod]
-		public void Ensure_SetPanelTemplate_Without_Quotes_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.SetPanelTemplateJS("some_javascript_variable");
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"panelTemplate\",some_javascript_variable)", html);
-		}
-
-		[TestMethod]
-		public void Ensure_SetPanelTemplate_With_Quotes_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.SetPanelTemplate("<h3>bob</h3>");
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"panelTemplate\",\"<h3>bob</h3>\")", html);
-		}
-
-		[TestMethod]
 		public void Ensure_GetActive_Renders_Correctly()
 		{
 		  // Arrange

@@ -386,46 +386,6 @@ namespace Fluqi.Widget.jTab {
 		}
 		
 		/// <summary>
-		/// Returns [in JavaScript] the current "panelTemplate" setting.
-		/// </summary>
-		public void GetPanelTemplate() {
-			this.RenderGetOptionCall("panelTemplate");
-		}
-
-		/// <summary>
-		/// HTML template from which a new tab panel is created in case of adding a tab 
-		/// with the add method or when creating a panel for a remote tab on the fly.
-		/// This entry point does _not_ add quotes to the input value and is indended for passing JavaScript
-		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
-		/// </summary>
-		/// <param name="newValue">New panelTemplate setting</param>
-		public void SetPanelTemplateJS(string newValue) {
-			this.RenderSetOptionCall("panelTemplate", newValue);
-		}
-
-		/// <summary>
-		/// HTML template from which a new tab panel is created in case of adding a tab 
-		/// with the add method or when creating a panel for a remote tab on the fly.
-		/// </summary>
-		/// <param name="newValue">New panelTemplate setting</param>
-		/// <param name="inDoubleQuotes">
-		/// true  - double quotes (")
-		/// false - single quotes (')
-		/// </param>
-		public void SetPanelTemplate(string newValue, bool inDoubleQuotes) {
-			this.RenderSetOptionCall("panelTemplate", newValue, inDoubleQuotes);
-		}
-
-		/// <summary>
-		/// HTML template from which a new tab panel is created in case of adding a tab 
-		/// with the add method or when creating a panel for a remote tab on the fly.
-		/// </summary>
-		/// <param name="newValue">New panelTemplate setting</param>
-		public void SetPanelTemplate(string newValue) {
-			this.SetPanelTemplate(newValue, true/*doubleQuotes*/);
-		}
-
-		/// <summary>
 		/// Returns [in JavaScript] the active setting.
 		/// To set all tabs to unselected pass -1 as value.
 		/// </summary>
