@@ -32,10 +32,10 @@ namespace Fluqi.Widget.jTab
 		protected internal string LoadEvent { get; set; }
 
 		/// <summary>
-		/// This event is triggered when a tab is shown.
+		/// This event is triggered when a tab is activated (after any animation has completed).
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/tabs/#event-show for details</remarks>
-		protected internal string ShowEvent { get; set; }
+		protected internal string ActivateEvent { get; set; }
 
 		/// <summary>
 		/// This event is triggered when a tab is added.

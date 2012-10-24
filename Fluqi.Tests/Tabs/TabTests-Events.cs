@@ -78,7 +78,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Tabs_With_Select_EventHandler_Wired_Up_Renders_Correctly()
+		public void Tabs_With_BeforeActivate_EventHandler_Wired_Up_Renders_Correctly()
 		{
 			// Arrange
 			// Arrange
@@ -138,7 +138,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Tabs_With_Show_EventHandler_Wired_Up_Renders_Correctly()
+		public void Tabs_With_Activate_EventHandler_Wired_Up_Renders_Correctly()
 		{
 			// Arrange
 			// Arrange
@@ -154,7 +154,7 @@ namespace Fluqi.Tests
 					.Compress();
 
 			tabs.Events
-				.SetShowEvent("addToLog('Show event called');")
+				.SetActivateEvent("addToLog('Activate event called');")
 			;
 
 			TestHelper.ForceRender(tabs);
@@ -163,7 +163,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  string expected = "show: function(event, ui) {addToLog('Show event called');}";
+		  string expected = "activate: function(event, ui) {addToLog('Activate event called');}";
 		  Assert.IsTrue(html.Contains(expected));
 		}
 

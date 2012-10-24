@@ -44,11 +44,11 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
-		/// This event is triggered when a tab is shown.
+		/// This event is triggered when a tab activates (after any animation completes).
 		/// </summary>
 		/// <returns>Events object for chainability</returns>
-		public Events SetShowEvent(string methodSource) {
-			this.ShowEvent = methodSource;
+		public Events SetActivateEvent(string methodSource) {
+			this.ActivateEvent = methodSource;
 			return this;	
 		}
 

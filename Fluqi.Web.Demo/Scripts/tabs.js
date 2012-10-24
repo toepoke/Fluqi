@@ -27,12 +27,14 @@ function loadEvent(event, ui) {
 	);	
 }
 
-function showEvent(event, ui) {
+function activateEvent(event, ui) {
 	addToLog(
-		"SHOW EVENT"
+		"ACTIVATE EVENT"
 		+ "<br/>- " + buildKeyValue("event.type", event.type, 28)
-		+ "<br/>- " + buildKeyValue("ui.tab.text", ui.tab.innerText, 20)
-		+ "<br/>- " + buildKeyValue("ui.panel.text", ui.panel.innerText, 20)
+		+ "<br/>- " + buildKeyValue("ui.oldTab.text()", ui.oldTab.text(), 20)
+		+ "<br/>- " + buildKeyValue("ui.oldPanel.text()", ui.oldPanel.text(), 20)
+		+ "<br/>- " + buildKeyValue("ui.newTab.text()", ui.newTab.text(), 20)
+		+ "<br/>- " + buildKeyValue("ui.newPanel.text()", ui.newPanel.text(), 20)
 	);
 }
 
