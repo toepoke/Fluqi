@@ -168,66 +168,6 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Tabs_With_Add_EventHandler_Wired_Up_Renders_Correctly()
-		{
-			// Arrange
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			// only testing raw output
-			tabs
-				.Options
-					.SetEvent("mouseover")
-				.Finish()
-				.Rendering
-					.Compress();
-
-			tabs.Events
-				.SetAddEvent("addToLog('Add event called');")
-			;
-
-			TestHelper.ForceRender(tabs);
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  string expected = "add: function(event, ui) {addToLog('Add event called');}";
-		  Assert.IsTrue(html.Contains(expected));
-		}
-
-		[TestMethod]
-		public void Tabs_With_Remove_EventHandler_Wired_Up_Renders_Correctly()
-		{
-			// Arrange
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			// only testing raw output
-			tabs
-				.Options
-					.SetEvent("mouseover")
-					.Finish()
-				.Rendering
-					.Compress();
-
-			tabs.Events
-				.SetRemoveEvent("addToLog('Remove event called');")
-			;
-
-			TestHelper.ForceRender(tabs);
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  string expected = "remove: function(event, ui) {addToLog('Remove event called');}";
-		  Assert.IsTrue(html.Contains(expected));
-		}
-
-		[TestMethod]
 		public void Tabs_With_Enable_EventHandler_Wired_Up_Renders_Correctly()
 		{
 			// Arrange

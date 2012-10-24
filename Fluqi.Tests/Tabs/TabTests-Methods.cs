@@ -129,39 +129,6 @@ namespace Fluqi.Tests
 		  Assert.AreEqual("$(\"#myTabs\").tabs(\"refresh\")", html);
 		}
 
-
-		[TestMethod]
-		public void Ensure_AddTab_Method_Renders_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			tabs.Methods.Add("http://someurl.html", "my new label");
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"add\",\"http://someurl.html\",\"my new label\")", html);
-		}
-
-		[TestMethod]
-		public void Ensure_RemoveTab_Method_Renders_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			tabs.Methods.Remove(2);
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"remove\",2)", html);
-		}
-
 		[TestMethod]
 		public void Ensure_Load_Method_Renders_Correctly()
 		{

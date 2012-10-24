@@ -77,4 +77,29 @@ function beforeLoadEvent(event, ui) {
 	);
 }
 
+/// <summary>
+/// Taken from upgrade guide 1.9:
+/// http://jqueryui.com/upgrade-guide/1.9/#deprecated-add-and-remove-methods-and-events-use-refresh-method
+/// </summary
+var _newTabID = 1;
+function addTab(title, fromUrl) {
+	$("<li><a href='" + fromUrl + "'>" + title + _newTabID + "</a></li>")
+		.appendTo("#tabs .ui-tabs-nav");
+	$("#tabs").tabs("refresh");
+	_newTabID++;
+}
 
+/// <summary>
+/// Taken from upgrade guide 1.9:
+/// http://jqueryui.com/upgrade-guide/1.9/#deprecated-add-and-remove-methods-and-events-use-refresh-method
+/// </summary
+function removeTab(index) {	
+	// Remove the tab
+	var tab = $("#tabs").find(".ui-tabs-nav li:eq(" + index + ")").remove();
+	// Find the id of the associated panel
+	var panelId = tab.attr("aria-controls");
+	// Remove the panel
+	$("#" + panelId).remove();
+	// Refresh the tabs widget
+	$("tabs").tabs("refresh");
+}

@@ -54,26 +54,6 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
-		/// This event is triggered when a tab is added.
-		/// </summary>
-		/// <returns>Events object for chainability</returns>
-		public Events SetAddEvent(string methodSource) {
-			this.AddEvent = methodSource;
-			return this;	
-		}
-
-
-		/// <summary>
-		/// This event is triggered when a tab is removed.
-		/// </summary>
-		/// <returns>Events object for chainability</returns>
-		public Events SetRemoveEvent(string methodSource) {
-			this.RemoveEvent = methodSource;
-			return this;	
-		}
-
-		
-		/// <summary>
 		/// This event is triggered when a tab is enabled.
 		/// </summary>
 		/// <returns>Events object for chainability</returns>

@@ -164,8 +164,8 @@
 			alert("Note 'Disable All' does not work\n\nsee jQuery UI issue #4386 http://bugs.jqueryui.com/ticket/4386\n\nIt's present here for when it get's fixed."); 
 			<%tabs.Methods.Disable();%>; 
 		});
-		$("#addTab").click(function() { <%tabs.Methods.Add( Url.Action("GetDynamicTab", "Builder"), "New Tab");%>; });
-		$("#removeTab").click(function() { <%tabs.Methods.Remove(0);%>; });
+		$("#addTab").click(function() { addTab("New Tab", '<%=Url.Action("GetDynamicTab", "Builder")%>'); });
+		$("#removeTab").click(function() { removeTab(0); });
 		$("#length").click(function() { alert("Number of tabs is:\n\n" + <%tabs.Methods.Length();%>); });
 		$("#startRotate").click(function() { <%tabs.Methods.StartRotation();%>; });
 		$("#stopRotate").click(function() { <%tabs.Methods.StopRotation();%>; });

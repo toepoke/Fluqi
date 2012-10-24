@@ -81,8 +81,6 @@ namespace Fluqi.Models
 					.SetBeforeActivateEvent("return beforeActivateEvent(event, ui);")
 					.SetLoadEvent("return loadEvent(event, ui);")
 					.SetActivateEvent("return activateEvent(event, ui);")
-					.SetAddEvent("return addEvent(event, ui);")
-					.SetRemoveEvent("return removeEvent(event, ui);")
 					.SetEnableEvent("return enableEvent(event, ui);")
 					.SetDisableEvent("return disableEvent(event, ui);")
 					.SetBeforeLoadEvent("return beforeLoadEvent(event, ui);")

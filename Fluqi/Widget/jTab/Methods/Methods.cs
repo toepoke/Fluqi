@@ -81,53 +81,6 @@ namespace Fluqi.Widget.jTab {
 
 
 		/// <summary>
-		/// Add a new tab. 
-		/// <param name="url">
-		/// The second argument is either a URL consisting of a fragment identifier only to create an in-page tab or a 
-		/// full url (relative or absolute, no cross-domain support) to turn the new tab into an Ajax (remote) tab.
-		/// </param>
-		/// <param name="label">
-		/// Text to appear in the title of the tab.
-		/// </param>
-		/// <param name="insertAt">
-		/// The third is the zero-based position where to insert the new tab.
-		/// </param>
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-add for details.</remarks>
-		public void Add(string url, string label, int insertAt) {
-			this.RenderMethodCall("add", url.InDoubleQuotes(), label.InDoubleQuotes(), insertAt );
-		}	
-
-
-		/// <summary>
-		/// Add a new tab and the end of the set of tab panes. 
-		/// <param name="url">
-		/// The second argument is either a URL consisting of a fragment identifier only to create an in-page tab or a 
-		/// full url (relative or absolute, no cross-domain support) to turn the new tab into an Ajax (remote) tab.
-		/// </param>
-		/// <param name="label">
-		/// Text to appear in the title of the tab.
-		/// </param>
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-add for details.</remarks>
-		public void Add(string url, string label) {
-			this.RenderMethodCall("add", url.InDoubleQuotes(), label.InDoubleQuotes() );
-		}	
-
-
-		/// <summary>
-		/// Remove a tab. 
-		/// </summary>
-		/// <param name="index">
-		/// Zero-based index of the tab to be removed.
-		/// </param>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-remove for details.</remarks>
-		public void Remove(int index) {
-			this.RenderMethodCall("remove", index );
-		}	
-
-
-		/// <summary>
 		/// Process any tabs that were added or removed directly in the DOM and recompute the height of the 
 		/// tab panels. Results depend on the content and the heightStyle option.
 		/// </summary>

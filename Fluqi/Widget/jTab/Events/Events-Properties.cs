@@ -38,18 +38,6 @@ namespace Fluqi.Widget.jTab
 		protected internal string ActivateEvent { get; set; }
 
 		/// <summary>
-		/// This event is triggered when a tab is added.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#event-add for details</remarks>
-		protected internal string AddEvent { get; set; }
-
-		/// <summary>
-		/// This event is triggered when a tab is removed.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#event-remove for details</remarks>
-		protected internal string RemoveEvent { get; set; }
-
-		/// <summary>
 		/// This event is triggered when a tab is enabled.
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/tabs/#event-enable for details</remarks>
