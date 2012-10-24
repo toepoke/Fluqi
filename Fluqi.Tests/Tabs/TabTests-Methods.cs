@@ -163,54 +163,6 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_Select_Method_Renders_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			tabs.Methods.Select(2);
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"select\",2)", html);
-		}
-
-		[TestMethod]
-		public void Ensure_Select_Without_Quotes_Method_Renders_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			tabs.Methods.SelectJS("some_javascript_variable");
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"select\",some_javascript_variable)", html);
-		}
-
-		[TestMethod]
-		public void Ensure_Select_By_ID_Method_Renders_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			tabs.Methods.Select("#hash");
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"select\",\"#hash\")", html);
-		}
-
-		[TestMethod]
 		public void Ensure_Load_Method_Renders_Correctly()
 		{
 			// Arrange

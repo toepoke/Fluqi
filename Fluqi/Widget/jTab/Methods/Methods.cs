@@ -138,51 +138,6 @@ namespace Fluqi.Widget.jTab {
 
 
 		/// <summary>
-		/// Select a tab, as if it were clicked. The second argument is the zero-based index of the 
-		/// tab to be selected or the id selector of the panel the tab is associated with 
-		/// (the tab's href fragment identifier, e.g. hash, points to the panel's id)
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-select for details.</remarks>
-		public void Select(int index) {
-			this.RenderMethodCall("select", index);
-		}	
-
-
-		/// <summary>
-		/// Select a tab, as if it were clicked. The second argument is id selector of the panel the 
-		/// tab is associated with (the tab's href fragment identifier, e.g. hash, points to the panel's id)
-		/// This entry point does _not_ add quotes to the input value and is indended for passing JavaScript
-		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-select for details.</remarks>
-		public void SelectJS(string idOrHash) {
-			this.RenderMethodCall("select", idOrHash);
-		}	
-
-		/// <summary>
-		/// Select a tab, as if it were clicked. The second argument is id selector of the panel the 
-		/// tab is associated with (the tab's href fragment identifier, e.g. hash, points to the panel's id)
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-select for details.</remarks>
-		/// <param name="idOrHash">What tab to select</param>
-		/// <param name="inDoubleQuotes">
-		/// true  - double quotes (")
-		/// false - single quotes (')
-		/// </param>
-		public void Select(string idOrHash, bool inDoubleQuotes) {
-			this.RenderMethodCall("select", idOrHash.InQuotes(inDoubleQuotes));
-		}	
-
-		/// <summary>
-		/// Select a tab, as if it were clicked. The second argument is id selector of the panel the 
-		/// tab is associated with (the tab's href fragment identifier, e.g. hash, points to the panel's id)
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#method-select for details.</remarks>
-		public void Select(string idOrHash) {
-			this.Select(idOrHash, true/*doubleQuotes*/);
-		}	
-
-		/// <summary>
 		/// Reload the content of an Ajax tab programmatically. This method always loads the tab content 
 		/// from the remote location, even if cache is set to true. Note the remote location is the href
 		/// in the header of the tab.

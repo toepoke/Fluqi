@@ -172,9 +172,9 @@
 		$("#widget").click(function() { alert( "Widget HTML:\n\n" + <%tabs.Methods.Widget();%>.html() ); });
 		$("#destroy").click(function() {  if (confirm("are you sure you want to destroy the tabs control?")) <%tabs.Methods.Destroy();%>; });
 
-		$("#selectTab-1").click(function() { <%tabs.Methods.Select(0);%>; });
-		$("#selectTab-2").click(function() { <%tabs.Methods.Select(1);%>; });
-		$("#selectTab-3").click(function() { <%tabs.Methods.Select(2);%>; });
+		$("#selectTab-1").click(function() { <%tabs.Methods.SetActive(0);%>; });
+		$("#selectTab-2").click(function() { <%tabs.Methods.SetActive(1);%>; });
+		$("#selectTab-3").click(function() { <%tabs.Methods.SetActive(2);%>; });
 		$("#enableTab-1").click(function() { <%tabs.Methods.Enable(0);%>; });
 		$("#enableTab-2").click(function() { <%tabs.Methods.Enable(1);%>; });
 		$("#enableTab-3").click(function() { <%tabs.Methods.Enable(2);%>; });

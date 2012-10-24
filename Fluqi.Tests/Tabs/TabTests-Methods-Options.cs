@@ -706,7 +706,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_GetSelected_Renders_Correctly()
+		public void Ensure_GetActive_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
@@ -722,7 +722,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_SetSelected_Renders_Correctly()
+		public void Ensure_SetActive_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
