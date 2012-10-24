@@ -20,7 +20,7 @@ namespace Fluqi.Widget.jTab
 	{
 		private bool _Disposed;
 		private readonly TextWriter _Writer = null;
-		internal bool _IsSelected = false;
+		internal bool _IsActive = false;
 
 		/// <summary>
 		/// Specifies the ID for the DIV that holds the tab content (for static tabs), or the URL where
@@ -37,22 +37,22 @@ namespace Fluqi.Widget.jTab
 		public string Title { get; set; }
 
 		/// <summary>
-		/// Flags whether this tab should be selected when the page is first loaded.
+		/// Flags whether this tab should be active when the page is first loaded.
 		/// </summary>
 		/// <remarks>
-		/// Note we manage unselecting a tab if a different tab is selected, hence the 
-		/// private "_IsSelected" flag above.
+		/// Note we manage unselecting a tab if a different tab is active, hence the 
+		/// private "_IsActive" flag above.
 		/// </remarks>
-		public bool IsSelected { 
+		public bool IsActive { 
 			get {
-				return this._IsSelected;
+				return this._IsActive;
 			}
 			set {
-				if (value && this.Panes.HasSelectedTab()) {
+				if (value && this.Panes.HasActiveTab()) {
 					this.Panes.ResetSelectedTabs();
 				}
 
-				this._IsSelected = value;
+				this._IsActive = value;
 			}
 		}
 
@@ -118,13 +118,13 @@ namespace Fluqi.Widget.jTab
 		/// For dynamic tabs this is the URL where the content is loaded from.
 		/// </param>
 		/// <param name="title">Title of the tab heading (same as <see cref="Title"/> property)</param>
-		/// <param name="isSelected">Flags whether this tab should be the selected one on page load (same as <see cref="IsSelected"/> property)</param>
-		internal Pane(TextWriter writer, Panes owner, string idOrLocation, string title, bool isSelected)  {
+		/// <param name="isActive">Flags whether this tab should be the active one on page load (same as <see cref="IsActive"/> property)</param>
+		internal Pane(TextWriter writer, Panes owner, string idOrLocation, string title, bool isActive)  {
 			this.Panes = owner;
 			this._Writer = writer;
 			this.IDOrLocation = idOrLocation;
 			this.Title = title;
-			this.IsSelected = isSelected;
+			this.IsActive = isActive;
 			this.Index = 0;
 			this.Visible = true;
 		}
@@ -162,7 +162,7 @@ namespace Fluqi.Widget.jTab
 			bool renderCss = this.Panes.Tabs.Rendering.RenderCSS;
 
 			if (renderCss) {
-				if (this.IsSelected)
+				if (this.IsActive)
 					selected = " ui-tabs-selected ui-state-active";
 
 				sb.AppendTabsFormatLineIf("<li class=\"ui-state-default ui-corner-top{0}\">", selected);

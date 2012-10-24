@@ -17,7 +17,7 @@ namespace Fluqi.Widget.jTab
 	/// <remarks>
 	/// Properties not supported: 
 	///		deselectable (depreciated)
-	/// Note "Selected" _is_ supported, however it hangs off an individual <see cref="Pane"/>.
+	/// Note "Active" _is_ supported, however it hangs off an individual <see cref="Pane"/>.
 	/// </remarks>
 	public partial class Events: Core.Options
 	{

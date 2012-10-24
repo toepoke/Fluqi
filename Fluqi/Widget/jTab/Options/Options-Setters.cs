@@ -51,7 +51,7 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
-		/// Sets whether the selected tab is collapsible or not.
+		/// Sets whether the active tab is collapsible or not.
 		/// </summary>
 		/// <param name="collapsible">Flags whether collapsible is on or off</param>
 		/// <returns>Options object for chainability</returns>

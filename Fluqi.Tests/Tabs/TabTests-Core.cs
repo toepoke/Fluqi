@@ -371,8 +371,8 @@ namespace Fluqi.Tests
 			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
 
 			// Change the selected tab before we render out
-			tabs.Panes.ToDictionary()["tab3"].IsSelected = true;
-			tabs.Panes.ToDictionary()["tab2"].IsSelected = true;
+			tabs.Panes.ToDictionary()["tab3"].IsActive = true;
+			tabs.Panes.ToDictionary()["tab2"].IsActive = true;
 
 			// only testing raw output
 			tabs.Rendering.Compress();
@@ -386,16 +386,16 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs({selected: 1})" + 
+						"$(\"#myTabs\").tabs({active: 1})" + 
 					";});" + 
 				"</script>";
 			Assert.IsTrue(html.Contains(expected));
 
 			// Ensure "tab2" is selected
-			Assert.AreEqual(1, (from t in tabs.Panes.ToDictionary() where t.Value.IsSelected && t.Value.IDOrLocation == "tab2" select t).Count() );
+			Assert.AreEqual(1, (from t in tabs.Panes.ToDictionary() where t.Value.IsActive && t.Value.IDOrLocation == "tab2" select t).Count() );
 
 			// Ensure only 1 tab is selected (.Single will throw a wobbler if there's > 1 selected)
-			var selectedTab = (from t in tabs.Panes.ToDictionary() where t.Value.IsSelected select t).Single();
+			var selectedTab = (from t in tabs.Panes.ToDictionary() where t.Value.IsActive select t).Single();
 		}
 
 		[TestMethod, ExpectedException(typeof(System.NotSupportedException))]

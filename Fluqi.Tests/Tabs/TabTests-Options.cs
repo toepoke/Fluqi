@@ -64,7 +64,7 @@ namespace Fluqi.Tests
 			;
 
 			// Set 3rd tab as selected
-			tabs.Panes.ToDictionary()["tab3"].IsSelected = true;
+			tabs.Panes.ToDictionary()["tab3"].IsActive = true;
 
 			TestHelper.ForceRender(tabs);
 
@@ -77,7 +77,7 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs({selected: 2})" + 
+						"$(\"#myTabs\").tabs({active: 2})" + 
 					";});" + 
 				"</script>";
 

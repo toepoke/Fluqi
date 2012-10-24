@@ -561,20 +561,20 @@ namespace Fluqi.Widget.jTab {
 		}
 
 		/// <summary>
-		/// Returns [in JavaScript] the selected setting.
+		/// Returns [in JavaScript] the active setting.
 		/// To set all tabs to unselected pass -1 as value.
 		/// </summary>
-		public void GetSelected() {
-			this.RenderGetOptionCall("selected");
+		public void GetActive() {
+			this.RenderGetOptionCall("active");
 		}
 
 		/// <summary>
-		/// Zero-based index of the tab to be selected on initialization. 
+		/// Zero-based index of the tab to be active on initialization. 
 		/// To set all tabs to unselected pass -1 as value.
 		/// </summary>
-		/// <param name="newValue">New selected value</param>
-		public void SetSelected(int newValue) {
-			this.RenderSetOptionCall("selected", newValue.ToString()); 
+		/// <param name="newValue">New active value</param>
+		public void SetActive(int newValue) {
+			this.RenderSetOptionCall("active", newValue.ToString()); 
 		}
 
 		/// <summary>

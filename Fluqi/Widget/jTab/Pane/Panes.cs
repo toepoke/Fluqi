@@ -12,7 +12,7 @@ namespace Fluqi.Widget.jTab
 	public class Panes
 	{
 		/// <summary>
-		/// Flags the currently selected pane.
+		/// Flags the currently active pane.
 		/// </summary>
 		protected internal Dictionary<string, Pane>.Enumerator _CurrentPaneValue;
 
@@ -77,10 +77,10 @@ namespace Fluqi.Widget.jTab
 		/// For dynamic tabs this is the URL where the content is loaded from.
 		/// </param>
 		/// <param name="title">Title of the tab (to appear in the tab headings)</param>
-		/// <param name="selected">Flags whether this tab should be the selected tab on page load</param>
+		/// <param name="active">Flags whether this tab should be the active tab on page load</param>
 		/// <returns>Returns Tabs object to maintain chainability</returns>
-		public Panes Add(string idOrLocation, string title, bool selected) {
-			Pane newTab = new Pane(this.Tabs.Writer, this, idOrLocation, title, selected);
+		public Panes Add(string idOrLocation, string title, bool active) {
+			Pane newTab = new Pane(this.Tabs.Writer, this, idOrLocation, title, active);
 
 			if (this._Panes.ContainsKey(newTab.IDOrLocation))
 				throw new ArgumentException(string.Format("A tab with ID or Location \"{0}\" has already been added.", newTab.IDOrLocation));
@@ -179,15 +179,15 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
-		/// Internal helper method to get the Tab marked as Selected (if there is one)
+		/// Internal helper method to get the Tab marked as active (if there is one)
 		/// </summary>
 		/// <returns>
-		/// Returns the selected Tab if there is one
+		/// Returns the active Tab if there is one
 		/// Returns null otherwise
 		/// </returns>
-		protected internal Pane GetSelectedTab() {
+		protected internal Pane GetActiveTab() {
 			foreach (Pane tb in this._Panes.Values) {
-				if (tb.IsSelected)
+				if (tb.IsActive)
 					return tb;
 			}
 
@@ -196,14 +196,14 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
-		/// Internal helper method to establish if any of the tabs are marked as selected
+		/// Internal helper method to establish if any of the tabs are marked as active
 		/// </summary>
 		/// <returns>
-		/// Returns true if a selected Tab is defined
+		/// Returns true if a active Tab is defined
 		/// Returns false otherwise
 		/// </returns>
-		protected internal bool HasSelectedTab() {
-			return (this.GetSelectedTab() != null);
+		protected internal bool HasActiveTab() {
+			return (this.GetActiveTab() != null);
 		}
 
 
@@ -214,21 +214,21 @@ namespace Fluqi.Widget.jTab
 			foreach (Pane t in this._Panes.Values) 
 				// go directly to the underlying value rather than the property
 				// ... otherwise we'll end up calling our self back and have a stackoverflow
-				t._IsSelected = false;
+				t._IsActive = false;
 		}
 
 
 		/// <summary>
-		/// Works out which (if any) of the tab panes are marked as selected.
-		/// If none are selected, the first tab is marked as selected.
+		/// Works out which (if any) of the tab panes are marked as active.
+		/// If none are active, the first tab is marked as selected.
 		/// </summary>
 		/// <remarks>
 		/// This is necessary to ensure the correct mark-up is produced when the
 		/// ShowCSS option is enabled (i.e. full markup is rendered).
 		/// </remarks>
 		protected internal void ResolveActiveTab() {
-			if (!this.HasSelectedTab() && this._Panes.Any())
-				this._Panes.Values.FirstOrDefault().IsSelected = true;
+			if (!this.HasActiveTab() && this._Panes.Any())
+				this._Panes.Values.FirstOrDefault().IsActive = true;
 		}
 
 

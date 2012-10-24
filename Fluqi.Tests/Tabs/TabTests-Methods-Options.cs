@@ -712,13 +712,13 @@ namespace Fluqi.Tests
 		  var resp = new MockWriter();
 			var ctl = TestHelper.SetupSimpleTabObject(resp);
 
-		  ctl.Methods.GetSelected();
+		  ctl.Methods.GetActive();
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"selected\")", html);
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"active\")", html);
 		}
 
 		[TestMethod]
@@ -728,13 +728,13 @@ namespace Fluqi.Tests
 		  var resp = new MockWriter();
 			var ctl = TestHelper.SetupSimpleTabObject(resp);
 
-		  ctl.Methods.SetSelected(3);
+		  ctl.Methods.SetActive(3);
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"selected\",3)", html);
+		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"active\",3)", html);
 		}
 
 		[TestMethod]

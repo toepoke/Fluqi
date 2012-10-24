@@ -136,8 +136,8 @@ namespace Fluqi.Widget.jTab
 			jStringBuilder sb = new jStringBuilder(prettyRender, tabDepth);
 
 			// Work out if we have an active tab set, if not default to the first one
-			if (!this.Panes.HasSelectedTab() && _Panes._Panes.Any())
-				_Panes._Panes.Values.FirstOrDefault().IsSelected = true;
+			if (!this.Panes.HasActiveTab() && _Panes._Panes.Any())
+				_Panes._Panes.Values.FirstOrDefault().IsActive = true;
 			
 			if (renderCss) {
 				this.WithCss("ui-tabs ui-widget ui-widget-content ui-corner-all");
