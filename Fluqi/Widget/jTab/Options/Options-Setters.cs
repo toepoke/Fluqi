@@ -135,18 +135,6 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
-		/// The HTML content of this string is shown in a tab title while remote content is loading. 
-		/// Pass in empty string to deactivate that behavior. An span element must be present in 
-		/// the A tag of the title, for the spinner content to be visible.
-		/// </summary>
-		/// <returns>Options object for chainability</returns>
-		public Options SetSpinner(string spinner) {
-			this.Spinner = spinner ?? "";
-			return this;
-		}		
-
-		
-		/// <summary>
 		/// HTML template from which a new tab is created and added. The placeholders 
 		/// #{href} and #{label} are replaced with the url and tab label that are passed as 
 		/// arguments to the add method.

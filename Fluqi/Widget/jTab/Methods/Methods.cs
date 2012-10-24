@@ -561,49 +561,6 @@ namespace Fluqi.Widget.jTab {
 		}
 
 		/// <summary>
-		/// Returns [in JavaScript] the current "spinner" setting.
-		/// </summary>
-		public void GetSpinner() {
-			this.RenderGetOptionCall("spinner");
-		}
-
-		/// <summary>
-		/// The HTML content of this string is shown in a tab title while remote content is loading. 
-		/// Pass in empty string to deactivate that behavior. An span element must be present in the 
-		/// A tag of the title, for the spinner content to be visible.
-		/// This entry point does _not_ add quotes to the input value and is indended for passing JavaScript
-		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
-		/// </summary>
-		/// <param name="newValue">New spinner setting</param>
-		public void SetSpinnerJS(string newValue) {
-			this.RenderSetOptionCall("spinner", newValue);
-		}
-
-		/// <summary>
-		/// The HTML content of this string is shown in a tab title while remote content is loading. 
-		/// Pass in empty string to deactivate that behavior. An span element must be present in the 
-		/// A tag of the title, for the spinner content to be visible.
-		/// </summary>
-		/// <param name="newValue">New spinner setting</param>
-		/// <param name="inDoubleQuotes">
-		/// true  - double quotes (")
-		/// false - single quotes (')
-		/// </param>
-		public void SetSpinner(string newValue, bool inDoubleQuotes) {
-			this.RenderSetOptionCall("spinner", newValue, inDoubleQuotes);
-		}
-
-		/// <summary>
-		/// The HTML content of this string is shown in a tab title while remote content is loading. 
-		/// Pass in empty string to deactivate that behavior. An span element must be present in the 
-		/// A tag of the title, for the spinner content to be visible.
-		/// </summary>
-		/// <param name="newValue">New spinner setting</param>
-		public void SetSpinner(string newValue) {
-			this.SetSpinner(newValue, true/*doubleQuotes*/);
-		}
-
-		/// <summary>
 		/// Returns [in JavaScript] the selected setting.
 		/// To set all tabs to unselected pass -1 as value.
 		/// </summary>

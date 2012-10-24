@@ -706,54 +706,6 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_GetSpinner_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.GetSpinner();
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"spinner\")", html);
-		}
-
-		[TestMethod]
-		public void Ensure_SetSpinner_Without_Quotes_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.SetSpinnerJS("some_javascript_variable");
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"spinner\",some_javascript_variable)", html);
-		}
-
-		[TestMethod]
-		public void Ensure_SetSpinner_With_Quotes_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.SetSpinner("<span>Loading...</span>");
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"spinner\",\"<span>Loading...</span>\")", html);
-		}
-
-		[TestMethod]
 		public void Ensure_GetSelected_Renders_Correctly()
 		{
 		  // Arrange

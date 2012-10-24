@@ -21,7 +21,6 @@ namespace Fluqi.Widget.jTab
 		public const string DEFAULT_HEIGHT_STYLE = "auto";
 		public const string DEFAULT_ID_PREFIX = "ui-tabs-";
 		public const string DEFAULT_PANEL_TEMPLATE = "<div></div>";
-		public const string DEFAULT_SPINNER = "<em>Loading&#8230;</em>";
 		public const string DEFAULT_TAB_TEMPLATE = "<li><a href=\"#{href}\"><span>#{label}</span></a></li>";
 #pragma warning restore 1591
 
@@ -86,7 +85,6 @@ namespace Fluqi.Widget.jTab
 			options.Add(this.HideAnimation.Options.GetAnimationScriptOption());
 			options.Add(!this.IsNullEmptyOrDefault(this.IdPrefix, DEFAULT_ID_PREFIX), "idPrefix", this.IdPrefix.InDoubleQuotes());
 			options.Add(!this.IsNullEmptyOrDefault(this.PanelTemplate, DEFAULT_PANEL_TEMPLATE), "panelTemplate", this.PanelTemplate.InDoubleQuotes());
-			options.Add(!this.IsNullEmptyOrDefault(this.Spinner, DEFAULT_SPINNER), "spinner", this.Spinner.InDoubleQuotes());
 			options.Add(!this.IsNullEmptyOrDefault(this.TabTemplate, DEFAULT_TAB_TEMPLATE), "tabTemplate", this.TabTemplate.InDoubleQuotes());
 			if (this.Tabs.Panes.HasSelectedTab() && this.Tabs.Panes.GetSelectedTab().Index > 0) {
 				options.Add( this.Tabs.Panes.HasSelectedTab(), "selected", this.Tabs.Panes.GetSelectedTab().Index.ToString() );
