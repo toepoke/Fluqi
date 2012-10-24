@@ -16,39 +16,7 @@ namespace Fluqi.Tests
 	[TestClass]
 	public partial class Tab_Methods_Options_Tests
 	{
-
-		[TestMethod]
-		public void Ensure_GetCache_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.GetCache();
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"cache\")", html);
-		}
-
-		[TestMethod]
-		public void Ensure_SetCache_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.SetCache(true);
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"cache\",true)", html);
-		}
-
+		
 		[TestMethod]
 		public void Ensure_GetCollapsible_Renders_Correctly()
 		{

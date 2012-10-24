@@ -84,68 +84,6 @@ namespace Fluqi.Tests
 			// Check script output
 			Assert.IsTrue(html.Contains(expected));
 		}
-	
-		[TestMethod]
-		public void Ensure_AjaxOptions_Option_Is_Added_To_Script_Definition()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			// only testing raw output
-			tabs
-				.Options
-					.SetAjaxOptions("{ async: false, password: \"xyz\" }")
-					.Finish()
-				.Rendering
-					.Compress();
-
-			TestHelper.ForceRender(tabs);
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-			string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs({ajaxOptions: { async: false, password: \"xyz\" }})" + 
-					";});" + 
-				"</script>";
-
-			Assert.IsTrue(html.Contains(expected));
-		}
-
-		[TestMethod]
-		public void Ensure_Cache_Option_Is_Added_To_Script_Definition_When_True()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			// only testing raw output
-			tabs
-				.Options
-					.SetCache(true)
-					.Finish()
-				.Rendering
-					.Compress();
-
-			TestHelper.ForceRender(tabs);
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-			string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs({cache: true})" + 
-					";});" + 
-				"</script>";
-
-			Assert.IsTrue(html.Contains(expected));
-		}
 
 		[TestMethod]
 		public void Ensure_Collapsible_Option_Is_Added_To_Script_Definition()

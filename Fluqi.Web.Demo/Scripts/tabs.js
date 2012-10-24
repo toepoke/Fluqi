@@ -66,5 +66,11 @@ function disableEvent(event, ui) {
 	);
 }
 
+function beforeLoadEvent(event, ui) {
+	addToLog("BEFORE_LOAD EVENT"
+		+ "<br/>- " + buildKeyValue("event.type", event.type, 28)
+		+ "<br/>- " + buildKeyValue("ui.ajaxSettings.username", ui.ajaxSettings.username, 20)
+	);
+}
 
 

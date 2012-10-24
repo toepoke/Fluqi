@@ -125,7 +125,7 @@
 	<ul class="horizontal">
 		<li><button id="disableAll" title="Disables the tabs control (note this does not work - see jQuery UI issue #4386 http://bugs.jqueryui.com/ticket/4386) ">Disable All</button></li>
 		<li><button id="enableAll" title="Enables the tabs control (note this does not work - see jQuery UI issue #4386 http://bugs.jqueryui.com/ticket/4386) ">Enable All</button></li>
-		<li><button id="addTab" title="Adds a tab.">Add [dynamic] Tab</button></li>
+		<li><button id="addTab" title="Adds a tab (note the 'beforeLoad' event won't fire until you click on the tab itself).">Add [dynamic] Tab</button></li>
 		<li><button id="removeTab" title="Removes the first tab.">Remove (1st) Tab</button></li>
 		<li><button id="length" title="Gets the number of tabs.">Length</button></li>
 		<li><button id="startRotate" title="Starts automatic rotation of tabs.">Start Rotate</button></li>

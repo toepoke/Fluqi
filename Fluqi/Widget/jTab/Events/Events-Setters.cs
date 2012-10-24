@@ -92,6 +92,15 @@ namespace Fluqi.Widget.jTab
 			return this;	
 		}
 
+		/// <summary>
+		/// This event is triggered when a tab is just about to be loaded.
+		/// </summary>
+		/// <returns>Events object for chainability</returns>
+		public void SetBeforeLoadEvent(string methodSource) {
+			this.BeforeLoadEvent = methodSource;
+		}
+
+
 	} // Events
 
 } // ns Fluqi.jTab

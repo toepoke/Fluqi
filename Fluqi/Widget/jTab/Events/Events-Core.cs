@@ -60,6 +60,7 @@ namespace Fluqi.Widget.jTab
 			options.AddEventHandler("remove", "event, ui", this.RemoveEvent);
 			options.AddEventHandler("enable", "event, ui", this.EnableEvent);
 			options.AddEventHandler("disable", "event, ui", this.DisableEvent);
+			options.AddEventHandler("beforeLoad", "event, ui", this.BeforeLoadEvent);
 		}
 
 	} // Options

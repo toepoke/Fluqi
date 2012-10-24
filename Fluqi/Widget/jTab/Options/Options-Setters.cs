@@ -51,29 +51,6 @@ namespace Fluqi.Widget.jTab
 
 
 		/// <summary>
-		/// Whether or not to cache remote tabs content, e.g. load only once or with every click. 
-		/// Cached content is being lazy loaded, e.g once and only once for the first click. 
-		/// Note that to prevent the actual Ajax requests from being cached by the browser you need to provide an extra 
-		/// cache: false flag to ajaxOptions
-		/// </summary>
-		/// <returns>Options object for chainability</returns>
-		public Options SetCache(bool cache) {
-			this.Cache = cache;
-			return this;
-		}
-
-
-		/// <summary>
-		/// Additional Ajax options to consider when loading tab content (see $.ajax).
-		/// </summary>
-		/// <remarks>Note this is passed "as is" to the jQuery UI Tabs.ajaxOptions setting.</remarks>
-		public Options SetAjaxOptions(string ajaxOptions) {
-			this.AjaxOptions = ajaxOptions;
-			return this;
-		}
-
-
-		/// <summary>
 		/// Sets whether the selected tab is collapsible or not.
 		/// </summary>
 		/// <param name="collapsible">Flags whether collapsible is on or off</param>

@@ -240,7 +240,6 @@ namespace Fluqi.Widget.jTab {
 			this.RenderMethodCall("rotate", ms, cont.JsBool());
 		}	
 
-
 		/// <summary>
 		/// Set up an automatic rotation through tabs of a tab pane, with a delay of 1 second between
 		/// transitions.
@@ -250,7 +249,6 @@ namespace Fluqi.Widget.jTab {
 			this.RenderMethodCall("rotate", 1000/*1 second*/);
 		}	
 
-
 		/// <summary>
 		/// Stops the rotation effect
 		/// </summary>
@@ -258,26 +256,7 @@ namespace Fluqi.Widget.jTab {
 		public void StopRotation() {
 			this.StartRotation( 0/*zero stops rotation*/, false/*continue*/);
 		}	
-
 		
-		/// <summary>
-		/// Returns [in JavaScript] the current "cache" setting.
-		/// </summary>
-		public void GetCache() {
-			this.RenderGetOptionCall("cache");
-		}
-
-		/// <summary>
-		/// Whether or not to cache remote tabs content, e.g. load only once or with every click. 
-		/// Cached content is being lazy loaded, e.g once and only once for the first click. 
-		/// Note that to prevent the actual Ajax requests from being cached by the browser you need to 
-		/// provide an extra cache: false flag to ajaxOptions.
-		/// </summary>
-		/// <param name="newValue">New cache setting</param>
-		public void SetCache(bool newValue) {
-			this.RenderSetOptionCall("cache", newValue);
-		}
-
 		/// <summary>
 		/// Returns [in JavaScript] the current "collapsible" setting.
 		/// </summary>

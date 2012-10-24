@@ -61,6 +61,15 @@ namespace Fluqi.Widget.jTab
 		/// <remarks>See http://jqueryui.com/demos/tabs/#event-disable for details</remarks>
 		protected internal string DisableEvent { get; set; }
 
+		/// <summary>
+		/// This event is triggered when a remote tab is about to be loaded, after the before the
+		/// beforeActivate event.  Can be cancelled to prevent the tab panel from loading content; 
+		/// though the panel will still be activated.
+		/// This event is triggered just before the Ajax request is made, so modifications can be 
+		/// made to ui.jQXHR and ui.ajaxSettings.
+		/// </summary>
+		protected internal string BeforeLoadEvent { get; set; }
+
 	} // Options
 
 } // ns Fluqi.jTab

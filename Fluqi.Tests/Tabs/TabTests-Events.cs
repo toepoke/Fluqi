@@ -257,6 +257,36 @@ namespace Fluqi.Tests
 		  Assert.IsTrue(html.Contains(expected));
 		}
 
+		[TestMethod]
+		public void Tabs_With_BeforeLoad_EventHandler_Wired_Up_Renders_Correctly()
+		{
+			// Arrange
+			// Arrange
+			var resp = new MockWriter();
+			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
+
+			// only testing raw output
+			tabs	
+				.Options
+					.SetEvent("mouseover")
+					.Finish()
+				.Rendering
+					.Compress();
+
+			tabs.Events
+				.SetBeforeLoadEvent("addToLog('beforeLoad event called');")
+			;
+
+			TestHelper.ForceRender(tabs);
+
+			// Act - Force output we'd see on the web page
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = "beforeLoad: function(event, ui) {addToLog('beforeLoad event called');}";
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
 	} // jTab_Tests
 
 } // ns

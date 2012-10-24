@@ -79,8 +79,6 @@ namespace Fluqi.Widget.jTab
 			}
 			options.Add(!this.IsNullEmptyOrDefault(this.Evt, DEFAULT_EVENT), "event", this.Evt.InDoubleQuotes());
 			options.Add(!this.IsNullEmptyOrDefault(this.HeightStyle, DEFAULT_HEIGHT_STYLE), "heightStyle", this.HeightStyle.InDoubleQuotes());
-			options.Add(this.Cache, "cache", this.Cache.JsBool() );
-			options.Add(!this.IsNullOrEmpty(this.AjaxOptions), "ajaxOptions", this.AjaxOptions);
 			options.Add(this.Collapsible, "collapsible", this.Collapsible.JsBool() );
 			// Cookie, show and hide are a little bit different because it's an object, so just add it's options in
 			options.Add(this.Cookie.Options.GetCookieScriptOption());

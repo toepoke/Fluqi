@@ -43,21 +43,6 @@ namespace Fluqi.Widget.jTab
 		protected internal List<int> DisabledArray { get; set; }
 
 		/// <summary>
-		/// Whether or not to cache remote tabs content, e.g. load only once or with every click. 
-		/// Cached content is being lazy loaded, e.g once and only once for the first click. 
-		/// Note that to prevent the actual Ajax requests from being cached by the browser you need to provide an extra 
-		/// cache: false flag to ajaxOptions
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#option-cache for details</remarks>
-		protected internal bool Cache { get; set; }
-
-		/// <summary>
-		/// Additional Ajax options to consider when loading tab content (see $.ajax).
-		/// </summary>
-		/// <remarks>Note this is passed "as is" to the jQuery UI Tabs.ajaxOptions setting.</remarks>
-		protected internal string AjaxOptions { get; set; }
-
-		/// <summary>
 		/// Stores whether the tabs are initialised with the collapsible option on or off (default is "false").
 		/// </summary>
 		/// <remarks>See http://jqueryui.com/demos/tabs/#option-collapsible for more details</remarks>
