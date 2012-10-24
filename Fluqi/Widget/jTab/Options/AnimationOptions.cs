@@ -25,11 +25,16 @@ namespace Fluqi.Widget.jTab {
 		/// Constructor
 		/// </summary>
 		/// <param name="tabOptions">Tab options object</param>
-		public AnimationOptions(jTab.Options tabOptions, string key)
+		/// <param name="caller">
+		/// Specifies the type of caller using the animation.  For instance it's common for the animation properties
+		/// to be used by both "show" and "hide" methods on a widget.  We need to differentiate between the two
+		/// when rendering the script output.
+		/// </param>
+		public AnimationOptions(jTab.Options tabOptions, string caller)
 		 : base()
 		{
 			this._TabOptions = tabOptions;
-			this.Options = new Utilities.jAnimation.Options(null, key);
+			this.Options = new Utilities.jAnimation.Options(null, caller);
 		}
 
 		/// <summary>
@@ -58,26 +63,6 @@ namespace Fluqi.Widget.jTab {
 		/// <returns>Object for chainability</returns>
 		public AnimationOptions SetEffect(string effect) {
 			this.Options.SetEffect(effect);
-			return this;
-		}
-
-		/// <summary>
-		/// The easing effect to use when showing/hiding.
-		/// </summary>
-		/// <param name="effect">Easing enum to use</param>
-		/// <returns>Object for chainability</returns>
-		public AnimationOptions SetEasing(Core.Ease.eEase easing) {
-			this.Options.SetEasing(easing);
-			return this;
-		}
-
-		/// <summary>
-		/// The easing effect to use when showing/hiding.
-		/// </summary>
-		/// <param name="effect">Easing name to use</param>
-		/// <returns>Object for chainability</returns>
-		public AnimationOptions SetEasing(string easing) {
-			this.Options.SetEasing(easing);
 			return this;
 		}
 

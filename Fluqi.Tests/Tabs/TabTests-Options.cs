@@ -643,7 +643,6 @@ namespace Fluqi.Tests
 					.ShowAnimation
 						.SetEffect(Core.Animation.eAnimation.Fold)
 						.SetDuration(999)
-						.SetEasing(Core.Ease.eEase.easeOutSine)
 					.Finish()
 				.Finish()
 				.Rendering
@@ -658,7 +657,7 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs({show: {effect: \"fold\",easing: \"easeOutSine\",duration: 999}})" + 
+						"$(\"#myTabs\").tabs({show: {effect: \"fold\",duration: 999}})" + 
 					";});" + 
 				"</script>";
 			Assert.IsTrue(html.Contains(expected));
@@ -678,7 +677,6 @@ namespace Fluqi.Tests
 					.HideAnimation
 						.SetEffect(Core.Animation.eAnimation.Fold)
 						.SetDuration(999)
-						.SetEasing(Core.Ease.eEase.easeOutSine)
 					.Finish()
 				.Finish()
 				.Rendering
@@ -693,7 +691,7 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs({hide: {effect: \"fold\",easing: \"easeOutSine\",duration: 999}})" + 
+						"$(\"#myTabs\").tabs({hide: {effect: \"fold\",duration: 999}})" + 
 					";});" + 
 				"</script>";
 			Assert.IsTrue(html.Contains(expected));
@@ -712,12 +710,10 @@ namespace Fluqi.Tests
 					.HideAnimation
 						.SetEffect(Core.Animation.eAnimation.Fold)
 						.SetDuration(999)
-						.SetEasing(Core.Ease.eEase.easeOutSine)
 					.Finish()
 					.ShowAnimation
 						.SetEffect(Core.Animation.eAnimation.Highlight)
 						.SetDuration(888)
-						.SetEasing(Core.Ease.eEase.easeOutElastic)
 					.Finish()
 				.Finish()
 				.Rendering
@@ -732,7 +728,7 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs({show: {effect: \"highlight\",easing: \"easeOutElastic\",duration: 888},hide: {effect: \"fold\",easing: \"easeOutSine\",duration: 999}})" + 
+						"$(\"#myTabs\").tabs({show: {effect: \"highlight\",duration: 888},hide: {effect: \"fold\",duration: 999}})" + 
 					";});" + 
 				"</script>";
 			Assert.IsTrue(html.Contains(expected));

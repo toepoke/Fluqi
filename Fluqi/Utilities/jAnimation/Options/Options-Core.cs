@@ -20,11 +20,11 @@
 		/// Constructor
 		/// </summary>
 		/// <param name="Animation">Animation object to define options for</param>
-		public Options(Animation ani, string key)
+		public Options(Animation ani, string caller)
 		 : base()
 		{
 			this.Animation = ani;
-			this.Key = key;
+			this.Caller = caller;
 			this.Reset();
 		}
 
@@ -33,7 +33,17 @@
 		/// </summary>
 		public Animation Animation { get; set; }
 
-		public string Key { get; set; }
+		/// <summary>
+		/// Specifies the type of caller using the animation.  For instance it's common for the animation properties
+		/// to be used by both "show" and "hide" methods on a widget.  We need to differentiate between the two
+		/// when rendering the script output.
+		/// </summary>
+		/// <remarks>
+		/// So if you're calling from a "show" you'll get something like 
+		///		{ show: { effect: "blind", duration: 500 } }
+		///	for example
+		/// </remarks>
+		public string Caller { get; set; }
 
 		/// <summary>
 		/// Used to flag that configuration of <see cref="Options"/> has finished, and 
@@ -70,7 +80,7 @@
 		/// <returns>Script option for the Animation object</returns>
 		protected Core.ScriptOption GetAnimationScriptOption(bool asChild) {
 			Core.ScriptOption parentOpts = new Core.ScriptOption() { 
-				Key = this.Key,
+				Key = this.Caller,
 				IsChild = asChild
 			};
 			Core.ScriptOptions childOpts = parentOpts.ChildOptions;

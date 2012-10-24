@@ -35,8 +35,9 @@ namespace Fluqi.Models
 			this.collapsible = false;
 			this.disabled = false;
 			this.showEffect = "";
-			this.showEasing = "";
 			this.showDuration = "";
+			this.hideEffect = "";
+			this.hideDuration = "";
 			this.evt = Core.BrowserEvent.BrowserEventToString(Core.BrowserEvent.eBrowserEvent.Click);
 			this.selectedTab = 0;
 		}
@@ -45,10 +46,8 @@ namespace Fluqi.Models
 		public bool disabled { get; set; }
 		public string evt { get; set; }
 		public string showEffect { get; set; }
-		public string showEasing { get; set; }
 		public string showDuration { get; set; }
 		public string hideEffect { get; set; }
-		public string hideEasing { get; set; }
 		public string hideDuration { get; set; }
 		public int selectedTab { get; set; }
 
@@ -62,12 +61,10 @@ namespace Fluqi.Models
 					.SetDisabled(this.disabled)
 					.ShowAnimation
 						.SetEffect(this.showEffect)
-						.SetEasing(this.showEasing)
 						.SetDuration(this.showDuration)
 					.Finish()
 					.HideAnimation
 						.SetEffect(this.hideEffect)
-						.SetEasing(this.hideEasing)
 						.SetDuration(this.hideDuration)
 					.Finish()
 				.Finish()
@@ -173,8 +170,13 @@ namespace Fluqi.Models
 			sb.AppendTabsLineIf(".ShowAnimation");
 			sb.IncIndent();
 			sb.AppendTabsFormatLineIf(".SetEffect(\"{0}\")", this.showEffect);
-			sb.AppendTabsFormatLineIf(".SetEasing(\"{0}\")", this.showEasing);
 			sb.AppendTabsFormatLineIf(".SetDuration(\"{0}\")", this.showDuration);
+			sb.AppendTabsLineIf(".Finish()");
+			sb.DecIndent();
+			sb.AppendTabsLineIf(".HideAnimation");
+			sb.IncIndent();
+			sb.AppendTabsFormatLineIf(".SetEffect(\"{0}\")", this.hideEffect);
+			sb.AppendTabsFormatLineIf(".SetDuration(\"{0}\")", this.hideDuration);
 			sb.AppendTabsLineIf(".Finish()");
 			sb.DecIndent();
 			if (!Utils.IsNullEmptyOrDefault(this.evt, Options.DEFAULT_EVENT))
