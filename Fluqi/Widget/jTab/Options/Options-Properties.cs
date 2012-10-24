@@ -67,14 +67,6 @@ namespace Fluqi.Widget.jTab
 		/// <remarks>See http://jqueryui.com/demos/tabs/#option-panelTemplate for details</remarks>
 		protected internal string PanelTemplate { get; set; }
 
-		/// <summary>
-		/// HTML template from which a new tab is created and added. The placeholders 
-		/// #{href} and #{label} are replaced with the url and tab label that are passed as 
-		/// arguments to the add method.
-		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#option-tabTemplate for details</remarks>
-		protected internal string TabTemplate { get; set; }
-
 	} // Options
 
 } // ns Fluqi.jTab

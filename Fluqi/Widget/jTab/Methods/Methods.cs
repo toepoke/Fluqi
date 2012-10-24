@@ -442,49 +442,6 @@ namespace Fluqi.Widget.jTab {
 			this.RenderSetOptionCall("active", newValue.ToString()); 
 		}
 
-		/// <summary>
-		/// Returns [in JavaScript] the current "tabTemplate" setting.
-		/// </summary>
-		public void GetTabTemplate() {
-			this.RenderGetOptionCall("tabTemplate");
-		}
-
-		/// <summary>
-		/// HTML template from which a new tab is created and added. The placeholders #{href} 
-		/// and #{label} are replaced with the url and tab label that are passed as arguments 
-		/// to the add method.
-		/// This entry point does _not_ add quotes to the input value and is indended for passing JavaScript
-		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
-		/// </summary>
-		/// <param name="newValue">New tabTemplate setting</param>
-		public void SetTabTemplateJS(string newValue) {
-			this.RenderSetOptionCall("tabTemplate", newValue);
-		}
-
-		/// <summary>
-		/// HTML template from which a new tab is created and added. The placeholders #{href} 
-		/// and #{label} are replaced with the url and tab label that are passed as arguments 
-		/// to the add method.
-		/// </summary>
-		/// <param name="newValue">New tabTemplate setting</param>
-		/// <param name="inDoubleQuotes">
-		/// true  - double quotes (")
-		/// false - single quotes (')
-		/// </param>
-		public void SetTabTemplate(string newValue, bool inDoubleQuotes) {
-			this.RenderSetOptionCall("tabTemplate", newValue, inDoubleQuotes);
-		}
-
-		/// <summary>
-		/// HTML template from which a new tab is created and added. The placeholders #{href} 
-		/// and #{label} are replaced with the url and tab label that are passed as arguments 
-		/// to the add method.
-		/// </summary>
-		/// <param name="newValue">New tabTemplate setting</param>
-		public void SetTabTemplate(string newValue) {
-			this.SetTabTemplate(newValue, true/*doubleQuotes*/);
-		}
-
 	}
 
 }

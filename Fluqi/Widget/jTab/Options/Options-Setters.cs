@@ -121,18 +121,6 @@ namespace Fluqi.Widget.jTab
 			return this;
 		}
 
-
-		/// <summary>
-		/// HTML template from which a new tab is created and added. The placeholders 
-		/// #{href} and #{label} are replaced with the url and tab label that are passed as 
-		/// arguments to the add method.
-		/// </summary>
-		/// <returns>Options object for chainability</returns>
-		public Options SetTabTemplate(string tabTemplate) {
-			this.TabTemplate = tabTemplate;
-			return this;
-		}
-
 	} // Options
 
 } // ns Fluqi.jTab

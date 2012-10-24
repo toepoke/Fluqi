@@ -83,7 +83,6 @@ namespace Fluqi.Widget.jTab
 			options.Add(this.ShowAnimation.Options.GetAnimationScriptOption());
 			options.Add(this.HideAnimation.Options.GetAnimationScriptOption());
 			options.Add(!this.IsNullEmptyOrDefault(this.PanelTemplate, DEFAULT_PANEL_TEMPLATE), "panelTemplate", this.PanelTemplate.InDoubleQuotes());
-			options.Add(!this.IsNullEmptyOrDefault(this.TabTemplate, DEFAULT_TAB_TEMPLATE), "tabTemplate", this.TabTemplate.InDoubleQuotes());
 			if (this.Tabs.Panes.HasActiveTab() && this.Tabs.Panes.GetActiveTab().Index > 0) {
 				options.Add( this.Tabs.Panes.HasActiveTab(), "active", this.Tabs.Panes.GetActiveTab().Index.ToString() );
 			}

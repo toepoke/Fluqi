@@ -689,54 +689,6 @@ namespace Fluqi.Tests
 		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"active\",3)", html);
 		}
 
-		[TestMethod]
-		public void Ensure_GetTabTemplate_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.GetTabTemplate();
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"tabTemplate\")", html);
-		}
-
-		[TestMethod]
-		public void Ensure_SetTabTemplate_Without_Quotes_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.SetTabTemplateJS("some_javascript_variable");
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"tabTemplate\",some_javascript_variable)", html);
-		}
-
-		[TestMethod]
-		public void Ensure_SetTabTemplate_With_Quotes_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-			var ctl = TestHelper.SetupSimpleTabObject(resp);
-
-		  ctl.Methods.SetTabTemplate("<div><p>my new tab</p></div>");
-
-		  // Act
-			string html = resp.Output.ToString();
-
-		  // Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"option\",\"tabTemplate\",\"<div><p>my new tab</p></div>\")", html);
-		}
-
 	} // jTab_Tests
 
 } // ns

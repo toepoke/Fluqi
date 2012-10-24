@@ -893,67 +893,6 @@ namespace Fluqi.Tests
 
 
 		[TestMethod]
-		public void Ensure_TabTemplate_Option_Is_Added_To_Script_Definition()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			// only testing raw output
-			tabs
-				.Options
-					.SetTabTemplate("<div><a href=\"#{href}\"><span>#{label}</span></a></div>")
-				.Finish()
-				.Rendering
-					.Compress();
-
-			TestHelper.ForceRender(tabs);
-			
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-			string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs({tabTemplate: \"<div><a href=\"#{href}\"><span>#{label}</span></a></div>\"})" + 
-					";});" + 
-				"</script>";
-			Assert.IsTrue(html.Contains(expected));
-		}
-
-
-		[TestMethod]
-		public void Ensure_TabTemplate_Default_Option_Is_Not_Rendered()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			// only testing raw output
-			tabs
-				.Options
-					.SetTabTemplate(Options.DEFAULT_TAB_TEMPLATE)
-					.Finish()
-				.Rendering
-					.Compress();
-
-			TestHelper.ForceRender(tabs);
-			
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-			string expected = 
-				"<script type=\"text/javascript\">" + 
-					"$(document).ready( function() {" + 
-						"$(\"#myTabs\").tabs()" + 
-					";});" + 
-				"</script>";
-			Assert.IsTrue(html.Contains(expected));
-		}
-
-		[TestMethod]
 		public void Ensure_Invisible_Tab_Is_Not_Rendered()
 		{
 			// Arrange
