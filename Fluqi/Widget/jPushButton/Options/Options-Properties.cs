@@ -23,14 +23,12 @@ namespace Fluqi.Widget.jPushButton
 		/// Disables (true) or enables (false) the button. Can be set when initialising (first creating) 
 		/// the button.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/button/#option-disabled for details</remarks>
 		protected internal bool Disabled { get; set; }
 
 		/// <summary>
 		/// Whether to show any text - when set to false (display no text), icons (see icons option) 
 		/// must be enabled, otherwise it'll be ignored.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/button/#option-text for details</remarks>
 		protected internal bool Text { get; set; }
 
 		/// <summary>
@@ -40,7 +38,6 @@ namespace Fluqi.Widget.jPushButton
 		/// For using only one icon: icons: {primary:'ui-icon-locked'}. 
 		/// For using two icons: icons: {primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/button/#option-icons for details</remarks>
 		protected internal string PrimaryIconClass { get; set; }
 
 		/// <summary>
@@ -50,7 +47,6 @@ namespace Fluqi.Widget.jPushButton
 		/// For using only one icon: icons: {primary:'ui-icon-locked'}. 
 		/// For using two icons: icons: {primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/button/#option-icons for details</remarks>
 		protected internal string SecondaryIconClass { get; set; }
 
 	} // Options

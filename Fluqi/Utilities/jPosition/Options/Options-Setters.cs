@@ -27,7 +27,7 @@ namespace Fluqi.Utilities.jPosition
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetMy(Core.Position.ePosition pos) {
 			this.My = Core.Position.PositionToString(pos);
 			return this;
@@ -41,7 +41,7 @@ namespace Fluqi.Utilities.jPosition
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetMy(Core.Position.ePosition pos1, Core.Position.ePosition pos2) {
 			string pos1String = Core.Position.PositionToString(pos1);
 			string pos2String = Core.Position.PositionToString(pos2);
@@ -57,7 +57,7 @@ namespace Fluqi.Utilities.jPosition
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetMy(string pos) {
 			//this.My.Clear();
 			//this.My.Add( Core.Position.StringToPosition(pos) );
@@ -73,7 +73,7 @@ namespace Fluqi.Utilities.jPosition
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetMy(string pos1, string pos2) {
 			this.My = string.Format("{0} {1}", pos1, pos2);
 			return this;
@@ -87,7 +87,7 @@ namespace Fluqi.Utilities.jPosition
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetAt(Core.Position.ePosition pos) {
 			this.At = Core.Position.PositionToString(pos);
 			return this;
@@ -101,7 +101,7 @@ namespace Fluqi.Utilities.jPosition
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetAt(Core.Position.ePosition pos1, Core.Position.ePosition pos2) {
 			string pos1String = Core.Position.PositionToString(pos1);
 			string pos2String = Core.Position.PositionToString(pos2);
@@ -117,7 +117,7 @@ namespace Fluqi.Utilities.jPosition
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetAt(string pos) {
 			this.At = pos;
 			return this;
@@ -131,7 +131,7 @@ namespace Fluqi.Utilities.jPosition
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetAt(string pos1, string pos2) {
 			this.At = string.Format("{0} {1}", pos1, pos2);
 			return this;
@@ -143,7 +143,7 @@ namespace Fluqi.Utilities.jPosition
 		/// will be used. If you provide a jQuery object, the first element will be used. If you 
 		/// provide an event object, the pageX and pageY properties will be used. Example: "#top-menu"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-of for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetOf(string of) {
 			this.Of = of;
 			return this;
@@ -178,7 +178,7 @@ namespace Fluqi.Utilities.jPosition
 		///   </item>
 		/// </list>
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-collision for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetCollision(Collision.eCollision colli) {
 			this.Collision.Clear();
 			this.Collision.Add(colli);
@@ -203,7 +203,7 @@ namespace Fluqi.Utilities.jPosition
 		///   </item>
 		/// </list>
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-collision for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetCollision(Collision.eCollision colli1, Collision.eCollision colli2) {
 			this.Collision.Clear();
 			this.Collision.Add(colli1);
@@ -229,7 +229,7 @@ namespace Fluqi.Utilities.jPosition
 		///   </item>
 		/// </list>
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-collision for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetCollision(string colli) {
 			this.Collision.Clear();
 			this.Collision.Add( Core.Collision.StringToCollision(colli) );
@@ -254,7 +254,7 @@ namespace Fluqi.Utilities.jPosition
 		///   </item>
 		/// </list>
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-collision for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetCollision(string colli1, string colli2) {
 			this.Collision.Clear();
 			this.Collision.Add( Core.Collision.StringToCollision(colli1) );
@@ -267,7 +267,7 @@ namespace Fluqi.Utilities.jPosition
 		/// When specified the actual property setting is delegated to this callback. Receives a 
 		/// single parameter which is a hash of top and left values for the position that should be set.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-using for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetUsingFunction(string usingFunc) {
 			this.UsingFunction = usingFunc;
 			return this;		

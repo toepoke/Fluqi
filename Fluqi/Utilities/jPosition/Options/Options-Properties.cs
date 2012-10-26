@@ -26,7 +26,6 @@ namespace Fluqi.Utilities.jPosition
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-my for details</remarks>
 		protected internal string My { get; set; }
 
 		/// <summary>
@@ -36,7 +35,6 @@ namespace Fluqi.Utilities.jPosition
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-at for details</remarks>
 		protected internal string At { get; set; }
 
 		/// <summary>
@@ -45,14 +43,12 @@ namespace Fluqi.Utilities.jPosition
 		/// If you provide an event object, the pageX and pageY properties will be used. 
 		/// Example: "#top-menu"
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-of for details</remarks>
 		protected internal string Of { get; set; }
 		
 		/// <summary>
 		/// Element to position within, affecting collision detection. If you provide a selector or 
 		/// jQuery object, the first matching element will be used.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		protected internal string Within { get; set; }
 
 		/// <summary>
@@ -72,14 +68,12 @@ namespace Fluqi.Utilities.jPosition
 		///   </item>
 		/// </list>
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-collision for details</remarks>
 		protected internal List<Collision.eCollision> Collision { get; set; }
 
 		/// <summary>
 		/// When specified the actual property setting is delegated to this callback. Receives a 
 		/// single parameter which is a hash of top and left values for the position that should be set.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/position/#option-using for details</remarks>
 		protected internal string UsingFunction { get; set; }
 
 	} // Options

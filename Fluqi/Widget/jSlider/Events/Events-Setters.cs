@@ -23,7 +23,7 @@ namespace Fluqi.Widget.jSlider
 		/// <summary>
 		/// This event is triggered when slider is created.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#event-create for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/slider/#event-create for details</remarks>
 		public Events SetCreateEvent(string createEvent) {
 			this.CreateEvent = createEvent;
 			return this;
@@ -33,7 +33,7 @@ namespace Fluqi.Widget.jSlider
 		/// <summary>
 		/// This event is triggered when the user starts sliding.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#event-start for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/slider/#event-start for details</remarks>
 		public Events SetStartEvent(string startEvent) {
 			this.StartEvent = startEvent;
 			return this;
@@ -45,7 +45,7 @@ namespace Fluqi.Widget.jSlider
 		/// sliders) to obtain the value of the current handle, $(..).slider('value', index) 
 		/// to get another handles' value.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#event-slide for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/slider/#event-slide for details</remarks>
 		public Events SetSlideEvent(string slideEvent) {
 			this.SlideEvent = slideEvent;
 			return this;
@@ -59,7 +59,7 @@ namespace Fluqi.Widget.jSlider
 		/// (single-handled sliders) to obtain the value of the current handle, 
 		/// $(this).slider('values', index) to get another handle's value.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#event-change for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/slider/#event-change for details</remarks>
 		public Events SetChangeEvent(string changeEvent) {
 			this.ChangeEvent = changeEvent;
 			return this;
@@ -69,7 +69,7 @@ namespace Fluqi.Widget.jSlider
 		/// <summary>
 		/// This event is triggered when the user stops sliding.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#event-stop for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/slider/#event-stop for details</remarks>
 		public Events SetStopEvent(string stopEvent) {
 			this.StopEvent = stopEvent;
 			return this;

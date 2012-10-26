@@ -31,14 +31,12 @@ namespace Fluqi.Widget.jDatePicker
 		/// <summary>
 		/// This event is triggered when datepicker is created.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#event-create for details</remarks>
 		protected internal string CreateEvent { get; set; }
 
 		/// <summary>
 		/// Can be a function that takes an input field and current datepicker instance and returns an 
 		/// options object to update the datepicker with. It is called just before the datepicker is displayed.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#event-beforeShow for details</remarks>
 		protected internal string BeforeShowEvent { get; set; }
 
 		/// <summary>
@@ -47,7 +45,6 @@ namespace Fluqi.Widget.jDatePicker
 		/// the default presentation, and [2] an optional popup tooltip for this date. It is called for 
 		/// each day in the datepicker before it is displayed.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#event-beforeShow for details</remarks>
 		protected internal string BeforeShowDayEvent { get; set; }
 
 		/// <summary>
@@ -55,7 +52,6 @@ namespace Fluqi.Widget.jDatePicker
 		/// function receives the selected year, month (1-12), and the datepicker instance as parameters. 
 		/// this refers to the associated input field.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#event-onChangeMonthYear for details</remarks>
 		protected internal string OnChangeMonthYearEvent { get; set; }
 
 		/// <summary>
@@ -63,7 +59,6 @@ namespace Fluqi.Widget.jDatePicker
 		/// selected. The function receives the selected date as text ('' if none) and the datepicker instance 
 		/// as parameters. this refers to the associated input field.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#option-event-onClose for details</remarks>
 		protected internal string OnCloseEvent { get; set; }
 
 		/// <summary>
@@ -71,7 +66,6 @@ namespace Fluqi.Widget.jDatePicker
 		/// selected date as text and the datepicker instance as parameters. this refers to the associated 
 		/// input field.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#option-event-onSelect for details</remarks>
 		protected internal string OnSelectEvent { get; set; }
 
 	} // Events

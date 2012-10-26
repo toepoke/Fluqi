@@ -19,19 +19,19 @@ namespace Fluqi.Widget.jProgressBar
 		/// <summary>
 		/// This event is triggered when progressbar is created.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#event-search for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/progressbar/#event-create for details</remarks>
 		protected internal string CreateEvent { get; set; }
 		
 		/// <summary>
 		/// This event is triggered when the value of the progressbar changes.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#event-create for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/progressbar/#event-change for details</remarks>
 		protected internal string ChangeEvent { get; set; }
 
 		/// <summary>
 		/// This event is triggered when the value of the progressbar reaches the maximum value of 100.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#event-open for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/progressbar/#event-complete for details</remarks>
 		protected internal string CompleteEvent { get; set; }
 
 	} // Events

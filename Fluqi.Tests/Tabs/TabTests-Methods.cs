@@ -145,22 +145,6 @@ namespace Fluqi.Tests
 		  Assert.AreEqual("$(\"#myTabs\").tabs(\"load\",3)", html);
 		}
 
-		[TestMethod]
-		public void Ensure_Url_Method_Renders_Correctly()
-		{
-			// Arrange
-			var resp = new MockWriter();
-			Tabs tabs = TestHelper.SetupSimpleTabObject(resp);
-
-			tabs.Methods.Url(1, "http://someurl.html");
-
-			// Act - Force output we'd see on the web page
-			string html = resp.Output.ToString();
-
-			// Assert
-		  Assert.AreEqual("$(\"#myTabs\").tabs(\"url\",1,\"http://someurl.html\")", html);
-		}
-
 	} // jTab_Tests
 
 } // ns

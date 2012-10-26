@@ -23,6 +23,7 @@ namespace Fluqi.Widget.jPushButton
 		/// This event is triggered when Button is created.
 		/// </summary>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/button/#event-create for details</remarks>
 		public Events SetCreateEvent(string methodSource) {
 			this.CreateEvent = methodSource;
 			return this;	
@@ -33,6 +34,7 @@ namespace Fluqi.Widget.jPushButton
 		/// http://jqueryui.com/demos/button/#events) or at the very least isn't documented.
 		/// But it's a button, chances are you want an event, so we're adding one just for you :)
 		/// </summary>
+		/// <remarks>This is a Fluqi created event, no associated jQuery UI documentation</remarks>
 		public Events SetClickEvent(string methodSource) {
 			this.ClickEvent = methodSource;
 			return this;

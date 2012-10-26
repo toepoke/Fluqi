@@ -20,7 +20,7 @@ namespace Fluqi.Widget.jDatePicker
 		/// <summary>
 		/// This event is triggered when datepicker is created.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#event-create for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/datepicker/#event-create for details</remarks>
 		public Events SetCreateEvent(string createEvent) {
 			this.CreateEvent = createEvent;
 			return this;
@@ -30,7 +30,7 @@ namespace Fluqi.Widget.jDatePicker
 		/// Can be a function that takes an input field and current datepicker instance and returns an 
 		/// events object to update the datepicker with. It is called just before the datepicker is displayed.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#event-beforeShow for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/datepicker/#event-beforeShow for details</remarks>
 		public Events SetBeforeShowEvent(string beforeShowEvent) {
 			this.BeforeShowEvent = beforeShowEvent;
 			return this;
@@ -42,7 +42,7 @@ namespace Fluqi.Widget.jDatePicker
 		/// the default presentation, and [2] an optional popup tooltip for this date. It is called for 
 		/// each day in the datepicker before it is displayed.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#event-beforeShow for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/datepicker/#event-beforeShow for details</remarks>
 		public Events SetBeforeShowDayEvent(string beforeShowDayEvent) {
 			this.BeforeShowDayEvent = beforeShowDayEvent;
 			return this;
@@ -53,7 +53,7 @@ namespace Fluqi.Widget.jDatePicker
 		/// function receives the selected year, month (1-12), and the datepicker instance as parameters. 
 		/// this refers to the associated input field.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#event-onChangeMonthYear for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/datepicker/#event-onChangeMonthYear for details</remarks>
 		public Events SetOnChangeMonthYearEvent(string onChangeMonthYearEvent) {
 			this.OnChangeMonthYearEvent = onChangeMonthYearEvent;
 			return this;
@@ -64,7 +64,7 @@ namespace Fluqi.Widget.jDatePicker
 		/// selected. The function receives the selected date as text ('' if none) and the datepicker instance 
 		/// as parameters. this refers to the associated input field.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#option-event-onClose for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/datepicker/#event-onClose for details</remarks>
 		public Events SetOnCloseEvent(string onCloseEvent) {
 			this.OnCloseEvent = onCloseEvent;
 			return this;
@@ -75,7 +75,7 @@ namespace Fluqi.Widget.jDatePicker
 		/// selected date as text and the datepicker instance as parameters. this refers to the associated 
 		/// input field.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/datepicker/#option-event-onSelect for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/datepicker/#event-onSelect for details</remarks>
 		public Events SetOnSelectEvent(string onSelectEvent) {
 			this.OnSelectEvent = onSelectEvent;
 			return this;

@@ -22,6 +22,7 @@ namespace Fluqi.Widget.jPushButton
 		/// </summary>
 		/// <param name="disable">Whether the control is disabled or not</param>
 		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/button/#option-disabled for details</remarks>
 		public Options SetDisabled(bool disable) {
 			this.Disabled = disable;
 			return this;
@@ -34,6 +35,7 @@ namespace Fluqi.Widget.jPushButton
 		/// </summary>
 		/// <param name="text">New flag setting</param>
 		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/button/#option-text for details</remarks>
 		public Options SetText(bool text) {
 			this.Text = text;
 			return this;
@@ -50,6 +52,7 @@ namespace Fluqi.Widget.jPushButton
 		/// <param name="primaryIcon">New setting</param>
 		/// <param name="secondaryIcon">New setting</param>
 		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/button/#option-icons for details</remarks>
 		public Options SetIcons(string primaryIcon, string secondaryIcon) {
 			this.PrimaryIconClass = primaryIcon ?? "";
 			this.SecondaryIconClass = secondaryIcon ?? "";
@@ -67,6 +70,7 @@ namespace Fluqi.Widget.jPushButton
 		/// <param name="primaryIconClass">New setting</param>
 		/// <param name="secondaryIconClass">New setting</param>
 		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/button/#option-icons for details</remarks>
 		public Options SetIcons(Core.Icons.eIconClass primaryIconClass, Core.Icons.eIconClass secondaryIconClass) {
 			this.PrimaryIconClass = Core.Icons.ByEnum(primaryIconClass);
 			this.SecondaryIconClass = Core.Icons.ByEnum(secondaryIconClass);

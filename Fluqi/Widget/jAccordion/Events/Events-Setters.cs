@@ -17,21 +17,12 @@ namespace Fluqi.Widget.jAccordion
 	public partial class Events: Core.Options {
 
 		/// <summary>
-		/// This event is triggered when accordion is created.
-		/// </summary>
-		/// <returns>Events object for chainability</returns>
-		public Events SetCreateEvent(string methodSource) {
-			this.CreateEvent = methodSource;
-			return this;	
-		}
-
-
-		/// <summary>
 		/// This event is triggered every time the accordion changes. If the accordion is 
 		/// animated, the event will be triggered upon completion of the animation; otherwise, 
 		/// it is triggered immediately.
 		/// </summary>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/accordion/#event-activate for details</remarks>
 		public Events SetActivateEvent(string methodSource) {
 			this.ActivateEvent = methodSource;
 			return this;	
@@ -42,11 +33,23 @@ namespace Fluqi.Widget.jAccordion
 		/// This event is triggered every time the accordion starts to change.
 		/// </summary>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/accordion/#event-beforeActivate for details</remarks>
 		public Events SetBeforeActivateEvent(string methodSource) {
 			this.BeforeActivateEvent = methodSource;
 			return this;	
 		}
 
+
+		/// <summary>
+		/// This event is triggered when accordion is created.
+		/// </summary>
+		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/accordion/#event-create for details</remarks>
+		public Events SetCreateEvent(string methodSource) {
+			this.CreateEvent = methodSource;
+			return this;	
+		}
+		
 	} // Events
 
 } // ns Fluqi.jTab

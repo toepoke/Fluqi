@@ -20,7 +20,6 @@ namespace Fluqi.Widget.jAutoComplete
 		/// Before a request (source-option) is started, after minLength and delay are met. 
 		/// Can be canceled (return false), then no request will be started and no items suggested.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#event-search for details</remarks>
 		protected internal string SearchEvent { get; set; }
 
 		/// <summary>
@@ -29,19 +28,16 @@ namespace Fluqi.Widget.jAutoComplete
 		/// triggered when a search completes, even if the menu will not be shown because there are no results or
 		/// the Autocomplete is disabled.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#event-response for details</remarks>
 		protected internal string ResponseEvent { get; set; }
 		
 		/// <summary>
 		/// This event is triggered when autocomplete is created.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#event-create for details</remarks>
 		protected internal string CreateEvent { get; set; }
 
 		/// <summary>
 		/// Triggered when the suggestion menu is opened.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#event-open for details</remarks>
 		protected internal string OpenEvent { get; set; }
 
 		/// <summary>
@@ -51,7 +47,6 @@ namespace Fluqi.Widget.jAutoComplete
 		/// Canceling this event prevents the value from being updated, but does not prevent 
 		/// the menu item from being focused.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#event-focus for details</remarks>
 		protected internal string FocusEvent { get; set; }
 
 		/// <summary>
@@ -60,19 +55,16 @@ namespace Fluqi.Widget.jAutoComplete
 		/// the selected item. Canceling this event prevents the value from being updated, but 
 		/// does not prevent the menu from closing.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#event-focus for details</remarks>
 		protected internal string SelectEvent { get; set; }
 		
 		/// <summary>
 		/// When the list is hidden - doesn't have to occur together with a change.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#event-close for details</remarks>
 		protected internal string CloseEvent { get; set; }
 
 		/// <summary>
 		/// Triggered when the field is blurred, if the value has changed; ui.item refers to the selected item.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#event-chage for details</remarks>
 		protected internal string ChangeEvent { get; set; }
 
 	} // Events

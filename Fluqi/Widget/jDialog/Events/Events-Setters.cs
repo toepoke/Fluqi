@@ -20,6 +20,7 @@ namespace Fluqi.Widget.jDialog
 		/// This event is triggered when Dialog is created.
 		/// </summary>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/dialog/#event-create for details</remarks>
 		public Events SetCreateEvent(string methodSource) {
 			this.CreateEvent = methodSource;
 			return this;	
@@ -30,7 +31,7 @@ namespace Fluqi.Widget.jDialog
 		/// This event is triggered when a dialog attempts to close. If the beforeClose event 
 		/// handler (callback function) returns false, the close will be prevented.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/dialog/#event-beforeClose for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/dialog/#event-beforeClose for details</remarks>
 		public Events SetBeforeCloseEvent(string methodSource) {
 			this.BeforeCloseEvent = methodSource;
 			return this;	
@@ -42,6 +43,7 @@ namespace Fluqi.Widget.jDialog
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/dialog/#event-open for details</remarks>
 		public Events SetOpenEvent(string methodSource) {
 			this.OpenEvent = methodSource;
 			return this;
@@ -53,6 +55,7 @@ namespace Fluqi.Widget.jDialog
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/dialog/#event-focus for details</remarks>
 		public Events SetFocusEvent(string methodSource) {
 			this.FocusEvent = methodSource;
 			return this;
@@ -64,6 +67,7 @@ namespace Fluqi.Widget.jDialog
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/dialog/#event-dragStart for details</remarks>
 		public Events SetDragStartEvent(string methodSource) {
 			this.DragStartEvent = methodSource;
 			return this;
@@ -75,6 +79,7 @@ namespace Fluqi.Widget.jDialog
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/dialog/#event-drag for details</remarks>
 		public Events SetDragEvent(string methodSource) {
 			this.DragEvent = methodSource;
 			return this;
@@ -86,6 +91,7 @@ namespace Fluqi.Widget.jDialog
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/dialog/#event-dragStop for details</remarks>
 		public Events SetDragStopEvent(string methodSource) {
 			this.DragStopEvent = methodSource;
 			return this;
@@ -97,6 +103,7 @@ namespace Fluqi.Widget.jDialog
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/dialog/#event-resizeStart for details</remarks>
 		public Events SetResizeStartEvent(string methodSource) {
 			this.ResizeStartEvent = methodSource;
 			return this;
@@ -108,6 +115,7 @@ namespace Fluqi.Widget.jDialog
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/dialog/#event-resize for details</remarks>
 		public Events SetResizeEvent(string methodSource) {
 			this.ResizeEvent = methodSource;
 			return this;
@@ -119,6 +127,7 @@ namespace Fluqi.Widget.jDialog
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/dialog/#event-resizeStop for details</remarks>
 		public Events SetResizeStopEvent(string methodSource) {
 			this.ResizeStopEvent = methodSource;
 			return this;
@@ -130,6 +139,7 @@ namespace Fluqi.Widget.jDialog
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/dialog/#event-close for details</remarks>
 		public Events SetCloseEvent(string methodSource) {
 			this.CloseEvent = methodSource;
 			return this;

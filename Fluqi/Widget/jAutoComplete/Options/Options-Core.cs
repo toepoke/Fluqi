@@ -59,7 +59,7 @@ namespace Fluqi.Widget.jAutoComplete
 		/// to position against. You can refer to the jQuery UI Position utility for more details 
 		/// about the various options.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#option-position for details</remarks>
+		/// <remarks>See http://api.jqueryui.com/autocomplete/#option-position for details</remarks>
 		public PositionOptions Position { get; set; }
 
 

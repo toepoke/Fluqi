@@ -26,31 +26,26 @@ namespace Fluqi.Widget.jTab
 		/// <summary>
 		/// Flags whether the "disabled" flag is on or off (default is "false").
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#option-disabled for details</remarks>
 		protected internal bool Disabled { get; set; }
 
 		/// <summary>
 		/// An array containing the position of the tabs (zero-based index) that should be disabled on initialization.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#option-disabled for details</remarks>
 		protected internal List<int> DisabledArray { get; set; }
 
 		/// <summary>
 		/// Stores whether the tabs are initialised with the collapsible option on or off (default is "false").
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#option-collapsible for more details</remarks>
 		protected internal bool Collapsible { get; set; }
 
 		/// <summary>
 		/// Stores the event [override] to be used when opening/closing tabs (default is "click").
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#option-event for details</remarks>
 		protected internal string Evt { get; set; }
 
 		/// <summary>
 		/// Stores the height of the tab panel.  Possible values are "auto", "fill" and "content".
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tabs/#option-heightStyle for details</remarks>
 		protected internal string HeightStyle { get; set; }
 
 	} // Options

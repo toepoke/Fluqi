@@ -20,6 +20,7 @@ namespace Fluqi.Widget.jAutoComplete
 		/// This event is triggered when autocomplete is created.
 		/// </summary>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/autocomplete/#event-create for details</remarks>
 		public Events SetCreateEvent(string methodSource) {
 			this.CreateEvent = methodSource;
 			return this;	
@@ -33,6 +34,7 @@ namespace Fluqi.Widget.jAutoComplete
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/autocomplete/#event-search for details</remarks>
 		public Events SetSearchEvent(string methodSource) {
 			this.SearchEvent = methodSource;
 			return this;
@@ -46,6 +48,7 @@ namespace Fluqi.Widget.jAutoComplete
 		/// the Autocomplete is disabled.
 		/// </summary>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/autocomplete/#event-response for details</remarks>
 		public Events SetResponseEvent(string methodSource) {
 			this.ResponseEvent = methodSource;
 			return this;
@@ -57,6 +60,7 @@ namespace Fluqi.Widget.jAutoComplete
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/autocomplete/#event-open for details</remarks>
 		public Events SetOpenEvent(string methodSource) {
 			this.OpenEvent = methodSource;
 			return this;	
@@ -72,6 +76,7 @@ namespace Fluqi.Widget.jAutoComplete
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/autocomplete/#event-focus for details</remarks>
 		public Events SetFocusEvent(string methodSource) {
 			this.FocusEvent = methodSource;
 			return this;	
@@ -86,6 +91,7 @@ namespace Fluqi.Widget.jAutoComplete
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/autocomplete/#event-select for details</remarks>
 		public Events SetSelectEvent(string methodSource) {
 			this.SelectEvent = methodSource;
 			return this;	
@@ -97,6 +103,7 @@ namespace Fluqi.Widget.jAutoComplete
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/autocomplete/#event-close for details</remarks>
 		public Events SetCloseEvent(string methodSource) {
 			this.CloseEvent = methodSource;
 			return this;	
@@ -108,6 +115,7 @@ namespace Fluqi.Widget.jAutoComplete
 		/// </summary>
 		/// <param name="methodSource">Source code to use when the event is called</param>
 		/// <returns>Events object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/autocomplete/#event-change for details</remarks>
 		public Events SetChangeEvent(string methodSource) {
 			this.ChangeEvent = methodSource;
 			return this;	

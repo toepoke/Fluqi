@@ -22,19 +22,16 @@ namespace Fluqi.Widget.jAutoComplete
 		/// <summary>
 		/// Flags whether the "disabled" flag is on or off (default is "false").
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#option-disabled for details</remarks>
 		protected internal bool Disabled { get; set; }
 
 		/// <summary>
 		/// Which element the menu should be appended to.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#option-appendTo for details</remarks>
 		protected internal string AppendTo { get; set; }
 
 		/// <summary>
 		/// If set to true the first item will be automatically focused.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#option-autoFocus for details</remarks>
 		protected internal bool AutoFocus { get; set; }
 
 		/// <summary>
@@ -42,7 +39,6 @@ namespace Fluqi.Widget.jAutoComplete
 		/// makes sense for local data (more responsive), but can produce a lot of load for remote data, 
 		/// while being less responsive.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#option-delay for details</remarks>
 		protected internal int Delay { get; set; }
 
 		/// <summary>
@@ -50,13 +46,11 @@ namespace Fluqi.Widget.jAutoComplete
 		/// useful for local data with just a few items. Should be increased when there are a lot of items, 
 		/// where a single character would match a few thousand items.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#option-minLength for details</remarks>
 		protected internal int MinimumLength { get; set; }
 
 		/// <summary>
 		/// Defines the data to use, must be specified.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#option-source for details</remarks>
 		protected internal string Source { get; set; }
 
 	} // Options

@@ -16,25 +16,21 @@ namespace Fluqi.Widget.jTab
 		/// <summary>
 		/// This event is triggered when tabs is created.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#event-create for details</remarks>
 		protected internal string CreateEvent { get; set; }
 
 		/// <summary>
 		/// This event is triggered after clicking a tab.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#event-select for details</remarks>
 		protected internal string BeforeActivateEvent { get; set; }
 
 		/// <summary>
 		/// This event is triggered after the content of a remote tab has been loaded.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#event-load for details</remarks>
 		protected internal string LoadEvent { get; set; }
 
 		/// <summary>
 		/// This event is triggered when a tab is activated (after any animation has completed).
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/tabs/#event-show for details</remarks>
 		protected internal string ActivateEvent { get; set; }
 
 		/// <summary>

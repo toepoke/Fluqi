@@ -90,6 +90,7 @@
     <Compile Include="Utilities\jCookie\CookieOptions.cs" />
     <Compile Include="Utilities\jPosition\PositionOptions.cs" />
     <Compile Include="Widget\jAccordion\ControlAttributes.cs" />
+    <Compile Include="Widget\jAccordion\Methods\Method-Options.cs" />
     <Compile Include="Widget\jAccordion\Panel\Hyperlink\Hyperlink.ControlAttributes.cs" />
     <Compile Include="Widget\jAccordion\Panel\Header\Header.ControlAttributes.cs" />
     <Compile Include="Widget\jAccordion\Panel\Hyperlink\Hyperlink.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Widget\jAccordion\Events\Events-Properties.cs" />
     <Compile Include="Widget\jAccordion\Events\Events-Setters.cs" />
     <Compile Include="Widget\jAutoComplete\ControlAttributes.cs" />
+    <Compile Include="Widget\jAutoComplete\Methods\Method-Options.cs" />
     <Compile Include="Widget\jAutoComplete\Options\PositionOptions.cs" />
     <Compile Include="Widget\jAutoComplete\Scripting.cs" />
     <Compile Include="Widget\jAutoComplete\Events\Events-Core.cs" />
@@ -110,6 +112,10 @@
     <Compile Include="Widget\jAutoComplete\Events\Events-Setters.cs" />
     <Compile Include="Widget\jAutoComplete\Methods\Methods.cs" />
     <Compile Include="Widget\jAutoComplete\Rendering\Rendering.cs" />
+    <Compile Include="Widget\jDatePicker\Methods\Method-Options.cs" />
+    <Compile Include="Widget\jDialog\Methods\Method-Options.cs" />
+    <Compile Include="Widget\jProgressBar\Methods\Method-Options.cs" />
+    <Compile Include="Widget\jPushButton\Methods\Method-Options.cs" />
     <Compile Include="Widget\jPushButton\PushButton.cs" />
     <Compile Include="Widget\jPushButton\ControlAttributes.cs" />
     <Compile Include="Widget\jPushButton\Scripting.cs" />
@@ -153,12 +159,14 @@
     <Compile Include="Widget\jProgressBar\Methods\Methods.cs" />
     <Compile Include="Widget\jProgressBar\Rendering\Rendering.cs" />
     <Compile Include="Widget\jSlider\ControlAttributes.cs" />
+    <Compile Include="Widget\jSlider\Methods\Method-Options.cs" />
     <Compile Include="Widget\jSlider\Scripting.cs" />
     <Compile Include="Widget\jSlider\Events\Events-Core.cs" />
     <Compile Include="Widget\jSlider\Events\Events-Properties.cs" />
     <Compile Include="Widget\jSlider\Events\Events-Setters.cs" />
     <Compile Include="Widget\jSlider\Methods\Methods.cs" />
     <Compile Include="Widget\jSlider\Rendering\Rendering.cs" />
+    <Compile Include="Widget\jTab\Methods\Method-Options.cs" />
     <Compile Include="Widget\jTab\Options\AnimationOptions.cs" />
     <Compile Include="Widget\jTab\Pane\Panes.cs" />
     <Compile Include="Widget\jTab\Scripting.cs" />

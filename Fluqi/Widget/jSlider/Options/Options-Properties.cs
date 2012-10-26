@@ -32,7 +32,6 @@ namespace Fluqi.Widget.jSlider
 		/// Disables (true) or enables (false) the control. Can be set when initialising 
 		/// (first creating) the control.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#option-disabled for details</remarks>
 		protected internal bool Disabled { get; set; }
 
 		/// <summary>
@@ -40,26 +39,22 @@ namespace Fluqi.Widget.jSlider
 		/// also accept a string representing one of the three predefined speeds ("slow", 
 		/// "normal", or "fast") or the number of milliseconds to run the animation (e.g. 1000)
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#option-animate for details</remarks>
 		protected internal string Animate { get; set; }
 
 		/// <summary>
 		/// The maximum value of the slider.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#option-max for more details</remarks>
 		protected internal int Max { get; set; }
 			
 		/// <summary>
 		/// The minimum value of the slider.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#option-min for more details</remarks>
 		protected internal int Min { get; set; }
 
 		/// <summary>
 		/// This option determines whether the slider has the min at the left, the max at the right or 
 		/// the min at the bottom, the max at the top. Possible values: 'horizontal', 'vertical'.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#option-orientation for details</remarks>
 		protected internal Core.Orientation.eOrientation Orientation { get; set; }
 
 		/// <summary>
@@ -75,7 +70,6 @@ namespace Fluqi.Widget.jSlider
 		/// min range goes from the slider min to one handle. A max range goes from one handle 
 		/// to the slider max.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#option-buttonimage for details</remarks>
 		protected internal string Range { get; set; }
 
 		/// <summary>
@@ -83,21 +77,18 @@ namespace Fluqi.Widget.jSlider
 		/// The full specified value range of the slider (max - min) needs to be evenly divisible 
 		/// by the step.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#option-step for details</remarks>
 		protected internal int Step { get; set; }
 
 		/// <summary>
 		/// Determines the value of the slider, if there's only one handle. If there is more than one handle, 
 		/// determines the value of the first handle.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#option-calculateweek for details</remarks>
 		protected internal int Value { get; set; }
 
 		/// <summary>
 		/// This option can be used to specify multiple handles. If range is set to true, the length of 
 		/// 'values' should be 2.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#option-changemonth for details</remarks>
 		protected internal List<int> Values { get; set; }
 
 	} // Events

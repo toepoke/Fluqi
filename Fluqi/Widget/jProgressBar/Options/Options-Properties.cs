@@ -22,13 +22,11 @@ namespace Fluqi.Widget.jProgressBar
 		/// <summary>
 		/// Disables (true) or enables (false) the progressbar. Can be set when initialising (first creating) the progressbar.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/progressbar/#option-disabled for details</remarks>
 		protected internal bool Disabled { get; set; }
 
 		/// <summary>
 		/// The value of the progressbar.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/progressbar/#option-value for details</remarks>
 		protected internal int Value { get; set; }
 
 	} // Options

@@ -22,13 +22,11 @@ namespace Fluqi.Widget.jAccordion
 	{
 
 		/// <summary>
-		/// Sets the "disabled" flag 
+		/// Disables the accordion if set to true 
 		/// </summary>
-		/// <param name="disabled">
-		/// True: sets disabled on
-		/// False: sets disabled off
-		/// </param>
+		/// <param name="disabled">Disables the accordion if set to true</param>
 		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/accordion/#option-disabled for details</remarks>
 		public Options SetDisabled(bool disabled) {
 		  this.Disabled = disabled;
 		  return this;
@@ -36,12 +34,11 @@ namespace Fluqi.Widget.jAccordion
 
 
 		/// <summary>
-		/// Sets the panel transition effect.  As this can have multiple arguments the
-		/// parameter is specified as JSON, so for example: 
-		///		myAccordion.Options.SetEffect("{ opacity: 'toggle' }")
+		/// If and how to animate changing panels.
 		/// </summary>
-		/// <param name="animated">Animation definition</param>
+		/// <param name="animated">Name of easing to use with default duration.</param>
 		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/accordion/#option-animate for details</remarks>
 		public Options SetAnimate(string animated) {
 			this.Animate = animated ?? "";
 			return this;
@@ -49,10 +46,10 @@ namespace Fluqi.Widget.jAccordion
 
 
 		/// <summary>
-		/// Sets the panel transition effect.  
+		/// If and how to animate changing panels.
 		/// </summary>
-		/// <param name="effect">Animation definition</param>
-		/// <returns>Options object for chainability</returns>
+		/// <param name="effect">Name of easing to use with default duration.</param>
+		/// <remarks>See http://api.jqueryui.com/accordion/#option-animate for details</remarks>
 		public Options SetAnimate(Core.Ease.eEase effect) {
 			string easeString = Core.Ease.EaseToString(effect);
 			return this.SetAnimate(easeString);
@@ -60,10 +57,11 @@ namespace Fluqi.Widget.jAccordion
 
 
 		/// <summary>
-		/// Sets whether the selected panel is collapsible or not.
+		/// Whether all the sections can be closed at once. Allows collapsing the active section.
 		/// </summary>
 		/// <param name="collapsible">Flags whether collapsible is on or off</param>
 		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/accordion/#option-collapsible for details</remarks>
 		public Options SetCollapsible(bool collapsible) {
 			this.Collapsible = collapsible;
 			return this;
@@ -71,10 +69,12 @@ namespace Fluqi.Widget.jAccordion
 	
 
 		/// <summary>
-		/// Sets the event that opens a panel, e.g. "mouseover"
+		/// The event that accordion headers will react to in order to activate the associated panel. 
+		/// Multiple events can be specificed, separated by a space
 		/// </summary>
 		/// <param name="evt">Event to use to open a tab</param>
 		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/accordion/#option-event for details</remarks>
 		public Options SetEvent(string evt) {
 			this.Event = evt ?? "";
 
@@ -83,10 +83,11 @@ namespace Fluqi.Widget.jAccordion
 
 
 		/// <summary>
-		/// Sets the event that opens a panel, e.g. "mouseover"
+		/// The event that accordion headers will react to in order to activate the associated panel. 
 		/// </summary>
 		/// <param name="browserEvent">Event to kick off changing of panes</param>
 		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/accordion/#option-event for details</remarks>
 		public Options SetEvent(Core.BrowserEvent.eBrowserEvent browserEvent) {
 			string evtName = Core.BrowserEvent.BrowserEventToString(browserEvent);
 			return this.SetEvent(evtName);
@@ -98,6 +99,7 @@ namespace Fluqi.Widget.jAccordion
 		/// </summary>
 		/// <param name="style">Style to use</param>
 		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/accordion/#option-heightStyle for details</remarks>
 		public Options SetHeightStyle(Core.HeightStyle.eHeightStyle style) {
 			this.HeightStyle = Core.HeightStyle.HeightStyleToString(style);
 			return this;
@@ -108,6 +110,7 @@ namespace Fluqi.Widget.jAccordion
 		/// Controls the height of the accordion and each panel.  Possible values are "auto", "fill" and "content".
 		/// </summary>
 		/// <param name="style">Style to use</param>
+		/// <remarks>See http://api.jqueryui.com/accordion/#option-heightStyle for details</remarks>
 		/// <returns>Options object for chainability</returns>
 		public Options SetHeightStyle(string style) {
 			this.HeightStyle = style;
@@ -150,11 +153,9 @@ namespace Fluqi.Widget.jAccordion
 		
 
 		/// <summary>
-		/// Icons to use for headers. Icons may be specified for 'header' and 'activeHeader', 
-		/// and we recommend using the icons native to the jQuery UI CSS Framework manipulated 
-		/// by jQuery UI ThemeRoller
+		/// Icons to use for headers, matching an icon defined by the jQuery UI CSS Framework. 
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-icons for more details</remarks>
+		/// <remarks>See http://api.jqueryui.com/accordion/#option-icons for details</remarks>
 		public Options SetIcons(string headerIconClass, string activeHeaderIconClass) {
 			this.HeaderIconClass = headerIconClass ?? "";
 			this.activeHeaderIconClass = activeHeaderIconClass ?? "";
@@ -163,12 +164,11 @@ namespace Fluqi.Widget.jAccordion
 
 
 		/// <summary>
-		/// Icons to use for headers. Icons may be specified for 'header' and 'activeHeader', 
-		/// and we recommend using the icons native to the jQuery UI CSS Framework manipulated 
-		/// by jQuery UI ThemeRoller
+		/// Icons to use for headers, matching an icon defined by the jQuery UI CSS Framework. 
 		/// </summary>
 		/// <remarks>
 		/// Overload for specifying icons through an enumeration (so you get the itellisense when finding them).
+		/// See http://api.jqueryui.com/accordion/#option-icons for details
 		/// </remarks>
 		public Options SetIcons(Core.Icons.eIconClass headerIconClass, Core.Icons.eIconClass activeHeaderIconClass) {
 			this.HeaderIconClass = Core.Icons.ByEnum(headerIconClass);
@@ -178,8 +178,9 @@ namespace Fluqi.Widget.jAccordion
 
 
 		/// <summary>
-		/// Turns panel header icons off
+		/// Icons to use for headers, matching an icon defined by the jQuery UI CSS Framework. 
 		/// </summary>
+		/// <remarks>See http://api.jqueryui.com/accordion/#option-icons for details</remarks>
 		public Options SetIconsOff() {
 			// just set both to empty strings to signify they are off ... the rendering phase will deal with this
 			this.HeaderIconClass = "";

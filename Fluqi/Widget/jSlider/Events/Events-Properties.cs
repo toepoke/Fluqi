@@ -31,13 +31,11 @@ namespace Fluqi.Widget.jSlider
 		/// <summary>
 		/// This event is triggered when slider is created.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#event-create for details</remarks>
 		protected internal string CreateEvent { get; set; }
 
 		/// <summary>
 		/// This event is triggered when the user starts sliding.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#event-start for details</remarks>
 		protected internal string StartEvent { get; set; }
 
 		/// <summary>
@@ -45,7 +43,6 @@ namespace Fluqi.Widget.jSlider
 		/// sliders) to obtain the value of the current handle, $(..).slider('value', index) 
 		/// to get another handles' value.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#event-slide for details</remarks>
 		protected internal string SlideEvent { get; set; }
 
 		/// <summary>
@@ -55,13 +52,11 @@ namespace Fluqi.Widget.jSlider
 		/// (single-handled sliders) to obtain the value of the current handle, 
 		/// $(this).slider('values', index) to get another handle's value.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#event-change for details</remarks>
 		protected internal string ChangeEvent { get; set; }
 
 		/// <summary>
 		/// This event is triggered when the user stops sliding.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/slider/#event-stop for details</remarks>
 		protected internal string StopEvent { get; set; }
 
 	} // Events
