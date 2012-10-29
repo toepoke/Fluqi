@@ -232,6 +232,7 @@
     <Content Include="Content\ui\images\ui-icons_f7a50d_256x240.png" />
     <Content Include="Content\ui\images\ui-icons_fcd113_256x240.png" />
     <Content Include="Content\ui\jquery-ui-1.8.16.custom.css" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\autocomplete-results.js" />
     <Content Include="Scripts\accordion.js" />
