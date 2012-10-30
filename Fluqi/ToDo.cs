@@ -8,6 +8,19 @@ namespace Fluqi
 	{
 		// jQuery 1.9.0 upgrade
 		// ToDo: Need to modify links in documentation as the location is now api.jqueryui.com
+		// ToDo: Add some code into the position "using" callback to illustrate the properties now available (there's lots more)
+		//       - see http://jqueryui.com/upgrade-guide/1.9/#added-positioning-feedback-to-the-using-callback
+		// ToDo: Investigate viability of have a "test.aspx" page which has Fluqi output it's settings and run the inbuild jQuery UI tests against it?
+		// ToDo: Favicon
+		// ToDo: Still need to add in DEFAULTs for the animation (may need to be per control).  Also remember this effects the C# output.
+		// ToDo: Accordion header needs adding
+		// ToDo: Does disable/enable on DatePicker still work?
+		// ToDo: Revisit show/hide in Dialog (and elsewhere) as we might be able to use the object version
+
+
+		// jQuery 1.9 bugs to raise
+		// easing not supported on tabs, should it be?
+
 
 		// ToDo: Integrate appHarbor for integration with github source code.
 		// ToDo: Check the source that comes out of the demo still matches the actual code required (copy and paste somewhere).
