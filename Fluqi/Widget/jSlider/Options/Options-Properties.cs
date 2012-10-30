@@ -42,7 +42,7 @@ namespace Fluqi.Widget.jSlider
 		protected internal string Animate { get; set; }
 
 		/// <summary>
-		/// The maximum value of the slider.
+		/// The maximum value of the Slider.
 		/// </summary>
 		protected internal int Max { get; set; }
 			

@@ -10,6 +10,7 @@ using Fluqi.Widget.jTab;
 using Fluqi.Utilities.jCookie;
 using Fluqi.Utilities.jPosition;
 using System.IO;
+using Fluqi.Widget.jSpinner;
 
 namespace Fluqi.Tests.Helpers {
 
@@ -120,13 +121,25 @@ namespace Fluqi.Tests.Helpers {
 			// nothing special, just create a simple dummy tab helper as a starting point 
 			// (saves having the same code everywhere!)
 			Slider ts = new Slider(writer, "mySlider");
-
+			
 			return ts;
 		}
 
 		internal static void ForceRender(Slider sldr)
 		{
 			sldr.Render();
+		}
+
+		internal static Spinner SetupSimpleSpinnerObject(TextWriter writer)
+		{
+			Spinner s = new Spinner(writer, "mySpinner");
+
+			return s;
+		}
+
+		internal static void ForceRender(Spinner s)
+		{
+			s.Render();
 		}
 
 		internal static Tabs SetupSimpleTabObject(TextWriter writer) 

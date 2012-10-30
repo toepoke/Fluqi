@@ -88,6 +88,11 @@
     <Compile Include="AutoComplete\AutoCompleteTests-Events.cs" />
     <Compile Include="AutoComplete\AutoCompleteTests-Methods.cs" />
     <Compile Include="AutoComplete\AutoCompleteTests-Methods-Options.cs" />
+    <Compile Include="Spinner\SpinnerTests-Core.cs" />
+    <Compile Include="Spinner\SpinnerTests-Events.cs" />
+    <Compile Include="Spinner\SpinnerTests-Methods-Options.cs" />
+    <Compile Include="Spinner\SpinnerTests-Methods.cs" />
+    <Compile Include="Spinner\SpinnerTests-Options.cs" />
     <Compile Include="PushButton\ButtonTests-Core.cs" />
     <Compile Include="PushButton\ButtonTests-Options.cs" />
     <Compile Include="PushButton\ButtonTests-Events.cs" />

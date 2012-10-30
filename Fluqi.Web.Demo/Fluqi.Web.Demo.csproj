@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Controllers\BuilderController\Accordion.cs" />
     <Compile Include="Controllers\BuilderController\AutoComplete.cs" />
+    <Compile Include="Controllers\BuilderController\Spinner.cs" />
     <Compile Include="Controllers\BuilderController\PushButton.cs" />
     <Compile Include="Controllers\BuilderController\DatePicker.cs" />
     <Compile Include="Controllers\BuilderController\Dialog.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Helpers\Url.cs" />
     <Compile Include="Helpers\List.cs" />
     <Compile Include="Helpers\Html.cs" />
+    <Compile Include="Models\SpinnerModel.cs" />
     <Compile Include="Models\PushButtonModel.cs" />
     <Compile Include="Models\WizardModel.cs" />
     <Compile Include="Models\DialogModel.cs" />
@@ -238,6 +240,7 @@
     <Content Include="Scripts\accordion.js" />
     <Content Include="Scripts\auto-complete.js" />
     <Content Include="Scripts\button.js" />
+    <Content Include="Scripts\spinner.js" />
     <Content Include="Scripts\jquery-ui-tabs-rotate.js" />
     <Content Include="Scripts\jquery.themeswitcher.min.js" />
     <Content Include="Scripts\js-src\jquery-ui.custom.js" />
@@ -293,6 +296,7 @@
     <Content Include="Views\Builder\Accordion.aspx" />
     <Content Include="Views\Builder\AddTab.ascx" />
     <Content Include="Views\Builder\AutoComplete.aspx" />
+    <Content Include="Views\Builder\Spinner.aspx" />
     <Content Include="Views\Builder\PushButton.aspx" />
     <Content Include="Views\Builder\DatePicker.aspx" />
     <Content Include="Views\Builder\Dialog.aspx" />

@@ -116,6 +116,15 @@ namespace Fluqi.Core
 		}
 
 		/// <summary>
+		/// Writes the JavaScript required to do a "Set" against a control option.
+		/// </summary>
+		/// <param name="optionName">Name of the option to get the value of</param>
+		/// <param name="newValue">New value for the control option.</param>
+		protected internal void RenderSetOptionCall(string optionName, int newValue) {
+			this.RenderSetOptionCall(optionName, newValue.ToString());
+		}
+
+		/// <summary>
 		/// Writes the JavaScript required to call a given method on the jQuery UI control.
 		/// </summary>
 		/// <param name="methodName">Name of the method to call (as define in the jQuery UI documentation for the control.</param>

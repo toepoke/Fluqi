@@ -12,11 +12,11 @@ namespace Fluqi.Widget.jSlider {
 	public partial class Methods: Core.Methods {
 
 		/// <summary>
-		/// Gets the value of the slider. For single handle sliders.
+		/// Gets the value of the spinner. For single handle sliders.
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-value for details</remarks>
 		public void GetValue() {
-			this.RenderMethodCall("value");
+		  this.RenderMethodCall("value");
 		}	
 
 		/// <summary>
@@ -24,7 +24,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-value for details</remarks>
 		public void SetValue(int newValue) {
-			this.RenderMethodCall("value", newValue);
+		  this.RenderMethodCall("value", newValue);
 		}
 
 		/// <summary>
@@ -32,7 +32,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-values for details</remarks>
 		public void GetValue(int index) {
-			this.RenderMethodCall("values", index);
+		  this.RenderMethodCall("values", index);
 		}	
 
 		/// <summary>
@@ -40,7 +40,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-values for details</remarks>
 		public void SetValue(int index, int newValue) {
-			this.RenderMethodCall("values", index, newValue);
+		  this.RenderMethodCall("values", index, newValue);
 		}	
 
 		/// <summary>
@@ -48,7 +48,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-animate for details</remarks>
 		public void GetAnimate() {
-			this.RenderGetOptionCall("animate");
+		  this.RenderGetOptionCall("animate");
 		}
 
 		/// <summary>
@@ -57,7 +57,7 @@ namespace Fluqi.Widget.jSlider {
 		/// <param name="newValue">New animate setting - in milliseconds</param>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-animate for details</remarks>
 		public void SetAnimate(int newValue) {
-			this.RenderSetOptionCall("animate", newValue.ToString());
+		  this.RenderSetOptionCall("animate", newValue.ToString());
 		}
 
 		/// <summary>
@@ -66,7 +66,7 @@ namespace Fluqi.Widget.jSlider {
 		/// <param name="speed">New animate setting - "slow", "normal", or "fast"</param>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-animate for details</remarks>
 		public void SetAnimate(string speed) {
-			this.RenderSetOptionCall("animate", speed.InDoubleQuotes() );
+		  this.RenderSetOptionCall("animate", speed.InDoubleQuotes() );
 		}
 
 		/// <summary>
@@ -75,7 +75,7 @@ namespace Fluqi.Widget.jSlider {
 		/// <param name="speed">New animate setting - "slow", "normal", or "fast"</param>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-animate for details</remarks>
 		public void SetAnimate(Core.Speed.eSpeed speed) {
-			this.RenderSetOptionCall("animate", Core.Speed.SpeedToString(speed).InDoubleQuotes() );
+		  this.RenderSetOptionCall("animate", Core.Speed.SpeedToString(speed).InDoubleQuotes() );
 		}
 
 		/// <summary>
@@ -83,7 +83,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-max for details</remarks>
 		public void GetMax() {
-			this.RenderGetOptionCall("max");
+		  this.RenderGetOptionCall("max");
 		}
 
 		/// <summary>
@@ -92,7 +92,7 @@ namespace Fluqi.Widget.jSlider {
 		/// <param name="newValue">New max setting</param>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-max for details</remarks>
 		public void SetMax(int newValue) {
-			this.RenderSetOptionCall("max", newValue.ToString());
+		  this.RenderSetOptionCall("max", newValue.ToString());
 		}
 
 		/// <summary>
@@ -100,7 +100,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-min for details</remarks>
 		public void GetMin() {
-			this.RenderGetOptionCall("min");
+		  this.RenderGetOptionCall("min");
 		}
 
 		/// <summary>
@@ -109,7 +109,7 @@ namespace Fluqi.Widget.jSlider {
 		/// <param name="newValue">New min setting</param>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-min for details</remarks>
 		public void SetMin(int newValue) {
-			this.RenderSetOptionCall("min", newValue.ToString());
+		  this.RenderSetOptionCall("min", newValue.ToString());
 		}
 
 		/// <summary>
@@ -117,7 +117,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-orientation for details</remarks>
 		public void GetOrientation() {
-			this.RenderGetOptionCall("orientation");
+		  this.RenderGetOptionCall("orientation");
 		}
 
 		/// <summary>
@@ -128,8 +128,8 @@ namespace Fluqi.Widget.jSlider {
 		/// <param name="newValue">New orientation setting</param>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-orientation for details</remarks>
 		public void SetOrientation(Core.Orientation.eOrientation newValue) {
-			string orientationStr = Core.Orientation.OrientationToString(newValue);
-			this.RenderSetOptionCall("orientation", orientationStr.InDoubleQuotes() );
+		  string orientationStr = Core.Orientation.OrientationToString(newValue);
+		  this.RenderSetOptionCall("orientation", orientationStr.InDoubleQuotes() );
 		}
 
 		/// <summary>
@@ -142,7 +142,7 @@ namespace Fluqi.Widget.jSlider {
 		/// <param name="newValue">New orientation setting</param>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-orientation for details</remarks>
 		public void SetOrientationJS(string newValue) {
-			this.RenderSetOptionCall("orientation", newValue );
+		  this.RenderSetOptionCall("orientation", newValue );
 		}
 
 		/// <summary>
@@ -157,7 +157,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </param>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-orientation for details</remarks>
 		public void SetOrientation(string newValue, bool inDoubleQuotes) {
-			this.RenderSetOptionCall("orientation", newValue, inDoubleQuotes );
+		  this.RenderSetOptionCall("orientation", newValue, inDoubleQuotes );
 		}
 
 		/// <summary>
@@ -168,7 +168,7 @@ namespace Fluqi.Widget.jSlider {
 		/// <param name="newValue">New orientation setting</param>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-orientation for details</remarks>
 		public void SetOrientation(string newValue) {
-			this.SetOrientation(newValue, true/*doubleQuotes*/);
+		  this.SetOrientation(newValue, true/*doubleQuotes*/);
 		}
 
 		/// <summary>
@@ -176,7 +176,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-range for details</remarks>
 		public void GetRange() {
-			this.RenderGetOptionCall("range");
+		  this.RenderGetOptionCall("range");
 		}
 
 		/// <summary>
@@ -188,7 +188,7 @@ namespace Fluqi.Widget.jSlider {
 		/// <param name="newValue">New range setting</param>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-range for details</remarks>
 		public void SetRange(bool newValue) {
-			this.RenderSetOptionCall("range", newValue);
+		  this.RenderSetOptionCall("range", newValue);
 		}
 
 		/// <summary>
@@ -196,7 +196,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-range for details</remarks>
 		public void SetRangeToMin() {
-			this.RenderSetOptionCall("range", "min".InDoubleQuotes());
+		  this.RenderSetOptionCall("range", "min".InDoubleQuotes());
 		}
 
 		/// <summary>
@@ -204,7 +204,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-range for details</remarks>
 		public void SetRangeToMax() {
-			this.RenderSetOptionCall("range", "max".InDoubleQuotes());
+		  this.RenderSetOptionCall("range", "max".InDoubleQuotes());
 		}
 
 		/// <summary>
@@ -212,7 +212,7 @@ namespace Fluqi.Widget.jSlider {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-step for details</remarks>
 		public void GetStep() {
-			this.RenderGetOptionCall("step");
+		  this.RenderGetOptionCall("step");
 		}
 
 		/// <summary>
@@ -222,7 +222,7 @@ namespace Fluqi.Widget.jSlider {
 		/// <param name="newValue">New step setting</param>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-step for details</remarks>
 		public void SetStep(int newValue) {
-			this.RenderSetOptionCall("step", newValue.ToString());
+		  this.RenderSetOptionCall("step", newValue.ToString());
 		}
 
 	}

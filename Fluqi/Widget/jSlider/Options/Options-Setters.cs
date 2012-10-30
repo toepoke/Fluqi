@@ -26,8 +26,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-disabled for details</remarks>
 		public Options SetDisabled(bool disabled) {
-			this.Disabled = disabled;
-			return this;
+		  this.Disabled = disabled;
+		  return this;
 		}
 
 
@@ -36,8 +36,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-changemonth for details</remarks>
 		public Options SetAnimate(bool animate) {
-			this.Animate = animate.ToString();
-			return this;
+		  this.Animate = animate.ToString();
+		  return this;
 		}
 
 
@@ -48,8 +48,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-animate for details</remarks>
 		public Options SetAnimate(string animate) {
-			this.Animate = animate;
-			return this;
+		  this.Animate = animate;
+		  return this;
 		}
 
 
@@ -59,9 +59,9 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-animate for details</remarks>
 		public Options SetAnimate(Core.Speed.eSpeed speed) {
-			string speedStr = Core.Speed.SpeedToString(speed);
-			this.Animate = speedStr;
-			return this;
+		  string speedStr = Core.Speed.SpeedToString(speed);
+		  this.Animate = speedStr;
+		  return this;
 		}
 
 
@@ -71,8 +71,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-animate for details</remarks>
 		public Options SetAnimate(int animateMillis) {
-			this.Animate = animateMillis.ToString();
-			return this;
+		  this.Animate = animateMillis.ToString();
+		  return this;
 		}
 
 
@@ -81,8 +81,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>		
 		/// <remarks>See http://api.jqueryui.com/slider/#option-min for details</remarks>
 		public Options SetMin(int min) {
-			this.Min = min;
-			return this;
+		  this.Min = min;
+		  return this;
 		}
 
 
@@ -91,8 +91,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-max for details</remarks>
 		public Options SetMax(int max) {
-			this.Max = max;
-			return this;
+		  this.Max = max;
+		  return this;
 		}
 			
 
@@ -102,8 +102,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-orientation for details</remarks>
 		public Options SetOrientation(Core.Orientation.eOrientation orientation) {
-			this.Orientation = orientation;
-			return this;
+		  this.Orientation = orientation;
+		  return this;
 		}
 
 
@@ -113,8 +113,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-orientation for details</remarks>
 		public Options SetOrientation(string orientation) {
-			this.Orientation = Fluqi.Core.Orientation.StringToOrientation(orientation);
-			return this;
+		  this.Orientation = Fluqi.Core.Orientation.StringToOrientation(orientation);
+		  return this;
 		}
 
 
@@ -125,8 +125,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-size for details</remarks>
 		public Options SetSize(string size) {
-			this.Size = size;
-			return this;
+		  this.Size = size;
+		  return this;
 		}
 
 
@@ -138,8 +138,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-range for details</remarks>
 		public Options SetRange(bool range) {
-			this.Range = range.ToString();
-			return this;
+		  this.Range = range.ToString();
+		  return this;
 		}
 
 
@@ -151,8 +151,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-range for details</remarks>
 		public Options SetRange(string range) {
-			this.Range = range;
-			return this;
+		  this.Range = range;
+		  return this;
 		}
 
 
@@ -163,8 +163,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-step for details</remarks>
 		public Options SetStep(int step) {
-			this.Step = step;
-			return this;
+		  this.Step = step;
+		  return this;
 		}
 
 
@@ -173,8 +173,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-value for details</remarks>
 		public Options SetValue(int value) {
-			this.Value = value;
-			return this;
+		  this.Value = value;
+		  return this;
 		}
 
 
@@ -184,8 +184,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-values for details</remarks>
 		public Options SetValues(List<int> values) {
-			this.Values = values;
-			return this;
+		  this.Values = values;
+		  return this;
 		}
 
 
@@ -195,8 +195,8 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-values for details</remarks>
 		public Options SetValues(params int[] values) {
-			this.Values = new List<int>(values);
-			return this;
+		  this.Values = new List<int>(values);
+		  return this;
 		}
 
 
@@ -207,16 +207,16 @@ namespace Fluqi.Widget.jSlider
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/slider/#option-values for details</remarks>
 		public Options SetValues(string values) {
-			if (string.IsNullOrEmpty(values))
-				// nothing to see here
-				return this;
+		  if (string.IsNullOrEmpty(values))
+		    // nothing to see here
+		    return this;
 
-			string[] strValues = values.Split(new char[] {','});
-			this.Values = (from v in strValues select int.Parse(v) ).ToList<int>();
+		  string[] strValues = values.Split(new char[] {','});
+		  this.Values = (from v in strValues select int.Parse(v) ).ToList<int>();
 
-			return this;
+		  return this;
 		}
 
 	} // Options
 
-} // ns Fluqi.jAutoComplete
+} // ns
