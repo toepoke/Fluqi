@@ -144,7 +144,8 @@ $(document).ready(function () {
 	var ts = $('#themeswitcher');
 	if (ts.length > 0) {
 		ts.themeswitcher({
-			imgpath: "../Content/switcher-images/"
+			imgpath: "../Content/switcher-images/",
+			jqueryuiversion: "1.9.0"
 		});
 	}
 
