@@ -11,6 +11,7 @@ using Fluqi.Utilities.jCookie;
 using Fluqi.Utilities.jPosition;
 using System.IO;
 using Fluqi.Widget.jSpinner;
+using Fluqi.Widget.jMenu;
 
 namespace Fluqi.Tests.Helpers {
 
@@ -140,6 +141,18 @@ namespace Fluqi.Tests.Helpers {
 		internal static void ForceRender(Spinner s)
 		{
 			s.Render();
+		}
+
+		internal static Menu SetupSimpleMenuObject(TextWriter writer) 
+		{
+			Menu m = new Menu(writer, "myMenu");
+
+			return m;
+		}
+
+		internal static void ForceRender(Menu m)
+		{
+			m.Render();
 		}
 
 		internal static Tabs SetupSimpleTabObject(TextWriter writer) 
