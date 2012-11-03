@@ -16,6 +16,7 @@ namespace Fluqi
 		// ToDo: Accordion header needs adding
 		// ToDo: Does disable/enable on DatePicker still work?
 		// ToDo: Revisit show/hide in Dialog (and elsewhere) as we might be able to use the object version
+		// ToDo: Menu widget doesn't expose a "click" event (eh?), so as per the Button we need to add our own
 
 
 		// jQuery 1.9 bugs to raise

@@ -68,7 +68,10 @@ namespace Fluqi.Widget.jMenu {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetMy(Core.Position.ePosition pos1, Core.Position.ePosition pos2) {
-			this.Options.SetMy(pos1, pos2);
+			if (pos1 != Position.ePosition.Left && pos2 != Position.ePosition.Top) {
+				// avoid menu default position of "left top"
+				this.Options.SetMy(pos1, pos2);
+			}
 			return this;
 		}
 
@@ -96,7 +99,10 @@ namespace Fluqi.Widget.jMenu {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetMy(string pos1, string pos2) {
-			this.Options.SetMy(pos1, pos2);
+			if (pos1 != "left" && pos2 != "top") {
+				// avoid menu default position of "left top"
+				this.Options.SetMy(pos1, pos2);
+			}
 			return this;
 		}
 
@@ -124,7 +130,10 @@ namespace Fluqi.Widget.jMenu {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetAt(Core.Position.ePosition pos1, Core.Position.ePosition pos2) {
-			this.Options.SetAt(pos1, pos2);
+			if (pos1 != Position.ePosition.Right && pos2 != Position.ePosition.Top) {
+				// avoid menu default position of "right top"
+				this.Options.SetAt(pos1, pos2);
+			}
 			return this;
 		}
 
@@ -152,7 +161,10 @@ namespace Fluqi.Widget.jMenu {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetAt(string pos1, string pos2) {
-			this.Options.SetAt(pos1, pos2);
+			if (pos1 != "right" && pos2 != "top") {
+				// avoid menu default position of "right top"
+				this.Options.SetAt(pos1, pos2);
+			}
 			return this;
 		}
 

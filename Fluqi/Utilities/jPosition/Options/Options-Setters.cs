@@ -59,8 +59,6 @@ namespace Fluqi.Utilities.jPosition
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public Options SetMy(string pos) {
-			//this.My.Clear();
-			//this.My.Add( Core.Position.StringToPosition(pos) );
 			this.My = pos;
 			return this;
 		}

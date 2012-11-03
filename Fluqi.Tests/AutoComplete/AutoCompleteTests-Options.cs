@@ -373,9 +373,7 @@ namespace Fluqi.Tests
 						.SetMy(Fluqi.Core.Position.ePosition.Bottom, Fluqi.Core.Position.ePosition.Right)
 					.Finish()
 			;
-
-
-
+			
 			// Act - Force output we'd see on the web page
 			ac.Render();
 			string html = resp.Output.ToString();
@@ -521,6 +519,108 @@ namespace Fluqi.Tests
 		    "<script type=\"text/javascript\">" + 
 		      "$(document).ready( function() {" + 
 		        "$(\"#ac\").autocomplete({source: ['c++', 'java', 'php'],position: {my: \"bottom right\",at: \"bottom right\"}})" + 
+		      ";});" + 
+		    "</script>";
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void AutoComplete_My_Position_Set_To_Default_Is_Not_Rendered()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			AutoComplete ac = TestHelper.SetupSimpleAutoCompleteObject(resp);
+
+			// only testing raw output
+			ac
+				.Rendering
+					.Compress()
+					.ShowCSS()
+					.Finish()
+				.Options
+					.Position
+						.SetMy("left top")
+					.Finish()
+				.Finish()
+			;
+
+			// Act - Force output we'd see on the web page
+			ac.Render();
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<script type=\"text/javascript\">" + 
+		      "$(document).ready( function() {" + 
+		        "$(\"#ac\").autocomplete({source: ['c++', 'java', 'php']})" + 
+		      ";});" + 
+		    "</script>";
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void AutoComplete_At_Position_Set_To_Default_Is_Not_Rendered()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			AutoComplete ac = TestHelper.SetupSimpleAutoCompleteObject(resp);
+
+			// only testing raw output
+			ac
+				.Rendering
+					.Compress()
+					.ShowCSS()
+					.Finish()
+				.Options
+					.Position
+						.SetAt("left bottom")
+					.Finish()
+				.Finish()
+			;
+
+			// Act - Force output we'd see on the web page
+			ac.Render();
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<script type=\"text/javascript\">" + 
+		      "$(document).ready( function() {" + 
+		        "$(\"#ac\").autocomplete({source: ['c++', 'java', 'php']})" + 
+		      ";});" + 
+		    "</script>";
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void AutoComplete_Collision_Position_Set_To_Default_Is_Not_Rendered()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			AutoComplete ac = TestHelper.SetupSimpleAutoCompleteObject(resp);
+
+			// only testing raw output
+			ac
+				.Rendering
+					.Compress()
+					.ShowCSS()
+					.Finish()
+				.Options
+					.Position
+						.SetCollision("none")
+					.Finish()
+				.Finish()
+			;
+
+			// Act - Force output we'd see on the web page
+			ac.Render();
+			string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<script type=\"text/javascript\">" + 
+		      "$(document).ready( function() {" + 
+		        "$(\"#ac\").autocomplete({source: ['c++', 'java', 'php']})" + 
 		      ";});" + 
 		    "</script>";
 		  Assert.IsTrue(html.Contains(expected));

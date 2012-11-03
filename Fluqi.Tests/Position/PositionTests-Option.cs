@@ -701,7 +701,7 @@ namespace Fluqi.Tests
 					.Compress()
 					.Finish()
 				.Options
-					.SetCollision("FLIP")
+					.SetCollision("FIT")
 			;
 
 			TestHelper.ForceRender(pos);
@@ -713,12 +713,11 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myPosition\").position({collision: \"flip\"})" + 
+						"$(\"#myPosition\").position({collision: \"fit\"})" + 
 					";});" + 
 				"</script>";
 
 			Assert.IsTrue(html.Contains(expected));
-			// works
 		}
 
 		[TestMethod]
@@ -734,7 +733,7 @@ namespace Fluqi.Tests
 					.Compress()
 					.Finish()
 				.Options
-					.SetCollision("flip")
+					.SetCollision("fit")
 			;
 
 			TestHelper.ForceRender(pos);
@@ -746,7 +745,7 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 					"$(document).ready( function() {" + 
-						"$(\"#myPosition\").position({collision: \"flip\"})" + 
+						"$(\"#myPosition\").position({collision: \"fit\"})" + 
 					";});" + 
 				"</script>";
 

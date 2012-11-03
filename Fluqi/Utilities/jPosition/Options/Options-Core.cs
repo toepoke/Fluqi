@@ -81,18 +81,18 @@ namespace Fluqi.Utilities.jPosition
 			Core.ScriptOptions posOptions = posParent.ChildOptions;
 			string collisions = Core.Collision.CollisionsToString(this.Collision);
 
-			posOptions.Add(!string.IsNullOrEmpty(this.My), "my", this.My.ToLower().InDoubleQuotes());
-			posOptions.Add(!string.IsNullOrEmpty(this.At), "at", this.At.ToLower().InDoubleQuotes());
+			posOptions.Add(!this.IsNullEmptyOrDefault(this.My, this.MyDefault), "my", this.My.ToLower().InDoubleQuotes());
+			posOptions.Add(!this.IsNullEmptyOrDefault(this.At, this.AtDefault), "at", this.At.ToLower().InDoubleQuotes());
 			if (this.IsSelector(this.Of)) 
-				posOptions.Add("of", this.Of.InDoubleQuotes());
+				posOptions.Add(!this.IsNullEmptyOrDefault(this.Of, this.OfDefault), "of", this.Of.InDoubleQuotes());
 			else 
-				posOptions.Add(!this.IsNullOrEmpty(this.Of), "of", this.Of);
+				posOptions.Add(!this.IsNullEmptyOrDefault(this.Of, this.OfDefault), "of", this.Of);
 			if (this.IsSelector(this.Within))
-				posOptions.Add("within", this.Within.InDoubleQuotes());
+				posOptions.Add(!this.IsNullEmptyOrDefault(this.Within, this.WithinDefault), "within", this.Within.InDoubleQuotes());
 			else 
-				posOptions.Add(!this.IsNullOrEmpty(this.Within), "within", this.Within);
-			posOptions.Add(!string.IsNullOrEmpty(collisions), "collision", collisions.InDoubleQuotes());
-			posOptions.Add(!this.IsNullOrEmpty(this.UsingFunction), "using", this.UsingFunction);
+				posOptions.Add(!this.IsNullEmptyOrDefault(this.Within, this.WithinDefault), "within", this.Within);
+			posOptions.Add(!this.IsNullEmptyOrDefault(collisions, this.CollisionDefault), "collision", collisions.InDoubleQuotes());
+			posOptions.Add(!this.IsNullEmptyOrDefault(this.UsingFunction, this.UsingFunctionDefault), "using", this.UsingFunction);
 
 			// Any of the above actually going to render?
 			posParent.Condition = posOptions.Where(x=>x.Condition).Any();
@@ -108,6 +108,14 @@ namespace Fluqi.Utilities.jPosition
 			this.At = "";
 			this.Of = "";
 			this.Collision = new List<Core.Collision.eCollision>();
+
+			// Set defaults for the Position utility (when used in isolation)
+			this.MyDefault = "center";
+			this.AtDefault = "center";
+			this.OfDefault = null;
+			this.CollisionDefault = "flip";
+			this.UsingFunctionDefault = null;
+			this.WithinDefault = "window";
 		}
 
 	} // Options

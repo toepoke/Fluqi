@@ -61,8 +61,18 @@ namespace Fluqi.Widget.jMenuItem {
 		/// This entry point has no URL on click.  The hyperlink will have a URL of "#".
 		/// </remarks>
 		public MenuItems Add(string title) {
-			this.Add(title, "");
-			return this;
+			return this.Add(title, "");
+		}
+		
+		/// <summary>
+		/// Adds a new item to the menu.
+		/// </summary>
+		/// <param name="title">Text to appear in the hyperlink</param>
+		/// <param name="url">URL to navigate to upon selecting the menu item.</param>
+		/// <param name="icon">Icon to display next to the menu item</param>
+		/// <returns>Sub-menu list for chainability</returns>
+		public MenuItems Add(string title, Core.Icons.eIconClass icon) {
+			return this.Add(title, "", icon);
 		}
 		
 		/// <summary>
@@ -72,9 +82,28 @@ namespace Fluqi.Widget.jMenuItem {
 		/// <param name="url">URL to navigate to upon selecting the menu item.</param>
 		/// <returns>Sub-menu list for chainability</returns>
 		public MenuItems Add(string title, string url) {
-			MenuItem i = new MenuItem(this.Parent) { 
-				Title = title, TargetURL = url 
-			};
+			//return this.Add(title, url, Core.Icons.eIconClass.none);
+			MenuItem i = new MenuItem(this.Parent)
+				.SetTitle(title)
+				.SetTargetURL(url)
+			;
+			_MenuItems.Add(i);
+			return this;
+		}
+
+		/// <summary>
+		/// Adds a new item to the menu.
+		/// </summary>
+		/// <param name="title">Text to appear in the hyperlink</param>
+		/// <param name="url">URL to navigate to upon selecting the menu item.</param>
+		/// <param name="icon">Icon to display next to the menu item</param>
+		/// <returns>Sub-menu list for chainability</returns>
+		public MenuItems Add(string title, string url, Core.Icons.eIconClass icon) {
+			MenuItem i = new MenuItem(this.Parent)
+				.SetTitle(title)
+				.SetTargetURL(url)
+				.SetIcon(icon)
+			;
 			_MenuItems.Add(i);
 			return this;
 		}

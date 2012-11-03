@@ -103,6 +103,10 @@ namespace Fluqi.Widget.jAutoComplete
 			this.Delay = DEFAULT_DELAY;
 			this.MinimumLength = DEFAULT_MINIMUM_LENGTH;
 			this.Disabled = false;
+			// Set position defaults
+			this.Position.Options.MyDefault = "left top";
+			this.Position.Options.AtDefault = "left bottom";
+			this.Position.Options.CollisionDefault = "none";
 		}
 
 	} // Options

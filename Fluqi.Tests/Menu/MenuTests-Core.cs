@@ -264,7 +264,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Simple_Menu_MarkUp_Is_Correct()
+		public void Add_With_Title_MarkUp_Is_Correct()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
@@ -273,14 +273,9 @@ namespace Fluqi.Tests
 		  // only testing raw output
 		  menu
 		    .Items()
-		        .Add("Item 1")
-		        .Add("Item 2")
-		        .Add("Item 3")
-		        .Add("Item 4")
-		        .Add("Item 5")
+		        .Add("toepoke")
 		      .Back()
 		    .Finish()
-		    //.Menu()
 		  .Rendering
 		    .Compress()
 		  ;
@@ -293,11 +288,97 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"#\">Item 1</a></li>" + 
-		      "<li><a href=\"#\">Item 2</a></li>" + 
-		      "<li><a href=\"#\">Item 3</a></li>" + 
-		      "<li><a href=\"#\">Item 4</a></li>" + 
-		      "<li><a href=\"#\">Item 5</a></li>" + 
+		      "<li><a href=\"#\">toepoke</a></li>" + 
+		    "</ul>";
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Add_With_Title_And_URL_MarkUp_Is_Correct()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+		    .Items()
+		        .Add("toepoke", "http://toepoke.co.uk")
+		      .Back()
+		    .Finish()
+		  .Rendering
+		    .Compress()
+		  ;
+
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<ul id=\"myMenu\">" + 
+		      "<li><a href=\"http://toepoke.co.uk\">toepoke</a></li>" + 
+		    "</ul>";
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Add_With_Title_And_Icon_MarkUp_Is_Correct()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+		    .Items()
+		        .Add("toepoke", Core.Icons.eIconClass.home)
+		      .Back()
+		    .Finish()
+		  .Rendering
+		    .Compress()
+		  ;
+
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<ul id=\"myMenu\">" + 
+		      "<li><a href=\"#\"><span class=\"ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
+		    "</ul>";
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Add_With_Title_And_URL_And_Icon_MarkUp_Is_Correct()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+		    .Items()
+		        .Add("toepoke", "http://toepoke.co.uk", Core.Icons.eIconClass.home)
+		      .Back()
+		    .Finish()
+		  .Rendering
+		    .Compress()
+		  ;
+
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<ul id=\"myMenu\">" + 
+		      "<li><a href=\"http://toepoke.co.uk\"><span class=\"ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
 		    "</ul>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
@@ -322,7 +403,6 @@ namespace Fluqi.Tests
 		        .Add("Item 5")
 		      .Back()
 		    .Finish()
-		    //.Menu()
 		  .Rendering
 		    .Compress()
 		  ;
@@ -368,7 +448,6 @@ namespace Fluqi.Tests
 		        .Add("Item 5")
 		      .Back()
 		    .Finish()
-		    //.Menu()
 		  .Rendering
 		    .Compress()
 		  ;

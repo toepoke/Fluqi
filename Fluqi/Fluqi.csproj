@@ -90,7 +90,7 @@
     <Compile Include="Utilities\jAnimation\Rendering\Rendering.cs" />
     <Compile Include="Utilities\jAnimation\Scripting.cs" />
     <Compile Include="Utilities\jCookie\CookieOptions.cs" />
-    <Compile Include="Utilities\jPosition\PositionOptions.cs" />
+    <Compile Include="Utilities\jPosition\Options\Options-Defaults.cs" />
     <Compile Include="Widget\jMenu\ControlAttributes.cs" />
     <Compile Include="Widget\jMenu\Events\Events-Core.cs" />
     <Compile Include="Widget\jMenu\Events\Events-Properties.cs" />
