@@ -17,7 +17,7 @@ namespace Fluqi.Widget.jMenuItem {
 		public MenuItem(jMenu.Menu owner, string id)
 		{
 			this.Menu = owner;
-			this.Tag = jMenu.Options.DEFAULT_MENUS;
+			this.Tag = DEFAULT_SINGLE_TAG;
 			this.Children = new MenuItems(this, id);
 			this.Parent = null;
 		}
@@ -25,7 +25,7 @@ namespace Fluqi.Widget.jMenuItem {
 		public MenuItem(MenuItem parent) {
 			this.Parent = parent;
 			this.Menu = parent.Menu;
-			this.Tag = jMenu.Options.DEFAULT_MENUS;
+			this.Tag = DEFAULT_SINGLE_TAG;
 			this.Children = new MenuItems(this);
 		}
 
@@ -74,27 +74,67 @@ namespace Fluqi.Widget.jMenuItem {
 		/// <summary>
 		/// Flags whether this MenuItem is the root of the menu.
 		/// </summary>
-		private bool _IsRoot { get; set; }
+		protected bool _IsRoot { get; set; }
 
+		/// <summary>
+		/// Changes the title that appears in the menu item.
+		/// </summary>
+		/// <returns>this for chainability</returns>
+		/// <remarks>
+		/// Dunno why you'd want to do this after it's already been defined when adding the menu item
+		/// but I'm leaving it here if only for the sake of consistency with the API.
+		/// </remarks>
 		public MenuItem SetTitle(string value) {
 			this.Title = value;
 			return this;
 		}
 
-		public MenuItem SetIcon(string value) {
-			this.Icon = value;
+		/// <summary>
+		/// Sets the icon which appears to the left of the menu title.
+		/// </summary>
+		/// <returns>this for chainability</returns>
+		/// <remarks>
+		/// Use this for adding your own icon.  The "ui-icon" jQuery UI class will still be added first
+		/// (so you can use this for sizing), but the "ui-icon" prefix won't be added in front of your CSS class.
+		/// </remarks>
+		/// <returns>this for chainability</returns>
+		public MenuItem SetIcon(string cssClass) {
+			this.Icon = cssClass;
 			return this;
 		}
 
+		/// <summary>
+		/// Sets the icon which appears to the left of the menu item.  This is one of the built in
+		/// icons provdided by the jQuery UI framework.
+		/// </summary>
+		/// <returns>this for chainability</returns>
 		public MenuItem SetIcon(Core.Icons.eIconClass value) {
 			return this.SetIcon( Core.Icons.ByEnum(value) );
 		}
 
+		/// <summary>
+		/// Sets the URL to navigate to from the menu (this replaces the default "#" href).
+		/// </summary>
+		/// <returns>this for chainability</returns>
 		public MenuItem SetTargetURL(string value) {
 			this.TargetURL = value;
 			return this;
 		}
+
+		/// <summary>
+		/// Sets the LI tag to use
+		/// </summary>
+		/// <returns>this for chainability</returns>
+		public MenuItem SetTag(string value) {
+			this.Tag = value;
+			return this;
+		}
 				
+		/// <summary>
+		/// Ends configuration of the menu item just added (through the <see cref="Add"/> method)
+		/// and brings the fluent API back a level to allow further menu items to be added.
+		/// </summary>
+		/// <returns>Parent MenuItems object to maintain fluent API reference point</returns>
 		public MenuItems Finish() {
 			return this.Parent.Children;
 		}
@@ -106,6 +146,7 @@ namespace Fluqi.Widget.jMenuItem {
 		protected internal bool HasChildren() {
 			return this.Children._MenuItems.Any();
 		}
+
 
 		/// <summary>
 		/// Resets the object back to a known state.
@@ -136,25 +177,27 @@ namespace Fluqi.Widget.jMenuItem {
 			if (this.HasChildren()) {
 				RenderChildren(sb);
 			}
+
 			if (_IsRoot)
 				RenderRootCloseItem(sb);
 			else
 				RenderCloseItem(sb);
 			
 		} // BuildTagHtml
-		
+
+
 		private void RenderRootOpenItem(jStringBuilder sb) {
-			sb.AppendTabsFormat("<{0}", this.Tag);
+			sb.AppendTabsFormat("<{0}", this.Menu.Options.Menus);
 			this.Menu.RenderAttributes(sb);
 			sb.AppendLineIf(">");
 		}
 
 		private void RenderRootCloseItem(jStringBuilder sb) {
-			sb.AppendTabsFormat("</{0}>", this.Tag);
+			sb.AppendTabsFormat("</{0}>", this.Menu.Options.Menus);
 		}
 
 		private void RenderOpenItem(jStringBuilder sb) {
-			sb.AppendTabsFormat("<{0}>", DEFAULT_SINGLE_TAG);
+			sb.AppendTabsFormat("<{0}>", this.Tag);
 
 			if (!string.IsNullOrEmpty(this.Html)) 
 				sb.Append(this.Html);
@@ -174,13 +217,13 @@ namespace Fluqi.Widget.jMenuItem {
 		}
 
 		private void RenderCloseItem(jStringBuilder sb) {
-			sb.AppendFormat("</{0}>", DEFAULT_SINGLE_TAG);
+			sb.AppendFormat("</{0}>", this.Tag);
 		}
 
 		protected internal void RenderChildren(jStringBuilder sb) {
 			// Open list/item
 			if (!_IsRoot)
-				sb.AppendTabsFormat("<{0}>", this.Tag);			
+				sb.AppendTabsFormat("<{0}>", this.Menu.Options.Menus);
 
 			foreach (MenuItem mi in this.Children._MenuItems) {
 				mi.BuildTagHtml(sb);
@@ -188,7 +231,7 @@ namespace Fluqi.Widget.jMenuItem {
 
 			// Close list/item
 			if (!_IsRoot)
-				sb.AppendTabsFormatLineIf("</{0}>", this.Tag);
+				sb.AppendTabsFormatLineIf("</{0}>", this.Menu.Options.Menus);
 		}
 
 	}

@@ -210,7 +210,7 @@ namespace Fluqi.Tests
 		  string expected = 
 		    "<script type=\"text/javascript\">" + 
 		      "$(document).ready( function() {" + 
-		        "$(\"#myMenu\").slider()" + 
+		        "$(\"#myMenu\").menu()" + 
 		      ";});" + 
 		    "</script>";
 		  Assert.IsFalse(html.Contains(expected));
@@ -301,6 +301,95 @@ namespace Fluqi.Tests
 		    "</ul>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
+
+		[TestMethod]
+		public void Overriding_UL_Adjusts_MarkUp_Appropriately()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+				.Options
+					.SetMenus("div")
+					.Finish()
+		    .Items()
+		        .Add("Item 1")
+		        .Add("Item 2")
+		        .Add("Item 3")
+		        .Add("Item 4")
+		        .Add("Item 5")
+		      .Back()
+		    .Finish()
+		    //.Menu()
+		  .Rendering
+		    .Compress()
+		  ;
+
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<div id=\"myMenu\">" + 
+		      "<li><a href=\"#\">Item 1</a></li>" + 
+		      "<li><a href=\"#\">Item 2</a></li>" + 
+		      "<li><a href=\"#\">Item 3</a></li>" + 
+		      "<li><a href=\"#\">Item 4</a></li>" + 
+		      "<li><a href=\"#\">Item 5</a></li>" + 
+		    "</div>";
+
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Overriding_LI_Adjusts_MarkUp_Appropriately()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+				.Options
+					.SetMenus("div")
+					.Finish()
+		    .Items()
+		        .Add("Item 1")
+		        .Add("Item 2")
+		        .Add("Item 3")
+							.Configure()
+								.SetTag("span")
+							.Finish()
+		        .Add("Item 4")
+		        .Add("Item 5")
+		      .Back()
+		    .Finish()
+		    //.Menu()
+		  .Rendering
+		    .Compress()
+		  ;
+
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<div id=\"myMenu\">" + 
+		      "<li><a href=\"#\">Item 1</a></li>" + 
+		      "<li><a href=\"#\">Item 2</a></li>" + 
+		      "<span><a href=\"#\">Item 3</a></span>" + 
+		      "<li><a href=\"#\">Item 4</a></li>" + 
+		      "<li><a href=\"#\">Item 5</a></li>" + 
+		    "</div>";
+
+		  Assert.IsTrue(html.Contains(expected));
+		}
 		
 		[TestMethod]
 		public void SubMenu_Menu_MarkUp_Is_Correct()
@@ -356,6 +445,102 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
+		public void SubMenu_Menu_At_Level_3_MarkUp_Is_Correct()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+				.Items()
+					.Add("Item 1")
+					.Add("Item 2")
+					.Add("Item 3")
+					.SubMenu()
+						.Add("Item 3-1")
+						.Add("Item 3-2")
+						.Add("Item 3-3")
+						.Add("Item 3-4")
+							.SubMenu()
+								.Add("Item 3-4-1")
+								.Add("Item 3-4-2")
+								.Add("Item 3-4-3")
+								.Add("Item 3-4-4")
+							.Back()
+						.Add("Item 3-5")
+					.Back()
+					.Add("Item 4")
+					.Add("Item 5")
+				.Finish()
+				.Rendering
+					.Compress()
+			;
+			
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<ul id=\"myMenu\">" + 
+		      "<li><a href=\"#\">Item 1</a></li>" + 
+		      "<li><a href=\"#\">Item 2</a></li>" + 
+		      "<li><a href=\"#\">Item 3</a>" + 
+						"<ul>" + 
+				      "<li><a href=\"#\">Item 3-1</a></li>" + 
+				      "<li><a href=\"#\">Item 3-2</a></li>" + 
+				      "<li><a href=\"#\">Item 3-3</a></li>" + 
+				      "<li><a href=\"#\">Item 3-4</a>" + 
+								"<ul>" + 
+						      "<li><a href=\"#\">Item 3-4-1</a></li>" + 
+						      "<li><a href=\"#\">Item 3-4-2</a></li>" + 
+						      "<li><a href=\"#\">Item 3-4-3</a></li>" + 
+						      "<li><a href=\"#\">Item 3-4-4</a></li>" + 
+								"</ul>" +
+							"</li>" + 
+				      "<li><a href=\"#\">Item 3-5</a></li>" + 
+						"</ul>" +
+					"</li>" + 
+		      "<li><a href=\"#\">Item 4</a></li>" + 
+		      "<li><a href=\"#\">Item 5</a></li>" + 
+		    "</ul>";
+
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Menu_Add_With_Url_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+				.Items()
+					.Add("toepoke", "http://toepoke.co.uk")
+				.Finish()
+				.Rendering
+					.Compress()
+			;
+			
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<ul id=\"myMenu\">" + 
+		      "<li><a href=\"http://toepoke.co.uk\">toepoke</a></li>" + 
+		    "</ul>";
+
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
 		public void Menu_With_Icons_By_Enum_Renders_Correctly()
 		{
 		  // Arrange
@@ -400,7 +585,7 @@ namespace Fluqi.Tests
 				.Items()
 					.Add("Phone Home")
 						.Configure()
-							.SetIcon("home")
+							.SetIcon("ui-icon-home")
 							.Finish()
 				.Finish()
 				.Rendering
@@ -453,6 +638,75 @@ namespace Fluqi.Tests
 
 		  Assert.IsTrue(html.Contains(expected));
 		}
+
+		[TestMethod]
+		public void Menu_SetTitle_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+				.Items()
+					.Add("Phone Home")
+						.Configure()
+							.SetTitle("Mobile Phone") // should override "Phone Home"
+							.Finish()
+				.Finish()
+				.Rendering
+					.Compress()
+			;
+			
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<ul id=\"myMenu\">" + 
+		      "<li><a href=\"#\">Mobile Phone</a></li>" + 
+		    "</ul>";
+
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Menu_SetTargetURL_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+				.Items()
+					.Add("toepoke")
+						.Configure()
+							.SetTargetURL("http://toepoke.co.uk")
+							.Finish()
+				.Finish()
+				.Rendering
+					.Compress()
+			;
+			
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<ul id=\"myMenu\">" + 
+		      "<li><a href=\"http://toepoke.co.uk\">toepoke</a></li>" + 
+		    "</ul>";
+
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+
+
 	}
 
 } // ns

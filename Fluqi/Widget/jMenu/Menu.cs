@@ -82,14 +82,8 @@ namespace Fluqi.Widget.jMenu
 		/// <param name="writer">Response stream to write the control to</param>
 		/// <param name="id">ID of the control (which must be unique on the page)</param>
 		public Menu(TextWriter writer, string id) {
-			this.PlugInName = "menu";
-			this.Writer = writer;
-			this.ID = id;
+			this.Reset(writer, id);
 			this.Root = new jMenuItem.MenuItem(this, id);
-			this.Options = new Options(this);
-			this.Events = new Events(this);
-			this.Methods = new Methods(this);
-			this.Rendering = new Rendering(this);
 		}
 
 
@@ -158,6 +152,17 @@ namespace Fluqi.Widget.jMenu
 			sb.DecIndent();
 			
 			return sb.ToString();
+		}
+
+		protected internal void Reset(TextWriter writer, string id) {
+			this.PlugInName = "menu";
+			this.Writer = writer;
+			this.ID = id;
+			this.Root = null;
+			this.Options = new Options(this);
+			this.Events = new Events(this);
+			this.Methods = new Methods(this);
+			this.Rendering = new Rendering(this);
 		}
 
 	}
