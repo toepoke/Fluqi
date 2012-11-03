@@ -101,7 +101,7 @@
 	</ul>
 <%
 	var mnu = Html.CreateMenu("mnu");
-	this.Model.ConfigureMenu(mnu)	;
+	this.Model.ConfigureMenu(mnu);
 %>
 	<script type="text/javascript">
 	$(document).ready(function() {
