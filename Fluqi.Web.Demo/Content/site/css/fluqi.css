@@ -20,6 +20,11 @@
 	line-height: 20px !important;
 }
 
+.ui-menu {
+	width: 150px;
+	min-height: 100px;
+}
+
 .italic {
 	font-style: italic;
 }

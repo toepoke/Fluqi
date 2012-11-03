@@ -76,6 +76,7 @@
     <Compile Include="Core\Speed.cs" />
     <Compile Include="Core\Methods.cs" />
     <Compile Include="Core\RenderBase.cs" />
+    <Compile Include="Extensions\jMenu_Extensions.cs" />
     <Compile Include="Extensions\jSpinner_Extensions.cs" />
     <Compile Include="Extensions\jButton_Extensions.cs" />
     <Compile Include="Extensions\jProgressBar_Extensions.cs" />

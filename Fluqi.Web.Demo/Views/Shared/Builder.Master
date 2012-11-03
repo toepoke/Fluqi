@@ -112,6 +112,7 @@
 		<li><%=Html.ActionLink("Slider", "Slider")%></li>
 		<li><%=Html.ActionLink("Spinner", "Spinner")%></li>
 		<li><%=Html.ActionLink("Tabs", "Tabs")%></li>
+		<li><%=Html.ActionLink("Menu", "Menu")%></li>
 	</ul>
 </asp:Content>
 

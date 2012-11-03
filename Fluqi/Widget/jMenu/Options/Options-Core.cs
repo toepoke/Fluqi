@@ -88,6 +88,7 @@ namespace Fluqi.Widget.jMenu
 			this.Icons = DEFAULT_ICONS;
 			this.Menus = DEFAULT_MENUS;
 			this.Role = DEFAULT_ROLE;
+			this.Position.SetMy("left top").SetAt("right top");
 		}
 
 	} // Options

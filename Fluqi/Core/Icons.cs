@@ -20,6 +20,7 @@ namespace Fluqi.Core
 		/// at http://jqueryui.com/themeroller/).
 		/// </summary>
 		public enum eIconClass: int {
+			none                    =  -1,
 			carat_1_n               =   0,
 			carat_1_ne              =   1,
 			carat_1_e               =   2,
@@ -246,6 +247,26 @@ namespace Fluqi.Core
 		/// <returns>Converted string</returns>
 		public static string IconToString(eIconClass icon) {
 			return ResolveIconName(icon.ToString());
+		}
+
+		/// <summary>
+		/// Converts a string into an Icon enum option.
+		/// </summary>
+		/// <param name="icon">String to convert</param>
+		/// <returns>Converted option</returns>
+		public static eIconClass StringToIcon(string icon) {
+			if (string.IsNullOrEmpty(icon))
+				return eIconClass.none;
+
+			// strip off any "ui-icon" prefix as that won't match in the enum (as we only have the suffix in the enum)
+			if (icon.StartsWith("ui-icon-"))
+				icon = icon.Remove(0, "ui-icon-".Length);
+
+			// also the enums have an underscore rather than a dash
+			icon = icon.Replace("-", "_");
+
+			eIconClass col = (eIconClass) Enum.Parse(typeof(eIconClass), icon, true/*ignoreCase*/);
+			return col;
 		}
 
 		/// <summary>
