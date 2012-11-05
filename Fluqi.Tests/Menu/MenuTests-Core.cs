@@ -47,6 +47,9 @@ namespace Fluqi.Tests
 
 		  // only testing raw output
 		  menu
+				.Items()
+					.Add("Item 1")
+				.Finish()
 		    .Rendering
 		      .Compress()
 		      .ShowCSS()
@@ -57,10 +60,12 @@ namespace Fluqi.Tests
 		  // Act - Force output we'd see on the web page
 		  string html = resp.Output.ToString();
 
-		  // Assert
-		  Assert.IsTrue(html.Contains("id=\"myMenu\""));
-
-		  Assert.AreEqual(1, Utils.NumberOfMatches(html, "class=\"ui-menu") );
+		  // Assert - UL root
+			Assert.AreEqual(1, Utils.NumberOfMatches(html, "<ul id=\"myMenu\" class=\"ui-menu ui-widget ui-widget-content ui-corner-all\">"));
+			// Assert - LI
+		  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<li class=\"ui-menu-item\"><a href=\"#\" class=\"ui-corner-all\">Item 1</a></li>") );
+			// Assert - A
+			Assert.AreEqual(1, Utils.NumberOfMatches(html, "<a href=\"#\" class=\"ui-corner-all\">Item 1</a>") );
 		}
 		
 		[TestMethod]
@@ -779,6 +784,39 @@ namespace Fluqi.Tests
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
 		      "<li><a href=\"http://toepoke.co.uk\">toepoke</a></li>" + 
+		    "</ul>";
+
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Menu_Disabled_MenuItem_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+				.Items()
+					.Add("toepoke")
+						.Configure()
+							.SetDisabled()
+							.Finish()
+				.Finish()
+				.Rendering
+					.Compress()
+			;
+			
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<ul id=\"myMenu\">" + 
+		      "<li class=\"ui-state-disabled\"><a href=\"#\">toepoke</a></li>" + 
 		    "</ul>";
 
 		  Assert.IsTrue(html.Contains(expected));

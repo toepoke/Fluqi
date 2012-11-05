@@ -20,6 +20,7 @@ namespace Fluqi.Widget.jMenuItem {
 			this.Tag = DEFAULT_SINGLE_TAG;
 			this.Children = new MenuItems(this, id);
 			this.Parent = null;
+			this.IsDisabled = false;
 		}
 
 		public MenuItem(MenuItem parent) {
@@ -27,12 +28,18 @@ namespace Fluqi.Widget.jMenuItem {
 			this.Menu = parent.Menu;
 			this.Tag = DEFAULT_SINGLE_TAG;
 			this.Children = new MenuItems(this);
+			this.IsDisabled = false;
 		}
 
 		/// <summary>
 		/// Holds a reference to the menu the item is on
 		/// </summary>
 		protected internal jMenu.Menu Menu { get; set; }
+
+		/// <summary>
+		/// Specifies that the rendered menu item should be disabled.
+		/// </summary>
+		protected internal bool IsDisabled { get; set; }
 
 		/// <summary>
 		/// Text to appear in the item
@@ -129,7 +136,16 @@ namespace Fluqi.Widget.jMenuItem {
 			this.Tag = value;
 			return this;
 		}
-				
+			
+		/// <summary>
+		/// Sets this menu item as disabled
+		/// </summary>
+		/// <returns>this for chainability</returns>
+		public MenuItem SetDisabled() {
+			this.IsDisabled = true;
+			return this;
+		}
+
 		/// <summary>
 		/// Ends configuration of the menu item just added (through the <see cref="Add"/> method)
 		/// and brings the fluent API back a level to allow further menu items to be added.
@@ -197,15 +213,30 @@ namespace Fluqi.Widget.jMenuItem {
 		}
 
 		private void RenderOpenItem(jStringBuilder sb) {
-			sb.AppendTabsFormat("<{0}>", this.Tag);
+			bool renderCss = this.Menu.Rendering.RenderCSS;
 
+			sb.AppendTabsFormat("<{0}", this.Tag);
+
+			if (renderCss) 
+				this.AddCssClass("ui-menu-item");
+			if (this.IsDisabled)
+				this.AddCssClass("ui-state-disabled");
+			
+			this.RenderAttributes(sb);
+
+			sb.Append(">");
 			if (!string.IsNullOrEmpty(this.Html)) 
 				sb.Append(this.Html);
 			else {
 				if (!string.IsNullOrEmpty(this.TargetURL))
-					sb.AppendFormat("<a href=\"{0}\">", this.TargetURL);
+					sb.AppendFormat("<a href=\"{0}\"", this.TargetURL);
 				else 
-					sb.AppendFormat("<a href=\"#\">");
+					sb.AppendFormat("<a href=\"#\"");
+				
+				if (renderCss)
+					sb.Append(" class=\"ui-corner-all\"");
+
+				sb.Append(">");
 			
 				if (!string.IsNullOrEmpty(this.Icon)) {
 					sb.AppendFormat("<span class=\"ui-icon {0}\"></span>", this.Icon);
