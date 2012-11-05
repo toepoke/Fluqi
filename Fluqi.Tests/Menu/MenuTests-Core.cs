@@ -299,6 +299,36 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
+		public void Add_Divider_MarkUp_Is_Correct()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+				.Items()
+					.AddDivider()
+				.Finish()
+				.Rendering
+					.Compress()
+			;
+			
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<ul id=\"myMenu\">" + 
+		      "<li class=\"ui-widget-content ui-menu-divider\"></li>" + 
+		    "</ul>";
+
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
 		public void Add_With_Title_And_URL_MarkUp_Is_Correct()
 		{
 		  // Arrange
@@ -691,39 +721,6 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Menu_Set_TargetURL_Renders_Correctly()
-		{
-		  // Arrange
-		  var resp = new MockWriter();
-		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
-
-		  // only testing raw output
-		  menu
-				.Items()
-					.Add("toepoke")
-						.Configure()
-							.SetTargetURL("http://toepoke.co.uk")
-							.Finish()
-				.Finish()
-				.Rendering
-					.Compress()
-			;
-			
-		  TestHelper.ForceRender(menu);
-			
-		  // Act - Force output we'd see on the web page
-		  string html = resp.Output.ToString();
-
-		  // Assert
-		  string expected = 
-		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"http://toepoke.co.uk\">toepoke</a></li>" + 
-		    "</ul>";
-
-		  Assert.IsTrue(html.Contains(expected));
-		}
-
-		[TestMethod]
 		public void Menu_SetTitle_Renders_Correctly()
 		{
 		  // Arrange
@@ -821,6 +818,7 @@ namespace Fluqi.Tests
 
 		  Assert.IsTrue(html.Contains(expected));
 		}
+
 
 
 

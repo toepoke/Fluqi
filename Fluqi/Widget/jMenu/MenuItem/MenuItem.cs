@@ -42,6 +42,11 @@ namespace Fluqi.Widget.jMenuItem {
 		protected internal bool IsDisabled { get; set; }
 
 		/// <summary>
+		/// Flags that this menu-item is a divider
+		/// </summary>
+		protected internal bool IsDivider { get; set; }
+
+		/// <summary>
 		/// Text to appear in the item
 		/// </summary>
 		protected internal string Title { get; set; }
@@ -147,6 +152,15 @@ namespace Fluqi.Widget.jMenuItem {
 		}
 
 		/// <summary>
+		/// Sets this menu-item as a divider.
+		/// </summary>
+		/// <returns>this for chainability</returns>
+		public MenuItem SetAsDivider() {
+			this.IsDivider = true;
+			return this;
+		}
+
+		/// <summary>
 		/// Ends configuration of the menu item just added (through the <see cref="Add"/> method)
 		/// and brings the fluent API back a level to allow further menu items to be added.
 		/// </summary>
@@ -217,8 +231,17 @@ namespace Fluqi.Widget.jMenuItem {
 
 			sb.AppendTabsFormat("<{0}", this.Tag);
 
+			// ToDo: REFACTOR THIS!
+			if (this.IsDivider) {
+				this.AddCssClass("ui-widget-content ui-menu-divider");
+				this.RenderAttributes(sb);
+				sb.Append(">");
+				return;
+			}
+
 			if (renderCss) 
 				this.AddCssClass("ui-menu-item");
+			
 			if (this.IsDisabled)
 				this.AddCssClass("ui-state-disabled");
 			
