@@ -82,7 +82,6 @@ namespace Fluqi.Widget.jMenuItem {
 		/// <param name="url">URL to navigate to upon selecting the menu item.</param>
 		/// <returns>Sub-menu list for chainability</returns>
 		public MenuItems Add(string title, string url) {
-			//return this.Add(title, url, Core.Icons.eIconClass.none);
 			MenuItem i = new MenuItem(this.Parent)
 				.SetTitle(title)
 				.SetTargetURL(url)
@@ -109,6 +108,18 @@ namespace Fluqi.Widget.jMenuItem {
 		}
 
 		/// <summary>
+		/// Adds a divider into the menu.  Useful if you want to group certain items
+		/// </summary>
+		/// <returns>Sub-menu list for chainability</returns>
+		public MenuItems AddDivider() {
+			MenuItem i = new MenuItem(this.Parent)
+				.SetAsDivider()
+			;
+			_MenuItems.Add(i);	
+			return this;
+		}
+
+		/// <summary>
 		/// Adds a new item to the menu, this replaces the hyperlink, but not the LI (or defined separator).
 		/// </summary>
 		/// <param name="markup">HTML to use</param>
@@ -120,6 +131,17 @@ namespace Fluqi.Widget.jMenuItem {
 			_MenuItems.Add(i);
 			return this;
 		} 
+
+		/// <summary>
+		/// Adds a new item to the menu, this replaces the hyperlink, but not the LI (or defined separator).
+		/// This overloads allows a "string.Format" set of parameters to be passed in
+		/// </summary>
+		/// <param name="markup">HTML to use (including {0}, {1}, etc)</param>
+		/// <param name="args">Arguments used to build up the markup</param>
+		/// <returns>Sub-menu list for chainability</returns>
+		public MenuItems AddHtml(string markup, params object[] args) {
+			return this.AddHtml(string.Format(markup, args));
+		}
 
 		/// <summary>
 		/// Returns control to the parent sub-menu (allows the user to continue adding further menu items
@@ -152,6 +174,7 @@ namespace Fluqi.Widget.jMenuItem {
 		public jMenu.Menu Finish() {			
 			return this.Parent.Menu;
 		}
+
 
 	}
 

@@ -95,6 +95,7 @@
     <Compile Include="Widget\jMenu\Events\Events-Core.cs" />
     <Compile Include="Widget\jMenu\Events\Events-Properties.cs" />
     <Compile Include="Widget\jMenu\Events\Events-Setters.cs" />
+    <Compile Include="Widget\jMenu\MenuItem\Menu.ControlAttributes.cs" />
     <Compile Include="Widget\jMenu\MenuItem\MenuItem.cs" />
     <Compile Include="Widget\jMenu\MenuItem\MenuItems.cs">
       <SubType>Code</SubType>

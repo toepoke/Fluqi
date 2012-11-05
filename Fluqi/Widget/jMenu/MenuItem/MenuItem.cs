@@ -10,7 +10,7 @@ namespace Fluqi.Widget.jMenuItem {
 	/// Defines the logic and rendering of a single menu item (which may also have a sub-menu 
 	/// of items (<see cref="MenuItems"/>).
 	/// </summary>
-	public class MenuItem: Core.ControlBase {
+	public partial class MenuItem: Core.ControlBase {
 
 		public const string DEFAULT_SINGLE_TAG = "li";
 
@@ -233,7 +233,8 @@ namespace Fluqi.Widget.jMenuItem {
 
 			// ToDo: REFACTOR THIS!
 			if (this.IsDivider) {
-				this.AddCssClass("ui-widget-content ui-menu-divider");
+				if (renderCss)
+					this.AddCssClass("ui-widget-content ui-menu-divider");
 				this.RenderAttributes(sb);
 				sb.Append(">");
 				return;
@@ -262,7 +263,7 @@ namespace Fluqi.Widget.jMenuItem {
 				sb.Append(">");
 			
 				if (!string.IsNullOrEmpty(this.Icon)) {
-					sb.AppendFormat("<span class=\"ui-icon {0}\"></span>", this.Icon);
+					sb.AppendFormat("<span class=\"ui-menu-icon ui-icon {0}\"></span>", this.Icon);
 				}
 				// Title is mandatory when not using the HTML version
 				sb.Append(this.Title);

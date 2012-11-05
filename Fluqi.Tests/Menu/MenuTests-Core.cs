@@ -299,7 +299,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Add_Divider_MarkUp_Is_Correct()
+		public void Add_With_Divider_MarkUp_Is_Correct()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
@@ -311,6 +311,7 @@ namespace Fluqi.Tests
 					.AddDivider()
 				.Finish()
 				.Rendering
+					.SetRenderCSS(true)
 					.Compress()
 			;
 			
@@ -321,7 +322,7 @@ namespace Fluqi.Tests
 
 		  // Assert
 		  string expected = 
-		    "<ul id=\"myMenu\">" + 
+		    "<ul id=\"myMenu\" class=\"ui-menu ui-widget ui-widget-content ui-corner-all\">" + 
 		      "<li class=\"ui-widget-content ui-menu-divider\"></li>" + 
 		    "</ul>";
 
@@ -383,7 +384,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"#\"><span class=\"ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
+		      "<li><a href=\"#\"><span class=\"ui-menu-icon ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
 		    "</ul>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
@@ -413,7 +414,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"http://toepoke.co.uk\"><span class=\"ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
+		      "<li><a href=\"http://toepoke.co.uk\"><span class=\"ui-menu-icon ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
 		    "</ul>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
@@ -625,6 +626,177 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
+		public void Grouped_Menu_MarkUp_Is_Correct()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+
+		  // only testing raw output
+		  menu
+				.Items()
+					.AddHtml("<strong>Group 1</strong>")
+					.Add("Aberdeen")
+					.Add("Ada")
+					.Add("Adamsville")
+					.Add("Addyston")
+					.AddDivider()
+					.AddHtml("<strong>Group 2</strong>")
+					.Add("Delphi")
+						.SubMenu()
+							.Add("Ada")
+							.Add("Saarland")
+							.Add("Salzburg")
+						.Back()
+					.Add("Saarland")
+					.AddDivider()
+					.AddHtml("<strong>Group 3</strong>")
+					.Add("Salzburg")
+						.SubMenu()
+							.Add("Delphi")
+								.SubMenu()
+									.Add("Ada")
+									.AddDivider()
+									.Add("Saarland")
+									.AddDivider()
+									.Add("Salzburg")
+									.AddDivider()
+								.Back()
+							.Add("Delphi")
+								.SubMenu()
+									.Add("Ada")
+									.Add("Saarland")
+									.Add("Salzburg")
+								.Back()
+							.Add("Perch")
+							.Back()
+						.Back()
+					.Add("Amesville")
+				.Finish()
+				.Rendering
+					.Compress()
+			;
+			
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<ul id=\"myMenu\">" + 
+		      "<li><strong>Group 1</strong></li>" + 
+		      "<li><a href=\"#\">Aberdeen</a></li>" + 
+		      "<li><a href=\"#\">Ada</a></li>" + 
+		      "<li><a href=\"#\">Adamsville</a></li>" + 
+		      "<li><a href=\"#\">Addyston</a></li>" + 
+		      "<li></li>" + 
+					"<li><strong>Group 2</strong></li>" +
+					"<li>" +
+						"<a href=\"#\">Delphi</a>" + 
+						"<ul>" + 
+				      "<li><a href=\"#\">Ada</a></li>" + 
+				      "<li><a href=\"#\">Saarland</a></li>" + 
+				      "<li><a href=\"#\">Salzburg</a></li>" + 
+						"</ul>" +
+					"</li>" + 
+		      "<li><a href=\"#\">Saarland</a></li>" + 
+		      "<li></li>" + 
+					"<li><strong>Group 3</strong></li>" +
+					"<li>" +
+						"<a href=\"#\">Salzburg</a>" + 
+						"<ul>" +
+							"<li>" +
+								"<a href=\"#\">Delphi</a>" + 
+								"<ul>" +
+									"<li><a href=\"#\">Ada</a></li>" + 
+									"<li></li>" + 
+									"<li><a href=\"#\">Saarland</a></li>" + 
+									"<li></li>" + 
+									"<li><a href=\"#\">Salzburg</a></li>" + 
+									"<li></li>" + 
+								"</ul>" +
+							"</li>" + 
+							"<li>" +
+								"<a href=\"#\">Delphi</a>" + 
+								"<ul>" +
+									"<li><a href=\"#\">Ada</a></li>" + 
+									"<li><a href=\"#\">Saarland</a></li>" + 
+									"<li><a href=\"#\">Salzburg</a></li>" + 
+								"</ul>" +
+							"</li>" + 
+							"<li><a href=\"#\">Perch</a></li>" + 
+						"</ul>" +
+					"</li>" + 
+					"<li><a href=\"#\">Amesville</a></li>" + 
+		    "</ul>";
+
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Override_MarkUp_Is_Correct()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Menu menu = TestHelper.SetupSimpleMenuObject(resp);
+			string addressTemplate = 
+				"<a href=\"#\">" +
+					"<span class=\"address-header\">{0}</span>" + 
+					"<span class=\"address-content\">{1}</span>" + 
+					"<span class=\"address-content\">{2}</span>" +
+				"</a>";
+
+		  // only testing raw output
+		  menu
+				.WithCss("menuElement")
+				.Options
+					.SetMenus("div")
+				.Finish()
+				.Items()
+					.AddHtml(addressTemplate, "John Doe", "78 West Main St Apt 3A", "Bloomsburg, PA 12345")
+						.Configure()
+							.SetTag("div")
+							.WithCss("address-item")
+						.Finish()
+					.AddHtml(addressTemplate, "Jane Doe", "78 West Main St Apt 3A", "Bloomsburg, PA 12345")
+						.Configure()
+							.SetTag("div")
+							.WithCss("address-item")
+						.Finish()
+				.Finish()
+				.Rendering
+					.Compress()
+			;
+			
+		  TestHelper.ForceRender(menu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<div id=\"myMenu\" class=\"menuElement\">" + 
+					"<div class=\"address-item\">" +
+						"<a href=\"#\">" + 
+							"<span class=\"address-header\">John Doe</span>" +
+							"<span class=\"address-content\">78 West Main St Apt 3A</span>" +
+							"<span class=\"address-content\">Bloomsburg, PA 12345</span>" +
+						"</a>" + 
+					"</div>" + 
+					"<div class=\"address-item\">" +
+						"<a href=\"#\">" + 
+							"<span class=\"address-header\">Jane Doe</span>" +
+							"<span class=\"address-content\">78 West Main St Apt 3A</span>" +
+							"<span class=\"address-content\">Bloomsburg, PA 12345</span>" +
+						"</a>" + 
+					"</div>" + 
+		    "</div>";
+
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
 		public void Menu_Add_With_Url_Renders_Correctly()
 		{
 		  // Arrange
@@ -681,7 +853,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"#\"><span class=\"ui-icon ui-icon-home\"></span>Phone Home</a></li>" + 
+		      "<li><a href=\"#\"><span class=\"ui-menu-icon ui-icon ui-icon-home\"></span>Phone Home</a></li>" + 
 		    "</ul>";
 
 		  Assert.IsTrue(html.Contains(expected));
@@ -714,7 +886,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"#\"><span class=\"ui-icon ui-icon-home\"></span>Phone Home</a></li>" + 
+		      "<li><a href=\"#\"><span class=\"ui-menu-icon ui-icon ui-icon-home\"></span>Phone Home</a></li>" + 
 		    "</ul>";
 
 		  Assert.IsTrue(html.Contains(expected));
