@@ -51,10 +51,15 @@ namespace Fluqi.Models
 			mnu
 				.Items()
 					.Add("Home", "http://fluqi.apphb.com", Core.Icons.eIconClass.home)
+					.AddDivider()
 					.Add("File", Core.Icons.eIconClass.disk)
 						.SubMenu()
 							.Add("Open", Core.Icons.eIconClass.folder_open)
 							.Add("Search", Core.Icons.eIconClass.search)
+							.Add("Print", Core.Icons.eIconClass.print)
+								.Configure()
+									.SetDisabled()
+								.Finish()
 							.Add("Close", Core.Icons.eIconClass.close)
 						.Back()
 					.Add("Edit", Core.Icons.eIconClass.pencil)
@@ -93,6 +98,7 @@ namespace Fluqi.Models
 		}
 
 		public string JavaScriptCode(Menu mnu) {
+			mnu.Rendering.SetPrettyRender(true);
 			return mnu.GetStartUpScript();
 		}
 
