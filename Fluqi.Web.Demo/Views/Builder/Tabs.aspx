@@ -150,6 +150,12 @@
 	</ul>
 	<br />
 	<br />
+	<p>
+		Note that in jQuery UI 1.9 the rotation of tabs has been 
+		<a href="http://jqueryui.com/upgrade-guide/1.9/#removed-rotate-method">depreciated</a>.  
+		There is however an <a href="https://github.com/cmcculloh/jQuery-UI-Tabs-Rotate">alternative plug-in</a> available
+		(see <strong>tabs.js</strong> in the <strong>Scripts</strong> folder for implementation details).
+	</p>
 <%
 	var tabs = Html.CreateTabs("tabs");
 	this.Model.ConfigureTabs(tabs);
