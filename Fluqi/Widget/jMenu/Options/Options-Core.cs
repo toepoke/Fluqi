@@ -45,15 +45,6 @@ namespace Fluqi.Widget.jMenu
 		public Menu Menu { get; set; }
 
 		/// <summary>
-		/// Identifies the position of the Autocomplete widget in relation to the associated input 
-		/// element. The "of" option defaults to the input element, but you can specify another element 
-		/// to position against. You can refer to the jQuery UI Position utility for more details 
-		/// about the various options.
-		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#option-position for details</remarks>
-		public PositionOptions Position { get; set; }
-
-		/// <summary>
 		/// Used to flag that configuration of <see cref="Options"/> has finished, and 
 		/// returns the <see cref="Menu"/> object so we can continue defining Tabs attributes.
 		/// </summary>

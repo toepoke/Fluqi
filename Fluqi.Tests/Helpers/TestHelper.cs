@@ -12,6 +12,7 @@ using Fluqi.Utilities.jPosition;
 using System.IO;
 using Fluqi.Widget.jSpinner;
 using Fluqi.Widget.jMenu;
+using Fluqi.Widget.jToolTip;
 
 namespace Fluqi.Tests.Helpers {
 
@@ -141,6 +142,18 @@ namespace Fluqi.Tests.Helpers {
 		internal static void ForceRender(Spinner s)
 		{
 			s.Render();
+		}
+
+		internal static ToolTip SetupSimpleToolTipObject(TextWriter writer) 
+		{
+			ToolTip t = new ToolTip(writer);
+
+			return t;
+		}
+
+		internal static void ForceRender(ToolTip t) 
+		{
+			t.Render();
 		}
 
 		internal static Menu SetupSimpleMenuObject(TextWriter writer) 

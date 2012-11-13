@@ -84,13 +84,24 @@
 				IsChild = asChild
 			};
 			Core.ScriptOptions childOpts = parentOpts.ChildOptions;
+
+			if (this.Disable) {
+				parentOpts.Value = "false";
+				parentOpts.Condition = true;
+				return parentOpts;
+			}
 			
-			string durationString = (this.IsNumeric(this.Duration) ? this.Duration.ToString() : this.Duration.InDoubleQuotes());
+			if (!string.IsNullOrEmpty(this.JSON)) {
+				// JSON supercedes any other settings
+				childOpts.Add(this.Caller, this.JSON);
+			} else {
+				string durationString = (this.IsNumeric(this.Duration) ? this.Duration.ToString() : this.Duration.InDoubleQuotes());
 
-			childOpts.Add(!this.IsNullOrEmpty(this.Effect), "effect", this.Effect.InDoubleQuotes());
-			childOpts.Add(!this.IsNullOrEmpty(this.Easing), "easing", this.Easing.InDoubleQuotes());
-			childOpts.Add(!this.IsNullEmptyOrDefault(this.Duration, DEFAULT_DURATION), "duration", durationString);				
-
+				childOpts.Add(!this.IsNullOrEmpty(this.Effect), "effect", this.Effect.InDoubleQuotes());
+				childOpts.Add(!this.IsNullOrEmpty(this.Easing), "easing", this.Easing.InDoubleQuotes());
+				childOpts.Add(!this.IsNullEmptyOrDefault(this.Duration, DEFAULT_DURATION), "duration", durationString);				
+			}
+		
 			// Any of the above actually going to render?
 			parentOpts.Condition = childOpts.Where(x=>x.Condition).Any();
 			return parentOpts;

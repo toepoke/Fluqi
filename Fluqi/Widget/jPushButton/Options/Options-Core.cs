@@ -57,8 +57,11 @@ namespace Fluqi.Widget.jPushButton
 			
 			// icons must be set as a pair
 			string iconSetting = "";
-			if (!this.IsNullOrEmpty(this.PrimaryIconClass) || !this.IsNullOrEmpty(this.SecondaryIconClass)) {
+			if (!this.IsNullOrEmpty(this.PrimaryIconClass) && !this.IsNullOrEmpty(this.SecondaryIconClass)) {
 				iconSetting = string.Format("{{ primary: '{0}', secondary: '{1}' }}", this.PrimaryIconClass, this.SecondaryIconClass);
+				options.Add("icons", iconSetting);
+			} else if (!this.IsNullOrEmpty(this.PrimaryIconClass)) {
+				iconSetting = string.Format("{{ primary: '{0}' }}", this.PrimaryIconClass );
 				options.Add("icons", iconSetting);
 			}
 		}

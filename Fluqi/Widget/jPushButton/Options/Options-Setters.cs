@@ -65,6 +65,36 @@ namespace Fluqi.Widget.jPushButton
 		/// displayed by default on the left of the label text, the secondary by default is on the right. 
 		/// Value for the primary and secondary properties must be a classname (String), eg. "ui-icon-gear". 
 		/// For using only one icon: icons: {primary:'ui-icon-locked'}. 
+		/// </summary>
+		/// <param name="primaryIcon">New setting</param>
+		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/button/#option-icons for details</remarks>
+		public Options SetIcons(string primaryIcon) {
+			this.PrimaryIconClass = primaryIcon ?? "";
+			return this;
+		}
+
+
+		/// <summary>
+		/// Icons to display, with or without text (see text option). The primary icon is 
+		/// displayed by default on the left of the label text, the secondary by default is on the right. 
+		/// Value for the primary and secondary properties must be a classname (String), eg. "ui-icon-gear". 
+		/// For using only one icon: icons: {primary:'ui-icon-locked'}. 
+		/// </summary>
+		/// <param name="primaryIconClass">New setting</param>
+		/// <returns>Options object for chainability</returns>
+		/// <remarks>See http://api.jqueryui.com/button/#option-icons for details</remarks>
+		public Options SetIcons(Core.Icons.eIconClass primaryIconClass) {
+			this.PrimaryIconClass = Core.Icons.ByEnum(primaryIconClass);
+			return this;
+		}
+
+	
+		/// <summary>
+		/// Icons to display, with or without text (see text option). The primary icon is 
+		/// displayed by default on the left of the label text, the secondary by default is on the right. 
+		/// Value for the primary and secondary properties must be a classname (String), eg. "ui-icon-gear". 
+		/// For using only one icon: icons: {primary:'ui-icon-locked'}. 
 		/// For using two icons: icons: {primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}
 		/// </summary>
 		/// <param name="primaryIconClass">New setting</param>

@@ -35,6 +35,16 @@ namespace Fluqi.Utilities.jAnimation
 		/// </summary>
 		protected internal string Duration { get; set; }
 
+		/// <summary>
+		/// Sets the Animation properties as a JSON string object
+		/// </summary>
+		protected internal string JSON { get; set; }
+
+		/// <summary>
+		/// Specifies that the animation is off.
+		/// </summary>
+		protected internal bool Disable { get; set; }
+
 	} // Options
 
 } // ns Fluqi.jCookie

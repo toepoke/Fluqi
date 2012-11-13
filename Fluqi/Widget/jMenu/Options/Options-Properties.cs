@@ -34,6 +34,15 @@ namespace Fluqi.Widget.jMenu
 		protected internal string Menus { get; set; }
 
 		/// <summary>
+		/// Identifies the position of the menu widget in relation to the associated input 
+		/// element. The "of" option defaults to the input element, but you can specify another element 
+		/// to position against. You can refer to the jQuery UI Position utility for more details 
+		/// about the various options.
+		/// </summary>
+		/// <remarks>See http://api.jqueryui.com/menu/#option-position for details</remarks>
+		public PositionOptions Position { get; set; }
+
+		/// <summary>
 		/// Customize the ARIA roles used for the menu and menu items. 
 		/// The default uses "menuitem" for items. 
 		/// Setting the role option to "listbox" will use "option" for items. 

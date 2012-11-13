@@ -82,6 +82,25 @@ namespace Fluqi.Utilities.jAnimation
 			this.Duration = Core.Speed.SpeedToString(speed);
 			return this;
 		}
+
+		/// <summary>
+		/// Sets the effects as a JSON object
+		/// </summary>
+		/// <param name="json">JSON object to use</param>
+		/// <returns>Object for chainability</returns>
+		public Options SetJSON(string json) {
+			this.JSON = json;
+			return this;
+		}
+
+		/// <summary>
+		/// Turns off the animation
+		/// </summary>
+		/// <returns>Object for chainability</returns>
+		public Options SetDisabled() {
+			this.Disable = true;
+			return this;
+		}
 		
 	} // Options
 

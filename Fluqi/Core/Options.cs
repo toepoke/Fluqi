@@ -21,6 +21,19 @@ namespace Fluqi.Core
 		} 
 
 		/// <summary>
+		/// Establishes if the given value is merely a set of empty quotes (either "" or '').
+		/// </summary>
+		/// <param name="value">String to check</param>
+		/// <returns>
+		/// Returns true if string is "" or ''
+		/// Returns false otherwise
+		/// Returns _false_ if string is null or empty!
+		/// </returns>
+		protected bool IsEmptyQuotes(string value) {
+			return Helpers.Utils.IsEmptyQuotes(value);
+		}
+
+		/// <summary>
 		/// Shortcut for working out if the given parameter is null or empty
 		/// </summary>
 		/// <param name="value">Value to query</param>

@@ -21,7 +21,7 @@
 		/// Specifies the options to be adopted for this object (see <see cref="Options"/> class
 		/// for full details)
 		/// </summary>
-		public Options Options {get; set;}
+		public Options Options { get; set; }
 
 		/// <summary>
 		/// Specifies the settings to be adopted when rendering the control (e.g. whether to compress the JavaScript, 
@@ -65,13 +65,9 @@
 		public string GetControlScript(int tabDepth) {
 			jStringBuilder sb = new jStringBuilder(this.Rendering.PrettyRender, this.Rendering.TabDepth);
 			
-			//sb.IncIndent();
-			//sb.AppendTabsFormatIf("$.cookie(", this.ID);
 			Core.ScriptOptions options = new Core.ScriptOptions();
 			this.Options.DiscoverOptions(options);
 			options.Render(sb);
-			//sb.Append(");");
-			//sb.DecIndent();
 			
 			return sb.ToString();
 		}

@@ -12,6 +12,27 @@ namespace Fluqi.Helpers {
 	public class Utils {
 
 		/// <summary>
+		/// Establishes if the given value is merely a set of empty quotes (either "" or '').
+		/// </summary>
+		/// <param name="value">String to check</param>
+		/// <returns>
+		/// Returns true if string is "" or ''
+		/// Returns false otherwise
+		/// Returns _false_ if string is null or empty!
+		/// </returns>
+		public static bool IsEmptyQuotes(string value) {
+			if (string.IsNullOrEmpty(value))
+				return false;
+
+			if (string.Equals(value, "\"\"", StringComparison.InvariantCultureIgnoreCase))
+				return true;
+			else if (string.Equals(value, "''", StringComparison.InvariantCultureIgnoreCase))
+				return true;
+
+			return false;
+		}
+
+		/// <summary>
 		/// Establishes if the given value is null, empty or the same as the default.  We look
 		/// at the default value because if we're rendering the default we don't need to output
 		/// the setting (as it's the default for the jQuery UI control) and thus we can reduce the

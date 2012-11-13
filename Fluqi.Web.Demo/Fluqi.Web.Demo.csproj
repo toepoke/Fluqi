@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Controllers\BuilderController\Accordion.cs" />
     <Compile Include="Controllers\BuilderController\AutoComplete.cs" />
+    <Compile Include="Controllers\BuilderController\ToolTip.cs" />
     <Compile Include="Controllers\BuilderController\Menu.cs" />
     <Compile Include="Controllers\BuilderController\Spinner.cs" />
     <Compile Include="Controllers\BuilderController\PushButton.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Helpers\Url.cs" />
     <Compile Include="Helpers\List.cs" />
     <Compile Include="Helpers\Html.cs" />
+    <Compile Include="Models\ToolTipModel.cs" />
     <Compile Include="Models\MenuModel.cs" />
     <Compile Include="Models\SpinnerModel.cs" />
     <Compile Include="Models\PushButtonModel.cs" />
@@ -242,6 +244,7 @@
     <Content Include="Scripts\accordion.js" />
     <Content Include="Scripts\auto-complete.js" />
     <Content Include="Scripts\button.js" />
+    <Content Include="Scripts\tooltip.js" />
     <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\spinner.js" />
     <Content Include="Scripts\jquery-ui-tabs-rotate.js" />
@@ -299,6 +302,7 @@
     <Content Include="Views\Builder\Accordion.aspx" />
     <Content Include="Views\Builder\AddTab.ascx" />
     <Content Include="Views\Builder\AutoComplete.aspx" />
+    <Content Include="Views\Builder\ToolTip.aspx" />
     <Content Include="Views\Builder\Menu.aspx" />
     <Content Include="Views\Builder\Spinner.aspx" />
     <Content Include="Views\Builder\PushButton.aspx" />
