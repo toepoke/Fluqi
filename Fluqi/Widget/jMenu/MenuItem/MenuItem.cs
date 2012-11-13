@@ -263,7 +263,7 @@ namespace Fluqi.Widget.jMenuItem {
 				sb.Append(">");
 			
 				if (!string.IsNullOrEmpty(this.Icon)) {
-					sb.AppendFormat("<span class=\"ui-menu-icon ui-icon {0}\"></span>", this.Icon);
+					sb.AppendFormat("<span class=\"ui-icon {0}\"></span>", this.Icon);
 				}
 				// Title is mandatory when not using the HTML version
 				sb.Append(this.Title);

@@ -384,7 +384,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"#\"><span class=\"ui-menu-icon ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
+		      "<li><a href=\"#\"><span class=\"ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
 		    "</ul>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
@@ -414,7 +414,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"http://toepoke.co.uk\"><span class=\"ui-menu-icon ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
+		      "<li><a href=\"http://toepoke.co.uk\"><span class=\"ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
 		    "</ul>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
@@ -853,7 +853,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"#\"><span class=\"ui-menu-icon ui-icon ui-icon-home\"></span>Phone Home</a></li>" + 
+		      "<li><a href=\"#\"><span class=\"ui-icon ui-icon-home\"></span>Phone Home</a></li>" + 
 		    "</ul>";
 
 		  Assert.IsTrue(html.Contains(expected));
@@ -886,7 +886,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"#\"><span class=\"ui-menu-icon ui-icon ui-icon-home\"></span>Phone Home</a></li>" + 
+		      "<li><a href=\"#\"><span class=\"ui-icon ui-icon-home\"></span>Phone Home</a></li>" + 
 		    "</ul>";
 
 		  Assert.IsTrue(html.Contains(expected));
