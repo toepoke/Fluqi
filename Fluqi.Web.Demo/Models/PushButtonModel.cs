@@ -78,6 +78,7 @@ namespace Fluqi.Models
 		}
 
 		public string JavaScriptCode(PushButton btn) {
+			btn.Rendering.SetPrettyRender(true);
 			return btn.GetStartUpScript();
 		}
 

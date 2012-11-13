@@ -81,6 +81,7 @@ namespace Fluqi.Models
 		}
 
 		public string JavaScriptCode(Spinner spin) {
+			spin.Rendering.SetPrettyRender(true);
 			return spin.GetStartUpScript();
 		}
 

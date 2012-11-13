@@ -83,6 +83,7 @@ namespace Fluqi.Models
 		}
 
 		public string JavaScriptCode(Accordion ac) {
+			ac.Rendering.SetPrettyRender(true);
 			return ac.GetStartUpScript();
 		}
 

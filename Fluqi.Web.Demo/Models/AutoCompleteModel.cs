@@ -101,6 +101,7 @@ namespace Fluqi.Models
 		}
 
 		public string JavaScriptCode(AutoComplete ac) {
+			ac.Rendering.SetPrettyRender(true);
 			return ac.GetStartUpScript();
 		}
 

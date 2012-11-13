@@ -128,6 +128,7 @@ namespace Fluqi.Models
 
 		public string JavaScriptCode() {
 			Dialog dlg = BuildDialogFromModel(this.Writer, "js_dlg");
+			dlg.Rendering.SetPrettyRender(true);
 			
 			return dlg.GetStartUpScript();
 		}

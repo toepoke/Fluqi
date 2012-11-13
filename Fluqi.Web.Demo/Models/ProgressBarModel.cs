@@ -61,6 +61,7 @@ namespace Fluqi.Models
 		}
 
 		public string JavaScriptCode(ProgressBar pb) {
+			pb.Rendering.SetPrettyRender(true);
 			return pb.GetStartUpScript();
 		}
 

@@ -91,6 +91,7 @@ namespace Fluqi.Models
 		}
 
 		public string JavaScriptCode(Tabs tabs) {
+			tabs.Rendering.SetPrettyRender(true);
 			return tabs.GetStartUpScript();
 		}
 		

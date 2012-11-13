@@ -86,6 +86,7 @@ namespace Fluqi.Models
 		}
 
 		public string JavaScriptCode(Slider sldr) {
+			sldr.Rendering.SetPrettyRender(true);
 			return sldr.GetStartUpScript();
 		}
 

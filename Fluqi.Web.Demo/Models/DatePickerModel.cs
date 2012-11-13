@@ -166,6 +166,7 @@ namespace Fluqi.Models
 		}
 
 		public string JavaScriptCode(DatePicker dt) {
+			dt.Rendering.SetPrettyRender(true);
 			return dt.GetStartUpScript();
 		}
 
