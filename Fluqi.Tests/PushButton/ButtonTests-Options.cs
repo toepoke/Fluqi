@@ -143,7 +143,38 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Button_Option_Icons_ByEnum_Renders_Correctly()
+		public void Button_Option_Primary_Icons_Only_ByEnum_Renders_Correctly()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			PushButton btn = TestHelper.SetupSimpleButtonObject(resp);
+
+			// only testing raw output
+			btn
+				.Options
+					.SetIcons( Core.Icons.eIconClass.alert )
+				.Finish()
+				.Rendering
+					.Compress()
+					.ShowCSS()
+			;
+
+			// Act - Force output we'd see on the web page
+			btn.Render();
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+				"$(document).ready( function() {" + 
+				"$(\"#btn\").button({icons: { primary: 'ui-icon-alert' }})" + 
+				";});" + 
+				"</script>";
+			Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Button_Option_Both_Icons_ByEnum_Renders_Correctly()
 		{
 			// Arrange
 			var resp = new MockWriter();
@@ -202,6 +233,37 @@ namespace Fluqi.Tests
 		      ";});" + 
 		    "</script>";
 		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Button_Option_Primary_Icon_Only_ByString_Renders_Correctly()
+		{
+			// Arrange
+			var resp = new MockWriter();
+			PushButton btn = TestHelper.SetupSimpleButtonObject(resp);
+
+			// only testing raw output
+			btn
+				.Options
+					.SetIcons( "ui-icon-alert" )
+					.Finish()
+				.Rendering
+					.Compress()
+					.ShowCSS()
+			;
+
+			// Act - Force output we'd see on the web page
+			btn.Render();
+			string html = resp.Output.ToString();
+
+			// Assert
+			string expected = 
+				"<script type=\"text/javascript\">" + 
+				"$(document).ready( function() {" + 
+				"$(\"#btn\").button({icons: { primary: 'ui-icon-alert' }})" + 
+				";});" + 
+				"</script>";
+			Assert.IsTrue(html.Contains(expected));
 		}
 
 	} // jButton_Tests
