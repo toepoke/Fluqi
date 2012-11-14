@@ -101,18 +101,19 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Navigation" runat="server">
-	<ul>
-		<li><%=Html.ActionLink("Home", "Home", "Home")%></li>
-		<li><%=Html.ActionLink("Accordion", "Accordion")%></li>
-		<li><%=Html.ActionLink("AutoComplete", "AutoComplete")%></li>
-		<li><%=Html.ActionLink("PushButton", "PushButton")%></li>
-		<li><%=Html.ActionLink("DatePicker", "DatePicker")%></li>
-		<li><%=Html.ActionLink("Dialog", "Dialog")%></li>
-		<li><%=Html.ActionLink("ProgressBar", "ProgressBar")%></li>
-		<li><%=Html.ActionLink("Slider", "Slider")%></li>
-		<li><%=Html.ActionLink("Spinner", "Spinner")%></li>
-		<li><%=Html.ActionLink("Tabs", "Tabs")%></li>
-		<li><%=Html.ActionLink("Menu", "Menu")%></li>
-	</ul>
+<ul class="twolines">
+	<li><%=Html.ActionLink("Home", "Home", "Home")%></li>
+	<li><%=Html.ActionLink("Accordion", "Accordion")%></li>
+	<li><%=Html.ActionLink("AutoComplete", "AutoComplete")%></li>
+	<li><%=Html.ActionLink("PushButton", "PushButton")%></li>
+	<li><%=Html.ActionLink("DatePicker", "DatePicker")%></li>
+	<li><%=Html.ActionLink("Dialog", "Dialog")%></li>
+	<li><%=Html.ActionLink("ProgressBar", "ProgressBar")%></li>
+	<li><%=Html.ActionLink("Slider", "Slider")%></li>
+	<li><%=Html.ActionLink("Spinner", "Spinner")%></li>
+	<li><%=Html.ActionLink("Tabs", "Tabs")%></li>
+	<li><%=Html.ActionLink("Menu", "Menu")%></li>
+	<li><%=Html.ActionLink("ToolTip", "ToolTip")%></li>
+</ul>
 </asp:Content>
 

@@ -97,13 +97,13 @@ p.intro { font-size: 18px; }
 /* links */
 a:link, a:visited {
     color: #285935;
-    text-decoration: none;
+    xtext-decoration: none;
     outline: 0;
 }
 a:hover, a:focus, a:active {
     color: #5E1F00;
 }
-
+a
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'MerriweatherBold', Serif;
@@ -354,16 +354,24 @@ header hgroup h3  {
 /* Main Navigation */
 header nav {
     float: right;
-    margin-top: 25px;
+    width: 500px;
 }
 header nav ul {
+    margin-top: 25px;
     font: bold 12px/25px  Helvetica, Arial, Sans-serif;
     margin-right: -5px;
     padding: 0;
     list-style: none;
+    float: right;
 }
+header nav ul.twolines {
+    margin-top: 15px;
+    text-align: right;
+}
+
 header nav ul li {
-    float: left;
+    xfloat: left;
+    display: inline-block;
 }
 header nav ul a:link, header nav ul a:visited {
     color: #c5c4c4;
