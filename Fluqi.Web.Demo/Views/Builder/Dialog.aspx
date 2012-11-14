@@ -31,7 +31,10 @@
 		<li><%=Html.LabelFor(vm=>vm.DialogClass)   %><%=Html.TextBoxFor(vm=>vm.DialogClass, "wide", "Specified class name is added to the dialog to enable further styling options.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.Draggable)     %><%=Html.CheckBoxFor(vm=>vm.Draggable, "Flags that the dialog can be dragged around by the titlebar handle.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.Height)        %><%=Html.TextBoxFor(vm=>vm.Height, "The height of the dialog, in pixels.  'Auto' adjusts the height based on the content in the dialog.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.ShowEffect)    %><%=Html.DropDownTipListFor(vm=>vm.ShowEffect, List.AnimationItems(), "Effect to use when the dialog is opened.")%></li>
+		<li>
+			<strong>Note that effects can have an impact on how the widget behaves.</strong><br />
+			<%=Html.LabelFor(vm=>vm.ShowEffect)    %><%=Html.DropDownTipListFor(vm=>vm.ShowEffect, List.AnimationItems(), "Effect to use when the dialog is opened.")%>
+		</li>
 		<li><%=Html.LabelFor(vm=>vm.HideEffect)    %><%=Html.DropDownTipListFor(vm=>vm.HideEffect, List.AnimationItems(), "Effect to use when the dialog is closed.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.MaxHeight)     %><%=Html.TextBoxFor(vm=>vm.MaxHeight, "Maximum height to which the dialog can be resized, in pixels.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.MaxWidth)      %><%=Html.TextBoxFor(vm=>vm.MaxWidth, "Maximum width to which the dialog can be resized, in pixels.")%></li>

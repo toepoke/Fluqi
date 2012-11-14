@@ -63,7 +63,10 @@
 	<ul>
 		<li><%=Html.LabelFor(vm=>vm.collapsible) %><%=Html.CheckBoxFor(vm=>vm.collapsible, "Tabs can collapse (a little like the accordion collapses).")%></li>
 		<li><%=Html.LabelFor(vm=>vm.disabled)    %><%=Html.CheckBoxFor(vm=>vm.disabled, "Disables all the tabs in the control.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.showEffect)  %><%=Html.DropDownTipListFor(vm=>vm.showEffect, List.AnimationItems(), "Animation effect when showing a tab")%></li>
+		<li>
+			<strong>Note that effects can have an impact on how the widget behaves.</strong><br />
+			<%=Html.LabelFor(vm=>vm.showEffect)  %><%=Html.DropDownTipListFor(vm=>vm.showEffect, List.AnimationItems(), "Animation effect when showing a tab")%>
+		</li>
 		<li><%=Html.LabelFor(vm=>vm.showDuration)%><%=Html.TextBoxFor(vm=>vm.showDuration, "Duration of the show effect (numeric or 'slow', 'fast', etc).")%></li>
 		<li><%=Html.LabelFor(vm=>vm.hideEffect)  %><%=Html.DropDownTipListFor(vm=>vm.hideEffect, List.AnimationItems(), "Animation effect when hiding a tab")%></li>
 		<li><%=Html.LabelFor(vm=>vm.hideDuration)%><%=Html.TextBoxFor(vm=>vm.hideDuration, "Duration of the hide effect (numeric or 'slow', 'fast', etc).")%></li>
