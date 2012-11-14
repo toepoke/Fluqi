@@ -44,8 +44,8 @@ namespace Fluqi.Models
 		public string Collision2 { get; set; }
 		public bool track { get; set; }
 
-		public void ConfigureToolTip(ToolTip spin) {
-			spin
+		public void ConfigureToolTip(ToolTip tip) {
+			tip
 				.Rendering
 					.SetPrettyRender(true)
 				.Finish()
@@ -66,7 +66,7 @@ namespace Fluqi.Models
 				.Finish();
 
 			if (this.showEvents) {
-				spin
+				tip
 					.Events
 						.SetCreateEvent("return createEvent(event, ui);")
 						.SetOpenEvent("return openEvent(event, ui);")
@@ -74,21 +74,21 @@ namespace Fluqi.Models
 					.Finish();
 			}
 			if (!this.prettyRender)
-				spin.Rendering.Compress();
+				tip.Rendering.Compress();
 			if (this.renderCSS)
-				spin.Rendering.ShowCSS();
+				tip.Rendering.ShowCSS();
 		}
 
-		public string JavaScriptCode(ToolTip spin) {
-			spin.Rendering.SetPrettyRender(true);
-			return spin.GetStartUpScript();
+		public string JavaScriptCode(ToolTip tip) {
+			tip.Rendering.SetPrettyRender(true);
+			return tip.GetStartUpScript();
 		}
 
-		public string CSharpCode(ToolTip spin) {
+		public string CSharpCode(ToolTip tip) {
 			jStringBuilder sb = new jStringBuilder(true/*includeWhitespace*/, 0);
 
 			sb.AppendTabsLineIf("<%");
-			sb.AppendTabsLineIf("Html.CreateToolTip(\"spin\")");
+			sb.AppendTabsLineIf("Html.CreateToolTip(\"name\")");
 
 			string optionsCode = OptionsCSharpCode();
 			string positionOptionsCode = PositionsCSharpCode();
@@ -146,7 +146,7 @@ namespace Fluqi.Models
 			if (!string.IsNullOrEmpty(this.hideEffect)) 
 				sb.AppendTabsFormatLineIf(".HideAnimation.SetEffect(\"{0}\").Finish()", this.hideEffect);
 			if (this.track)
-				sb.AppendTabsFormatLineIf(".SetTrack({0})", this.track);
+				sb.AppendTabsFormatLineIf(".SetTrack({0})", this.track.JsBool());
 			
 			return sb.ToString();
 		}

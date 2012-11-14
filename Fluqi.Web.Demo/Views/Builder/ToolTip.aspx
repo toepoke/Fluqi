@@ -34,10 +34,9 @@
 %>
 	<input type="submit" value="UPDATE" />
 	<ul class="small-label">
-			
 		<li><%=Html.LabelFor(vm=>vm.disabled)    %><%=Html.CheckBoxFor(vm=>vm.disabled, "Disables the tooltips.")%></li>
 		<li>
-			Note that effects can have an impact on how the widget behaves.<br />
+			<strong>Note that effects can have an impact on how the widget behaves.</strong><br />
 			<%=Html.LabelFor(vm=>vm.showEffect)  %><%=Html.DropDownTipListFor(vm=>vm.showEffect, List.AnimationItems(), "Animation effect when showing.")%>
 		</li>
 		<li><%=Html.LabelFor(vm=>vm.hideEffect)  %><%=Html.DropDownTipListFor(vm=>vm.hideEffect, List.AnimationItems(), "Animation effect when hiding.")%></li>
@@ -45,7 +44,7 @@
 		<li><%=Html.Label("Position.my")         %><%=Html.DropDownTipListFor(vm=>vm.My1, List.DirectionItems(), positionTooltip)%> <%=Html.DropDownTipListFor(vm=>vm.My2, List.DirectionItems(), positionTooltip)%></li>
 		<li><%=Html.Label("Position.collision")  %><%=Html.DropDownTipListFor(vm=>vm.Collision1, List.CollisionItems(), positionTooltip)%> <%=Html.DropDownTipListFor(vm=>vm.Collision2, List.CollisionItems(), positionTooltip)%></li>
 		<%--tooltipClass is skipped as there's no advantage to showing it here--%>
-		<li><%=Html.LabelFor(vm=>vm.track)       %><%=Html.CheckBoxFor(vm=>vm.track, "Disables the tooltips.")%></li>
+		<li><%=Html.LabelFor(vm=>vm.track)       %><%=Html.CheckBoxFor(vm=>vm.track, "Tooltips track the mouse cursor.")%></li>
 	</ul>
 	<hr />
 	<h2>Test Harness Options</h2>
@@ -71,16 +70,10 @@
 
 
 <asp:Content ID="Content4" ContentPlaceHolderID="DemoHtmlContent" runat="server">
-<%
-	var tooltip = Html.CreateToolTip("name");
-	this.Model.ConfigureToolTip(tooltip);
-
-	tooltip
-		.Rendering
-			.SetAutoScript(false)
-		.Finish()
-	.Render();
-%>
+<p>
+	There is no HTML extract for ToolTips as there is no underlying control, and therefore
+	no HTML to render
+</p>
 </asp:Content>
 
 
@@ -97,12 +90,12 @@
 
 <asp:Content ID="Content6" ContentPlaceHolderID="DemoMethodsContent" runat="server">
 	<ul class="horizontal">
-		<li><button id="disable" title="Disables the slider.">Disable</button></li>
-		<li><button id="enable" title="Enables the slider.">Enable</button></li>
-		<li><button id="widget" title="Shows the HTML for the .ui-slider element.">Widget</button></li>
-		<li><button id="close" title="Closes the tooltips.">Close</button></li>
-		<li><button id="open" title="Opens the tooltips">Open</button></li>
-		<li><button id="destroy" title="Returns the button to it's pre-init state.">Destroy</button></li>
+		<li><button id="disable" title="Disables the (name field) tooltip.">Disable</button></li>
+		<li><button id="enable" title="Enables the (name field) tooltip.">Enable</button></li>
+		<li><button id="widget" title="Shows the HTML for the tooltip widget.">Widget</button></li>
+		<li><button id="close" title="Closes the (name field) tooltip.">Close</button></li>
+		<li><button id="open" title="Opens the (name field) tooltip.">Open</button></li>
+		<li><button id="destroy" title="Returns the tooltip to it's pre-init state.">Destroy</button></li>
 	</ul>
 <%
 	var ctl = Html.CreateToolTip("name");
@@ -110,12 +103,12 @@
 %>
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$("#disable").click(function() { <%ctl.Methods.Disable();%>; });
-		$("#enable").click(function() { <%ctl.Methods.Enable();%>; });
+		$("#disable").click(function() { <%ctl.Methods.Disable();%>; alert("Name field tooltip is disabled."); });
+		$("#enable").click(function() { <%ctl.Methods.Enable();%>; alert("Name field tooltip is enabled."); });
 		$("#widget").click(function() { alert( "Widget HTML:\n\n" + <%ctl.Methods.Widget();%>.html() ); });
 		$("#close").click(function() { <%ctl.Methods.Close();%>; });
 		$("#open").click(function() { <%ctl.Methods.Open();%>; });
-		$("#destroy").click(function() {  if (confirm("are you sure you want to destroy the slider?")) <%ctl.Methods.Destroy();%>; });
+		$("#destroy").click(function() {  if (confirm("are you sure you want to destroy the (name element) tooltip?")) <%ctl.Methods.Destroy();%>; });
 	});
 	</script>
 </asp:Content>
