@@ -24,9 +24,8 @@
 	<script type="text/javascript">window.jQuery || document.write('<script src="../../Scripts/jquery-1.8.2.js"><\/script>')</script>
 	<script src="../Scripts/jquery-ui-1.9.0.custom.js" type="text/javascript"></script>
 	<script src="../Scripts/syntax-highlighter.js" type="text/javascript"></script>
-	<link href="../Content/syntax-highlighter.css rel="stylesheet" type="text/css" />
+	<link href="../Content/syntax-highlighter.css" rel="stylesheet" type="text/css" />
 	<link href="../Content/builder.css" rel="stylesheet" type="text/css" />
-
 	<script src="../Scripts/fluqi-helpers.js" type="text/javascript"></script>	
 	
 	<asp:ContentPlaceHolder ID="head" runat="server">
