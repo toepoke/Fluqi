@@ -16,8 +16,9 @@ namespace Fluqi
 		// ToDo: Accordion header needs adding
 		// ToDo: Does disable/enable on DatePicker still work?
 		// ToDo: Revisit show/hide in Dialog (and elsewhere) as we might be able to use the object version
-		// ToDo: Menu widget doesn't expose a "click" event (eh?), so as per the Button we need to add our own
-
+		// ToDo: Add a way to publish a jsfiddle from the builder pages (see http://doc.jsfiddle.net/api/post.html and http://jsfiddle.net/zalun/sthmj/embedded/result/)
+		// ToDo: Check the documentation for ALL controls against what we have.  E.g. we've missed the hide method on setting tabs
+		// ToDo: Look to convert the Hide/Show functions to use the more generic jAnimation classes
 
 		// jQuery 1.9 bugs to raise
 		// easing not supported on tabs, should it be?
