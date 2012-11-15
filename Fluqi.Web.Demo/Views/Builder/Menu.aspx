@@ -11,8 +11,7 @@
 	this.Model.ConfigureMenu(mnu);
 %>
 	<label for="myMenu">Menu:</label>
-	<br />
-
+	
 <%mnu.Render();%>
 
 <%using (iconCheatDlg.RenderDialog()) { %>

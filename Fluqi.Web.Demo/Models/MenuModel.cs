@@ -49,6 +49,7 @@ namespace Fluqi.Models
 
 		public void ConfigureMenu(Menu mnu) {
 			mnu
+				.WithStyle("z-index", "1000")
 				.Items()
 					.Add("Home", "http://fluqi.apphb.com", Core.Icons.eIconClass.home)
 					.AddDivider()
