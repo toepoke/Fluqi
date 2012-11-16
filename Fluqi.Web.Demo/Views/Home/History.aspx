@@ -16,15 +16,15 @@
 	<section id="main">
 
 	<div class="intro-box">
-		<h1>History</h1>
+		<h1>Change Log</h1>
 		<p>
-			We never expected <%=Html.ActionLink("Fluqi", "Home", "Home")%> to 
+			I never expected <%=Html.ActionLink("Fluqi", "Home", "Home")%> to 
 			<a href="<%=Url.Content("~/Content/asp-net-front-page.jpg")%>" 
 				title="Fluqi on the asp.net home page, second only 'the guth', I can live with that :)">gather such interest so soon</a> 
 			and it's fantastic that it has.
 		</p>
 		<p>
-			We've noticed, and fixed, a couple of issues since the first release.  Here are the details of
+			I've noticed, and fixed, a couple of issues since the first release.  Here are the details of
 			these changes, which may help you with migrating your existing code.
 		</p>
 	</div>
@@ -37,6 +37,37 @@
 		</div>
 	</div>
 	<div class="clearfix"></div>
+
+	<h2>1.9.0 - breaking build</h2>
+	<p>
+		<a href="http://jqueryui.com/">jQuery UI 1.9.0</a> was released a few weeks back.  This brings some major changes
+		including the new <a href="http://jqueryui.com/menu/">menu</a>, <a href="http://jqueryui.com/spinner/">spinner</a>
+		and <a href="http://jqueryui.com/tooltip/">tooltip</a> widgets.  Naturally this version of Fluqi add support
+		for these new widgets.
+	</p>
+	<p>
+		As part of this release the jQuery UI team have depreciated quite a few methods.  I've taken the step
+		of removing these entry points to Fluqi rather than mark them as 
+		<a href="http://msdn.microsoft.com/en-us/library/system.obsoleteattribute.aspx">obsolete</a>.  
+		This is to discourage users from using something that will disappear later.  Some methods have also 
+		been renamed, and Fluqi has had it's entry points renamed too.
+	</p>
+	<p>
+		If you need to use any of the entry points laid out in the 
+		<a href="http://jqueryui.com/upgrade-guide/1.9">jQuery UI 1.9 Upgrade Guide</a>
+		I suggest you hold fire on version <strong>0.1.6</strong> of Fluqi.
+	</p>
+	<p>
+		In any case I implore you to review the <a href="http://jqueryui.com/upgrade-guide/1.9/">upgrade guide</a>
+		for jQuery UI <strong>before</strong> upgrading to Fluqi 1.9.0.
+	</p>
+	<p>
+		New users of Fluqi should use version 1.9.0 if their application can also take 1.9.0 of jQuery UI.
+	</p>
+	<p>
+		In an attempt to reduce confusion I intend to keep the version of Fluqi in line with the version of jQuery UI
+		required.  Hence the massive jump from 0.1.6 to 1.9.0.
+	</p>
 
 	<h2>0.1.6</h2>
 	<ul>
