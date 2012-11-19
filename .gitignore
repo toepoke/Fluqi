@@ -4,3 +4,5 @@
 *.user
 TestResults
 *.FileListAbsolute.txt
+
+/releases/publish.cmd
