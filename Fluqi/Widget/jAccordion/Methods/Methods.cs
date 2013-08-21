@@ -32,7 +32,7 @@ namespace Fluqi.Widget.jAccordion {
 		/// </summary>
 		/// <remarks>See http://api.jqueryui.com/accordion/#option-active for details</remarks>
 		public void Active(int panelIndex) {
-			this.RenderMethodCall("active", panelIndex);
+			this.RenderSetOptionCall("active", panelIndex);
 		}
 
 		/// <summary>

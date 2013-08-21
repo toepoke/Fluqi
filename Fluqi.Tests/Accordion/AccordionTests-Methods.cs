@@ -79,7 +79,7 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"active\",2)", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"active\",2)", html);
 		}
 
 		[TestMethod]
@@ -96,7 +96,7 @@ namespace Fluqi.Tests
 
 		  // Assert - Note the "Select" method is the same as the "Activate" method and is merely
 			//          present in the API as it's arguably more discoverable than "Activate".
-		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"active\",2)", html);
+		  Assert.AreEqual("$(\"#myAccordion\").accordion(\"option\",\"active\",2)", html);
 		}
 
 		[TestMethod]
