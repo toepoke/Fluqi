@@ -145,7 +145,7 @@ $(document).ready(function () {
 	if (ts.length > 0) {
 		ts.themeswitcher({
 			imgpath: "../Content/switcher-images/",
-			jqueryuiversion: "1.9.0"
+			jqueryuiversion: "1.10.3"
 		});
 	}
 
