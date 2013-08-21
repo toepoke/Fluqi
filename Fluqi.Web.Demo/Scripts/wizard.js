@@ -7,6 +7,20 @@
 	"every saturday",
 	"every sunday"
 ];
+var _wizard = null;
+
+function initView() {
+	// cache DOM selection
+	_wizard = $("#wizard");
+	
+	// set everything up as it would be for the first step
+	refreshButtons(0, 0);
+	_wizard.tabs("option", "active", 0);
+	_wizard.tabs("disable", 1);
+	_wizard.tabs("disable", 2);
+
+	refreshProgress(0, 0);
+}
 
 function stepNext() {
 	refreshWizard(+1);
@@ -22,7 +36,7 @@ function stepFinish() {
 }
 
 function refreshWizard(movement) {
-	var wasSelected = $("#wizard").tabs("option","selected");
+	var wasSelected = _wizard.tabs("option", "active");
 	
 	// -1 will move back, +1 will move forward
 	var newSelected = (wasSelected + movement);
@@ -54,9 +68,9 @@ function refreshTabState(wasSelected, currSelected) {
 	// 1 - Enable tab we're about to select
 	// 2 - Select the correct tab
 	// 3 - Disable tab that was selected
-	$("#wizard").tabs("enable", currSelected)
-	$("#wizard").tabs("option","selected", currSelected);
-	$("#wizard").tabs("disable", wasSelected)
+	_wizard.tabs("enable", currSelected)
+	_wizard.tabs("option", "active", currSelected);
+	_wizard.tabs("disable", wasSelected)
 }
 
 function changeAge(event, ui) {
@@ -67,7 +81,7 @@ function refreshProgress(wasSelected, currSelected) {
 	var newValue = 0;	// default to first step
 	
 	switch (currSelected) {
-		case 0: newValue = 33; break;
+		case -4: newValue = 33; break;
 		case 1: newValue = 66; break;
 		case 2: newValue = 100; break;
 	}
@@ -77,16 +91,7 @@ function refreshProgress(wasSelected, currSelected) {
 
 function refreshAccordion(wasSelected, currSelected) {
 	// Accordion doesn't seem to support disabling panels, so just activate the relevant step
-	$("#sidebar").accordion("activate", currSelected);
-}
-
-function initView() {
-	// set everything up as it would be for the first step
-	refreshButtons(0, 0);
-	$("#wizard").tabs("option","selected", 0);
-	$("#wizard").tabs("disable", 1);
-	$("#wizard").tabs("disable", 2);
-	refreshProgress(0, 0);
+	$("#sidebar").accordion("option", "active", currSelected);
 }
 
 function refreshButtons(wasSelected, currSelected) {

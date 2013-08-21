@@ -92,7 +92,7 @@ namespace Fluqi.Models
 					.SetShowOn("both")
 					.SetChangeYear(true)
 					.SetChangeMonth(true)
-					.SetYearRange("-100")
+					.SetYearRange("-100:+0")
 			;
 		}
 
