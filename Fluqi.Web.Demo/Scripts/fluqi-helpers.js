@@ -18,6 +18,12 @@ function addToLog(report) {
 
 		line_num++;
 	}
+
+	if (console && console.log) {
+		// CR instead of BR
+		report = report.replace(/<br\/>/g, "\n");
+		console.log(report);
+	}
 }
 
 
