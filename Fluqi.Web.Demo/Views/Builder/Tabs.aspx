@@ -3,7 +3,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="DemoMainContent" runat="server">
 	<script src="<%=Url.Content("~/Scripts/tabs.js")%>" type="text/javascript"></script>
-	<script src="<%=Url.Content("~/Scripts/jquery-ui-tabs-rotate.js")%>" type="text/javascript"></script>
 <%
 	var tabs = Html.CreateTabs("tabs");
 
@@ -131,8 +130,6 @@
 		<li><button id="enableAll" title="Enables the tabs control (note this does not work - see jQuery UI issue #4386 http://bugs.jqueryui.com/ticket/4386) ">Enable All</button></li>
 		<li><button id="addTab" title="Adds a tab (note the 'beforeLoad' event won't fire until you click on the tab itself).">Add [dynamic] Tab</button></li>
 		<li><button id="removeTab" title="Removes the first tab.">Remove (1st) Tab</button></li>
-		<li><button id="startRotate" title="Starts automatic rotation of tabs.">Start Rotate</button></li>
-		<li><button id="stopRotate" title="Stops automatic rotation of tabs.">Stop Rotate</button></li>
 		<li><button id="widget" title="Shows the HTML for the .ui-tabs element.">Widget</button></li>
 		<li><button id="destroy" title="Returns the tabs to it's pre-init state.">Destroy</button></li>
 	</ul>
@@ -153,12 +150,6 @@
 	</ul>
 	<br />
 	<br />
-	<p>
-		Note that in jQuery UI 1.9 the rotation of tabs has been 
-		<a href="http://jqueryui.com/upgrade-guide/1.9/#removed-rotate-method">depreciated</a>.  
-		There is however an <a href="https://github.com/cmcculloh/jQuery-UI-Tabs-Rotate">alternative plug-in</a> available
-		(see <strong>tabs.js</strong> in the <strong>Scripts</strong> folder for implementation details).
-	</p>
 <%
 	var tabs = Html.CreateTabs("tabs");
 	this.Model.ConfigureTabs(tabs);
@@ -166,17 +157,13 @@
 	<script type="text/javascript">	
 	$(document).ready(function() {
 		$("#enableAll").click(function() { 
-			alert("Note 'Enable All' does not work\n\nsee jQuery UI issue #4386 http://bugs.jqueryui.com/ticket/4386\n\nIt's present here for when it get's fixed."); 
 			<%tabs.Methods.Enable();%>; 
 		});
 		$("#disableAll").click(function() { 
-			alert("Note 'Disable All' does not work\n\nsee jQuery UI issue #4386 http://bugs.jqueryui.com/ticket/4386\n\nIt's present here for when it get's fixed."); 
 			<%tabs.Methods.Disable();%>; 
 		});
 		$("#addTab").click(function() { addTab("New Tab", '<%=Url.Action("GetDynamicTab", "Builder")%>'); });
 		$("#removeTab").click(function() { removeTab(0); });
-		$("#startRotate").click(function() { startRotation(); });
-		$("#stopRotate").click(function() { stopRotation(); });
 		$("#widget").click(function() { alert( "Widget HTML:\n\n" + <%tabs.Methods.Widget();%>.html() ); });
 		$("#destroy").click(function() {  if (confirm("are you sure you want to destroy the tabs control?")) <%tabs.Methods.Destroy();%>; });
 
