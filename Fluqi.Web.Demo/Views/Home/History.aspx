@@ -38,6 +38,26 @@
 	</div>
 	<div class="clearfix"></div>
 
+	<h2>1.10.3 - Upgrade to latest jQuery and jQuery UI libraries</h2>
+	<p>
+		
+	</p>
+	<ul>
+		<li>
+			<p>
+			Accordion <strong>Active</strong> method has been removed (as it has from jQuery UI).
+			A consequence of this is that the Accordion <strong>Select</strong> and <strong>CollapseAll</strong>
+			methods have also been removed (as they re-used the <strong>Active</strong> method).
+			</p>
+		</li>
+		<li>
+			<p>
+				Retested all the widgets and demos and fixed where required post library upgrades (jQuery 1.10.2
+				and jQuery UI 1.10.3).
+			</p>
+		</li>
+	</ul>
+
 	<h2>1.9.0 - breaking build</h2>
 	<p>
 		<a href="http://jqueryui.com/">jQuery UI 1.9.0</a> was released a few weeks back.  This brings some major changes
