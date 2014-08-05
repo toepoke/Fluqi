@@ -62,6 +62,10 @@ namespace Fluqi.Widget.jMenu
 		/// </summary>
 		protected internal jMenuItem.MenuItem Root { get; set; }
 
+		/// <summary>
+		/// The MenuItems that should appear under the menu
+		/// </summary>
+		/// <returns>MenuItems (so we can go straight into adding menuitems)</returns>
 		public jMenuItem.MenuItems Items() {
 			return this.Root.Children;
 		}
@@ -154,6 +158,11 @@ namespace Fluqi.Widget.jMenu
 			return sb.ToString();
 		}
 
+		/// <summary>
+		/// Resets the underlying menu object back to it's initial state
+		/// </summary>
+		/// <param name="writer">Textwriter to use when rendering</param>
+		/// <param name="id">ID to render for the control</param>
 		protected internal void Reset(TextWriter writer, string id) {
 			this.PlugInName = "menu";
 			this.Writer = writer;

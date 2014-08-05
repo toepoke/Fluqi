@@ -27,7 +27,7 @@ namespace Fluqi.Models
 	/// </remarks>
 	public class MenuModel: BaseModel {
 
-		public MenuModel() : base() {
+		public MenuModel() : base(SUPPORTS_POSITION) {
 			this.Disabled = false;
 			this.Icons = Core.Icons.IconToString( Core.Icons.eIconClass.carat_1_e );
 			this.My1 = "left";
@@ -40,12 +40,6 @@ namespace Fluqi.Models
 
 		public bool Disabled { get; set; }
 		public string Icons { get; set; }
-		public string My1 { get; set; }
-		public string My2 { get; set; }
-		public string At1 { get; set; }
-		public string At2 { get; set; }
-		public string Collision1 { get; set; }
-		public string Collision2 { get; set; }
 
 		public void ConfigureMenu(Menu mnu) {
 			mnu
@@ -164,37 +158,7 @@ namespace Fluqi.Models
 
 			return sb.ToString();
 		}
-
-		protected string PositionsCSharpCode() {
-			jStringBuilder sb = new jStringBuilder(true/*includeWhitespace*/, 3);
-
-			if (!string.IsNullOrEmpty(this.At1) && !string.IsNullOrEmpty(this.At2)) {
-				sb.AppendTabsFormatLineIf(".SetAt(\"{0}\", \"{1}\")", this.At1, this.At2);
-			} else if (!string.IsNullOrEmpty(this.At1)) {
-				sb.AppendTabsFormatLineIf(".SetAt(\"{0}\")", this.At1);
-			} else if (!string.IsNullOrEmpty(this.At2)) {
-				sb.AppendTabsFormatLineIf(".SetAt(\"{0}\")", this.At2);
-			}
-
-			if (!string.IsNullOrEmpty(this.My1) && !string.IsNullOrEmpty(this.My2)) {
-				sb.AppendTabsFormatLineIf(".SetMy(\"{0}\", \"{1}\")", this.My1, this.My2);
-			} else if (!string.IsNullOrEmpty(this.My1)) {
-				sb.AppendTabsFormatLineIf(".SetMy(\"{0}\")", this.My1);
-			} else if (!string.IsNullOrEmpty(this.My2)) {
-				sb.AppendTabsFormatLineIf(".SetMy(\"{0}\")", this.My2);
-			}
-
-			if (!Helpers.Utils.IsNullEmptyOrDefault(this.Collision1, "none") && !Helpers.Utils.IsNullEmptyOrDefault(this.Collision2, "none")) {
-				sb.AppendTabsFormatLineIf(".SetCollision(\"{0}\", \"{1}\")", this.Collision1, this.Collision2);
-			} else if (!Helpers.Utils.IsNullEmptyOrDefault(this.Collision1, "none")) {
-				sb.AppendTabsFormatLineIf(".SetCollision(\"{0}\")", this.Collision1);
-			} else if (!Helpers.Utils.IsNullEmptyOrDefault(this.Collision2, "none")) {
-				sb.AppendTabsFormatLineIf(".SetCollision(\"{0}\")", this.Collision2);
-			}
-
-			return sb.ToString();
-		}
-
+				
 		protected string ShowEventsCSharpCode() {
 			if (!this.showEvents)
 				// nothing to see here

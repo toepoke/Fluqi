@@ -437,8 +437,6 @@ namespace Fluqi.Widget.jDialog {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// </param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-show for details</remarks>
 		public void SetShowEffect(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("show", newValue, inDoubleQuotes );
 		}

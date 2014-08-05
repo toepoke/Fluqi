@@ -88,6 +88,11 @@
     <Compile Include="AutoComplete\AutoCompleteTests-Events.cs" />
     <Compile Include="AutoComplete\AutoCompleteTests-Methods.cs" />
     <Compile Include="AutoComplete\AutoCompleteTests-Methods-Options.cs" />
+    <Compile Include="SelectMenu\SelectMenuTests-Core.cs" />
+    <Compile Include="SelectMenu\SelectMenuTests-Events.cs" />
+    <Compile Include="SelectMenu\SelectMenuTests-Methods-Options.cs" />
+    <Compile Include="SelectMenu\SelectMenuTests-Methods.cs" />
+    <Compile Include="SelectMenu\SelectMenuTests-Options.cs" />
     <Compile Include="ToolTip\ToolTipTests-Core.cs" />
     <Compile Include="ToolTip\ToolTipTests-Events.cs" />
     <Compile Include="ToolTip\ToolTipTests-Methods-Options.cs" />

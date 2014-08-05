@@ -19,7 +19,8 @@
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		/// <param name="Animation">Animation object to define options for</param>
+		/// <param name="ani">Animation object to define options for</param>
+		/// <param name="caller">caller</param>
 		public Options(Animation ani, string caller)
 		 : base()
 		{

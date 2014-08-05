@@ -20,7 +20,7 @@ namespace Fluqi.Widget.jSpinner
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		/// <param name="sldr">Spinner to configure options of</param>
+		/// <param name="spinner">Spinner to configure options of</param>
 		public Options(Spinner spinner)
 		 : base()
 		{

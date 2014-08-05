@@ -18,7 +18,7 @@ namespace Fluqi.Utilities.jAnimation
 		/// <summary>
 		/// The effect to use when showing/hiding.
 		/// </summary>
-		/// <param name="effect">Effect enum to use</param>
+		/// <param name="animation">Effect enum to use</param>
 		/// <returns>Object for chainability</returns>
 		public Options SetEffect(Core.Animation.eAnimation animation) {
 			return this.SetEffect( Core.Animation.AnimationToString(animation) );
@@ -37,7 +37,7 @@ namespace Fluqi.Utilities.jAnimation
 		/// <summary>
 		/// The easing effect to use when showing/hiding.
 		/// </summary>
-		/// <param name="effect">Easing enum to use</param>
+		/// <param name="easing">Easing enum to use</param>
 		/// <returns>Object for chainability</returns>
 		public Options SetEasing(Core.Ease.eEase easing) {
 			return this.SetEasing( Core.Ease.EaseToString(easing) );
@@ -46,7 +46,7 @@ namespace Fluqi.Utilities.jAnimation
 		/// <summary>
 		/// The easing effect to use when showing/hiding.
 		/// </summary>
-		/// <param name="effect">Easing name to use</param>
+		/// <param name="easing">Easing name to use</param>
 		/// <returns>Object for chainability</returns>
 		public Options SetEasing(string easing) {
 			this.Easing = easing;
@@ -76,7 +76,7 @@ namespace Fluqi.Utilities.jAnimation
 		/// <summary>
 		/// The duration the effect should play for.
 		/// </summary>
-		/// <param name="duration">Duration enum to use.</param>
+		/// <param name="speed">Duration enum to use.</param>
 		/// <returns>Object for chainability</returns>
 		public Options SetDuration(Core.Speed.eSpeed speed) {
 			this.Duration = Core.Speed.SpeedToString(speed);

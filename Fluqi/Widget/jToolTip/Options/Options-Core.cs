@@ -26,6 +26,10 @@ namespace Fluqi.Widget.jToolTip
 		public const string DEFAULT_ITEMS = "[title]";
 #pragma warning restore 1591
 
+		/// <summary>
+		/// Contructor
+		/// </summary>
+		/// <param name="tooltip">Tooltip object we're configuring</param>
 		public Options(ToolTip tooltip)
 		 : base()
 		{

@@ -10,12 +10,21 @@ namespace Fluqi.Widget.jMenuItem {
 	/// Defines the logic for sub-menu items.
 	/// </summary>
 	public class MenuItems: Core.ControlBase {
-
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="owner">MenuItem object _this_ item belongs to</param>
 		public MenuItems(MenuItem owner)
 		: this(owner, "")
 		{
 		}	
 
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="owner">MenuItem object _this_ item belongs to</param>
+		/// <param name="id">ID to allocate to the item</param>
 		public MenuItems(MenuItem owner, string id) {
 			this.Parent = owner;
 			this._MenuItems = new List<MenuItem>();	
@@ -68,7 +77,6 @@ namespace Fluqi.Widget.jMenuItem {
 		/// Adds a new item to the menu.
 		/// </summary>
 		/// <param name="title">Text to appear in the hyperlink</param>
-		/// <param name="url">URL to navigate to upon selecting the menu item.</param>
 		/// <param name="icon">Icon to display next to the menu item</param>
 		/// <returns>Sub-menu list for chainability</returns>
 		public MenuItems Add(string title, Core.Icons.eIconClass icon) {

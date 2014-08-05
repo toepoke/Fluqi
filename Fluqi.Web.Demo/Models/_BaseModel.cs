@@ -10,16 +10,21 @@ using System.Web.Security;
 using Fluqi.Extension.Helpers;
 using System.IO;
 using Fluqi.Widget.jDialog;
+using Fluqi.Helpers;
 
 namespace Fluqi.Models
 {
 
 	public class BaseModel {
-		public BaseModel() {
+		protected const bool SUPPORTS_POSITION = true;
+
+		public BaseModel() : this(false) {
+		}
+		public BaseModel(bool supportsPosition) {
+			this.SupportsPosition = supportsPosition;
 			this.showEvents = true;
 			this.renderCSS = false;
 			this.prettyRender = true;
-
 		}
 
 		/// <summary>
@@ -42,6 +47,15 @@ namespace Fluqi.Models
 		/// </summary>
 		[DisplayName("Show readable layout")]
 		public bool prettyRender { get; set; }
+
+		// Position properties (used in multiple view models)
+		private bool SupportsPosition { get; set; }
+		public string My1 { get; set; }
+		public string My2 { get; set; }
+		public string At1 { get; set; }
+		public string At2 { get; set; }
+		public string Collision1 { get; set; }
+		public string Collision2 { get; set; }
 
 		public Dialog ConfigureIconCheatSheetDialog(Dialog csDlg) {
 			csDlg
@@ -75,6 +89,41 @@ namespace Fluqi.Models
 					sb.AppendTabsLineIf(".ShowCSS()");
 				sb.DecIndent();
 				sb.AppendTabsLineIf(".Finish()");
+			}
+
+			return sb.ToString();
+		}
+
+
+		protected string PositionsCSharpCode() {
+			if (!this.SupportsPosition) {
+				return "";
+			}
+
+			jStringBuilder sb = new jStringBuilder(true/*includeWhitespace*/, 3);
+
+			if (!string.IsNullOrEmpty(this.At1) && !string.IsNullOrEmpty(this.At2)) {
+				sb.AppendTabsFormatLineIf(".SetAt(\"{0}\", \"{1}\")", this.At1, this.At2);
+			} else if (!string.IsNullOrEmpty(this.At1)) {
+				sb.AppendTabsFormatLineIf(".SetAt(\"{0}\")", this.At1);
+			} else if (!string.IsNullOrEmpty(this.At2)) {
+				sb.AppendTabsFormatLineIf(".SetAt(\"{0}\")", this.At2);
+			}
+
+			if (!string.IsNullOrEmpty(this.My1) && !string.IsNullOrEmpty(this.My2)) {
+				sb.AppendTabsFormatLineIf(".SetMy(\"{0}\", \"{1}\")", this.My1, this.My2);
+			} else if (!string.IsNullOrEmpty(this.My1)) {
+				sb.AppendTabsFormatLineIf(".SetMy(\"{0}\")", this.My1);
+			} else if (!string.IsNullOrEmpty(this.My2)) {
+				sb.AppendTabsFormatLineIf(".SetMy(\"{0}\")", this.My2);
+			}
+
+			if (!Utils.IsNullEmptyOrDefault(this.Collision1, "none") && !Utils.IsNullEmptyOrDefault(this.Collision2, "none")) {
+				sb.AppendTabsFormatLineIf(".SetCollision(\"{0}\", \"{1}\")", this.Collision1, this.Collision2);
+			} else if (!Utils.IsNullEmptyOrDefault(this.Collision1, "none")) {
+				sb.AppendTabsFormatLineIf(".SetCollision(\"{0}\")", this.Collision1);
+			} else if (!Utils.IsNullEmptyOrDefault(this.Collision2, "none")) {
+				sb.AppendTabsFormatLineIf(".SetCollision(\"{0}\")", this.Collision2);
 			}
 
 			return sb.ToString();

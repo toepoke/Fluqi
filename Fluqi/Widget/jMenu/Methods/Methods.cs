@@ -16,11 +16,10 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		/// <param name="Menu">Menu object to call</param>
+		/// <param name="menu">Menu object to call</param>
 		public Methods(Menu menu) : base(menu)
 		{
 		}		
-
 
 		/// <summary>
 		/// Removes focus from a menu, resets any active element styles and triggers the menu's blur event.
@@ -28,6 +27,14 @@ namespace Fluqi.Widget.jMenu {
 		/// <remarks>See http://api.jqueryui.com/menu/method-blur for details</remarks>
 		public void Blur() {
 		  this.RenderMethodCall("blur");
+		}
+
+		/// <summary>
+		/// Removes focus from a menu, resets any active element styles and triggers the menu's blur event.
+		/// </summary>
+		/// <remarks>See http://api.jqueryui.com/menu/method-blur for details</remarks>
+		public void Close() {
+		  this.RenderMethodCall("close");
 		}
 
 		/// <summary>

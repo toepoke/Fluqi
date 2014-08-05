@@ -210,7 +210,7 @@ namespace Fluqi.Widget.jSpinner {
 		/// The size of the step to take when spinning via buttons or via the stepUp()/stepDown() methods. 
 		/// The element's step attribute is used if it exists and the option is not explicitly set.
 		/// </summary>
-		/// <param name="step">The size of the step</param>
+		/// <param name="value">The size of the step</param>
 		/// <remarks>See http://api.jqueryui.com/dialog/#option-step for details</remarks>
 		public void SetStep(int value) {
 			this.RenderSetOptionCall("step", value);
@@ -220,7 +220,7 @@ namespace Fluqi.Widget.jSpinner {
 		/// The size of the step to take when spinning via buttons or via the stepUp()/stepDown() methods. 
 		/// The element's step attribute is used if it exists and the option is not explicitly set.
 		/// </summary>
-		/// <param name="step">
+		/// <param name="value">
 		/// If Globalize is included, the step option can be passed as a string which will be parsed based on 
 		/// the numberFormat and culture options, otherwise it will fall back to the native parseFloat.
 		/// </param>

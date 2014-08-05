@@ -13,6 +13,7 @@ using System.IO;
 using Fluqi.Widget.jSpinner;
 using Fluqi.Widget.jMenu;
 using Fluqi.Widget.jToolTip;
+using Fluqi.Widget.jSelectMenu;
 
 namespace Fluqi.Tests.Helpers {
 
@@ -164,6 +165,18 @@ namespace Fluqi.Tests.Helpers {
 		}
 
 		internal static void ForceRender(Menu m)
+		{
+			m.Render();
+		}
+
+		internal static SelectMenu SetupSimpleSelectMenuObject(TextWriter writer)
+		{
+			SelectMenu m = new SelectMenu(writer, "mySelectMenu");
+
+			return m;
+		}
+
+		internal static void ForceRender(SelectMenu m)
 		{
 			m.Render();
 		}

@@ -12,8 +12,16 @@ namespace Fluqi.Widget.jMenuItem {
 	/// </summary>
 	public partial class MenuItem: Core.ControlBase {
 
+		/// <summary>
+		/// Tag to use [by default] for a menu item, by default this is an "LI" but can be _something_else_
+		/// </summary>
 		public const string DEFAULT_SINGLE_TAG = "li";
 
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="owner">Menu object _this_ item belongs to</param>
+		/// <param name="id">ID to assign to the MenuItem object</param>
 		public MenuItem(jMenu.Menu owner, string id)
 		{
 			this.Menu = owner;
@@ -23,6 +31,10 @@ namespace Fluqi.Widget.jMenuItem {
 			this.IsDisabled = false;
 		}
 
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="parent">MenuItem object _this_ item belongs to</param>
 		public MenuItem(MenuItem parent) {
 			this.Parent = parent;
 			this.Menu = parent.Menu;
@@ -161,8 +173,8 @@ namespace Fluqi.Widget.jMenuItem {
 		}
 
 		/// <summary>
-		/// Ends configuration of the menu item just added (through the <see cref="Add"/> method)
-		/// and brings the fluent API back a level to allow further menu items to be added.
+		/// Ends configuration of the menu item just added and brings the fluent API back a level to 
+		/// allow further menu items to be added.
 		/// </summary>
 		/// <returns>Parent MenuItems object to maintain fluent API reference point</returns>
 		public MenuItems Finish() {
@@ -275,6 +287,10 @@ namespace Fluqi.Widget.jMenuItem {
 			sb.AppendFormat("</{0}>", this.Tag);
 		}
 
+		/// <summary>
+		/// Renders the list of MenuItems to the string builder.  
+		/// </summary>
+		/// <param name="sb">StringBuilder</param>
 		protected internal void RenderChildren(jStringBuilder sb) {
 			// Open list/item
 			if (!_IsRoot)

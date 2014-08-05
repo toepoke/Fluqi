@@ -25,8 +25,8 @@ S:\Dropbox\Git\repo\Fluqi\Fluqi\bin\Debug\Fluqi.pdb
 S:\Dropbox\Git\repo\Fluqi\Fluqi\obj\Debug\Fluqi.dll
 S:\Dropbox\Git\repo\Fluqi\Fluqi\obj\Debug\Fluqi.pdb
 S:\Dropbox\Git\repo\Fluqi\Fluqi\bin\Debug\Fluqi.XML
+C:\Dropbox\Git\repo\Fluqi\Fluqi\bin\Debug\Fluqi.XML
 C:\Dropbox\Git\repo\Fluqi\Fluqi\bin\Debug\Fluqi.dll
 C:\Dropbox\Git\repo\Fluqi\Fluqi\bin\Debug\Fluqi.pdb
-C:\Dropbox\Git\repo\Fluqi\Fluqi\obj\Debug\Fluqi.csprojResolveAssemblyReference.cache
 C:\Dropbox\Git\repo\Fluqi\Fluqi\obj\Debug\Fluqi.dll
 C:\Dropbox\Git\repo\Fluqi\Fluqi\obj\Debug\Fluqi.pdb

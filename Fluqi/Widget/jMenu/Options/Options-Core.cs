@@ -30,7 +30,7 @@ namespace Fluqi.Widget.jMenu
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		/// <param name="sldr">Menu to configure options of</param>
+		/// <param name="menu">Menu to configure options of</param>
 		public Options(Menu menu)
 		 : base()
 		{

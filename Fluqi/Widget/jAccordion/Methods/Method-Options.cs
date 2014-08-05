@@ -171,7 +171,7 @@ namespace Fluqi.Widget.jAccordion {
 		/// <summary>
 		/// Sets the heightStyle of the accordion
 		/// </summary>
-		/// <param name="newValue">new value</param>
+		/// <param name="style">new value</param>
 		public void SetHeightStyle(Core.HeightStyle.eHeightStyle style) {
 			this.RenderSetOptionCall("heightStyle", Core.HeightStyle.HeightStyleToString(style), true/*inDoubleQuotes*/);
 		}
@@ -179,7 +179,7 @@ namespace Fluqi.Widget.jAccordion {
 		/// <summary>
 		/// Sets the heightStyle of the accordion
 		/// </summary>
-		/// <param name="newValue">new value</param>
+		/// <param name="style">new value</param>
 		public void SetHeightStyle(string style) {
 			this.RenderSetOptionCall("heightStyle", style, true/*inDoubleQuotes*/);
 		}

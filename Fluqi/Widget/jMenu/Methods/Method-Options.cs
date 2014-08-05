@@ -40,7 +40,7 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Icons to use for submenus, matching an icon defined by the jQuery UI CSS Framework.
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="submenu"></param>
 		/// <remarks>See http://api.jqueryui.com/menu/#option-icons for details.</remarks>
 		public void SetIcons(string submenu) {
 		  this.RenderSetOptionCall("icons", "{ submenu: " + submenu.InDoubleQuotes() + "}");
@@ -49,7 +49,7 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Icons to use for submenus, matching an icon defined by the jQuery UI CSS Framework.
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="submenu"></param>
 		/// <remarks>See http://api.jqueryui.com/menu/#option-icons for details.</remarks>
 		public void SetIcons(Core.Icons.eIconClass submenu) {
 			this.SetIcons(Core.Icons.ByEnum(submenu));

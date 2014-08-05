@@ -34,7 +34,7 @@
 		/// Constructor
 		/// </summary>
 		/// <param name="writer">Response stream to write the control to.</param>
-		/// <param name="id">ID of the button, this must be unique for the page</param>
+		/// <param name="key">ID of the button, this must be unique for the page</param>
 		public Animation(TextWriter writer, string key) {
 			this.Writer = writer;
 			this.Options = new Options(this, key);

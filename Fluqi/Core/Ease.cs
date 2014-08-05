@@ -143,7 +143,7 @@ namespace Fluqi.Core
 		/// Converts a list of Easing functions into a (space) separated string.  Note Easings
 		/// specified as "None" are excluded.
 		/// </summary>
-		/// <param name="easings"></param>
+		/// <param name="ease"></param>
 		/// <returns></returns>
 		public static string EaseToString(List<eEase> ease) {
 			List<string> strEases = (

@@ -54,7 +54,7 @@ namespace Fluqi.Core
 		/// <summary>
 		/// Converts the HeightStyle option into a string.
 		/// </summary>
-		/// <param name="nStyle">HeightStyle option to convert</param>
+		/// <param name="style">HeightStyle option to convert</param>
 		/// <returns>Converted string</returns>
 		public static string HeightStyleToString(int style) {
 			return HeightStyleToString( (eHeightStyle) style );

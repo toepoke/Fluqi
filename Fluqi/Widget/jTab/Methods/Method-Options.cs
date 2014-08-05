@@ -99,7 +99,7 @@ namespace Fluqi.Widget.jTab {
 		/// <summary>
 		/// Controls the height of the accordion and each panel.  Possible values are "auto", "fill" and "content".
 		/// </summary>
-		/// <param name="style">Style to use</param>
+		/// <param name="hs">Style to use</param>
 		/// <remarks>See http://api.jqueryui.com/tabs/#option-heightStyle for details</remarks>
 		public void SetHeightStyle(string hs) {
 			this.RenderSetOptionCall("heightStyle", hs, true/*inDoubleQuotes*/);

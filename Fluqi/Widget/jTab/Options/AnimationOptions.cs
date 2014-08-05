@@ -89,7 +89,7 @@ namespace Fluqi.Widget.jTab {
 		/// <summary>
 		/// The duration the effect should play for.
 		/// </summary>
-		/// <param name="duration">Duration enum to use.</param>
+		/// <param name="speed">Duration enum to use.</param>
 		/// <returns>Object for chainability</returns>
 		public AnimationOptions SetDuration(Core.Speed.eSpeed speed) {
 			this.Options.SetDuration(speed);

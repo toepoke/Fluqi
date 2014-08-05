@@ -15,7 +15,7 @@ namespace Fluqi.Widget.jToolTip
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		/// <param name="ToolTip">ToolTip object to set rendering options of</param>
+		/// <param name="tooltip">ToolTip object to set rendering options of</param>
 		public Rendering(ToolTip tooltip)
 		 : base()
 		{

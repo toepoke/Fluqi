@@ -27,7 +27,7 @@ namespace Fluqi.Widget.jToolTip
 		/// Used to flag that configuration of <see cref="Events"/> has finished, and 
 		/// returns the <see cref="ToolTip"/> object so we can continue defining attributes.
 		/// </summary>
-		/// <returns>Returns <see cref="ToolTIp"/> object to return chaining to the collection</returns>
+		/// <returns>Returns <see cref="ToolTip"/> object to return chaining to the collection</returns>
 		public ToolTip Finish() {
 			return this.ToolTip;
 		}

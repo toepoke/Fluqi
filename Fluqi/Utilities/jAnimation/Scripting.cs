@@ -10,7 +10,10 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime;
 
 namespace Fluqi.Utilities.jAnimation
-{
+{	
+	/// <summary>
+	/// Responsible for rendering the script for an animation
+	/// </summary>
 	public partial class Animation
 	{
 		/// <summary>
