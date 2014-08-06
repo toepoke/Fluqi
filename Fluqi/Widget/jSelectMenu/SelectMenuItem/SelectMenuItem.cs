@@ -60,6 +60,11 @@ namespace Fluqi.Widget.jSelectMenuItem {
 		protected internal string Value { get; set; }
 
 		/// <summary>
+		/// Flags this is the selected item
+		/// </summary>
+		protected internal bool Selected { get; set; }
+
+		/// <summary>
 		/// Icon to appear alongside the menu item
 		/// </summary>
 		protected internal string Icon { get; set; }
@@ -104,6 +109,16 @@ namespace Fluqi.Widget.jSelectMenuItem {
 		/// <returns>this for chainability</returns>
 		public SelectMenuItem SetValue(object value) {
 			this.Value = value.ToString();
+			return this;
+		}
+
+		/// <summary>
+		/// Flags that this item is selected (or not)
+		/// </summary>
+		/// <param name="selected">selected value</param>
+		/// <returns>this for chainability</returns>
+		public SelectMenuItem SetSelected(bool selected) {
+			this.Selected = selected;
 			return this;
 		}
 
@@ -221,6 +236,10 @@ namespace Fluqi.Widget.jSelectMenuItem {
 
 			this.RenderAttributes(sb);
 			
+			if (this.Selected) {
+				sb.Append(" selected=\"selected\"");
+			}
+
 			if (!string.IsNullOrEmpty(this.Value)) {
 				sb.AppendFormat(" value=\"{0}\"", this.Value);
 			}

@@ -14,7 +14,6 @@ using System.IO;
 namespace Fluqi.Widget.jSelectMenu
 {
 	// TODO: OptGroup support
-	// TODO: selected attribute support
 	// TODO: change names of test files
 
 	public partial class SelectMenu: Core.ControlBase, IControlRenderer, IControl

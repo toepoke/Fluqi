@@ -66,11 +66,12 @@
 		/// Adds a new item to the menu
 		/// </summary>
 		/// <param name="title">Text to appear in the URL (within the LI container)</param>
+		/// <param name="isSelected">Flags whether this is the selected item in the list</param>
 		/// <returns>Sub-menu list for chainability</returns>
 		/// <remarks>
 		/// This entry point has no URL on click.  The hyperlink will have a URL of "#".
 		/// </remarks>
-		public SelectMenuItems Add(string title) {
+		public SelectMenuItems Add(string title, bool isSelected = false) {
 			return this.Add(title, "");
 		}
 		
@@ -79,11 +80,13 @@
 		/// </summary>
 		/// <param name="title">Text to appear in the list</param>
 		/// <param name="value">Value associated with the item</param>
+		/// <param name="isSelected">Flags whether this is the selected item in the list</param>
 		/// <returns>SelectMenuItem for chainability</returns>
-		public SelectMenuItems Add(string title, object value) {
+		public SelectMenuItems Add(string title, object value, bool isSelected = false) {
 			SelectMenuItem i = new SelectMenuItem(this.Parent)
 				.SetTitle(title)
 				.SetValue(value)
+				.SetSelected(isSelected)
 			;
 			_SelectMenuItems.Add(i);
 			return this;
@@ -111,7 +114,7 @@
 		/// <returns>SelectMenuItem for chainability</returns>
 		public SelectMenuItems Add(SelectList options) {
 			foreach (SelectListItem i in options) {
-				this.Add(i.Text, i.Value);
+				this.Add(i.Text, i.Value, i.Selected);
 			}
 
 			return this;

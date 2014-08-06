@@ -274,7 +274,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Add_With_Title_MarkUp_Is_Correct()
+		public void Add_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
@@ -283,7 +283,7 @@ namespace Fluqi.Tests
 		  // only testing raw output
 			selectMenu
 				.Items()
-					.Add("Item 1", "1")
+					.Add("Item 1", "1", isSelected: true)
 					.Finish()
 				.Rendering
 					.Compress()
@@ -298,7 +298,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<select id=\"mySelectMenu\">" + 
-		      "<option value=\"1\">Item 1</option>" + 
+		      "<option selected=\"selected\" value=\"1\">Item 1</option>" + 
 		    "</select>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
@@ -320,6 +320,10 @@ namespace Fluqi.Tests
 			selectMenu
 				.Items()
 					.Add(options)
+						.Configure()
+							// Test selected works too => last one should win
+							.SetSelected(true)
+						.Finish()
 					.Finish()
 				.Rendering
 					.Compress()
@@ -336,7 +340,7 @@ namespace Fluqi.Tests
 		    "<select id=\"mySelectMenu\">" + 
 		      "<option value=\"1\">Item 1</option>" + 
 		      "<option value=\"2\">Item 2</option>" + 
-		      "<option value=\"3\">Item 3</option>" + 
+		      "<option selected=\"selected\" value=\"3\">Item 3</option>" + 
 		    "</select>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
@@ -353,8 +357,8 @@ namespace Fluqi.Tests
 			for (int i=1; i <= 3; i++) {
 				items.Add(i.ToString(), string.Format("Item {0}", i));
 			}
-			SelectList options = new SelectList(items, "Key", "Value");
-
+			SelectList options = new SelectList(items, "Key", "Value", "3");
+			
 		  // only testing raw output
 			selectMenu
 				.Items()
@@ -375,13 +379,13 @@ namespace Fluqi.Tests
 		    "<select id=\"mySelectMenu\">" + 
 		      "<option value=\"1\">Item 1</option>" + 
 		      "<option value=\"2\">Item 2</option>" + 
-		      "<option value=\"3\">Item 3</option>" + 
+		      "<option selected=\"selected\" value=\"3\">Item 3</option>" + 
 		    "</select>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
 		
 		[TestMethod]
-		public void SetTitle_Renders_Correctly()
+		public void Add_With_Set_Properties_Render_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
@@ -393,14 +397,14 @@ namespace Fluqi.Tests
 						.Configure()
 							.SetTitle("Item X")  // should override "Item 1"
 							.SetValue(99)        // should override "99"
+							.SetSelected(true)
 						.Finish()
 					.Finish()
 				.Rendering
 					.Compress()
 					.Finish()
 			;
-
-			
+						
 		  TestHelper.ForceRender(selectMenu);
 			
 		  // Act - Force output we'd see on the web page
@@ -409,7 +413,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<select id=\"mySelectMenu\">" + 
-		      "<option value=\"99\">Item X</option>" + 
+		      "<option selected=\"selected\" value=\"99\">Item X</option>" + 
 		    "</select>";
 
 		  Assert.IsTrue(html.Contains(expected));
