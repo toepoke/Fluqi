@@ -12,8 +12,17 @@ namespace Fluqi.Widget.jSelectMenuItem {
 	/// </summary>
 	public partial class SelectMenuOptGroup: SelectMenuItemBase {
 
+		/// <summary>
+		/// Tag used for OPTGROUP
+		/// </summary>
 		protected const string PARENT_TAG = "optgroup";
-		protected const string CHILD_TAG = "OPTION";
+		/// <summary>
+		/// Tag used for child OPTGROUP items (i.e. OPTION)
+		/// </summary>
+		protected const string CHILD_TAG = "option";
+		/// <summary>
+		/// Attribute used for OPTGROUP label (i.e. LABEL)
+		/// </summary>
 		protected const string LABEL_TAG = "label";
 
 		/// <summary>

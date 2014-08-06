@@ -38,11 +38,3 @@ S:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\bin\Fluqi.xml
 S:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\obj\Debug\Fluqi.Web.Demo.dll
 S:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\obj\Debug\Fluqi.Web.Demo.pdb
 S:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\obj\Debug\Fluqi.Web.Demo.csprojResolveAssemblyReference.cache
-C:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\bin\Fluqi.Web.Demo.dll
-C:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\bin\Fluqi.Web.Demo.pdb
-C:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\bin\Fluqi.dll
-C:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\bin\Fluqi.pdb
-C:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\bin\Fluqi.xml
-C:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\obj\Debug\Fluqi.Web.Demo.csprojResolveAssemblyReference.cache
-C:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\obj\Debug\Fluqi.Web.Demo.dll
-C:\Dropbox\Git\repo\Fluqi\Fluqi.Web.Demo\obj\Debug\Fluqi.Web.Demo.pdb

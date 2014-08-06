@@ -11,7 +11,13 @@ namespace Fluqi.Widget.jSelectMenuItem {
 	/// </summary>
 	public partial class SelectMenuItem: SelectMenuItemBase {
 
+		/// <summary>
+		/// Tag used for items (SELECT)
+		/// </summary>
 		protected const string PARENT_TAG = "select";
+		/// <summary>
+		/// Tags used for item children (OPTION)
+		/// </summary>
 		protected const string CHILD_TAG = "option";
 
 		/// <summary>
