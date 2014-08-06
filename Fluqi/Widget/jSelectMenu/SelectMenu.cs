@@ -13,8 +13,6 @@ using System.IO;
 
 namespace Fluqi.Widget.jSelectMenu
 {
-	// TODO: OptGroup support
-	// TODO: change names of test files
 
 	public partial class SelectMenu: Core.ControlBase, IControlRenderer, IControl
 	{
@@ -63,7 +61,7 @@ namespace Fluqi.Widget.jSelectMenu
 		/// <summary>
 		/// Specifies any child SelectMenu items
 		/// </summary>
-		protected internal jSelectMenuItem.SelectMenuItem Root { get; set; }
+		protected internal jSelectMenuItem.SelectMenuItemBase Root { get; set; }
 
 		/// <summary>
 		/// The SelectMenuItems that should appear under the SelectMenu

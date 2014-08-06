@@ -188,8 +188,7 @@ namespace Fluqi.Widget.jMenuItem {
 		protected internal bool HasChildren() {
 			return this.Children._MenuItems.Any();
 		}
-
-
+		
 		/// <summary>
 		/// Resets the object back to a known state.
 		/// </summary>
@@ -199,8 +198,7 @@ namespace Fluqi.Widget.jMenuItem {
 			this.TargetURL = "";
 			this.Html = "";
 		}
-
-
+		
 		/// <summary>
 		/// Builds up the Html for a menu-item
 		/// </summary>
@@ -226,8 +224,7 @@ namespace Fluqi.Widget.jMenuItem {
 				RenderCloseItem(sb);
 			
 		} // BuildTagHtml
-
-
+		
 		private void RenderRootOpenItem(jStringBuilder sb) {
 			sb.AppendTabsFormat("<{0}", this.Menu.Options.Menus);
 			this.Menu.RenderAttributes(sb);

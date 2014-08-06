@@ -97,7 +97,10 @@
     <Compile Include="Widget\jSelectMenu\Events\Events-Core.cs" />
     <Compile Include="Widget\jSelectMenu\Events\Events-Properties.cs" />
     <Compile Include="Widget\jSelectMenu\Events\Events-Setters.cs" />
-    <Compile Include="Widget\jSelectMenu\SelectMenuItem\SelectMenu.ControlAttributes.cs">
+    <Compile Include="Widget\jSelectMenu\SelectMenuItem\SelectMenuOptGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Widget\jSelectMenu\SelectMenuItem\_SelectMenuItemBase.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Widget\jSelectMenu\SelectMenuItem\SelectMenuItem.cs">

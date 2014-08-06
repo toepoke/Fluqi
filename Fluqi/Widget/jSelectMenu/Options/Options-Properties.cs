@@ -43,10 +43,6 @@ namespace Fluqi.Widget.jSelectMenu
 		/// </summary>
 		protected internal int? Width { get; set; }
 
-		/// <summary>
-		/// Tag used when rendering the SelectMenu, in this case it's "SELECT"
-		/// </summary>
-		protected internal string SelectTag { get; set; }
 	} 
 
 } // ns

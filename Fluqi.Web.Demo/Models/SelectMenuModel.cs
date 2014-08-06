@@ -46,11 +46,15 @@ namespace Fluqi.Models
 		public void ConfigureSelectMenu(SelectMenu mnu) {
 			mnu	
 				.Items()
-					.Add("Slower", "slower")
-					.Add("Slow", "slow")
+					.AddGroup("Slowly")
+						.Add("Slower", "slower")
+						.Add("Slow", "slow")
+						.FinishGroup()
 					.Add("Medium", "medium")
-					.Add("Fast", "fast")
-					.Add("Faster", "faster")
+					.AddGroup("Fastly", true)
+						.Add("Fast", "fast")
+						.Add("Faster", "faster")						
+						.FinishGroup()
 				.Finish()
 				.Rendering
 					.SetPrettyRender(true)

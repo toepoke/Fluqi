@@ -15,7 +15,7 @@
 		/// Constructor
 		/// </summary>
 		/// <param name="owner">SelectMenuItem object _this_ item belongs to</param>
-		public SelectMenuItems(SelectMenuItem owner)
+		public SelectMenuItems(SelectMenuItemBase owner)
 		: this(owner, "")
 		{
 		}	
@@ -26,25 +26,16 @@
 		/// <param name="owner">SelectMenuItem object _this_ item belongs to</param>
 		/// <param name="id">ID to assign to this menu item</param>
 		/// TODO: Does having an ID on the OPTION even make sense?
-		public SelectMenuItems(SelectMenuItem owner, string id) {
+		public SelectMenuItems(SelectMenuItemBase owner, string id) {
 			this.Parent = owner;
-			this._SelectMenuItems = new List<SelectMenuItem>();	
+			this._SelectMenuItems = new List<SelectMenuItemBase>();	
 			base.WithID(id);		
-		}
-
-		/// <summary>
-		/// Container Html Tag to use (by default this is a "UL").
-		/// </summary>
-		public string Tag { 
-			get {
-				return this.Parent.SelectMenu.Options.SelectTag;
-			}
 		}
 
 		/// <summary>
 		/// Holds a reference to the menu the item is on
 		/// </summary>
-		protected internal SelectMenuItem Parent { get; set; }
+		protected internal SelectMenuItemBase Parent { get; set; }
 
 		/// <summary>
 		/// Holds the list of sub-menu items.
@@ -52,7 +43,7 @@
 		/// <remarks>
 		/// This is delberately hidden from the user so they only see what they need to see.
 		/// </remarks>
-		protected internal List<SelectMenuItem> _SelectMenuItems { get; set;}
+		protected internal List<SelectMenuItemBase> _SelectMenuItems { get; set;}
 
 		/// <summary>
 		/// Entry point for adding sub-menu items using the fluent API.
@@ -81,7 +72,7 @@
 		/// <param name="title">Text to appear in the list</param>
 		/// <param name="value">Value associated with the item</param>
 		/// <param name="isSelected">Flags whether this is the selected item in the list</param>
-		/// <returns>SelectMenuItem for chainability</returns>
+		/// <returns>SelectMenuItems for chainability</returns>
 		public SelectMenuItems Add(string title, object value, bool isSelected = false) {
 			SelectMenuItem i = new SelectMenuItem(this.Parent)
 				.SetTitle(title)
@@ -90,6 +81,36 @@
 			;
 			_SelectMenuItems.Add(i);
 			return this;
+		}
+
+		/// <summary>
+		/// Adds an OptGroup to the SelectMenu
+		/// </summary>
+		/// <param name="label">Label of the group</param>
+		/// <param name="isDisabled">
+		/// Whether the group (and all it's child options) are disabled
+		/// Note: I'm not sure if the jQuery UI select-menu supports this however
+		/// </param>
+		/// <returns>SelectMenuItems for chainability</returns>
+		public SelectMenuItems AddGroup(string label, bool isDisabled = false) {
+			SelectMenuOptGroup optGroup = new SelectMenuOptGroup(this.Parent)
+				.SetLabel(label)
+			;
+			if (isDisabled) {
+				optGroup.SetDisabled();
+			}
+			_SelectMenuItems.Add(optGroup);
+			return optGroup.Children;
+		}
+
+		/// <summary>
+		/// Stipulates that all options have been added for this OptGroup.
+		/// Control is returned to the SelectMenu control to allow further items
+		/// (or further OptGroups to be defined).
+		/// </summary>
+		/// <returns></returns>
+		public SelectMenuItems FinishGroup() {
+			return this.Parent.Parent.Children;
 		}
 
 		/// <summary>
@@ -125,8 +146,13 @@
 		/// This allows an Icon to be added for instance.
 		/// </summary>
 		/// <returns>Last added MenuItem</returns>
-		public SelectMenuItem Configure() {
-			return _SelectMenuItems.LastOrDefault();
+		public SelectMenuItem ConfigureItem() {
+			var lastAddedItem = _SelectMenuItems.LastOrDefault();
+			if (lastAddedItem is SelectMenuItem) {
+				return (SelectMenuItem)lastAddedItem;
+			} else {
+				throw new ArgumentException("ConfigureItem can only be used when adding items, not optGroup.");
+			}
 		}
 
 		/// <summary>
@@ -134,7 +160,7 @@
 		/// defining the menu items" and returns the fluent API back to the menu.
 		/// </summary>
 		/// <returns>Menu object to continue chaining</returns>
-		public jSelectMenu.SelectMenu Finish() {			
+		public jSelectMenu.SelectMenu Finish() {
 			return this.Parent.SelectMenu;
 		}
 

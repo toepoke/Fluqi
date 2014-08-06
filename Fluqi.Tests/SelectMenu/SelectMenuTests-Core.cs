@@ -49,7 +49,7 @@ namespace Fluqi.Tests
 				.WithCss("select-extra-css")
 				.Items()
 					.Add("Item 1", "1")
-						.Configure()
+						.ConfigureItem()
 							.WithCss("option-extra-css")
 						.Finish()
 					.Finish()
@@ -76,7 +76,7 @@ namespace Fluqi.Tests
 				.WithAttribute("name", "select-name")
 				.Items()
 					.Add("Item 1", "1")
-						.Configure()
+						.ConfigureItem()
 							.WithAttribute("data-class", "podcast")
 						.Finish()
 					.Finish()
@@ -103,7 +103,7 @@ namespace Fluqi.Tests
 				.WithAttribute("name", "select-name")
 				.Items()
 					.Add("Item 1", "1")
-						.Configure()
+						.ConfigureItem()
 							.WithAttribute("data-style", "background-image: url('http://gravatar.com/avatar/xyz?a=b&x=y')")
 						.Finish()
 					.Finish()
@@ -280,10 +280,51 @@ namespace Fluqi.Tests
 		  var resp = new MockWriter();
 		  SelectMenu selectMenu = TestHelper.SetupSimpleSelectMenuObject(resp);
 
+			selectMenu
+			  .Items()
+			    .Add("Item 1", "1")
+						.ConfigureItem()
+							.SetSelected(true)
+						.Finish()
+			    .Finish()
+			  .Rendering
+			    .Compress()
+			  .Finish()
+			;
+
+		  TestHelper.ForceRender(selectMenu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<select id=\"mySelectMenu\">" + 
+		      "<option selected=\"selected\" value=\"1\">Item 1</option>" + 
+		    "</select>";
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Add_With_OptGroup_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  SelectMenu selectMenu = TestHelper.SetupSimpleSelectMenuObject(resp);
+
 		  // only testing raw output
 			selectMenu
 				.Items()
 					.Add("Item 1", "1", isSelected: true)
+					.AddGroup("2", true)
+						.Add("2.1")
+						.Add("2.2")
+						.FinishGroup()
+					.AddGroup("3")
+						.Add("Section 3, 1", "3.1")
+						.Add("Section 3, 2", "3.2")
+						.Add("Section 3, 3", "3.3")
+						.FinishGroup()					
 					.Finish()
 				.Rendering
 					.Compress()
@@ -299,6 +340,15 @@ namespace Fluqi.Tests
 		  string expected = 
 		    "<select id=\"mySelectMenu\">" + 
 		      "<option selected=\"selected\" value=\"1\">Item 1</option>" + 
+					"<optgroup label=\"2\" disabled=\"disabled\">" + 
+						"<option>2.1</option>" + 
+						"<option>2.2</option>" + 
+					"</optgroup>" + 
+					"<optgroup label=\"3\">" +
+						"<option value=\"3.1\">Section 3, 1</option>" +
+						"<option value=\"3.2\">Section 3, 2</option>" +
+						"<option value=\"3.3\">Section 3, 3</option>" +
+					"</optgroup>" +
 		    "</select>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
@@ -320,7 +370,7 @@ namespace Fluqi.Tests
 			selectMenu
 				.Items()
 					.Add(options)
-						.Configure()
+						.ConfigureItem()
 							// Test selected works too => last one should win
 							.SetSelected(true)
 						.Finish()
@@ -394,7 +444,7 @@ namespace Fluqi.Tests
 			selectMenu
 				.Items()
 					.Add("Item 1", "1")
-						.Configure()
+						.ConfigureItem()
 							.SetTitle("Item X")  // should override "Item 1"
 							.SetValue(99)        // should override "99"
 							.SetSelected(true)

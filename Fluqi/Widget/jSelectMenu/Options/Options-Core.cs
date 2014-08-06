@@ -23,7 +23,6 @@ namespace Fluqi.Widget.jSelectMenu
 #pragma warning disable 1591
 		public const bool DEFAULT_DISABLED = false;
 		public const string DEFAULT_ICONS = "ui-icon-triangle-1-s";
-		public const string DEFAULT_CONTAINER_TAG = "select";
 #pragma warning restore 1591
 
 		/// <summary>
@@ -74,7 +73,6 @@ namespace Fluqi.Widget.jSelectMenu
 		/// defaults as documented by jQuery UI library
 		/// </summary>
 		protected void Reset() {
-			this.SelectTag = DEFAULT_CONTAINER_TAG;
 			this.AppendTo = null;
 			this.Disabled = false;
 			this.Icons = DEFAULT_ICONS;
