@@ -27,7 +27,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Remove the datepicker functionality completely. This will return the element back to its pre-init state.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-destroy for details</remarks>
 		public void Destroy() {
 			this.RenderMethodCall("destroy");
 		}	
@@ -52,7 +51,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns the .ui-datepicker element.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-widget for details</remarks>
 		public void Widget() {
 			this.RenderMethodCall("widget");
 		}	
@@ -62,7 +60,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// Open a datepicker in a "dialog" box.
 		/// </summary>
 		/// <param name="date">Initial date for the date picker as Date.</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-dialog for details</remarks>
 		public void Dialog(DateTime date) {
 			this.Dialog(date, "", null, null, null);
 		}
@@ -72,7 +69,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// Open a datepicker in a "dialog" box.
 		/// </summary>
 		/// <param name="date">Initial date for the date picker as a string in the current date format.</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-dialog for details</remarks>
 		public void Dialog(string date) {
 			this.Dialog(date.InSingleQuotes(), "", null, null, null);
 		}
@@ -86,7 +82,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// A callback function when a date is selected. 
 		/// The function receives the date text and date picker instance as parameters.
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-dialog for details</remarks>
 		public void Dialog(DateTime date, string onSelect) {
 			this.Dialog(date, onSelect, null, null, null);
 		}
@@ -100,7 +95,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// A callback function when a date is selected. 
 		/// The function receives the date text and date picker instance as parameters.
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-dialog for details</remarks>
 		public void Dialog(string date, string onSelect) {
 			this.Dialog(date.InSingleQuotes(), onSelect, null, null, null);
 		}
@@ -115,7 +109,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// The function receives the date text and date picker instance as parameters.
 		/// </param>
 		/// <param name="settings">The new settings for the date picker.</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-dialog for details</remarks>
 		public void Dialog(DateTime date, string onSelect, Options settings) {
 			this.Dialog(date, onSelect, null, null, settings);
 		}
@@ -130,7 +123,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// The function receives the date text and date picker instance as parameters.
 		/// </param>
 		/// <param name="settings">The new settings for the date picker.</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-dialog for details</remarks>
 		public void Dialog(string date, string onSelect, Options settings) {
 			this.Dialog(date.InSingleQuotes(), onSelect, null, null, settings);
 		}
@@ -144,7 +136,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <param name="leftPosition">The position of the left of the dialog</param>
 		/// <param name="topPosition">The position of the top/left of the dialog</param>
 		/// <param name="settings">The new settings for the date picker.</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-dialog for details</remarks>
 		public void Dialog(DateTime date, string onSelect, int? leftPosition, int? topPosition, Options settings) {
 			this.DialogBuilder(date.JsDate(), onSelect, leftPosition, topPosition, settings);			
 		}
@@ -161,7 +152,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <param name="leftPosition">The position of the left of the dialog</param>
 		/// <param name="topPosition">The position of the top/left of the dialog</param>
 		/// <param name="settings">The new settings for the date picker.</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-dialog for details</remarks>
 		public void Dialog(string date, string onSelect, int? leftPosition, int? topPosition, Options settings) {
 			this.DialogBuilder(date.InSingleQuotes(), onSelect, leftPosition, topPosition, settings);
 		}
@@ -170,7 +160,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Determines if the datepicker is disabled
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-isDisabled for details</remarks>
 		public void IsDisabled() {
 			this.RenderMethodCall("isDisabled");
 		}	
@@ -179,7 +168,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Close a previously opened date picker.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-hide for details</remarks>
 		public void Hide() {
 			this.RenderMethodCall("hide");
 		}	
@@ -188,7 +176,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Call up a previously attached date picker.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-show for details</remarks>
 		public void Show() {
 			this.RenderMethodCall("show");
 		}
@@ -197,7 +184,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Redraw a date picker, after having made some external modifications.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-refresh for details</remarks>
 		public void Refresh() {
 			this.RenderMethodCall("refresh");
 		}	
@@ -206,7 +192,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns the current date for the datepicker or null if no date has been selected.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-getDate for details</remarks>
 		public void GetDate() {
 			this.RenderMethodCall("getDate");
 		}	
@@ -216,7 +201,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// Sets the current date for the datepicker. The new date is a .NET Date object 
 		/// which is converted the JavaScript equivalent (using the jQuery parseDate helper function). 
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#method-setDate for details</remarks>
 		public void SetDate(DateTime dt) {
 			this.RenderMethodCall("setDate", dt.JsDate());
 		}	

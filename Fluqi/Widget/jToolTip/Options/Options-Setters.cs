@@ -20,7 +20,6 @@ namespace Fluqi.Widget.jToolTip
 		/// <summary>
 		/// Sets the tooltip function to use
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-content for details.</remarks>
 		public Options SetContentByFunction(string content) {
 			this.Content = content;
 			return this;
@@ -29,7 +28,6 @@ namespace Fluqi.Widget.jToolTip
 		/// <summary>
 		/// Sets the tooltip to use
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-content for details.</remarks>
 		public Options SetContentByString(string content) {
 			this.Content = content.InDoubleQuotes();
 			return this;
@@ -39,7 +37,6 @@ namespace Fluqi.Widget.jToolTip
 		/// <summary>
 		/// Disables the tooltip.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-disabled for details</remarks>
 		public Options SetDisabled(bool disabled) {
 		  this.Disabled = disabled;
 		  return this;
@@ -51,7 +48,6 @@ namespace Fluqi.Widget.jToolTip
 		/// or if you need a different selector for event delegation.
 		/// When changing this option, you likely need to also change the content option.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-items for details.</remarks>
 		public Options SetItems(params string[] selectors) {
 			if (selectors != null && selectors.Any()) {
 				this.Items = string.Join(", ", selectors );
@@ -67,7 +63,6 @@ namespace Fluqi.Widget.jToolTip
 		/// or if you need a different selector for event delegation.
 		/// When changing this option, you likely need to also change the content option.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-items for details.</remarks>
 		public Options SetItemsObject(string objSelector) {
 			this.Items = objSelector;
 			return this;
@@ -77,7 +72,6 @@ namespace Fluqi.Widget.jToolTip
 		/// A class to add to the widget, can be used to display various tooltip types, like warnings or errors.
 		/// This may get replaced by the classes option.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-tooltipClass for details</remarks>
 		public Options SetToolTipClass(string cssClass) {
 			this.ToolTipClass = cssClass;
 			return this;
@@ -86,7 +80,6 @@ namespace Fluqi.Widget.jToolTip
 		/// <summary>
 		/// Whether the tooltip should track (follow) the mouse.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-track for details</remarks>
 		public Options SetTrack(bool track) {
 			this.Track = track;
 			return this;

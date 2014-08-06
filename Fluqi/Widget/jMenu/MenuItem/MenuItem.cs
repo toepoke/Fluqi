@@ -243,7 +243,6 @@ namespace Fluqi.Widget.jMenuItem {
 
 			sb.AppendTabsFormat("<{0}", this.Tag);
 
-			// ToDo: REFACTOR THIS!
 			if (this.IsDivider) {
 				if (renderCss)
 					this.AddCssClass("ui-widget-content ui-menu-divider");

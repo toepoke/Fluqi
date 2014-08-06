@@ -1,6 +1,4 @@
-﻿// TODO: selected attribute support
-// TODO: change names of test files
-namespace Fluqi.Widget.jSelectMenuItem {
+﻿namespace Fluqi.Widget.jSelectMenuItem {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;

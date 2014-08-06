@@ -23,7 +23,6 @@ namespace Fluqi.Widget.jToolTip
 		/// <summary>
 		/// Triggered when a tooltip is closed, triggered on focusout or mouseleave.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#event-close for details</remarks>
 		public Events SetCloseEvent(string closeEvent) {
 		  this.CloseEvent = closeEvent;
 		  return this;
@@ -32,7 +31,6 @@ namespace Fluqi.Widget.jToolTip
 		/// <summary>
 		/// This event is triggered when tooltip is created.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#event-create for details</remarks>
 		public Events SetCreateEvent(string createEvent) {
 		  this.CreateEvent = createEvent;
 		  return this;
@@ -42,7 +40,6 @@ namespace Fluqi.Widget.jToolTip
 		/// <summary>
 		/// Triggered when a tooltip is shown, triggered on focusin or mouseover.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#event-open for details</remarks>
 		public Events SetOpenEvent(string openEvent) {
 		  this.OpenEvent = openEvent;
 		  return this;

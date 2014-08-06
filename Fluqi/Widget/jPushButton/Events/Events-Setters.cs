@@ -23,7 +23,6 @@ namespace Fluqi.Widget.jPushButton
 		/// This event is triggered when Button is created.
 		/// </summary>
 		/// <returns>Events object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/button/#event-create for details</remarks>
 		public Events SetCreateEvent(string methodSource) {
 			this.CreateEvent = methodSource;
 			return this;	

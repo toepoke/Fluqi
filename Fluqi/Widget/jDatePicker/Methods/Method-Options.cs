@@ -15,7 +15,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "altField" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-altField for details</remarks>
 		public void GetAltField() {
 			this.RenderGetOptionCall("altField");
 		}
@@ -28,7 +27,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New altField setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-altField for details</remarks>
 		public void SetAltFieldJS(string newValue) {
 			this.RenderSetOptionCall("altField", newValue);
 		}
@@ -43,7 +41,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-altField for details</remarks>
 		public void SetAltField(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("altField", newValue, inDoubleQuotes);
 		}
@@ -54,7 +51,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// within this field. Leave as blank for no alternate field.
 		/// </summary>
 		/// <param name="newValue">New altField setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-altField for details</remarks>
 		public void SetAltField(string newValue) {
 			this.SetAltField(newValue, true/*doubleQuotes*/);
 		}
@@ -62,7 +58,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "altFormat" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-altFormat for details</remarks>
 		public void GetAltFormat() {
 			this.RenderGetOptionCall("altFormat");
 		}
@@ -76,7 +71,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New altFormat setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-altFormat for details</remarks>
 		public void SetAltFormatJS(string newValue) {
 			this.RenderSetOptionCall("altFormat", newValue);
 		}
@@ -88,7 +82,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// function
 		/// </summary>
 		/// <param name="newValue">New altFormat setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-altFormat for details</remarks>
 		public void SetAltFormat(string newValue) {
 			this.SetAltFormat(newValue, true/*doubleQuotes*/);
 		}
@@ -104,7 +97,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-altFormat for details</remarks>
 		public void SetAltFormat(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("altFormat", newValue.InDoubleQuotes());
 		}
@@ -112,7 +104,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "appendText" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-appendText for details</remarks>
 		public void GetAppendText() {
 			this.RenderGetOptionCall("appendText");
 		}
@@ -123,7 +114,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New appendText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-appendText for details</remarks>
 		public void SetAppendTextJS(string newValue) {
 			this.RenderSetOptionCall("appendText", newValue);
 		}
@@ -132,7 +122,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// The text to display after each date field, e.g. to show the required format.
 		/// </summary>
 		/// <param name="newValue">New appendText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-appendText for details</remarks>
 		public void SetAppendText(string newValue) {
 			this.SetAppendText(newValue, true/*doubleQuotes*/);
 		}
@@ -145,7 +134,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-appendText for details</remarks>
 		public void SetAppendText(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("appendText", newValue, inDoubleQuotes);
 		}
@@ -153,7 +141,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "autoSize" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-autoSize for details</remarks>
 		public void GetAutoSize() {
 			this.RenderGetOptionCall("autoSize");
 		}
@@ -163,7 +150,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// dates in the current dateFormat.
 		/// </summary>
 		/// <param name="newValue">New autoSize setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-autoSize for details</remarks>
 		public void SetAutoSize(bool newValue) {
 			this.RenderSetOptionCall("autoSize", newValue);
 		}
@@ -171,7 +157,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "buttonImage" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-buttonImage for details</remarks>
 		public void GetButtonImage() {
 			this.RenderGetOptionCall("buttonImage");
 		}
@@ -183,7 +168,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New buttonImage setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-buttonImage for details</remarks>
 		public void SetButtonImageJS(string newValue) {
 			this.RenderSetOptionCall("buttonImage", newValue);
 		}
@@ -197,7 +181,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-buttonImage for details</remarks>
 		public void SetButtonImage(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("buttonImage", newValue, inDoubleQuotes);
 		}
@@ -207,7 +190,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// the alt value and is not directly displayed.
 		/// </summary>
 		/// <param name="newValue">New buttonImage setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-buttonImage for details</remarks>
 		public void SetButtonImage(string newValue) {
 			this.SetButtonImage(newValue, true/*doubleQuotes*/);
 		}
@@ -215,7 +197,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "buttonImageOnly" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-buttonImageOnly for details</remarks>
 		public void GetButtonImageOnly() {
 			this.RenderGetOptionCall("buttonImageOnly");
 		}
@@ -225,7 +206,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// without it appearing on a button.
 		/// </summary>
 		/// <param name="newValue">New buttonImageOnly setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-buttonImageOnly for details</remarks>
 		public void SetButtonImageOnly(bool newValue) {
 			this.RenderSetOptionCall("buttonImageOnly", newValue);
 		}
@@ -233,7 +213,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "buttonText" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-buttonText for details</remarks>
 		public void GetButtonText() {
 			this.RenderGetOptionCall("buttonText");
 		}
@@ -245,7 +224,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New buttonText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-buttonText for details</remarks>
 		public void SetButtonTextJS(string newValue) {
 			this.RenderSetOptionCall("buttonText", newValue);
 		}
@@ -255,7 +233,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// with showOn equal to 'button' or 'both'.
 		/// </summary>
 		/// <param name="newValue">New buttonText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-buttonText for details</remarks>
 		public void SetButtonText(string newValue) {
 			this.SetButtonText(newValue, true/*doubleQuotes*/);
 		}
@@ -269,7 +246,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-buttonText for details</remarks>
 		public void SetButtonText(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("buttonText", newValue.InDoubleQuotes());
 		}
@@ -277,7 +253,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "calculateWeek" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-calculateWeek for details</remarks>
 		public void GetCalculateWeek() {
 			this.RenderGetOptionCall("calculateWeek");
 		}
@@ -291,7 +266,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New calculateWeek setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-calculateWeek for details</remarks>
 		public void SetCalculateWeekJS(string newValue) {
 			this.RenderSetOptionCall("calculateWeek", newValue);
 		}
@@ -305,7 +279,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New calculateWeek setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-calculateWeek for details</remarks>
 		public void SetCalculateWeek(string newValue) {
 			// It's not appropriate to have a quoted version of the CalculateWeek, so this
 			// entry point is merely to be consistent from a method signature perspective.
@@ -315,7 +288,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "changeMonth" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-changeMonth for details</remarks>
 		public void GetChangeMonth() {
 			this.RenderGetOptionCall("changeMonth");
 		}
@@ -325,7 +297,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// You can enable this feature by setting the attribute to true.
 		/// </summary>
 		/// <param name="newValue">New changeMonth setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-changeMonth for details</remarks>
 		public void SetChangeMonth(bool newValue) {
 			this.RenderSetOptionCall("changeMonth", newValue);
 		}
@@ -333,7 +304,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "changeYear" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-changeYear for details</remarks>
 		public void GetChangeYear() {
 			this.RenderGetOptionCall("changeYear");
 		}
@@ -345,7 +315,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// for selection.
 		/// </summary>
 		/// <param name="newValue">New changeYear setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-changeYear for details</remarks>
 		public void SetChangeYear(bool newValue) {
 			this.RenderSetOptionCall("changeYear", newValue);
 		}
@@ -353,7 +322,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "closeText" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-closeText for details</remarks>
 		public void GetCloseText() {
 			this.RenderGetOptionCall("closeText");
 		}
@@ -366,7 +334,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New closeText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-closeText for details</remarks>
 		public void SetCloseTextJS(string newValue) {
 			this.RenderSetOptionCall("closeText", newValue);
 		}
@@ -377,7 +344,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// this button.
 		/// </summary>
 		/// <param name="newValue">New closeText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-closeText for details</remarks>
 		public void SetCloseText(string newValue) {
 			this.SetCloseText(newValue, true/*doubleQuotes*/);
 		}
@@ -392,7 +358,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-closeText for details</remarks>
 		public void SetCloseText(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("closeText", newValue, inDoubleQuotes);
 		}
@@ -400,7 +365,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "constraintInput" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-constraintInput for details</remarks>
 		public void GetConstrainInput() {
 			this.RenderGetOptionCall("constrainInput");
 		}
@@ -410,7 +374,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// allowed by the current dateFormat.
 		/// </summary>
 		/// <param name="newValue">New constraintInput setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-constraintInput for details</remarks>
 		public void SetConstrainInput(bool newValue) {
 			this.RenderSetOptionCall("constrainInput", newValue);
 		}
@@ -418,7 +381,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "currentText" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-currentText for details</remarks>
 		public void GetCurrentText() {
 			this.RenderGetOptionCall("currentText");
 		}
@@ -431,7 +393,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New currentText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-currentText for details</remarks>
 		public void SetCurrentTextJS(string newValue) {
 			this.RenderSetOptionCall("currentText", newValue);
 		}
@@ -442,7 +403,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// display this button.
 		/// </summary>
 		/// <param name="newValue">New currentText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-currentText for details</remarks>
 		public void SetCurrentText(string newValue) {
 			this.SetCurrentText(newValue, true/*doubleQuotes*/);
 		}
@@ -457,7 +417,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-currentText for details</remarks>
 		public void SetCurrentText(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("currentText", newValue, inDoubleQuotes);
 		}
@@ -465,7 +424,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "dateFormat" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dateFormat for details</remarks>
 		public void GetDateFormat() {
 			this.RenderGetOptionCall("dateFormat");
 		}
@@ -478,7 +436,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New dateFormat setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dateFormat for details</remarks>
 		public void SetDateFormatJS(string newValue) {
 			this.RenderSetOptionCall("dateFormat", newValue);
 		}
@@ -489,7 +446,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// see the formatDate function.
 		/// </summary>
 		/// <param name="newValue">New dateFormat setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dateFormat for details</remarks>
 		public void SetDateFormat(string newValue) {
 			this.SetDateFormat(newValue, true/*doubleQuotes*/);
 		}
@@ -504,7 +460,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dateFormat for details</remarks>
 		public void SetDateFormat(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("dateFormat", newValue, inDoubleQuotes);
 		}
@@ -512,7 +467,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "dayNames" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dayNames for details</remarks>
 		public void GetDayNames() {
 			this.RenderGetOptionCall("dayNames");
 		}
@@ -524,7 +478,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValues">New dayNames setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dayNames for details</remarks>
 		public void SetDayNames(params string[] newValues) {
 			this.SetDayNames(new List<string>(newValues));
 		}
@@ -536,7 +489,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValues">New dayNames setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dayNames for details</remarks>
 		public void SetDayNames(List<string> newValues) {
 			this.RenderSetOptionCall("dayNames", newValues.JsArray(false/*singleQuotes*/));
 		}
@@ -544,7 +496,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "dayNamesMin" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dayNamesMin for details</remarks>
 		public void GetDayNamesMin() {
 			this.RenderGetOptionCall("dayNamesMin");
 		}
@@ -555,7 +506,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValues">New dayNamesMin setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dayNamesMin for details</remarks>
 		public void SetDayNamesMin(params string[] newValues) {
 			this.SetDayNamesMin(new List<string>(newValues));
 		}
@@ -566,7 +516,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValues">New dayNamesMin setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dayNamesMin for details</remarks>
 		public void SetDayNamesMin(List<string> newValues) {
 			this.RenderSetOptionCall("dayNamesMin", newValues.JsArray(false/*singleQuotes*/));
 		}
@@ -574,7 +523,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "dayNamesShort" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dayNamesShort for details</remarks>
 		public void GetDayNamesShort() {
 			this.RenderGetOptionCall("dayNamesShort");
 		}
@@ -585,7 +533,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValues">New dayNamesShort setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dayNamesShort for details</remarks>
 		public void SetDayNamesShort(params string[] newValues) {
 			this.SetDayNamesShort(new List<string>(newValues));
 		}
@@ -596,7 +543,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValues">New dayNamesShort setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-dayNamesShort for details</remarks>
 		public void SetDayNamesShort(List<string> newValues) {
 			this.RenderSetOptionCall("dayNamesShort", newValues.JsArray(false/*singleQuotes*/));
 		}
@@ -605,7 +551,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "defaultDate" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-defaultDate for details</remarks>
 		public void GetDefaultDate() {
 			this.RenderGetOptionCall("defaultDate");
 		}
@@ -620,7 +565,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New defaultDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-defaultDate for details</remarks>
 		public void SetDefaultDateJS(string newValue) {
 			this.RenderSetOptionCall("defaultDate", newValue );
 		}
@@ -637,7 +581,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-defaultDate for details</remarks>
 		public void SetDefaultDate(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("defaultDate", newValue, inDoubleQuotes );
 		}
@@ -650,7 +593,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// 'w' for weeks, 'd' for days, e.g. '+1m +7d'), or null for today.
 		/// </summary>
 		/// <param name="newValue">New defaultDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-defaultDate for details</remarks>
 		public void SetDefaultDate(string newValue) {
 			this.SetDefaultDate(newValue, true/*doubleQuotes*/);
 		}
@@ -663,7 +605,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// 'w' for weeks, 'd' for days, e.g. '+1m +7d'), or null for today.
 		/// </summary>
 		/// <param name="newValue">New defaultDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-defaultDate for details</remarks>
 		public void SetDefaultDate(int newValue) {
 			this.RenderSetOptionCall("defaultDate", newValue.ToString() );
 		}
@@ -676,7 +617,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// 'w' for weeks, 'd' for days, e.g. '+1m +7d'), or null for today.
 		/// </summary>
 		/// <param name="newValue">New defaultDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-defaultDate for details</remarks>
 		public void SetDefaultDate(DateTime newValue) {
 			this.RenderSetOptionCall("defaultDate", newValue);
 		}
@@ -684,7 +624,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "duration" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-duration for details</remarks>
 		public void GetDuration() {
 			this.RenderGetOptionCall("duration");
 		}
@@ -694,7 +633,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// Duration in milliseconds
 		/// </summary>
 		/// <param name="newValue">Duration in milliseconds</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-duration for details</remarks>
 		public void SetDuration(int newValue) {
 			this.RenderSetOptionCall("duration", newValue.ToString() );
 		}
@@ -704,7 +642,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// constants of "slow", "normal" or "fast"
 		/// </summary>
 		/// <param name="newValue">Duration in milliseconds</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-duration for details</remarks>
 		public void SetDuration(string newValue) {
 			this.RenderSetOptionCall("duration", newValue.InDoubleQuotes() );
 		}
@@ -713,7 +650,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// Control the speed at which the datepicker appears, 
 		/// </summary>
 		/// <param name="speed">One of the three predefined speeds ("slow", "normal", "fast").</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-duration for details</remarks>
 		public void SetDuration(Core.Speed.eSpeed speed) {
 			string speedStr = Core.Speed.SpeedToString(speed);
 			this.RenderSetOptionCall("duration", speedStr.InDoubleQuotes() );
@@ -722,7 +658,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "firstDay" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-firstDay for details</remarks>
 		public void GetFirstDay() {
 			this.RenderGetOptionCall("firstDay");
 		}
@@ -732,7 +667,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValue">New firstDay setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-firstDay for details</remarks>
 		public void SetFirstDay(int newValue) {
 			this.RenderSetOptionCall("firstDay", newValue.ToString() );
 		}
@@ -740,7 +674,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "gotoCurrent" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-gotoCurrent for details</remarks>
 		public void GetGotoCurrent() {
 			this.RenderGetOptionCall("gotoCurrent");
 		}
@@ -750,7 +683,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// selected date instead of today.
 		/// </summary>
 		/// <param name="newValue">New gotoCurrent setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-gotoCurrent for details</remarks>
 		public void SetGotoCurrent(bool newValue) {
 			this.RenderSetOptionCall("gotoCurrent", newValue);
 		}
@@ -758,7 +690,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "hideIfNoPrevNext" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-hideIfNoPrevNext for details</remarks>
 		public void GetHideIfNoPrevNext() {
 			this.RenderGetOptionCall("hideIfNoPrevNext");
 		}
@@ -769,7 +700,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// attribute to true.
 		/// </summary>
 		/// <param name="newValue">New hideIfNoPrevNext setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-hideIfNoPrevNext for details</remarks>
 		public void SetHideIfNoPrevNext(bool newValue) {
 			this.RenderSetOptionCall("hideIfNoPrevNext", newValue);
 		}
@@ -777,7 +707,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "isRTL" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-isRTL for details</remarks>
 		public void GetIsRTL() {
 			this.RenderGetOptionCall("isRTL");
 		}
@@ -787,7 +716,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValue">New isRTL setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-isRTL for details</remarks>
 		public void SetIsRTL(bool newValue) {
 			this.RenderSetOptionCall("isRTL", newValue);
 		}
@@ -795,7 +723,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "maxDate" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-maxDate for details</remarks>
 		public void GetMaxDate() {
 			this.RenderGetOptionCall("maxDate");
 		}
@@ -808,7 +735,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New maxDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-maxDate for details</remarks>
 		public void SetMaxDateJS(string newValue) {
 			this.RenderSetOptionCall("maxDate", newValue);
 		}
@@ -819,7 +745,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// e.g. '+1m +1w'), or null for no limit.
 		/// </summary>
 		/// <param name="newValue">New maxDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-maxDate for details</remarks>
 		public void SetMaxDate(string newValue) {
 			if (this.AddQuotesToDate(newValue))
 				newValue = newValue.InDoubleQuotes();
@@ -831,7 +756,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// today (e.g. +7)
 		/// </summary>
 		/// <param name="newValue">New maxDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-maxDate for details</remarks>
 		public void SetMaxDate(int newValue) {
 			this.RenderSetOptionCall("maxDate", newValue.ToString());
 		}
@@ -840,7 +764,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// Set a maximum selectable date via a Date object.
 		/// </summary>
 		/// <param name="newValue">New maxDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-maxDate for details</remarks>
 		public void SetMaxDate(DateTime newValue) {
 			this.RenderSetOptionCall("maxDate", newValue);
 		}
@@ -848,7 +771,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "minDate" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-minDate for details</remarks>
 		public void GetMinDate() {
 			this.RenderGetOptionCall("minDate");
 		}
@@ -861,7 +783,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New minDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-minDate for details</remarks>
 		public void SetMinDateJS(string newValue) {
 			this.RenderSetOptionCall("minDate", newValue);
 		}
@@ -876,7 +797,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-minDate for details</remarks>
 		public void SetMinDate(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("minDate", newValue, inDoubleQuotes);
 		}
@@ -887,7 +807,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// 'd' for days, e.g. '-1y -1m'), or null for no limit.
 		/// </summary>
 		/// <param name="newValue">New minDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-minDate for details</remarks>
 		public void SetMinDate(string newValue) {
 			if (this.AddQuotesToDate(newValue))
 				newValue = newValue.InDoubleQuotes();
@@ -898,7 +817,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// Set a minimum selectable date via a Date object.
 		/// </summary>
 		/// <param name="newValue">New minDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-minDate for details</remarks>
 		public void SetMinDate(DateTime newValue) {
 			this.RenderSetOptionCall("minDate", newValue);
 		}
@@ -908,7 +826,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (e.g. +7).
 		/// </summary>
 		/// <param name="newValue">New minDate setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-minDate for details</remarks>
 		public void SetMinDate(int newValue) {
 			this.RenderSetOptionCall("minDate", newValue.ToString());
 		}
@@ -916,7 +833,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "monthNames" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-monthNames for details</remarks>
 		public void GetMonthNames() {
 			this.RenderGetOptionCall("monthNames");
 		}
@@ -926,7 +842,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValues">New monthNames setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-monthNames for details</remarks>
 		public void SetMonthNames(List<string> newValues) {
 			this.RenderSetOptionCall("monthNames", newValues.JsArray(false/*singleQuotes*/));
 		}
@@ -936,7 +851,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValues">New monthNames setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-monthNames for details</remarks>
 		public void SetMonthNames(params string[] newValues) {
 			this.SetMonthNames(new List<string>(newValues));
 		}
@@ -944,7 +858,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "monthNamesShort" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-monthNamesShort for details</remarks>
 		public void GetMonthNamesShort() {
 			this.RenderGetOptionCall("monthNamesShort");
 		}
@@ -955,7 +868,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValues">New monthNamesShort setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-monthNamesShort for details</remarks>
 		public void SetMonthNamesShort(params string[] newValues) {
 			this.SetMonthNamesShort(new List<string>(newValues));
 		}
@@ -966,7 +878,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValues">New monthNamesShort setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-monthNamesShort for details</remarks>
 		public void SetMonthNamesShort(List<string> newValues) {
 			this.RenderSetOptionCall("monthNamesShort", newValues.JsArray(false/*singleQuotes*/));
 		}
@@ -974,7 +885,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "navigationAsDateFormat" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-navigationAsDateFormat for details</remarks>
 		public void GetNavigationAsDateFormat() {
 			this.RenderGetOptionCall("navigationAsDateFormat");
 		}
@@ -985,7 +895,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// target month names for example
 		/// </summary>
 		/// <param name="newValue">New navigationAsDateFormat setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-navigationAsDateFormat for details</remarks>
 		public void SetNavigationAsDateFormat(bool newValue) {
 			this.RenderSetOptionCall("navigationAsDateFormat", newValue);
 		}
@@ -993,7 +902,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "nextText" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-nextText for details</remarks>
 		public void GetNextText() {
 			this.RenderGetOptionCall("nextText");
 		}
@@ -1006,7 +914,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New nextText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-nextText for details</remarks>
 		public void SetNextTextJS(string newValue) {
 			this.RenderSetOptionCall("nextText", newValue);
 		}
@@ -1021,7 +928,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-nextText for details</remarks>
 		public void SetNextText(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("nextText", newValue, inDoubleQuotes);
 		}
@@ -1032,7 +938,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// this value is replaced by an icon.
 		/// </summary>
 		/// <param name="newValue">New nextText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-nextText for details</remarks>
 		public void SetNextText(string newValue) {
 			this.SetNextText(newValue, true/*doubleQuotes*/);
 		}
@@ -1040,7 +945,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "numberOfMonths" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-numberOfMonths for details</remarks>
 		public void GetNumberOfMonths() {
 			this.RenderGetOptionCall("numberOfMonths");
 		}
@@ -1050,7 +954,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// or can be a two-element array to define the number of rows and columns to display
 		/// </summary>
 		/// <param name="newValue">New numberOfMonths setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-numberOfMonths for details</remarks>
 		public void SetNumberOfMonths(int newValue) {
 			this.RenderSetOptionCall("numberOfMonths", newValue.ToString());
 		}
@@ -1060,7 +963,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// </summary>
 		/// <param name="numRows">Number of rows</param>
 		/// <param name="numCols">Number of columns</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-numberOfMonths for details</remarks>
 		public void SetNumberOfMonths(int numRows, int numCols) {
 			List<int> values = new List<int>() { numRows, numCols };
 			this.RenderSetOptionCall("numberOfMonths", values.JsArray());
@@ -1069,7 +971,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "prevText" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-prevText for details</remarks>
 		public void GetPrevText() {
 			this.RenderGetOptionCall("prevText");
 		}
@@ -1082,7 +983,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New prevText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-prevText for details</remarks>
 		public void SetPrevTextJS(string newValue) {
 			this.RenderSetOptionCall("prevText", newValue);
 		}
@@ -1097,7 +997,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-prevText for details</remarks>
 		public void SetPrevText(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("prevText", newValue, inDoubleQuotes);
 		}
@@ -1108,7 +1007,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// ThemeRoller styling, this value is replaced by an icon.
 		/// </summary>
 		/// <param name="newValue">New prevText setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-prevText for details</remarks>
 		public void SetPrevText(string newValue) {
 			this.SetPrevText(newValue, true/*doubleQuotes*/);
 		}
@@ -1116,7 +1014,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "selectOtherMonths" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-selectOtherMonths for details</remarks>
 		public void GetSelectOtherMonths() {
 			this.RenderGetOptionCall("selectOtherMonths");
 		}
@@ -1126,7 +1023,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// are selectable. This only applies if showOtherMonths is also true
 		/// </summary>
 		/// <param name="newValue">New selectOtherMonths setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-selectOtherMonths for details</remarks>
 		public void SetSelectOtherMonths(bool newValue) {
 			this.RenderSetOptionCall("selectOtherMonths", newValue);
 		}
@@ -1134,7 +1030,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "shortYearCutoff" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-shortYearCutoff for details</remarks>
 		public void GetShortYearCutoff() {
 			this.RenderGetOptionCall("shortYearCutoff");
 		}
@@ -1151,7 +1046,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New shortYearCutoff setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-shortYearCutoff for details</remarks>
 		public void SetShortYearCutoffJS(string newValue) {
 			this.RenderSetOptionCall("shortYearCutoff", newValue);
 		}
@@ -1170,7 +1064,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-shortYearCutoff for details</remarks>
 		public void SetShortYearCutoff(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("shortYearCutoff", newValue, inDoubleQuotes);
 		}
@@ -1185,7 +1078,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// the current century, while those greater than it are deemed to be in the previous century.
 		/// </summary>
 		/// <param name="newValue">New shortYearCutoff setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-shortYearCutoff for details</remarks>
 		public void SetShortYearCutoff(string newValue) {
 			this.SetShortYearCutoff(newValue, true/*doubleQuotes*/);
 		}
@@ -1200,7 +1092,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// the current century, while those greater than it are deemed to be in the previous century.
 		/// </summary>
 		/// <param name="newValue">New shortYearCutoff setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-shortYearCutoff for details</remarks>
 		public void SetShortYearCutoff(int newValue) {
 			this.RenderSetOptionCall("shortYearCutoff", newValue.ToString() );
 		}
@@ -1208,7 +1099,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "showAnim" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showAnim for details</remarks>
 		public void GetShowAnim() {
 			this.RenderGetOptionCall("showAnim");
 		}
@@ -1221,7 +1111,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New showAnim setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showAnim for details</remarks>
 		public void SetShowAnimJS(string newValue) {
 			this.RenderSetOptionCall("showAnim", newValue);
 		}
@@ -1236,7 +1125,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showAnim for details</remarks>
 		public void SetShowAnim(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("showAnim", newValue, inDoubleQuotes);
 		}
@@ -1247,7 +1135,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// or '' for no animation
 		/// </summary>
 		/// <param name="newValue">New showAnim setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showAnim for details</remarks>
 		public void SetShowAnim(string newValue) {
 			this.SetShowAnim(newValue, true/*doubleQuotes*/);
 		}
@@ -1258,7 +1145,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// or '' for no animation
 		/// </summary>
 		/// <param name="animation">New showAnim setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showAnim for details</remarks>
 		public void SetShowAnim(Core.Animation.eAnimation animation) {
 			this.SetShowAnim(Core.Animation.AnimationToString(animation));
 		}
@@ -1266,7 +1152,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "showButtonPanel" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showButtonPanel for details</remarks>
 		public void GetShowButtonPanel() {
 			this.RenderGetOptionCall("showButtonPanel");
 		}
@@ -1275,7 +1160,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// Whether to show the button panel.
 		/// </summary>
 		/// <param name="newValue">New showButtonPanel setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showButtonPanel for details</remarks>
 		public void SetShowButtonPanel(bool newValue) {
 			this.RenderSetOptionCall("showButtonPanel", newValue);
 		}
@@ -1283,7 +1167,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "showCurrentAtPos" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showCurrentAtPos for details</remarks>
 		public void GetShowCurrentAtPos() {
 			this.RenderGetOptionCall("showCurrentAtPos");
 		}
@@ -1293,7 +1176,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// starting from 0 at the top/left
 		/// </summary>
 		/// <param name="newValue">New showCurrentAtPos setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showCurrentAtPos for details</remarks>
 		public void SetShowCurrentAtPos(int newValue) {
 			this.RenderSetOptionCall("showCurrentAtPos", newValue.ToString());
 		}
@@ -1301,7 +1183,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "showMonthAfterYear" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showMonthAfterYear for details</remarks>
 		public void GetShowMonthAfterYear() {
 			this.RenderGetOptionCall("showMonthAfterYear");
 		}
@@ -1311,7 +1192,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValue">New showMonthAfterYear setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showMonthAfterYear for details</remarks>
 		public void SetShowMonthAfterYear(bool newValue) {
 			this.RenderSetOptionCall("showMonthAfterYear", newValue);
 		}
@@ -1319,7 +1199,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "showOn" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showOn for details</remarks>
 		public void GetShowOn() {
 			this.RenderGetOptionCall("showOn");
 		}
@@ -1327,7 +1206,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Have the datepicker appear automatically when the field receives focus 
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showOn for details</remarks>
 		public void SetShowOnFocus() {
 			this.RenderSetOptionCall("showOn", "focus".InDoubleQuotes());
 		}
@@ -1336,7 +1214,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// Have the datepicker appear automatically when a button is 
 		/// clicked.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showOn for details</remarks>
 		public void SetShowOnButton() {
 			this.RenderSetOptionCall("showOn", "button".InDoubleQuotes());
 		}
@@ -1345,7 +1222,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// Have the datepicker appear automatically when the field 
 		/// receives focus or when a button is clicked ('button').
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showOn for details</remarks>
 		public void SetShowOnFocusOrButton() {
 			this.RenderSetOptionCall("showOn", "both".InDoubleQuotes());
 		}
@@ -1362,7 +1238,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// end of the current month. To make these days selectable use selectOtherMonths.
 		/// </summary>
 		/// <param name="newValue">New showOtherMonths setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showOtherMonths for details</remarks>
 		public void SetShowOtherMonths(bool newValue) {
 			this.RenderSetOptionCall("showOtherMonths", newValue);
 		}
@@ -1371,7 +1246,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// If using one of the jQuery UI effects for showAnim, you can provide additional settings 
 		/// for that animation via this option.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showOptions for details</remarks>
 		public void GetShowOptions() {
 			this.RenderGetOptionCall("showOptions");
 		}
@@ -1381,7 +1255,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// for that animation via this option.
 		/// </summary>
 		/// <param name="newValue">New showOptions setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showOptions for details</remarks>
 		public void SetShowOptions(string newValue) {
 			this.RenderSetOptionCall("showOptions", newValue);
 		}
@@ -1389,7 +1262,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "showWeek" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showWeek for details</remarks>
 		public void GetShowWeek() {
 			this.RenderGetOptionCall("showWeek");
 		}
@@ -1400,7 +1272,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// You may also want to change the firstDay option.
 		/// </summary>
 		/// <param name="newValue">New showWeek setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-showWeek for details</remarks>
 		public void SetShowWeek(bool newValue) {
 			this.RenderSetOptionCall("showWeek", newValue);
 		}
@@ -1408,7 +1279,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "stepMonths" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-stepMonths for details</remarks>
 		public void GetStepMonths() {
 			this.RenderGetOptionCall("stepMonths");
 		}
@@ -1417,7 +1287,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// Set how many months to move when clicking the Previous/Next links
 		/// </summary>
 		/// <param name="newValue">New stepMonths setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-stepMonths for details</remarks>
 		public void SetStepMonths(int newValue) {
 			this.RenderSetOptionCall("stepMonths", newValue.ToString());
 		}
@@ -1426,7 +1295,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "weekHeader" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-weekHeader for details</remarks>
 		public void GetWeekHeader() {
 			this.RenderGetOptionCall("weekHeader");
 		}
@@ -1438,7 +1306,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New weekHeader setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-weekHeader for details</remarks>
 		public void SetWeekHeaderJS(string newValue) {
 			this.RenderSetOptionCall("weekHeader", newValue);
 		}
@@ -1452,7 +1319,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-weekHeader for details</remarks>
 		public void SetWeekHeader(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("weekHeader", newValue, inDoubleQuotes);
 		}
@@ -1462,7 +1328,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes. Use showWeek to display this column.
 		/// </summary>
 		/// <param name="newValue">New weekHeader setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-weekHeader for details</remarks>
 		public void SetWeekHeader(string newValue) {
 			this.SetWeekHeader(newValue, true/*doubleQuotes*/);
 		}
@@ -1470,7 +1335,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "yearRange" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-yearRange for details</remarks>
 		public void GetYearRange() {
 			this.RenderGetOptionCall("yearRange");
 		}
@@ -1488,7 +1352,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New yearRange setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-yearRange for details</remarks>
 		public void SetYearRangeJS(string newValue) {
 			this.RenderSetOptionCall("yearRange", newValue);
 		}
@@ -1508,7 +1371,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-yearRange for details</remarks>
 		public void SetYearRange(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("yearRange", newValue, inDoubleQuotes);
 		}
@@ -1524,7 +1386,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// dates may be selected use the minDate and/or maxDate options.
 		/// </summary>
 		/// <param name="newValue">New yearRange setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-yearRange for details</remarks>
 		public void SetYearRange(string newValue) {
 			this.SetYearRange(newValue, true/*doubleQuotes*/);
 		}
@@ -1541,7 +1402,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// </summary>
 		/// <param name="lowerRange">Lower range for year dropdown</param>
 		/// <param name="upperRange">Upper range for year dropdown</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-yearRange for details</remarks>
 		public void SetYearRange(string lowerRange, string upperRange) {
 			string newValue = string.Format("{0}:{1}", lowerRange, upperRange);
 			this.RenderSetOptionCall("yearRange", newValue.InDoubleQuotes());
@@ -1550,7 +1410,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// <summary>
 		/// Returns [in JavaScript] the current "yearSuffix" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-yearSuffix for details</remarks>
 		public void GetYearSuffix() {
 			this.RenderGetOptionCall("yearSuffix");
 		}
@@ -1562,7 +1421,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New yearSuffix setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-yearSuffix for details</remarks>
 		public void SetYearSuffixJS(string newValue) {
 			this.RenderSetOptionCall("yearSuffix", newValue);
 		}
@@ -1576,7 +1434,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-yearSuffix for details</remarks>
 		public void SetYearSuffix(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("yearSuffix", newValue, inDoubleQuotes);
 		}
@@ -1586,7 +1443,6 @@ namespace Fluqi.Widget.jDatePicker {
 		/// This attribute is one of the regionalisation attributes.
 		/// </summary>
 		/// <param name="newValue">New yearSuffix setting</param>
-		/// <remarks>See http://api.jqueryui.com/datepicker/#option-yearSuffix for details</remarks>
 		public void SetYearSuffix(string newValue) {
 			this.SetYearSuffix(newValue, true/*doubleQuotes*/);
 		}

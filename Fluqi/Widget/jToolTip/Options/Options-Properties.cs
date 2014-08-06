@@ -51,7 +51,6 @@ namespace Fluqi.Widget.jToolTip
 		/// Note: In 1.9.0, the default value was { my: "left+15 center", at: "right center", collision: "flipfit" }, 
 		/// but this was changed to more closely match native tooltip positioning.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-position for details</remarks>
 		public PositionOptions Position { get; set; }
 
 		/// <summary>

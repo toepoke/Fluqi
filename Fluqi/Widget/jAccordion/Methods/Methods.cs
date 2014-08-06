@@ -30,7 +30,6 @@ namespace Fluqi.Widget.jAccordion {
 		/// zero-indexed number to match the position of the header to activate. 
 		/// </param>
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/accordion/#option-active for details</remarks>
 		public void Active(int panelIndex) {
 			this.RenderSetOptionCall("active", panelIndex);
 		}
@@ -38,7 +37,6 @@ namespace Fluqi.Widget.jAccordion {
 		/// <summary>
 		/// Remove the accordion functionality completely. This will return the element back to its pre-init state.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/accordion/#method-destroy for details</remarks>
 		public void Destroy() {
 			this.RenderMethodCall("destroy");
 		}	
@@ -47,7 +45,6 @@ namespace Fluqi.Widget.jAccordion {
 		/// <summary>
 		/// Disable the accordion.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/accordion/#method-disable for details</remarks>
 		public void Disable() {
 			this.RenderMethodCall("disable");
 		}	
@@ -56,7 +53,6 @@ namespace Fluqi.Widget.jAccordion {
 		/// <summary>
 		/// Enable the accordion.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/accordion/#method-enable for details</remarks>
 		public void Enable() {
 			this.RenderMethodCall("enable");
 		}	
@@ -78,7 +74,6 @@ namespace Fluqi.Widget.jAccordion {
 		/// <summary>
 		/// Returns the .ui-accordion element.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/accordion/#method-widget for details</remarks>
 		public void Widget() {
 			this.RenderMethodCall("widget");
 		}	

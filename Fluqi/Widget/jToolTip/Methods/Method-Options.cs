@@ -14,7 +14,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Returns [in JavaScript] the current "content" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-content for details</remarks>
 		public void GetContent() {
 		  this.RenderGetOptionCall("content");
 		}
@@ -22,7 +21,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// The content of the tooltip.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-culture for details.</remarks>
 		public void SetContentByString(string content) {
 			this.RenderSetOptionCall("content", content.InDoubleQuotes());
 		}
@@ -30,7 +28,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// The content of the tooltip.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-culture for details.</remarks>
 		public void SetContentByFunction(string content) {
 			this.RenderSetOptionCall("content", content);
 		}
@@ -38,7 +35,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Returns [in JavaScript] the current "disabled" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-disabled for details</remarks>
 		public void GetDisabled() {
 			this.RenderGetOptionCall("disabled");
 		}
@@ -46,7 +42,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Disables the tooltip.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-disabled for details</remarks>
 		public void SetDisabled(bool disabled) {
 			this.RenderSetOptionCall("disabled", disabled);
 		}
@@ -62,7 +57,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// Hide by Boolean: When set to false, no animation will be used and the tooltip will be hidden immediately. 
 		/// When set to true, the tooltip will fade out with the default duration and the default easing.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-hide for details.</remarks>
 		public void DisabledHideEffect() {
 			this.RenderSetOptionCall("hide", false);
 		}
@@ -70,7 +64,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Hide by Number: The tooltip will fade out with the specified duration and the default easing.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-hide for details.</remarks>
 		public void SetHide(int duration) {
 			this.RenderSetOptionCall("hide", "{{ duration: {0} }}", duration.ToString());
 		}
@@ -78,7 +71,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Hide by Number: The tooltip will fade out with the specified duration and the default easing.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-hide for details.</remarks>
 		public void SetHide(Core.Animation.eAnimation effect, Core.Ease.eEase easing, int duration) {
 			this.RenderSetOptionCall("hide", "{{ effect: \"{0}\", easing: \"{1}\", duration: {2} }}", 
 				Core.Animation.AnimationToString(effect),
@@ -90,7 +82,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Hide by Number: The tooltip will fade out with the specified duration and the default easing.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-hide for details.</remarks>
 		public void SetHide(string json) {
 			this.RenderSetOptionCall("hide", json);
 		}
@@ -106,7 +97,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// Show by Boolean: When set to false, no animation will be used and the tooltip will be hidden immediately. 
 		/// When set to true, the tooltip will fade out with the default duration and the default easing.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-show for details.</remarks>
 		public void DisabledShowEffect() {
 			this.RenderSetOptionCall("show", false);
 		}
@@ -114,7 +104,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Show by Number: The tooltip will fade out with the specified duration and the default easing.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-show for details.</remarks>
 		public void SetShow(Core.Animation.eAnimation effect, Core.Ease.eEase easing, int duration) {
 			this.RenderSetOptionCall("show", "{{ effect: \"{0}\", easing: \"{1}\", duration: {2} }}", 
 				Core.Animation.AnimationToString(effect),
@@ -126,7 +115,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Show by Number: The tooltip will fade out with the specified duration and the default easing.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-show for details.</remarks>
 		public void SetShow(int duration) {
 			this.RenderSetOptionCall("show", "{{ duration: {0} }}", duration.ToString());
 		}
@@ -134,7 +122,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Show by Object: 
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-show for details.</remarks>
 		public void SetShow(string json) {
 			this.RenderSetOptionCall("show", json);
 		}
@@ -143,7 +130,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// A selector indicating which items should show tooltips. 
 		/// Customize if you're using something other then the title attribute for the tooltip content, or if you need a different selector for event delegation.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-items for details</remarks>
 		public void GetItems() {
 			this.RenderGetOptionCall("items");
 		}
@@ -152,7 +138,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// A selector indicating which items should show tooltips. 
 		/// Customize if you're using something other then the title attribute for the tooltip content, or if you need a different selector for event delegation.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-items for details</remarks>
 		public void SetItems(params string[] items) {
 			this.RenderSetOptionCall("items", string.Join(", ", items).InDoubleQuotes() );
 		}
@@ -167,7 +152,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Tooltip class to add
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-tooltipClass for details</remarks>
 		public void SetTooltipClass(string tooltipClass) {
 			this.RenderSetOptionCall("tooltipClass", tooltipClass.InDoubleQuotes());
 		}
@@ -182,7 +166,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Whether the tooltip should track the mouse
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#option-track for details</remarks>
 		public void SetTrack(bool track) {
 			this.RenderSetOptionCall("track", track.JsBool());
 		}

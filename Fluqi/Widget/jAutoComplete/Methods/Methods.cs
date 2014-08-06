@@ -26,7 +26,6 @@ namespace Fluqi.Widget.jAutoComplete {
 		/// Close the Autocomplete menu. Useful in combination with the search method, to 
 		/// close the open menu.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#method-close for details</remarks>
 		public void Close() {
 			base.RenderMethodCall("close");
 		}	
@@ -35,7 +34,6 @@ namespace Fluqi.Widget.jAutoComplete {
 		/// <summary>
 		/// Remove the AutoComplete functionality completely. This will return the element back to its pre-init state.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#method-destroy for details</remarks>
 		public void Destroy() {
 			base.RenderMethodCall("destroy");
 		}	
@@ -44,7 +42,6 @@ namespace Fluqi.Widget.jAutoComplete {
 		/// <summary>
 		/// Disable the AutoComplete.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#method-disable for details</remarks>
 		public void Disable() {
 			base.RenderMethodCall("disable");
 		}	
@@ -53,7 +50,6 @@ namespace Fluqi.Widget.jAutoComplete {
 		/// <summary>
 		/// Enable the AutoComplete.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#method-enable for details</remarks>
 		public void Enable() {
 			base.RenderMethodCall("enable");
 		}	
@@ -68,7 +64,6 @@ namespace Fluqi.Widget.jAutoComplete {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="searchParam">Search string to use</param>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#method-search for details</remarks>
 		public void SearchJS(string searchParam) {
 			base.RenderMethodCall("search", searchParam);
 		}
@@ -80,7 +75,6 @@ namespace Fluqi.Widget.jAutoComplete {
 		/// empty string and minLength: 0 to display all items.
 		/// </summary>
 		/// <param name="searchParam">Search string to use</param>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#method-search for details</remarks>
 		public void Search(string searchParam) {
 			this.Search(searchParam, true/*doubleQuotes*/);
 		}
@@ -96,7 +90,6 @@ namespace Fluqi.Widget.jAutoComplete {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#method-search for details</remarks>
 		public void Search(string searchParam, bool inDoubleQuotes) {
 			searchParam = searchParam.InQuotes(inDoubleQuotes);
 			base.RenderMethodCall("search", searchParam);

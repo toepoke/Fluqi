@@ -39,7 +39,6 @@ namespace Fluqi.Widget.jMenu
 		/// to position against. You can refer to the jQuery UI Position utility for more details 
 		/// about the various options.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/#option-position for details</remarks>
 		public PositionOptions Position { get; set; }
 
 		/// <summary>

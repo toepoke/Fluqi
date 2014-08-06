@@ -14,7 +14,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "closeOnEscape" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-closeOnEscape for details</remarks>
 		public void GetCloseOnEscape() {
 			this.RenderGetOptionCall("closeOnEscape");
 		}
@@ -24,7 +23,6 @@ namespace Fluqi.Widget.jDialog {
 		/// presses the esacpe (ESC) key.
 		/// </summary>
 		/// <param name="newValue">New closeOnEscape setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-closeOnEscape for details</remarks>
 		public void SetCloseOnEscape(bool newValue) {
 			this.RenderSetOptionCall("closeOnEscape", newValue);
 		}
@@ -32,7 +30,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "closeText" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-closeText for details</remarks>
 		public void GetCloseText() {
 			this.RenderGetOptionCall("closeText");
 		}
@@ -44,7 +41,6 @@ namespace Fluqi.Widget.jDialog {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New closeText setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-closeText for details</remarks>
 		public void SetCloseTextJS(string newValue) {
 			this.RenderSetOptionCall("closeText", newValue);
 		}
@@ -58,7 +54,6 @@ namespace Fluqi.Widget.jDialog {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-closeText for details</remarks>
 		public void SetCloseText(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("closeText", newValue, inDoubleQuotes);
 		}
@@ -68,7 +63,6 @@ namespace Fluqi.Widget.jDialog {
 		/// Note that the close text is visibly hidden when using a standard theme.
 		/// </summary>
 		/// <param name="newValue">New closeText setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-closeText for details</remarks>
 		public void SetCloseText(string newValue) {
 			this.SetCloseText(newValue, true/*doubleQuotes*/);
 		}
@@ -76,7 +70,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "dialogClass" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-dialogClass for details</remarks>
 		public void GetDialogClass() {
 			this.RenderGetOptionCall("dialogClass");
 		}
@@ -87,7 +80,6 @@ namespace Fluqi.Widget.jDialog {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New dialogClass setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-dialogClass for details</remarks>
 		public void SetDialogClassJS(string newValue) {
 			this.RenderSetOptionCall("dialogClass", newValue);
 		}
@@ -100,7 +92,6 @@ namespace Fluqi.Widget.jDialog {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-dialogClass for details</remarks>
 		public void SetDialogClass(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("dialogClass", newValue, inDoubleQuotes);
 		}
@@ -109,7 +100,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The specified class name(s) will be added to the dialog, for additional theming.
 		/// </summary>
 		/// <param name="newValue">New dialogClass setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-dialogClass for details</remarks>
 		public void SetDialogClass(string newValue) {
 			this.SetDialogClass(newValue, true/*doubleQuotes*/);
 		}
@@ -117,7 +107,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "draggable" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-draggable for details</remarks>
 		public void GetDraggable() {
 			this.RenderGetOptionCall("draggable");
 		}
@@ -126,7 +115,6 @@ namespace Fluqi.Widget.jDialog {
 		/// If set to true, the dialog will be draggable will be draggable by the titlebar.
 		/// </summary>
 		/// <param name="newValue">New draggable setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-draggable for details</remarks>
 		public void SetDraggable(bool newValue) {
 			this.RenderSetOptionCall("draggable", newValue);
 		}
@@ -134,7 +122,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "height" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-height for details</remarks>
 		public void GetHeight() {
 			this.RenderGetOptionCall("height");
 		}
@@ -143,7 +130,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The height of the dialog, in pixels. 
 		/// </summary>
 		/// <param name="newValue">New height setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-height for details</remarks>
 		public void SetHeight(int newValue) {
 			this.RenderSetOptionCall("height", newValue.ToString());
 		}
@@ -152,7 +138,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The height of the dialog, in pixels. 
 		/// Specifying 'auto' is also supported to make the dialog adjust based on its content.		
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-height for details</remarks>
 		public void SetHeightToAuto() {
 			this.RenderSetOptionCall("height", "auto".InDoubleQuotes());
 		}
@@ -160,7 +145,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "hide" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-hide for details</remarks>
 		public void GetHideEffect() {
 			this.RenderGetOptionCall("hide");
 		}
@@ -169,7 +153,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The effect to be used when the dialog is closed.
 		/// </summary>
 		/// <param name="newValue">New hide setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-hide for details</remarks>
 		public void SetHideEffect(Core.Animation.eAnimation newValue) {
 			string animationStr = Core.Animation.AnimationToString(newValue);
 			this.RenderSetOptionCall("hide", animationStr.InDoubleQuotes() );
@@ -181,7 +164,6 @@ namespace Fluqi.Widget.jDialog {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New hide setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-hide for details</remarks>
 		public void SetHideEffectJS(string newValue) {
 			this.RenderSetOptionCall("hide", newValue );
 		}
@@ -194,7 +176,6 @@ namespace Fluqi.Widget.jDialog {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-hide for details</remarks>
 		public void SetHideEffect(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("hide", newValue, inDoubleQuotes );
 		}
@@ -203,7 +184,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The effect to be used when the dialog is closed.
 		/// </summary>
 		/// <param name="newValue">New hide setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-hide for details</remarks>
 		public void SetHideEffect(string newValue) {
 			this.SetHideEffect(newValue, true/*doubleQuotes*/);
 		}
@@ -211,7 +191,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "maxHeight" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-maxHeight for details</remarks>
 		public void GetMaxHeight() {
 			this.RenderGetOptionCall("maxHeight");
 		}
@@ -220,7 +199,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The maximum height to which the dialog can be resized, in pixels.
 		/// </summary>
 		/// <param name="newValue">New maxHeight setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-maxHeight for details</remarks>
 		public void SetMaxHeight(int newValue) {
 			this.RenderSetOptionCall("maxHeight", newValue.ToString());
 		}
@@ -228,7 +206,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "maxWidth" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-maxWidth for details</remarks>
 		public void GetMaxWidth() {
 			this.RenderGetOptionCall("maxWidth");
 		}
@@ -237,7 +214,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The maximum width to which the dialog can be resized, in pixels
 		/// </summary>
 		/// <param name="newValue">New maxWidth setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-maxWidth for details</remarks>
 		public void SetMaxWidth(int newValue) {
 			this.RenderSetOptionCall("maxWidth", newValue.ToString());
 		}
@@ -245,7 +221,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "minHeight" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-minHeight for details</remarks>
 		public void GetMinHeight() {
 			this.RenderGetOptionCall("minHeight");
 		}
@@ -254,7 +229,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The minimum height to which the dialog can be resized, in pixels.
 		/// </summary>
 		/// <param name="newValue">New minHeight setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-minHeight for details</remarks>
 		public void SetMinHeight(int newValue) {
 			this.RenderSetOptionCall("minHeight", newValue.ToString());
 		}
@@ -262,7 +236,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "minWidth" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-minWidth for details</remarks>
 		public void GetMinWidth() {
 			this.RenderGetOptionCall("minWidth");
 		}
@@ -278,7 +251,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "modal" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-modal for details</remarks>
 		public void GetModal() {
 			this.RenderGetOptionCall("modal");
 		}
@@ -289,7 +261,6 @@ namespace Fluqi.Widget.jDialog {
 		/// create an overlay below the dialog but above other page elements.
 		/// </summary>
 		/// <param name="newValue">New modal setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-modal for details</remarks>
 		public void SetModal(bool newValue) {
 			this.RenderSetOptionCall("modal", newValue);
 		}
@@ -297,7 +268,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "position" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public void GetPosition() {
 			this.RenderGetOptionCall("position");
 		}
@@ -309,7 +279,6 @@ namespace Fluqi.Widget.jDialog {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="position">New position setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public void SetPositionJS(string position) {
 			this.RenderSetOptionCall("position", position);
 		}
@@ -323,7 +292,6 @@ namespace Fluqi.Widget.jDialog {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public void SetPosition(string position, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("position", position, inDoubleQuotes);
 		}
@@ -333,7 +301,6 @@ namespace Fluqi.Widget.jDialog {
 		/// A single string representing position within viewport: 'center', 'left', 'right', 'top', 'bottom'. 
 		/// </summary>
 		/// <param name="position">New position setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public void SetPosition(string position) {
 			this.SetPosition(position, true/*doubleQuotes*/);
 		}
@@ -343,7 +310,6 @@ namespace Fluqi.Widget.jDialog {
 		/// A single string representing position within viewport: 'center', 'left', 'right', 'top', 'bottom'. 
 		/// </summary>
 		/// <param name="position">New position setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public void SetPosition(Core.Position.ePosition position) {
 			this.RenderSetOptionCall("position", Core.Position.PositionToString(position).InDoubleQuotes() );
 		}
@@ -354,7 +320,6 @@ namespace Fluqi.Widget.jDialog {
 		/// </summary>
 		/// <param name="pos1">First position setting</param>
 		/// <param name="pos2">Second position setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public void SetPosition(string pos1, string pos2) {
 			List<string> positions = new List<string>() { pos1, pos2 };
 			this.RenderSetOptionCall("position", positions.JsArray(false/*singleQuotes*/));
@@ -366,7 +331,6 @@ namespace Fluqi.Widget.jDialog {
 		/// </summary>
 		/// <param name="pos1">First position setting</param>
 		/// <param name="pos2">Second position setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public void SetPosition(Core.Position.ePosition pos1, Core.Position.ePosition pos2) {
 			this.SetPosition( Core.Position.PositionToString(pos1), Core.Position.PositionToString(pos2) );
 		}
@@ -377,7 +341,6 @@ namespace Fluqi.Widget.jDialog {
 		/// </summary>
 		/// <param name="pos1">First position setting</param>
 		/// <param name="pos2">Second position setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public void SetPosition(int pos1, int pos2) {
 			List<int> positions = new List<int>() { pos1, pos2 };
 			this.RenderSetOptionCall("position", positions.JsArray());
@@ -386,7 +349,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "reisizable" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-resizable for details</remarks>
 		public void GetResizable() {
 			this.RenderGetOptionCall("resizable");
 		}
@@ -395,7 +357,6 @@ namespace Fluqi.Widget.jDialog {
 		/// If set to true, the dialog will be resizeable.
 		/// </summary>
 		/// <param name="newValue">New reisizable setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-resizable for details</remarks>
 		public void SetResizable(bool newValue) {
 			this.RenderSetOptionCall("resizable", newValue);
 		}
@@ -403,7 +364,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "show" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-show for details</remarks>
 		public void GetShowEffect() {
 			this.RenderGetOptionCall("show");
 		}
@@ -412,7 +372,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The effect to be used when the dialog is opened.
 		/// </summary>
 		/// <param name="newValue">New show setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-show for details</remarks>
 		public void SetShowEffect(Core.Animation.eAnimation newValue) {
 			string animationStr = Core.Animation.AnimationToString(newValue);
 			this.RenderSetOptionCall("show", animationStr.InDoubleQuotes() );
@@ -424,7 +383,6 @@ namespace Fluqi.Widget.jDialog {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New show setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-show for details</remarks>
 		public void SetShowEffectJS(string newValue) {
 			this.RenderSetOptionCall("show", newValue );
 		}
@@ -445,7 +403,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The effect to be used when the dialog is opened.
 		/// </summary>
 		/// <param name="newValue">New show setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-show for details</remarks>
 		public void SetShowEffect(string newValue) {
 			this.SetShowEffect(newValue, true/*doubleQuotes*/);
 		}
@@ -453,7 +410,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "stack" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-stack for details</remarks>
 		public void GetStack() {
 			this.RenderGetOptionCall("stack");
 		}
@@ -464,7 +420,6 @@ namespace Fluqi.Widget.jDialog {
 		/// it gains focus.
 		/// </summary>
 		/// <param name="newValue">New stack setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-stack for details</remarks>
 		public void SetStack(bool newValue) {
 			this.RenderSetOptionCall("stack", newValue);
 		}
@@ -472,7 +427,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "title" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-title for details</remarks>
 		public void GetTitle() {
 			this.RenderGetOptionCall("title");
 		}
@@ -484,7 +438,6 @@ namespace Fluqi.Widget.jDialog {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="newValue">New title setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-title for details</remarks>
 		public void SetTitleJS(string newValue) {
 			this.RenderSetOptionCall("title", newValue);
 		}
@@ -498,7 +451,6 @@ namespace Fluqi.Widget.jDialog {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-title for details</remarks>
 		public void SetTitle(string newValue, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("title", newValue, inDoubleQuotes);
 		}
@@ -508,7 +460,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The title can also be specified by the title attribute on the dialog source element.
 		/// </summary>
 		/// <param name="newValue">New title setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-title for details</remarks>
 		public void SetTitle(string newValue) {
 			this.SetTitle(newValue, true/*doubleQuotes*/);
 		}
@@ -516,7 +467,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "width" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-width for details</remarks>
 		public void GetWidth() {
 			this.RenderGetOptionCall("width");
 		}
@@ -525,7 +475,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The width of the dialog, in pixels.
 		/// </summary>
 		/// <param name="newValue">New width setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-width for details</remarks>
 		public void SetWidth(int newValue) {
 			this.RenderSetOptionCall("width", newValue.ToString());
 		}
@@ -533,7 +482,6 @@ namespace Fluqi.Widget.jDialog {
 		/// <summary>
 		/// Returns [in JavaScript] the current "zIndex" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-zIndex for details</remarks>
 		public void GetZIndex() {
 			this.RenderGetOptionCall("zIndex");
 		}
@@ -542,7 +490,6 @@ namespace Fluqi.Widget.jDialog {
 		/// The starting z-index for the dialog.
 		/// </summary>
 		/// <param name="newValue">New zIndex setting</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-zIndex for details</remarks>
 		public void SetZIndex(int newValue) {
 			this.RenderSetOptionCall("zIndex", newValue.ToString());
 		}

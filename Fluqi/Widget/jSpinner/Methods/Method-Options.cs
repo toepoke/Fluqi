@@ -14,7 +14,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// <summary>
 		/// Returns [in JavaScript] the current "culture" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/spinner/#option-culture for details</remarks>
 		public void GetCulture() {
 		  this.RenderGetOptionCall("culture");
 		}
@@ -25,7 +24,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// Only relevant if the <see cref="SetNumberFormat"/> option is set. Requires Globalize to be included.
 		/// </summary>
 		/// <param name="culture"></param>
-		/// <remarks>See http://api.jqueryui.com/spinner/#option-culture for details.</remarks>
 		public void SetCulture(string culture) {
 			this.RenderSetOptionCall("culture", culture.InDoubleQuotes());
 		}
@@ -33,7 +31,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// <summary>
 		/// Returns [in JavaScript] the current "disabled" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/spinner/#option-disabled for details</remarks>
 		public void GetDisabled() {
 			this.RenderGetOptionCall("disabled");
 		}
@@ -41,7 +38,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// <summary>
 		/// Disables the spinner.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/spinner/#option-disabled for details</remarks>
 		public void SetDisabled(bool disabled) {
 			this.RenderSetOptionCall("disabled", disabled);
 		}
@@ -58,7 +54,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// </summary>
 		/// <param name="downIcon">Icon to use for the down</param>
 		/// <param name="upIcon">Icon to use for the up</param>
-		/// <remarks>See http://api.jqueryui.com/spinner/#option-icons for details.</remarks>
 		public void SetIcons(string downIcon, string upIcon) {
 			downIcon = downIcon ?? "";
 			upIcon = upIcon ?? "";
@@ -73,7 +68,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// </summary>
 		/// <param name="downIcon">Icon to use for the down</param>
 		/// <param name="upIcon">Icon to use for the up</param>
-		/// <remarks>See http://api.jqueryui.com/spinner/#option-icons for details.</remarks>
 		public void SetIcons(Core.Icons.eIconClass downIcon, Core.Icons.eIconClass upIcon) {
 			string down = Core.Icons.ByEnum(downIcon);
 			string up = Core.Icons.ByEnum(upIcon);
@@ -93,7 +87,6 @@ namespace Fluqi.Widget.jSpinner {
 		///	- When set to true, the stepping delta will increase when spun incessantly. 
 		///	- When set to false, all steps are equal (as defined by the step option).
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-incremental for details</remarks>
 		public void SetIncremental(bool inc) {
 			this.RenderSetOptionCall("incremental", inc);
 		}
@@ -103,7 +96,6 @@ namespace Fluqi.Widget.jSpinner {
 		///	- Receives one parameter: the number of spins that have occurred. 
 		///		Must return the number of steps that should occur for the current spin.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-incremental for details</remarks>
 		public void SetIncremental(string incMethod) {
 			this.RenderSetOptionCall("incremental", incMethod);
 		}
@@ -119,7 +111,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// The minimum allowed value
 		/// </summary>
 		/// <param name="value">The minimum value</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-min for details</remarks>
 		public void SetMin(int value) {
 			this.RenderSetOptionCall("min", value);
 		}
@@ -131,7 +122,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// If Globalize is included, the min option can be passed as a string which will be parsed based on the 
 		/// numberFormat and culture options; otherwise it will fall back to the native parseFloat() method.
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-min for details</remarks>
 		public void SetMin(string value) {
 			this.RenderSetOptionCall("min", value.InDoubleQuotes());
 		}
@@ -147,7 +137,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// The maximum allowed value
 		/// </summary>
 		/// <param name="value">The maximum value</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-max for details</remarks>
 		public void SetMax(int value) {
 			this.RenderSetOptionCall("max", value);
 		}
@@ -159,7 +148,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// If Globalize is included, the min option can be passed as a string which will be parsed based on the 
 		/// numberFormat and culture options; otherwise it will fall back to the native parseFloat() method.
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-max for details</remarks>
 		public void SetMax(string value) {
 			this.RenderSetOptionCall("max", value.InDoubleQuotes());
 		}
@@ -178,7 +166,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// Most common are "n" for a decimal number and "C" for a currency value. 
 		/// Also see the culture option.
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-numberFormat for details</remarks>
 		public void SetNumberFormat(string value) {
 			this.RenderSetOptionCall("numberFormat", value.InDoubleQuotes());
 		}
@@ -194,7 +181,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// The number of steps to take when paging via the pageUp/pageDown methods.
 		/// </summary>
 		/// <param name="value">New value</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-page for details</remarks>
 		public void SetPage(int value) {
 			this.RenderSetOptionCall("page", value);
 		}
@@ -211,7 +197,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// The element's step attribute is used if it exists and the option is not explicitly set.
 		/// </summary>
 		/// <param name="value">The size of the step</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-step for details</remarks>
 		public void SetStep(int value) {
 			this.RenderSetOptionCall("step", value);
 		}
@@ -224,7 +209,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// If Globalize is included, the step option can be passed as a string which will be parsed based on 
 		/// the numberFormat and culture options, otherwise it will fall back to the native parseFloat.
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-step for details</remarks>
 		public void SetStep(string value) {
 			this.RenderSetOptionCall("step", value.InDoubleQuotes());
 		}

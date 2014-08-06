@@ -32,7 +32,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Removes the ToolTip functionality completely. This will return the element back to its pre-init state.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#method-destroy for details</remarks>
 		public void Destroy() {
 		  this.RenderMethodCall("destroy");
 		}
@@ -40,7 +39,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Disables the tooltip.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#method-disable for details</remarks>
 		public void Disable() {
 		  this.RenderMethodCall("disable");
 		}	
@@ -48,7 +46,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Enable the tooltip.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#method-enable for details</remarks>
 		public void Enable() {
 		  this.RenderMethodCall("enable");
 		}	
@@ -56,7 +53,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Returns a jQuery object containing the generated wrapper.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#method-widget for details</remarks>
 		public void Widget() {
 		  this.RenderMethodCall("widget");
 		}	
@@ -64,7 +60,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Programmatically open a tooltip. This is only intended to be called for non-delegated tooltips.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#method-open for details</remarks>
 		public void Open() {
 		  this.RenderMethodCall("open");
 		}	
@@ -72,7 +67,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// <summary>
 		/// Closes a tooltip. This is only intended to be called for non-delegated tooltips.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tooltip/#method-close for details</remarks>
 		public void Close() {
 		  this.RenderMethodCall("close");
 		}	

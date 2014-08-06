@@ -35,7 +35,6 @@ namespace Fluqi.Widget.jAutoComplete
 		/// </summary>
 		/// <param name="appendTo">Element to append menu to (selector to the element, e.g. #my-element)</param>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#option-appendTo for details</remarks>
 		public Options SetAppendTo(string appendTo) {
 			this.AppendTo = appendTo;
 			return this;
@@ -47,7 +46,6 @@ namespace Fluqi.Widget.jAutoComplete
 		/// </summary>
 		/// <param name="autoFocus">Flag</param>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#option-autoFocus for details</remarks>
 		public Options SetAutoFocus(bool autoFocus) {
 			this.AutoFocus = autoFocus;
 			return this;
@@ -61,7 +59,6 @@ namespace Fluqi.Widget.jAutoComplete
 		/// </summary>
 		/// <param name="delay">Delay (in milliseconds).  By default this is 300</param>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#option-delay for details</remarks>
 		public Options SetDelay(int delay) {
 			this.Delay = delay;
 			return this;
@@ -75,7 +72,6 @@ namespace Fluqi.Widget.jAutoComplete
 		/// </summary>
 		/// <param name="minLength">Min length (default is 1)</param>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/autocomplete/#option-minLength for details</remarks>
 		public Options SetMinimumLength(int minLength) {
 			this.MinimumLength = minLength;
 			return this;

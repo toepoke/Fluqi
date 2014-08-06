@@ -24,7 +24,6 @@ namespace Fluqi.Widget.jPushButton {
 		/// <summary>
 		/// Remove the Button functionality completely. This will return the element back to its pre-init state.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/button/#method-destroy for details</remarks>
 		public void Destroy() {
 			base.RenderMethodCall("destroy");
 		}	
@@ -33,7 +32,6 @@ namespace Fluqi.Widget.jPushButton {
 		/// <summary>
 		/// Disable the Button.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/button/#method-disable for details</remarks>
 		public void Disable() {
 			base.RenderMethodCall("disable");
 		}	
@@ -42,7 +40,6 @@ namespace Fluqi.Widget.jPushButton {
 		/// <summary>
 		/// Enable the Button.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/button/#method-enable for details</remarks>
 		public void Enable() {
 			base.RenderMethodCall("enable");
 		}	
@@ -51,7 +48,6 @@ namespace Fluqi.Widget.jPushButton {
 		/// <summary>
 		/// Returns the .ui-button element.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/button/#method-widget for details</remarks>
 		public void Widget() {
 			base.RenderMethodCall("widget");
 		}	
@@ -61,7 +57,6 @@ namespace Fluqi.Widget.jPushButton {
 		/// Refreshes the visual state of the button. Useful for updating button state after the native 
 		/// element's checked or disabled state is changed programatically.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/button/#method-refresh for details</remarks>
 		public void Refresh() {
 			base.RenderMethodCall("refresh");
 		}	

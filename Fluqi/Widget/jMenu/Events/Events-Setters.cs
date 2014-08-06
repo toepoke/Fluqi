@@ -23,7 +23,6 @@ namespace Fluqi.Widget.jMenu
 		/// <summary>
 		/// Triggered when the menu loses focus.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/option-blur for details</remarks>
 		public Events SetBlurEvent(string blurEvent) {
 		  this.BlurEvent = blurEvent;
 		  return this;
@@ -32,7 +31,6 @@ namespace Fluqi.Widget.jMenu
 		/// <summary>
 		/// Triggered when the menu is created.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/option-create for details</remarks>
 		public Events SetCreateEvent(string createEvent) {
 		  this.CreateEvent = createEvent;
 		  return this;
@@ -41,7 +39,6 @@ namespace Fluqi.Widget.jMenu
 		/// <summary>
 		/// Triggered when the menu loses focus.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/option-focus for details</remarks>
 		public Events SetFocusEvent(string focusEvent) {
 		  this.FocusEvent = focusEvent;
 		  return this;
@@ -50,7 +47,6 @@ namespace Fluqi.Widget.jMenu
 		/// <summary>
 		/// Triggered when a menu item is selected.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/option-select for details</remarks>
 		public Events SetSelectEvent(string selectEvent) {
 		  this.SelectEvent = selectEvent;
 		  return this;

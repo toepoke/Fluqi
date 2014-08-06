@@ -15,7 +15,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Disables the menu if set to true.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/#option-disabled for details</remarks>
 		public void GetDisabled() {
 		  this.RenderGetOptionCall("disabled");
 		}
@@ -24,7 +23,6 @@ namespace Fluqi.Widget.jMenu {
 		/// Disables the menu if set to true.
 		/// </summary>
 		/// <param name="value"></param>
-		/// <remarks>See http://api.jqueryui.com/menu/#option-disabled for details.</remarks>
 		public void SetDisabled(bool value) {
 		  this.RenderSetOptionCall("disabled", value);
 		}
@@ -32,7 +30,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Icons to use for submenus, matching an icon defined by the jQuery UI CSS Framework.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/#option-icons for details</remarks>
 		public void GetIcons() {
 		  this.RenderGetOptionCall("icons");
 		}
@@ -41,7 +38,6 @@ namespace Fluqi.Widget.jMenu {
 		/// Icons to use for submenus, matching an icon defined by the jQuery UI CSS Framework.
 		/// </summary>
 		/// <param name="submenu"></param>
-		/// <remarks>See http://api.jqueryui.com/menu/#option-icons for details.</remarks>
 		public void SetIcons(string submenu) {
 		  this.RenderSetOptionCall("icons", "{ submenu: " + submenu.InDoubleQuotes() + "}");
 		}
@@ -50,7 +46,6 @@ namespace Fluqi.Widget.jMenu {
 		/// Icons to use for submenus, matching an icon defined by the jQuery UI CSS Framework.
 		/// </summary>
 		/// <param name="submenu"></param>
-		/// <remarks>See http://api.jqueryui.com/menu/#option-icons for details.</remarks>
 		public void SetIcons(Core.Icons.eIconClass submenu) {
 			this.SetIcons(Core.Icons.ByEnum(submenu));
 		}
@@ -58,7 +53,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Icons to use for submenus, matching an icon defined by the jQuery UI CSS Framework.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/#option-icons for details</remarks>
 		public void GetMenus() {
 		  this.RenderGetOptionCall("menus");
 		}
@@ -66,7 +60,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Selector for the elements that serve as the menu container, including sub-menus.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/option-menus for details</remarks>
 		public void SetMenus(string menus) {
 			this.RenderSetOptionCall("menus", menus.InDoubleQuotes());
 		}
@@ -74,7 +67,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Returns [in JavaScript] the current "position" setting.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/option-position for details</remarks>
 		public void GetPosition() {
 			this.RenderGetOptionCall("position");
 		}
@@ -86,7 +78,6 @@ namespace Fluqi.Widget.jMenu {
 		/// (that is when rendered, the input value will refer to a JavaScript variable for instance).
 		/// </summary>
 		/// <param name="position">New position setting</param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-position for details</remarks>
 		public void SetPositionJS(string position) {
 			this.RenderSetOptionCall("position", position);
 		}
@@ -100,7 +91,6 @@ namespace Fluqi.Widget.jMenu {
 		/// true  - double quotes (")
 		/// false - single quotes (')
 		/// </param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-position for details</remarks>
 		public void SetPosition(string position, bool inDoubleQuotes) {
 			this.RenderSetOptionCall("position", position, inDoubleQuotes);
 		}
@@ -110,7 +100,6 @@ namespace Fluqi.Widget.jMenu {
 		/// A single string representing position within viewport: 'center', 'left', 'right', 'top', 'bottom'. 
 		/// </summary>
 		/// <param name="position">New position setting</param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-position for details</remarks>
 		public void SetPosition(string position) {
 			this.SetPosition(position, true/*doubleQuotes*/);
 		}
@@ -120,7 +109,6 @@ namespace Fluqi.Widget.jMenu {
 		/// A single string representing position within viewport: 'center', 'left', 'right', 'top', 'bottom'. 
 		/// </summary>
 		/// <param name="position">New position setting</param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-position for details</remarks>
 		public void SetPosition(Core.Position.ePosition position) {
 			this.RenderSetOptionCall("position", Core.Position.PositionToString(position).InDoubleQuotes() );
 		}
@@ -131,7 +119,6 @@ namespace Fluqi.Widget.jMenu {
 		/// </summary>
 		/// <param name="pos1">First position setting</param>
 		/// <param name="pos2">Second position setting</param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-position for details</remarks>
 		public void SetPosition(string pos1, string pos2) {
 			List<string> positions = new List<string>() { pos1, pos2 };
 			this.RenderSetOptionCall("position", positions.JsArray(false/*singleQuotes*/));
@@ -143,7 +130,6 @@ namespace Fluqi.Widget.jMenu {
 		/// </summary>
 		/// <param name="pos1">First position setting</param>
 		/// <param name="pos2">Second position setting</param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-position for details</remarks>
 		public void SetPosition(Core.Position.ePosition pos1, Core.Position.ePosition pos2) {
 			this.SetPosition( Core.Position.PositionToString(pos1), Core.Position.PositionToString(pos2) );
 		}
@@ -154,7 +140,6 @@ namespace Fluqi.Widget.jMenu {
 		/// </summary>
 		/// <param name="pos1">First position setting</param>
 		/// <param name="pos2">Second position setting</param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-position for details</remarks>
 		public void SetPosition(int pos1, int pos2) {
 			List<int> positions = new List<int>() { pos1, pos2 };
 			this.RenderSetOptionCall("position", positions.JsArray());
@@ -166,7 +151,6 @@ namespace Fluqi.Widget.jMenu {
 		/// Setting the role option to "listbox" will use "option" for items. 
 		/// If set to null, no roles will be set, which is useful if the menu is being controlled by another element that is maintaining focus.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/#option-role for details</remarks>
 		public void GetRole() {
 		  this.RenderGetOptionCall("role");
 		}
@@ -178,7 +162,6 @@ namespace Fluqi.Widget.jMenu {
 		/// If set to null, no roles will be set, which is useful if the menu is being controlled by another element that is maintaining focus.
 		/// </summary>
 		/// <param name="role"></param>
-		/// <remarks>See http://api.jqueryui.com/menu/#option-role for details</remarks>
 		public void SetRole(string role) {
 			if (role.Equals("null", StringComparison.InvariantCultureIgnoreCase))
 				// no quotes

@@ -25,7 +25,6 @@ namespace Fluqi.Widget.jSlider {
 		/// <summary>
 		/// Remove the slider functionality completely. This will return the element back to its pre-init state.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/slider/#method-destroy for details</remarks>
 		public void Destroy() {
 			this.RenderMethodCall("destroy");
 		}	
@@ -33,7 +32,6 @@ namespace Fluqi.Widget.jSlider {
 		/// <summary>
 		/// Disable the slider.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/slider/#method-disable for details</remarks>
 		public void Disable() {
 			this.RenderMethodCall("disable");
 		}	
@@ -41,7 +39,6 @@ namespace Fluqi.Widget.jSlider {
 		/// <summary>
 		/// Enable the slider.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/slider/#method-enable for details</remarks>
 		public void Enable() {
 			this.RenderMethodCall("enable");
 		}	
@@ -49,7 +46,6 @@ namespace Fluqi.Widget.jSlider {
 		/// <summary>
 		/// Returns the .ui-slider element.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/slider/#method-widget for details</remarks>
 		public void Widget() {
 			this.RenderMethodCall("widget");
 		}	

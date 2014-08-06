@@ -25,7 +25,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// <summary>
 		/// Removes the spinner functionality completely. This will return the element back to its pre-init state.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/spinner/#method-destroy for details</remarks>
 		public void Destroy() {
 		  this.RenderMethodCall("destroy");
 		}
@@ -33,7 +32,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// <summary>
 		/// Disables the spinner.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/spinner/#method-disable for details</remarks>
 		public void Disable() {
 		  this.RenderMethodCall("disable");
 		}	
@@ -41,7 +39,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// <summary>
 		/// Enable the spinner.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/spinner/#method-enable for details</remarks>
 		public void Enable() {
 		  this.RenderMethodCall("enable");
 		}	
@@ -49,7 +46,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// <summary>
 		/// Returns a jQuery object containing the generated wrapper.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/spinner/#method-widget for details</remarks>
 		public void Widget() {
 		  this.RenderMethodCall("widget");
 		}	
@@ -58,7 +54,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// Decrements the value by the specified number of pages, as defined by the page option. 
 		/// Without the parameter, a single page is decremented.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/spinner/#method-pageDown for details</remarks>
 		public void PageDown(int value = 1) {
 		  this.RenderSetOptionCall("pageDown", value);
 		}	
@@ -67,7 +62,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// Decrements the value by the specified number of pages, as defined by the page option. 
 		/// Without the parameter, a single page is decremented.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/spinner/#method-pageUp for details</remarks>
 		public void PageUp(int value = 1) {
 		  this.RenderSetOptionCall("pageUp", value);
 		}	
@@ -77,7 +71,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// If the resulting value is above the max, below the min, or reuslts in a step mismatch, 
 		/// the value will be adjusted to the closest valid value.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/spinner/#method-stepDown for details</remarks>
 		public void StepDown(int value = 1) {
 		  this.RenderSetOptionCall("stepDown", value);
 		}	
@@ -87,7 +80,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// If the resulting value is above the max, below the min, or reuslts in a step mismatch, 
 		/// the value will be adjusted to the closest valid value.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/spinner/#method-pstepUp for details</remarks>
 		public void StepUp(int value = 1) {
 		  this.RenderSetOptionCall("stepUp", value);
 		}	
@@ -96,7 +88,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// Gets the current value as a number.
 		/// The value is parsed based on the numberFormat and culture options.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-value for details</remarks>
 		public void GetValue() {
 			this.RenderGetOptionCall("value");
 		}
@@ -105,7 +96,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// Sets the value
 		/// </summary>
 		/// <param name="value">The value to set</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-value for details</remarks>
 		public void SetValue(int value) {
 			this.RenderSetOptionCall("value", value);
 		}
@@ -114,7 +104,6 @@ namespace Fluqi.Widget.jSpinner {
 		/// Sets the value
 		/// </summary>
 		/// <param name="value">The value is parsed based on the numberFormat and culture options.</param>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-value for details</remarks>
 		public void SetValue(string value) {
 			this.RenderSetOptionCall("value", value.InDoubleQuotes());
 		}

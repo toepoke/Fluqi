@@ -24,7 +24,6 @@ namespace Fluqi.Widget.jProgressBar
 		/// </summary>
 		/// <param name="disable">Whether the control is disabled or not</param>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/progressbar/#option-disabled for details</remarks>
 		public Options SetDisabled(bool disable) {
 			this.Disabled = disable;
 			return this;
@@ -36,7 +35,6 @@ namespace Fluqi.Widget.jProgressBar
 		/// </summary>
 		/// <param name="value">Element to append menu to (selector to the element, e.g. #my-element)</param>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/progressbar/#option-value for details</remarks>
 		public Options SetValue(int value) {
 			this.Value = value;
 			return this;

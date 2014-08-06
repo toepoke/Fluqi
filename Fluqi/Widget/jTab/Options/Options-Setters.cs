@@ -22,7 +22,6 @@ namespace Fluqi.Widget.jTab
 		/// </param>
 		/// <returns>Options object for chainability</returns>
 		/// <remarks>Why you'd want to use this I have no idea!</remarks>
-		/// <remarks>See http://api.jqueryui.com/tabs/#option-disabled for details</remarks>
 		public Options SetDisabled(bool disabled) {
 			this.Disabled = disabled;
 			return this;
@@ -34,7 +33,6 @@ namespace Fluqi.Widget.jTab
 		/// should be disabled on initialization.
 		/// </summary>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/tabs/#option-disabled for details</remarks>
 		public Options SetDisabled(List<int> disabled) {
 			this.DisabledArray = disabled;
 			return this;
@@ -46,7 +44,6 @@ namespace Fluqi.Widget.jTab
 		/// should be disabled on initialization.
 		/// </summary>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/tabs/#option-disabled for details</remarks>
 		public Options SetDisabled(params int[] disabledTabs) {
 			this.DisabledArray = (from i in disabledTabs select i).ToList<int>();
 			return this;
@@ -58,7 +55,6 @@ namespace Fluqi.Widget.jTab
 		/// </summary>
 		/// <param name="collapsible">Flags whether collapsible is on or off</param>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/tabs/#option-collapsible for details</remarks>
 		public Options SetCollapsible(bool collapsible) {
 			this.Collapsible = collapsible;
 			return this;
@@ -70,7 +66,6 @@ namespace Fluqi.Widget.jTab
 		/// </summary>
 		/// <param name="evt">Event to use to open a tab</param>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/tabs/#option-event for details</remarks>
 		public Options SetEvent(string evt) {
 			this.Evt = evt ?? "";
 
@@ -86,7 +81,6 @@ namespace Fluqi.Widget.jTab
 		/// </summary>
 		/// <param name="browserEvent">Event to use to open a tab</param>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/tabs/#option-event for details</remarks>
 		public Options SetEvent(Core.BrowserEvent.eBrowserEvent browserEvent) {
 			return this.SetEvent( Core.BrowserEvent.BrowserEventToString(browserEvent) );
 		}
@@ -97,7 +91,6 @@ namespace Fluqi.Widget.jTab
 		/// </summary>
 		/// <param name="style">Style to use</param>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/tabs/#option-heightStyle for details</remarks>
 		public Options SetHeightStyle(Core.HeightStyle.eHeightStyle style) {
 			return this.SetHeightStyle( Core.HeightStyle.HeightStyleToString(style) );
 		}
@@ -108,7 +101,6 @@ namespace Fluqi.Widget.jTab
 		/// </summary>
 		/// <param name="style">Style to use</param>
 		/// <returns>Options object for chainability</returns>
-		/// <remarks>See http://api.jqueryui.com/tabs/#option-heightStyle for details</remarks>
 		public Options SetHeightStyle(string style) {
 			this.HeightStyle = style ?? "";
 

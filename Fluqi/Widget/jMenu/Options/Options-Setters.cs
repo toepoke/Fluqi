@@ -24,7 +24,6 @@ namespace Fluqi.Widget.jMenu
 		/// Disables the menu if set to true.
 		/// </summary>
 		/// <param name="value">If true disables the menu, enabled otherwise</param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-disabled for details</remarks>
 		public Options SetDisabled(bool value) {
 			this.Disabled = value;
 			return this;
@@ -34,7 +33,6 @@ namespace Fluqi.Widget.jMenu
 		/// Icons to use for submenus, matching an icon defined by the jQuery UI CSS Framework.
 		/// </summary>
 		/// <param name="subMenuIcon">Sub menu icon to use</param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-icons for details</remarks>
 		public Options SetIcons(Core.Icons.eIconClass subMenuIcon) {
 			return this.SetIcons( Core.Icons.ByEnum(subMenuIcon) );
 		}
@@ -43,7 +41,6 @@ namespace Fluqi.Widget.jMenu
 		/// Icons to use for submenus, matching an icon defined by the jQuery UI CSS Framework.
 		/// </summary>
 		/// <param name="subMenuIcon">Sub menu icon to use</param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-icons for details</remarks>
 		public Options SetIcons(string subMenuIcon) {
 			this.Icons = subMenuIcon;
 			return this;
@@ -53,7 +50,6 @@ namespace Fluqi.Widget.jMenu
 		/// Selector for the elements that serve as the menu container, including sub-menus.
 		/// </summary>
 		/// <param name="value"></param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-menus for details</remarks>
 		public Options SetMenus(string value) {
 			this.Menus = value;
 			return this;
@@ -66,7 +62,6 @@ namespace Fluqi.Widget.jMenu
 		/// If set to null, no roles will be set, which is useful if the menu is being controlled by another element that is maintaining focus.
 		/// </summary>
 		/// <param name="role">Role to use</param>
-		/// <remarks>See http://api.jqueryui.com/menu/option-role for details</remarks>
 		public Options SetRole(string role) {
 			this.Role = role;
 			return this;

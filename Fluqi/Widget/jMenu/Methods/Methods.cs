@@ -24,7 +24,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Removes focus from a menu, resets any active element styles and triggers the menu's blur event.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-blur for details</remarks>
 		public void Blur() {
 		  this.RenderMethodCall("blur");
 		}
@@ -32,7 +31,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Removes focus from a menu, resets any active element styles and triggers the menu's blur event.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-blur for details</remarks>
 		public void Close() {
 		  this.RenderMethodCall("close");
 		}
@@ -40,7 +38,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Closes the currently active sub-menu.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-collapse for details</remarks>
 		public void Collapse() {
 		  this.RenderMethodCall("collapse");
 		}
@@ -48,7 +45,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Closes all open sub-menus.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-collapseAll for details</remarks>
 		public void CollapseAll() {
 		  this.RenderMethodCall("collapseAll");
 		}
@@ -56,7 +52,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Removes the menu functionality completely. This will return the element back to its pre-init state.
 		/// </summary>		
-		/// <remarks>See http://api.jqueryui.com/menu/method-destroy for details</remarks>
 		public void Destroy() {
 		  this.RenderMethodCall("destroy");
 		}
@@ -64,7 +59,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Disables the menu.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-disable for details</remarks>
 		public void Disable() {
 		  this.RenderMethodCall("disable");
 		}
@@ -72,7 +66,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Enables the menu.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-enable for details</remarks>
 		public void Enable() {
 		  this.RenderMethodCall("enable");
 		}
@@ -80,7 +73,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Opens the sub-menu below the currently active item, if one exists.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-expand for details</remarks>
 		public void Expand() {
 		  this.RenderMethodCall("expand");
 		}
@@ -88,7 +80,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Activates a particular menu item, begins opening any sub-menu if present and triggers the menu's focus
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-focus for details</remarks>
 		public void Focus(string itemSelector) {
 			// bit of a cheat this, but hey ... it works :)
 		  this.RenderMethodCall("focus", " null, " + itemSelector);
@@ -97,7 +88,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Returns a boolean value stating whether or not the currently active item is the first item in the menu.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-isFirstTime for details</remarks>
 		public void IsFirstItem() {
 		  this.RenderMethodCall("isFirstItem");
 		}
@@ -105,7 +95,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Returns a boolean value stating whether or not the currently active item is the last item in the menu.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-isLastItem for details</remarks>
 		public void IsLastItem() {
 		  this.RenderMethodCall("isLastItem");
 		}
@@ -113,7 +102,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Moves active state to next menu item.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-next for details</remarks>
 		public void Next() {
 		  this.RenderMethodCall("next");
 		}
@@ -121,7 +109,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Moves active state to first menu item below the bottom of a scrollable menu or the last item if not scrollable.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-nextPage for details</remarks>
 		public void NextPage() {
 		  this.RenderMethodCall("nextPage");
 		}
@@ -129,7 +116,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Moves active state to previous menu item.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-previous for details</remarks>
 		public void Previous() {
 		  this.RenderMethodCall("previous");
 		}
@@ -137,7 +123,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Moves active state to first menu item above the top of a scrollable menu or the first item if not scrollable.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-previousPage for details</remarks>
 		public void PreviousPage() {
 		  this.RenderMethodCall("previousPage");
 		}
@@ -147,7 +132,6 @@ namespace Fluqi.Widget.jMenu {
 		/// New menu items, including sub-menus can be added to the menu or all of the contents of the menu 
 		/// can be replaced and then initialized with the refresh() method.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-refresh for details</remarks>
 		public void Refresh() {
 		  this.RenderMethodCall("refresh");
 		}
@@ -156,7 +140,6 @@ namespace Fluqi.Widget.jMenu {
 		/// Selects the currently active menu item, collapses all sub-menus and 
 		/// triggers the menu's select event.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-select for details</remarks>
 		public void Select() {
 		  this.RenderMethodCall("select");
 		}
@@ -164,7 +147,6 @@ namespace Fluqi.Widget.jMenu {
 		/// <summary>
 		/// Returns a jQuery object containing the menu.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/menu/method-widget for details</remarks>
 		public void Widget() {
 		  this.RenderMethodCall("widget");
 		}

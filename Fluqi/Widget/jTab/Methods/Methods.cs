@@ -24,7 +24,6 @@ namespace Fluqi.Widget.jTab {
 		/// <summary>
 		/// Remove the tabs functionality completely. This will return the element back to its pre-init state.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tabs/#method-destroy for details</remarks>
 		public void Destroy() {
 			this.RenderMethodCall("destroy");
 		}	
@@ -32,7 +31,6 @@ namespace Fluqi.Widget.jTab {
 		/// <summary>
 		/// Disable the tabs.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tabs/#method-disable for details</remarks>
 		public void Disable() {
 			this.RenderMethodCall("disable");
 		}	
@@ -42,7 +40,6 @@ namespace Fluqi.Widget.jTab {
 		/// $('#example').tabs("option","disabled", [1, 2, 3]);
 		/// The second argument is the zero-based index of the tab to be disabled.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tabs/#method-disable for details</remarks>
 		public void Disable(params int[] indexes) {
 			if (indexes.Count() == 1)
 				this.RenderMethodCall("disable", indexes[0] );
@@ -53,7 +50,6 @@ namespace Fluqi.Widget.jTab {
 		/// <summary>
 		/// Enable the tabs.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tabs/#method-enable for details</remarks>
 		public void Enable() {
 			this.RenderMethodCall("enable");
 		}	
@@ -61,7 +57,6 @@ namespace Fluqi.Widget.jTab {
 		/// <summary>
 		/// Enable a disabled tab. The second argument is the zero-based index of the tab to be enabled.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tabs/#method-enable for details</remarks>
 		public void Enable(int index) {
 			this.RenderMethodCall("enable", index);
 		}	
@@ -69,7 +64,6 @@ namespace Fluqi.Widget.jTab {
 		/// <summary>
 		/// Returns the .ui-tabs element.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tabs/#method-enable for details</remarks>
 		public void Widget() {
 			this.RenderMethodCall("widget");
 		}	
@@ -78,7 +72,6 @@ namespace Fluqi.Widget.jTab {
 		/// Process any tabs that were added or removed directly in the DOM and recompute the height of the 
 		/// tab panels. Results depend on the content and the heightStyle option.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tabs/#method-refresh for details</remarks>
 		public void Refresh() {
 			this.RenderMethodCall("refresh");
 		}
@@ -91,7 +84,6 @@ namespace Fluqi.Widget.jTab {
 		/// Zero-based index of the tab to be reloaded.
 		/// </param>
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/tabs/#method-load for details</remarks>
 		public void Load(int index) {
 			this.RenderMethodCall("load", index);
 		}	

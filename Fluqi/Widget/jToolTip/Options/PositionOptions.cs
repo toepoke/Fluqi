@@ -60,7 +60,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetMy(Core.Position.ePosition pos) {
 			this.Options.SetMy(pos);
 			return this;
@@ -74,7 +73,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetMy(Core.Position.ePosition pos1, Core.Position.ePosition pos2) {
 			this.Options.SetMy(pos1, pos2);
 			return this;
@@ -88,7 +86,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetMy(string pos) {
 			this.Options.SetMy(pos);
 			return this;
@@ -102,7 +99,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetMy(string pos1, string pos2) {
 			this.Options.SetMy(pos1, pos2);
 			return this;
@@ -116,7 +112,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetAt(Core.Position.ePosition pos) {
 			this.Options.SetAt(pos);
 			return this;
@@ -130,7 +125,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetAt(Core.Position.ePosition pos1, Core.Position.ePosition pos2) {
 			this.Options.SetAt(pos1, pos2);
 			return this;
@@ -144,7 +138,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetAt(string pos) {
 			this.Options.SetAt(pos);
 			return this;
@@ -158,7 +151,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// convention). Acceptable values: "top", "center", "bottom", "left", "right". 
 		/// Example: "left top" or "center center"
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetAt(string pos1, string pos2) {
 			this.Options.SetAt(pos1, pos2);
 			return this;
@@ -170,7 +162,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// will be used. If you provide a jQuery object, the first element will be used. If you 
 		/// provide an event object, the pageX and pageY properties will be used. Example: "#top-menu"
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetOf(string of) {
 			this.Options.SetOf(of);
 			return this;
@@ -194,7 +185,6 @@ namespace Fluqi.Widget.jToolTip {
 		///   </item>
 		/// </list>
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetCollision(Collision.eCollision colli) {
 			this.Options.SetCollision(colli);
 			return this;
@@ -218,7 +208,6 @@ namespace Fluqi.Widget.jToolTip {
 		///   </item>
 		/// </list>
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetCollision(Collision.eCollision colli1, Collision.eCollision colli2) {
 			this.Options.SetCollision(colli1, colli2);
 			return this;
@@ -242,7 +231,6 @@ namespace Fluqi.Widget.jToolTip {
 		///   </item>
 		/// </list>
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetCollision(string colli) {
 			this.Options.SetCollision(colli);
 			return this;
@@ -266,7 +254,6 @@ namespace Fluqi.Widget.jToolTip {
 		///   </item>
 		/// </list>
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetCollision(string colli1, string colli2) {
 			this.Options.SetCollision(colli1, colli2);
 			return this;
@@ -277,7 +264,6 @@ namespace Fluqi.Widget.jToolTip {
 		/// When specified the actual property setting is delegated to this callback. Receives a 
 		/// single parameter which is a hash of top and left values for the position that should be set.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/position/ for details</remarks>
 		public PositionOptions SetUsingFunction(string usingFunc) {
 			this.Options.SetUsingFunction(usingFunc);
 			return this;		

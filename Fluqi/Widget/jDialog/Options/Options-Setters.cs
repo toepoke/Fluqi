@@ -35,7 +35,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// Disables (true) or enables (false) the dialog. Can be set when initialising (first creating) the dialog.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-disabled for details</remarks>
 		public Options SetDisabled(bool disable) {
 			this.Disabled = disable;
 			return this;
@@ -46,7 +45,6 @@ namespace Fluqi.Widget.jDialog
 		/// When autoOpen is true the dialog will open automatically when dialog is called. If false it will stay 
 		/// hidden until .dialog("open") is called on it.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-autoOpen for details</remarks>
 		public Options SetAutoOpen(bool autoOpen) {
 			this.AutoOpen = autoOpen;
 			return this;
@@ -56,7 +54,6 @@ namespace Fluqi.Widget.jDialog
 		/// Specifies whether the dialog should close when it has focus and the user presses 
 		/// the esacpe (ESC) key.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-closeOnEscape for details</remarks>
 		public Options SetCloseOnEscape(bool closeOnEscape) {
 			this.CloseOnEscape = closeOnEscape;
 			return this;
@@ -67,7 +64,6 @@ namespace Fluqi.Widget.jDialog
 		/// Specifies the text for the close button. Note that the close text is visibly hidden 
 		/// when using a standard theme.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-closeText for details</remarks>
 		public Options SetCloseText(string closeText) {
 			this.CloseText = closeText;
 			return this;
@@ -77,7 +73,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The specified class name(s) will be added to the dialog, for additional theming.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-dialogClass for details</remarks>
 		public Options SetDialogClass(string dialogClass) {
 			this.DialogClass = dialogClass;
 			return this;
@@ -87,7 +82,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// If set to true, the dialog will be draggable will be draggable by the titlebar.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-draggable for details</remarks>
 		public Options SetDraggable(bool draggable) {
 			this.Draggable = draggable;
 			return this;
@@ -98,7 +92,6 @@ namespace Fluqi.Widget.jDialog
 		/// The height of the dialog, in pixels. Specifying 'auto' is also supported to make 
 		/// the dialog adjust based on its content.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-height for details</remarks>
 		public Options SetHeight(string height) {
 			this.Height = height;
 			return this;
@@ -109,7 +102,6 @@ namespace Fluqi.Widget.jDialog
 		/// The height of the dialog, in pixels. Specifying 'auto' is also supported to make 
 		/// the dialog adjust based on its content.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-height for details</remarks>
 		public Options SetHeight(int height) {
 			this.Height = height.ToString();
 			return this;
@@ -119,7 +111,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The effect to be used when the dialog is closed.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-hide for details</remarks>
 		public Options SetHideEffect(string hide) {
 			if (string.IsNullOrEmpty(hide))
 				// nothing to see here
@@ -135,7 +126,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The effect to be used when the dialog is closed.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-hide for details</remarks>
 		public Options SetHideEffect(Core.Animation.eAnimation effect) {
 			return this.SetHideEffect( Core.Animation.AnimationToString(effect) );
 		}
@@ -144,7 +134,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// Function to use when the dialog is closed.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-hide for details</remarks>
 		public Options SetHideMethod(string hideMethod) {
 			this.Hide = hideMethod;
 			return this;
@@ -154,7 +143,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The maximum height to which the dialog can be resized, in pixels.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-maxHeight for details</remarks>
 		public Options SetMaxHeight(string maxHeight) {
 			this.MaxHeight = maxHeight;
 			return this;
@@ -164,7 +152,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The maximum height to which the dialog can be resized, in pixels.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-maxHeight for details</remarks>
 		public Options SetMaxHeight(int maxHeight) {
 			this.MaxHeight = maxHeight.ToString();
 			return this;
@@ -174,7 +161,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The maximum width to which the dialog can be resized, in pixels.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-maxWidth for details</remarks>
 		public Options SetMaxWidth(string maxWidth) {
 			this.MaxWidth = maxWidth;
 			return this;
@@ -184,7 +170,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The maximum width to which the dialog can be resized, in pixels.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-maxWidth for details</remarks>
 		public Options SetMaxWidth(int maxWidth) {
 			return this.SetMaxWidth(maxWidth.ToString());
 		}
@@ -192,7 +177,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The minimum height to which the dialog can be resized, in pixels.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-minHeight for details</remarks>
 		public Options SetMinHeight(int minHeight) {
 			this.MinHeight = minHeight;
 			return this;
@@ -202,7 +186,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The minimum width to which the dialog can be resized, in pixels.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-minWidth for details</remarks>
 		public Options SetMinWidth(int minWidth) {
 			this.MinWidth = minWidth;
 			return this;
@@ -214,7 +197,6 @@ namespace Fluqi.Widget.jDialog
 		/// disabled (i.e. cannot be interacted with). Modal dialogs create an overlay below the 
 		/// dialog but above other page elements.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-modal for details</remarks>
 		public Options SetModal(bool modal) {
 			this.Modal = modal;
 			return this;
@@ -225,7 +207,6 @@ namespace Fluqi.Widget.jDialog
 		/// Specifies where the dialog should be displayed. Possible values: 
 		///   A single string representing position within viewport: 'center', 'left', 'right', 'top', 'bottom'. 
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public Options SetPosition(string position) {
 			if (string.IsNullOrEmpty(position)) 
 				// nothing to see here
@@ -241,7 +222,6 @@ namespace Fluqi.Widget.jDialog
 		/// Specifies where the dialog should be displayed. Possible values: 
 		///   Two strings containing x,y position string values (e.g. ['right','top'] for top right corner)
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public Options SetPosition(string x, string y) {
 			if (string.IsNullOrEmpty(x) && string.IsNullOrEmpty(y)) 
 				// nothing to see here
@@ -260,7 +240,6 @@ namespace Fluqi.Widget.jDialog
 		/// Specifies where the dialog should be displayed. Possible values: 
 		///   A single string representing position within viewport: 'center', 'left', 'right', 'top', 'bottom'. 
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public Options SetPosition(Core.Position.ePosition position) {
 			string strPos = Core.Position.PositionToString(position);
 
@@ -272,7 +251,6 @@ namespace Fluqi.Widget.jDialog
 		/// Specifies where the dialog should be displayed. Possible values: 
 		///   Two strings containing x,y position string values (e.g. ['right','top'] for top right corner)
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public Options SetPosition(Core.Position.ePosition x, Core.Position.ePosition y) {
 			string strX = Core.Position.PositionToString(x);
 			string strY = Core.Position.PositionToString(y);
@@ -286,7 +264,6 @@ namespace Fluqi.Widget.jDialog
 		///   Two values containing an x,y coordinate pair in pixel offset from left, top corner of viewport 
 		///   (e.g. 350, 100) 
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-position for details</remarks>
 		public Options SetPosition(int x, int y) {
 			this.Position.Clear();
 			this.Position.Add(x.ToString());
@@ -298,7 +275,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// If set to true, the dialog will be resizable.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-resizable for details</remarks>
 		public Options SetResizable(bool resizable) {
 			this.Resizable = resizable;
 			return this;
@@ -308,7 +284,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The effect to be used when the dialog is opened.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-show for details</remarks>
 		public Options SetShowEffect(string show) {
 			if (string.IsNullOrEmpty(show))
 				// nothing to see here
@@ -324,7 +299,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The effect to be used when the dialog is opened.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-show for details</remarks>
 		public Options SetShowEffect(Core.Animation.eAnimation effect) {
 			return this.SetShowEffect( Core.Animation.AnimationToString(effect) );
 		}
@@ -333,7 +307,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The effect to be used when the dialog is opened.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-show for details</remarks>
 		public Options SetShowMethod(string showMethod) {
 			this.Show = showMethod;
 			return this;
@@ -344,7 +317,6 @@ namespace Fluqi.Widget.jDialog
 		/// Specifies whether the dialog will stack on top of other dialogs. This will cause 
 		/// the dialog to move to the front of other dialogs when it gains focus.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-stack for details</remarks>
 		public Options SetStack(bool stack) {
 			this.Stack = stack;
 			return this;
@@ -355,7 +327,6 @@ namespace Fluqi.Widget.jDialog
 		/// Specifies the title of the dialog. Any valid HTML may be set as the title. 
 		/// The title can also be specified by the title attribute on the dialog source element.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-title for details</remarks>
 		public Options SetTitle(string title) {
 			this.Title = title;
 			return this;
@@ -365,7 +336,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The width of the dialog, in pixels.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-width for details</remarks>
 		public Options SetWidth(int width) {
 			this.Width = width;
 			return this;
@@ -375,7 +345,6 @@ namespace Fluqi.Widget.jDialog
 		/// <summary>
 		/// The starting z-index for the dialog.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/dialog/#option-zIndex for details</remarks>
 		public Options SetZIndex(int zIndex) {
 			this.ZIndex = zIndex;
 			return this;

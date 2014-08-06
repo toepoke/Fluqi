@@ -61,7 +61,6 @@ namespace Fluqi.Widget.jSelectMenuItem {
 
 		/// <summary>
 		/// Icon to appear alongside the menu item
-		/// ToDo: Can these appear on the left hand and right hand side?
 		/// </summary>
 		protected internal string Icon { get; set; }
 

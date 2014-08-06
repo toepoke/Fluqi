@@ -24,7 +24,6 @@ namespace Fluqi.Widget.jProgressBar {
 		/// <summary>
 		/// Remove the ProgressBar functionality completely. This will return the element back to its pre-init state.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/progressbar/#method-destroy for details</remarks>
 		public void Destroy() {
 			this.RenderMethodCall("destroy");
 		}	
@@ -32,7 +31,6 @@ namespace Fluqi.Widget.jProgressBar {
 		/// <summary>
 		/// Disable the progressbar.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/progressbar/#method-disable for details</remarks>
 		public void Disable() {
 			this.RenderMethodCall("disable");
 		}	
@@ -40,7 +38,6 @@ namespace Fluqi.Widget.jProgressBar {
 		/// <summary>
 		/// Enable the progressbar.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/progressbar/#method-enable for details</remarks>
 		public void Enable() {
 			this.RenderMethodCall("enable");
 		}	
@@ -48,7 +45,6 @@ namespace Fluqi.Widget.jProgressBar {
 		/// <summary>
 		/// Returns the .ui-progressbar element.
 		/// </summary>
-		/// <remarks>See http://api.jqueryui.com/progressbar/#method-widget for details</remarks>
 		public void Widget() {
 			this.RenderMethodCall("widget");
 		}	
