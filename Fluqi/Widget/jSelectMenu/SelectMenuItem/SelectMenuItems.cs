@@ -1,10 +1,12 @@
-﻿
+﻿// TODO: selected attribute support
+// TODO: change names of test files
 namespace Fluqi.Widget.jSelectMenuItem {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
 	using Fluqi.Extension.Helpers;
+	using System.Web.Mvc;
 	
 	/// <summary>
 	/// Defines the logic for sub-selectMenu items.
@@ -86,6 +88,34 @@ namespace Fluqi.Widget.jSelectMenuItem {
 				.SetValue(value)
 			;
 			_SelectMenuItems.Add(i);
+			return this;
+		}
+
+		/// <summary>
+		/// Adds a collection of options to the menu.
+		/// The "Key" becomes the "value" attribute of the OPTION (in the SELECT tag)
+		/// The "Value" becomes the readable text of the OPTION (what the user sees in the dropdown)
+		/// </summary>
+		/// <param name="dict">Dictionary of options to add</param>
+		/// <returns>SelectMenuItem for chainability</returns>
+		public SelectMenuItems Add(Dictionary<string, string> dict) {
+			foreach (KeyValuePair<string, string> keyValue in dict) {
+				this.Add(keyValue.Value, keyValue.Key);
+			}
+
+			return this;
+		}
+
+		/// <summary>
+		/// Adds a list of SelectListItems to the menu
+		/// </summary>
+		/// <param name="options">List of items</param>
+		/// <returns>SelectMenuItem for chainability</returns>
+		public SelectMenuItems Add(SelectList options) {
+			foreach (SelectListItem i in options) {
+				this.Add(i.Text, i.Value);
+			}
+
 			return this;
 		}
 

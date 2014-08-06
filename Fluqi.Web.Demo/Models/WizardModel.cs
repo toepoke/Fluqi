@@ -63,6 +63,21 @@ namespace Fluqi.Models
 				.Finish();
 		}
 		
+		public void ConfigureSelectMenu(Widget.jSelectMenu.SelectMenu mnu) {
+			mnu
+				.Items()
+					.Add(this.PlayingTimes())
+					.Finish()
+				.Options
+					.SetWidth(200)	// issue with jQuery UI I think - null causes width to be set to zero length
+					.Finish()
+				.Rendering
+					.SetAutoScript(false)
+					.SetTabDepth(1)
+				.Finish()
+			;
+		}
+
 		public void ConfigureTabs(Tabs tabs) {
 			tabs
 				.Panes

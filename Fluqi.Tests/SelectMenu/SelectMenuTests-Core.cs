@@ -38,40 +38,6 @@ namespace Fluqi.Tests
 			Assert.IsTrue(html.Contains("id=\"mySelectMenu\""));
 		}
 
-		/// THE "SelectMenu" CONTROL REPLACES THE UNDERLYING SELECT CONTROL.
-		/// BASICALLY IT CAN'T BE USED IN ISOLATION SO HAVING THE CORRECT CSS CLASSES IS OF NO VALUE
-		//[TestMethod]
-		//public void With_Full_CSS_Delivers_Correct_CSS_Classes()
-		//{
-		//  throw new NotImplementedException();
-
-		//  // Arrange
-		//  var resp = new MockWriter();
-		//  SelectMenu selectMenu = TestHelper.SetupSimpleSelectMenuObject(resp);
-
-		//  // only testing raw output
-		//  //selectMenu
-		//  //  .Items()
-		//  //    .Add("Item 1")
-		//  //  .Finish()
-		//  //  .Rendering
-		//  //    .Compress()
-		//  //    .ShowCSS()
-		//  //;
-
-		//  TestHelper.ForceRender(selectMenu);
-			
-		//  // Act - Force output we'd see on the web page
-		//  string html = resp.Output.ToString();
-
-		//  // Assert - UL root
-		//  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<ul id=\"mySelectMenu\" class=\"ui-menu ui-widget ui-widget-content ui-corner-all\">"));
-		//  // Assert - LI
-		//  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<li class=\"ui-menu-item\"><a href=\"#\" class=\"ui-corner-all\">Item 1</a></li>") );
-		//  // Assert - A
-		//  Assert.AreEqual(1, Utils.NumberOfMatches(html, "<a href=\"#\" class=\"ui-corner-all\">Item 1</a>") );
-		//}
-		
 		[TestMethod]
 		public void With_Addition_CSS_Delivers_Is_Rendered()
 		{
@@ -324,7 +290,6 @@ namespace Fluqi.Tests
 				.Finish()
 			;
 
-
 		  TestHelper.ForceRender(selectMenu);
 			
 		  // Act - Force output we'd see on the web page
@@ -337,6 +302,83 @@ namespace Fluqi.Tests
 		    "</select>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
+
+		[TestMethod]
+		public void Add_With_Dictionary_Is_Correct()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  SelectMenu selectMenu = TestHelper.SetupSimpleSelectMenuObject(resp);
+			Dictionary<string, string> options = new Dictionary<string,string>();
+
+			// Populate the options
+			for (int i=1; i <= 3; i++) {
+				options.Add(i.ToString(), string.Format("Item {0}", i));
+			}
+
+		  // only testing raw output
+			selectMenu
+				.Items()
+					.Add(options)
+					.Finish()
+				.Rendering
+					.Compress()
+				.Finish()
+			;
+
+		  TestHelper.ForceRender(selectMenu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<select id=\"mySelectMenu\">" + 
+		      "<option value=\"1\">Item 1</option>" + 
+		      "<option value=\"2\">Item 2</option>" + 
+		      "<option value=\"3\">Item 3</option>" + 
+		    "</select>";
+		  Assert.IsTrue(html.Contains(expected));
+		}
+
+		[TestMethod]
+		public void Add_With_SelectList_Is_Correct()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  SelectMenu selectMenu = TestHelper.SetupSimpleSelectMenuObject(resp);
+			Dictionary<string, string> items = new Dictionary<string,string>();
+
+			// Populate the options
+			for (int i=1; i <= 3; i++) {
+				items.Add(i.ToString(), string.Format("Item {0}", i));
+			}
+			SelectList options = new SelectList(items, "Key", "Value");
+
+		  // only testing raw output
+			selectMenu
+				.Items()
+					.Add(options)
+					.Finish()
+				.Rendering
+					.Compress()
+				.Finish()
+			;
+
+		  TestHelper.ForceRender(selectMenu);
+			
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  string expected = 
+		    "<select id=\"mySelectMenu\">" + 
+		      "<option value=\"1\">Item 1</option>" + 
+		      "<option value=\"2\">Item 2</option>" + 
+		      "<option value=\"3\">Item 3</option>" + 
+		    "</select>";
+		  Assert.IsTrue(html.Contains(expected));
+		}
 		
 		[TestMethod]
 		public void SetTitle_Renders_Correctly()
@@ -344,18 +386,6 @@ namespace Fluqi.Tests
 		  // Arrange
 		  var resp = new MockWriter();
 		  SelectMenu selectMenu = TestHelper.SetupSimpleSelectMenuObject(resp);
-
-		  // only testing raw output
-			//selectMenu
-			//  .Items()
-			//    .Add("Phone Home")
-			//      .Configure()
-			//        .SetTitle("Mobile Phone") // should override "Phone Home"
-			//        .Finish()
-			//  .Finish()
-			//  .Rendering
-			//    .Compress()
-			//;
 
 			selectMenu
 				.Items()
@@ -384,39 +414,6 @@ namespace Fluqi.Tests
 
 		  Assert.IsTrue(html.Contains(expected));
 		}
-
-		//[TestMethod]
-		//public void Disabled_MenuItem_Renders_Correctly()
-		//{
-		//  // Arrange
-		//  var resp = new MockWriter();
-		//  SelectMenu selectMenu = TestHelper.SetupSimpleSelectMenuObject(resp);
-
-		//  // only testing raw output
-		//  selectMenu
-		//    .Items()
-		//      .Add("Item 1", "1")
-		//        .Configure()
-		//          .SetDisabled()
-		//        .Finish()
-		//      .Finish()
-		//    .Rendering
-		//      .Compress()
-		//  ;
-			
-		//  TestHelper.ForceRender(selectMenu);
-			
-		//  // Act - Force output we'd see on the web page
-		//  string html = resp.Output.ToString();
-
-		//  // Assert
-		//  string expected = 
-		//    "<select id=\"mySelectMenu\">" + 
-		//      "<option class=\"ui-state-disabled\">Item 1</option>" + 
-		//    "</select>";
-
-		//  Assert.IsTrue(html.Contains(expected));
-		//}
 
 	}
 

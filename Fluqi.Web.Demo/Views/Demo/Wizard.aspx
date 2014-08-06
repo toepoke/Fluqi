@@ -29,6 +29,7 @@
 		var autoComplete = Html.CreateAutoComplete("HowOften", "playFrequency")
 			.Options.SetMinimumLength(0).SetDelay(1).SetAutoFocus(true).Finish()
 		;
+		var durationMenu = Html.CreateSelectMenu("Duration");
 		var confirmDlg = Html.CreateDialog("confirmDlg")
 			.Options
 				.SetAutoOpen(false)
@@ -41,6 +42,7 @@
 		this.Model.ConfigureTabs(wizard);
 		this.Model.ConfigureButtons(back, next, finish);
 		this.Model.ConfigureDatePicker(dobPicker);
+		this.Model.ConfigureSelectMenu(durationMenu);
 		%>
 
 		<div id="sidebar-container">
@@ -84,7 +86,7 @@
 					</li>
 					<li>
 						<%=Html.LabelFor(m=>m.Duration)%>
-						<%=Html.DropDownListFor(m=>m.Duration, Model.PlayingTimes(), "Select")%>
+						<%durationMenu.Render();%>
 					</li>
 				</ul>
 			<% } %>
@@ -118,6 +120,7 @@
 <%sldr.RenderStartUpScript(false);%>
 <%autoComplete.RenderStartUpScript(false);%>
 <%confirmDlg.RenderStartUpScript(false);%>
+<%durationMenu.RenderStartUpScript(false);%>
 		initView();
 	});
 </script>
