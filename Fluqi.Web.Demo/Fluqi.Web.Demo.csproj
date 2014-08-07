@@ -247,7 +247,7 @@
     <Content Include="Scripts\button.js" />
     <Content Include="Scripts\select-menu.js" />
     <Content Include="Scripts\jq\jquery-1.10.2.js" />
-    <Content Include="Scripts\jq\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\jq\jquery-ui-1.11.0.js" />
     <Content Include="Scripts\tooltip.js" />
     <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\spinner.js" />

@@ -81,6 +81,7 @@
 		<li><button id="widget" title="Shows the HTML for the .ui-spinner element.">Widget</button></li>
 		<li><button id="getValue" title="Gets the value in the spinner.">Get Value</button></li>
 		<li><button id="setValue" title="Sets the value of the spinner (to 50).">Set Value</button></li>
+		<li><button id="isValid" title="Shows whether the value is valid (given the min/max).">Is Valid</button></li>
 		<li><button id="destroy" title="Returns the button to it's pre-init state.">Destroy</button></li>
 	</ul>
 <%
@@ -94,6 +95,7 @@
 		$("#widget").click(function() { alert( "Widget HTML:\n\n" + <%spin.Methods.Widget();%>.html() ); });
 		$("#getValue").click(function() { alert( "GetValues reports:\n\n" + <%spin.Methods.GetValue();%> ); });
 		$("#setValue").click(function() { <%spin.Methods.SetValue(50);%>; });
+		$("#isValid").click(function() { alert( <%spin.Methods.GetIsValid();%> ); });
 		$("#destroy").click(function() {  if (confirm("are you sure you want to destroy the spinner?")) <%spin.Methods.Destroy();%>; });
 	});
 	</script>

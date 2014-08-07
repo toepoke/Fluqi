@@ -107,6 +107,14 @@ namespace Fluqi.Widget.jSpinner {
 		public void SetValue(string value) {
 			this.RenderSetOptionCall("value", value.InDoubleQuotes());
 		}
+
+		/// <summary>
+		/// Returns whether the Spinner's value is valid given its min, max, and step.
+		/// </summary>
+		public void GetIsValid() {
+			this.RenderMethodCall("isValid");
+		}
+
 	}
 
 }

@@ -177,6 +177,22 @@ namespace Fluqi.Tests
 		  Assert.AreEqual("$(\"#mySpinner\").spinner(\"option\",\"value\",44)", html);
 		}
 		
+		[TestMethod]
+		public void Ensure_GetIsValid_Method_Renders_Correctly()
+		{
+		  // Arrange
+		  var resp = new MockWriter();
+		  Spinner spinner = TestHelper.SetupSimpleSpinnerObject(resp);
+
+		  spinner.Methods.GetIsValid();
+
+		  // Act - Force output we'd see on the web page
+		  string html = resp.Output.ToString();
+
+		  // Assert
+		  Assert.AreEqual("$(\"#mySpinner\").spinner(\"isValid\")", html);
+		}
+		
 	}
 
 } // ns

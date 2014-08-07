@@ -10813,6 +10813,11 @@
             </summary>
             <param name="value">The value is parsed based on the numberFormat and culture options.</param>
         </member>
+        <member name="M:Fluqi.Widget.jSpinner.Methods.GetIsValid">
+            <summary>
+            Returns whether the Spinner's value is valid given its min, max, and step.
+            </summary>
+        </member>
         <member name="M:Fluqi.Widget.jSpinner.Methods.GetCulture">
             <summary>
             Returns [in JavaScript] the current "culture" setting.
