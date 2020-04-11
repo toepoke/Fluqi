@@ -20,13 +20,13 @@
 	<input type="submit" value="UPDATE" />
 	<ul class="small-label">
 		<li><%=Html.LabelFor(vm=>vm.Disabled)    %><%=Html.CheckBoxFor(vm=>vm.Disabled, "Disables the slider is attached (can't be slid).")%></li>
-		<li><%=Html.LabelFor(vm=>vm.Animated)    %><%=Html.TextBoxFor(vm=>vm.Animated, "Speed of the animation, can be 'fast', 'slow', 'normal' or a number of milliseconds.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.Min)         %><%=Html.TextBoxFor(vm=>vm.Min, "Minimum value of the slider.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.Max)         %><%=Html.TextBoxFor(vm=>vm.Max, "Maximum value of the slider.")%></li>
+		<li><%=Html.LabelFor(vm=>vm.Animated)    %><%=Html.TextBoxFor(vm=>vm.Animated, "Speed of the animation, can be 'fast', 'slow', 'normal' or a number of milliseconds.", "")%></li>
+		<li><%=Html.LabelFor(vm=>vm.Min)         %><%=Html.TextBoxFor(vm=>vm.Min, "Minimum value of the slider.", "")%></li>
+		<li><%=Html.LabelFor(vm=>vm.Max)         %><%=Html.TextBoxFor(vm=>vm.Max, "Maximum value of the slider.", "")%></li>
 		<li><%=Html.LabelFor(vm=>vm.Orientation) %><%=Html.DropDownTipListFor(vm=>vm.Orientation, List.OrientationItems(), "Whether the slider is drawn vertically or horizontally.") %></li>
-		<li><%=Html.LabelFor(vm=>vm.Range)       %><%=Html.TextBoxFor(vm=>vm.Range, "If set to true, the slider will detect if you have two handles and create a stylable range element between these two. Two other possible values are 'min' and 'max'. A min range goes from the slider min to one handle. A max range goes from one handle to the slider max.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.Step)        %><%=Html.TextBoxFor(vm=>vm.Step, "Determines the size or amount of each interval or step the slider takes between min and max. The full specified value range of the slider (max - min) needs to be evenly divisible by the step.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.Value)       %><%=Html.TextBoxFor(vm=>vm.Value, "Starting value of the slider.")%></li>
+		<li><%=Html.LabelFor(vm=>vm.Range)       %><%=Html.TextBoxFor(vm=>vm.Range, "If set to true, the slider will detect if you have two handles and create a stylable range element between these two. Two other possible values are 'min' and 'max'. A min range goes from the slider min to one handle. A max range goes from one handle to the slider max.", "")%></li>
+		<li><%=Html.LabelFor(vm=>vm.Step)        %><%=Html.TextBoxFor(vm=>vm.Step, "Determines the size or amount of each interval or step the slider takes between min and max. The full specified value range of the slider (max - min) needs to be evenly divisible by the step.", "")%></li>
+		<li><%=Html.LabelFor(vm=>vm.Value)       %><%=Html.TextBoxFor(vm=>vm.Value, "Starting value of the slider.", "")%></li>
 		<li><%=Html.LabelFor(vm=>vm.Values)      %><%=Html.TextBoxFor(vm=>vm.Values, "wide", "This option can be used to specify multiple handles. If range is set to true, the length of 'values' should be 2. (enter comma separated values)") %></li>
 	</ul>
 	<hr />

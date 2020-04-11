@@ -34,7 +34,7 @@
 				<li><%=Html.LabelFor(vm=>vm.ConstrainInput)   %><%=Html.CheckBoxFor(vm=>vm.ConstrainInput, "Only allows characters expressed in formatDate")%></li>
 				<li><%=Html.LabelFor(vm=>vm.DateFormat)       %><%=Html.TextBoxFor(vm=>vm.DateFormat, "wide", "For example try 'yy-mm-dd'")%></li>
 				<li><%=Html.LabelFor(vm=>vm.DefaultDate)      %><%=Html.TextBoxFor(vm=>vm.DefaultDate, "wide", "Date to be highlighted when DatePicker is first opened; For example try '+1m +7d' (without the quotes)")%></li>
-				<li><%=Html.LabelFor(vm=>vm.FirstDay)         %><%=Html.TextBoxFor(vm=>vm.FirstDay, "First day of the week (for regionalisation); For example try '3' (no quotes) for 'Wednesday'")%></li>
+				<li><%=Html.LabelFor(vm=>vm.FirstDay)         %><%=Html.TextBoxFor(vm=>vm.FirstDay, "First day of the week (for regionalisation); For example try '3' (no quotes) for 'Wednesday'", "")%></li>
 				<li><%=Html.LabelFor(vm=>vm.GotoCurrent)      %><%=Html.CheckBoxFor(vm=>vm.GotoCurrent, "Current day link moves to the currently selected date instead of today")%></li>
 				<li><%=Html.LabelFor(vm=>vm.ShortYearCutoff)  %><%=Html.TextBoxFor(vm=>vm.ShortYearCutoff, "wide", "Sets cut-off year for determining which century we're talking about when 2 digit for the year are used; For example try '11' (without the quotes)")%></li>
 			</ul>
@@ -53,9 +53,9 @@
 			<i>Show Options</i>
 			<ul>
 				<li><%=Html.LabelFor(vm=>vm.ShowInline)        %><%=Html.CheckBoxFor(vm=>vm.ShowInline, "Picker is shown as part of the page, no user intervention required to show it.") %></li>
-				<li><%=Html.LabelFor(vm=>vm.NumberOfMonths)    %><%=Html.TextBoxFor(vm=>vm.NumberOfMonths, "Number of months to show when DatePicker is open; For example try '3' (without the quotes)")%></li>
-				<li><%=Html.LabelFor(vm=>vm.StepMonths)        %><%=Html.TextBoxFor(vm=>vm.StepMonths, "How many months to move when clicking Next/Prev; For example try '2' (without the quotes)")%></li>
-				<li><%=Html.LabelFor(vm=>vm.ShowCurrentAtPos)  %><%=Html.TextBoxFor(vm=>vm.ShowCurrentAtPos, "Where the current month is displayed when 'NumberOfMonths' is active.")%></li>
+				<li><%=Html.LabelFor(vm=>vm.NumberOfMonths)    %><%=Html.TextBoxFor(vm=>vm.NumberOfMonths, "Number of months to show when DatePicker is open; For example try '3' (without the quotes)", "")%></li>
+				<li><%=Html.LabelFor(vm=>vm.StepMonths)        %><%=Html.TextBoxFor(vm=>vm.StepMonths, "How many months to move when clicking Next/Prev; For example try '2' (without the quotes)", "")%></li>
+				<li><%=Html.LabelFor(vm=>vm.ShowCurrentAtPos)  %><%=Html.TextBoxFor(vm=>vm.ShowCurrentAtPos, "Where the current month is displayed when 'NumberOfMonths' is active.", "")%></li>
 				<li><%=Html.LabelFor(vm=>vm.ShowMonthAfterYear)%><%=Html.CheckBoxFor(vm=>vm.ShowMonthAfterYear, "Label shows '2011 December' or 'December 2011'")%></li>
 				<li><%=Html.LabelFor(vm=>vm.ShowOtherMonths)   %><%=Html.CheckBoxFor(vm=>vm.ShowOtherMonths, "Shows days in other months (for example if the current month is March, the last few days of February are also shown.")%></li>
 				<li><%=Html.LabelFor(vm=>vm.SelectOtherMonths) %><%=Html.CheckBoxFor(vm=>vm.SelectOtherMonths, "'ShowOtherMonths' must be on - you can then select days in next/prev month as well as show them.")%></li>
@@ -64,7 +64,7 @@
 				<li><%=Html.LabelFor(vm=>vm.ChangeMonth)       %><%=Html.CheckBoxFor(vm=>vm.ChangeMonth, "Enables month selection for navigating dates.")%></li>
 				<li><%=Html.LabelFor(vm=>vm.ChangeYear)        %><%=Html.CheckBoxFor(vm=>vm.ChangeYear, "Enabled year selection for navigating dates.")%></li>
 				<li><%=Html.LabelFor(vm=>vm.YearRange)         %><%=Html.TextBoxFor(vm=>vm.YearRange, "wide", "Specifies what years are available in the year dropdown; For example try 'c-1:c+1' (without the quotes)")%></li>
-				<li><%=Html.LabelFor(vm=>vm.YearSuffix)        %><%=Html.TextBoxFor(vm=>vm.YearSuffix, "Suffix for the year in title of the DatePicker; For example try 'yr' (without the quotes)")%></li>
+				<li><%=Html.LabelFor(vm=>vm.YearSuffix)        %><%=Html.TextBoxFor(vm=>vm.YearSuffix, "Suffix for the year in title of the DatePicker; For example try 'yr' (without the quotes)", "")%></li>
 				<li><%=Html.LabelFor(vm=>vm.AltField)          %><%=Html.TextBoxFor(vm=>vm.AltField, "wide", "Specifies an alternative element to add the selected date to; For example try '#selectedDate' (without the quotes)")%></li>
 				<li><%=Html.LabelFor(vm=>vm.AltFormat)         %><%=Html.TextBoxFor(vm=>vm.AltFormat, "wide", "Specifies an alternative format for the selected date (to be added to the alternative element [see above]); For example try 'DD, dd MM yy' (without the quotes)")%></li>
 				<li><%=Html.LabelFor(vm=>vm.AppendText)        %><%=Html.TextBoxFor(vm=>vm.AppendText, "wide", "Prompt to add next to the DatePicker input field; For example try (yyyy-mm-dd) (with the brackets)")%></li>

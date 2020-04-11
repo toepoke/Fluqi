@@ -87,7 +87,7 @@
 		<li><%=Html.LabelFor(vm=>vm.animate)%>                 <%=Html.TextBoxFor(vm=>vm.animate, "wide", "How panel opening/closing should be animated, for example 'easeOutBounce' (with quotes)")%></li>
 		<li><%=Html.LabelFor(vm=>vm.evt)%>                     <%=Html.DropDownTipListFor(vm=>vm.evt, List.BrowserEventItems(), "Event to use to expand/contract the panels.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.heightStyle)%>             <%=Html.DropDownTipListFor(vm=>vm.heightStyle, List.HeightStyleItems(), "Controls the height of the accordion and each panel.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.activePanel)%>             <%=Html.TextBoxFor(vm=>vm.activePanel, "Pick an alternative selected panel on page load, in this example pick between 0 and 2.")%></li>
+		<li><%=Html.LabelFor(vm=>vm.activePanel)%>             <%=Html.TextBoxFor(vm=>vm.activePanel, "Pick an alternative selected panel on page load, in this example pick between 0 and 2.", "")%></li>
 		<li><%=Html.LabelFor(vm=>vm.headerIconClass) %>        <%=Html.DropDownTipListFor(vm=>vm.headerIconClass, List.IconListNames(), "Overrides the icon for the unselected panel, try 'ui-icon-plusthick' for example.")%> <%showIcons1.Render();%>  </li> 
 		<li><%=Html.LabelFor(vm=>vm.activeHeaderIconClass)%>   <%=Html.DropDownTipListFor(vm=>vm.activeHeaderIconClass, List.IconListNames(), "Overrides the icon for the selected panel, try 'ui-icon-minusthick' for example.")%> <%showIcons2.Render();%> </li>
 	</ul>

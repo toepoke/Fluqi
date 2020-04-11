@@ -20,11 +20,11 @@
 	<input type="submit" value="UPDATE" />
 	<ul class="small-label">
 		<li><%=Html.LabelFor(vm=>vm.disabled)      %><%=Html.CheckBoxFor(vm=>vm.disabled, "Disables the spinner.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.min)           %><%=Html.TextBoxFor(vm=>vm.min, "Minimum value of the spinner.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.max)           %><%=Html.TextBoxFor(vm=>vm.max, "Maximum value of the spinner.")%></li>
+		<li><%=Html.LabelFor(vm=>vm.min)           %><%=Html.TextBoxFor(vm=>vm.min, "Minimum value of the spinner.", "")%></li>
+		<li><%=Html.LabelFor(vm=>vm.max)           %><%=Html.TextBoxFor(vm=>vm.max, "Maximum value of the spinner.", "")%></li>
 		<li><%=Html.LabelFor(vm=>vm.downIconClass) %><%=Html.DropDownTipListFor(vm=>vm.downIconClass, List.IconListNames(), "Down icon.") %></li>
 		<li><%=Html.LabelFor(vm=>vm.upIconClass)   %><%=Html.DropDownTipListFor(vm=>vm.upIconClass, List.IconListNames(), "Up icon.") %></li>
-		<li><%=Html.LabelFor(vm=>vm.page)          %><%=Html.TextBoxFor(vm=>vm.page, "Page setting.")%></li>
+		<li><%=Html.LabelFor(vm=>vm.page)          %><%=Html.TextBoxFor(vm=>vm.page, "Page setting.", "")%></li>
 	</ul>
 	<hr />
 	<h2>Test Harness Options</h2>

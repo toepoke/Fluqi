@@ -19,8 +19,8 @@
 		<li><%=Html.LabelFor(vm=>vm.disabled)  %><%=Html.CheckBoxFor(vm=>vm.disabled, "Disables the menu from appearing when the textbox has focus (textbox is still editable however).")%></li>
 		<li><%=Html.LabelFor(vm=>vm.appendTo)  %><%=Html.TextBoxFor(vm=>vm.appendTo, "wide", "jQuery selector setting which element should be used for appending the menu options - note this is in the DOM, not the visual menu.  Try '#testAppendTo' for example, then examine the DOM.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.autoFocus) %><%=Html.CheckBoxFor(vm=>vm.autoFocus, "If true, the first item in the menu will be selected when listing matches.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.delay)     %><%=Html.TextBoxFor(vm=>vm.delay, "How long before the options in the menu should appear once a key is pressed in the textbox.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.minLength) %><%=Html.TextBoxFor(vm=>vm.minLength, "Number of characters that must be typed before the menu of matches appears.")%></li>
+		<li><%=Html.LabelFor(vm=>vm.delay)     %><%=Html.TextBoxFor(vm=>vm.delay, "How long before the options in the menu should appear once a key is pressed in the textbox.", "")%></li>
+		<li><%=Html.LabelFor(vm=>vm.minLength) %><%=Html.TextBoxFor(vm=>vm.minLength, "Number of characters that must be typed before the menu of matches appears.", "")%></li>
 		<li><%=Html.Label("Position.at")       %><%=Html.DropDownTipListFor(vm=>vm.At1, List.DirectionItems(), positionTooltip)%> <%=Html.DropDownTipListFor(vm=>vm.At2, List.DirectionItems(), positionTooltip)%></li>
 		<li><%=Html.Label("Position.my")       %><%=Html.DropDownTipListFor(vm=>vm.My1, List.DirectionItems(), positionTooltip)%> <%=Html.DropDownTipListFor(vm=>vm.My2, List.DirectionItems(), positionTooltip)%></li>
 		<li><%=Html.Label("Position.collision")%><%=Html.DropDownTipListFor(vm=>vm.Collision1, List.CollisionItems(), positionTooltip)%> <%=Html.DropDownTipListFor(vm=>vm.Collision2, List.CollisionItems(), positionTooltip)%></li>

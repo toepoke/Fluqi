@@ -41,7 +41,7 @@
 		<li><%=Html.Label("Position.at")       %><%=Html.DropDownTipListFor(vm=>vm.At1, List.DirectionItems(), positionTooltip)%> <%=Html.DropDownTipListFor(vm=>vm.At2, List.DirectionItems(), positionTooltip)%></li>
 		<li><%=Html.Label("Position.my")       %><%=Html.DropDownTipListFor(vm=>vm.My1, List.DirectionItems(), positionTooltip)%> <%=Html.DropDownTipListFor(vm=>vm.My2, List.DirectionItems(), positionTooltip)%></li>
 		<li><%=Html.Label("Position.collision")%><%=Html.DropDownTipListFor(vm=>vm.Collision1, List.CollisionItems(), positionTooltip)%> <%=Html.DropDownTipListFor(vm=>vm.Collision2, List.CollisionItems(), positionTooltip)%></li>
-		<li><%=Html.LabelFor(vm=>vm.Width)     %><%=Html.TextBoxFor(vm=>vm.Width, "The width of the menu, in pixels. When the value is null, the width of the native select is used.")%></li>
+		<li><%=Html.LabelFor(vm=>vm.Width)     %><%=Html.TextBoxFor(vm=>vm.Width, "The width of the menu, in pixels. When the value is null, the width of the native select is used.", "")%></li>
 
 	</ul>
 	<hr />

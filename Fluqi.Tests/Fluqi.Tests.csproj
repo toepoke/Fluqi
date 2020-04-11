@@ -156,10 +156,6 @@
     <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Fluqi.Web.Demo\Fluqi.Web.Demo.csproj">
-      <Project>{82C1C43B-0A57-4B17-BC16-DE5242B7B673}</Project>
-      <Name>Fluqi.Web.Demo</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Fluqi\Fluqi.csproj">
       <Project>{26D94B83-7571-4953-873F-42DBA16DB202}</Project>
       <Name>Fluqi</Name>

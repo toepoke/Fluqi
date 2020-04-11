@@ -17,7 +17,7 @@
 	<input type="submit" value="UPDATE" />
 	<ul>
 		<li><%=Html.LabelFor(vm=>vm.disabled)  %><%=Html.CheckBoxFor(vm=>vm.disabled, "Styles the progress bar as if it's disabled, however the value can still be updated.")%></li>
-		<li><%=Html.LabelFor(vm=>vm.value)     %><%=Html.TextBoxFor(vm=>vm.value, "Value of the progress bar (i.e. what % of the way through your process you are).")%></li>
+		<li><%=Html.LabelFor(vm=>vm.value)     %><%=Html.TextBoxFor(vm=>vm.value, "Value of the progress bar (i.e. what % of the way through your process you are).", "")%></li>
 	</ul>
 	<hr />
 	<h2>Test Harness Options</h2>
