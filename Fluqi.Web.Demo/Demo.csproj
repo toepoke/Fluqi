@@ -340,6 +340,8 @@
     <Content Include="Views\Builder\Tabs.aspx" />
     <Content Include="Views\Builder\ToolTip.aspx" />
     <Content Include="Views\Demo\Wizard.aspx" />
+    <Content Include="Views\Home\History.aspx" />
+    <Content Include="Views\Home\Home.aspx" />
     <Content Include="Views\Shared\Analytics.ascx" />
     <Content Include="Views\Shared\Banner.ascx" />
     <Content Include="Views\Shared\Disqus.ascx" />
