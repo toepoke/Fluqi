@@ -23,7 +23,7 @@
 	<div class="intro-box">
 		<h1>Fluqi</h1>
 		<p>
-			The <a href="https://jqueryui.com/demos/">jQuery UI widgets</a> are brilliant.  They speed up web development	
+			The <a href="https://jqueryui.com/demos/">jQuery UI widgets</a> are brilliant!  They speed up web development	
 			no end with those easy to use controls.  The downside is remembering all the HTML mark-up and widget options!
 		</p>
 		<p>
