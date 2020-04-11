@@ -371,7 +371,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Views\Shared\Builder.Master" />
     <Content Include="Views\Shared\Demo.Parent.Master" />
     <Content Include="Views\Shared\Fluqi.Master" />
