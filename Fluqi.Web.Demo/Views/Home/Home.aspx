@@ -316,7 +316,7 @@ Bundle.JavaScript()
 			<p class="footnote">
 				We're all about <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progress enhacement</a> <%=Html.ActionLink("here", "Home", "Home")%>.
 				If you're wanting <a href="http://www.asp.net/web-forms/videos/building-35-applications/submit-and-postback">postbacks</a>,
-				check out <a href="http://juiceui.com/">JuiceUI</a>.				
+				check out <a href="https://github.com/appendto/juiceui/">JuiceUI</a>.				
 			</p>
 			<a href="<%=Url.Content("~/WebForms/QuickDemo.aspx")%>" class="align-right">WebForms Demo</a>
 		</section>
@@ -328,7 +328,7 @@ Bundle.JavaScript()
 	<h1>Articles</h1>
 	<ul>
 		<li><a href="https://toepoke.github.io/2012/02/27/enhancing-the-non-javascript-user-experience.html">Enhancing the non-JS user experience with Fluqi</a></li>
-		<li>Wanting PostBack support with jQuery UI and WebForms? <a href="http://juiceui.com/">Check out JuiceUI as well</a>.</li>
+		<li>Wanting PostBack support with jQuery UI and WebForms? <a href="https://github.com/appendto/juiceui/">Check out JuiceUI as well</a>.</li>
 	</ul>
 	<p>
 		Written an article about <%=Html.ActionLink("Fluqi", "Home", "Home")%>?  <a href="mailto:contact[at]toepoke.co.uk">Let us know</a> 
