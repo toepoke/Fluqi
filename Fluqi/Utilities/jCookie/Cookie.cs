@@ -13,7 +13,7 @@ using System.IO;
 namespace Fluqi.Utilities.jCookie
 {
 	/// <summary>
-	/// Code for rendering the jQuery Cookie utility plugin (see http://archive.plugins.jquery.com/project/Cookie)
+	/// Code for rendering the jQuery Cookie utility plugin (see https://archive.plugins.jquery.com/project/Cookie)
 	/// </summary>
 	public partial class Cookie: Core.Interfaces.IControl
 	{

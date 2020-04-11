@@ -8,12 +8,12 @@ namespace Fluqi
 	{
 		// jQuery 1.9.0 upgrade
 		// ToDo: Add some code into the position "using" callback to illustrate the properties now available (there's lots more)
-		//       - see http://jqueryui.com/upgrade-guide/1.9/#added-positioning-feedback-to-the-using-callback
+		//       - see https://jqueryui.com/upgrade-guide/1.9/#added-positioning-feedback-to-the-using-callback
 		// ToDo: Investigate viability of have a "test.aspx" page which has Fluqi output it's settings and run the inbuild jQuery UI tests against it?
 		// ToDo: Still need to add in DEFAULTs for the animation (may need to be per control).  Also remember this effects the C# output.
 		// ToDo: Accordion header needs adding
 		// ToDo: Revisit show/hide in Dialog (and elsewhere) as we might be able to use the object version
-		// ToDo: Add a way to publish a jsfiddle from the builder pages (see http://doc.jsfiddle.net/api/post.html and http://jsfiddle.net/zalun/sthmj/embedded/result/)
+		// ToDo: Add a way to publish a jsfiddle from the builder pages (see https://doc.jsfiddle.net/api/post.html and https://jsfiddle.net/zalun/sthmj/embedded/result/)
 		// ToDo: Check the documentation for ALL controls against what we have.  E.g. we've missed the hide method on setting tabs
 		// ToDo: Look to convert the Hide/Show functions to use the more generic jAnimation classes
 

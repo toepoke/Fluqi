@@ -12,7 +12,7 @@ using System.Runtime;
 namespace Fluqi.Utilities.jPosition
 {
 	/// <summary>
-	/// Models the Position jQuery utility object (see http://jqueryui.com/demos/position/)
+	/// Models the Position jQuery utility object (see https://jqueryui.com/demos/position/)
 	/// </summary>
 	public partial class Position
 	{

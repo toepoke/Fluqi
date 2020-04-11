@@ -69,7 +69,7 @@ namespace Fluqi.Tests
 
 			// only testing raw output
 			btn
-				.RenderAsHyperlink("http://toepoke.co.uk")
+				.RenderAsHyperlink("https://toepoke.co.uk")
 				.Rendering				
 					.Compress()
 					.ShowCSS()
@@ -81,7 +81,7 @@ namespace Fluqi.Tests
 
 			// Assert - <button ..>my button label</button>
 			Assert.IsTrue(html.Contains(">my button label</a>"));
-			Assert.IsTrue(html.Contains("http://toepoke.co.uk"));
+			Assert.IsTrue(html.Contains("https://toepoke.co.uk"));
 		}
 
 		[TestMethod]

@@ -64,7 +64,7 @@ namespace Fluqi.Widget.jAccordion {
 		/// should be called by its resize-event.
 		/// </summary>
 		/// <remarks>
-		/// See http://api.jqueryui.com/accordion/#method-refresh for details.
+		/// See https://api.jqueryui.com/accordion/#method-refresh for details.
 		/// Note previous to jQuery 1.9 this was called the "resize" method
 		/// </remarks>
 		public void Refresh() {
@@ -86,7 +86,7 @@ namespace Fluqi.Widget.jAccordion {
 		/// zero-indexed number to match the position of the header to activate. 
 		/// </param>
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#method-activate for details.</remarks>
+		/// <remarks>See https://jqueryui.com/demos/accordion/#method-activate for details.</remarks>
 		public void Select(int panelIndex) {
 			this.Active(panelIndex);
 		}
@@ -94,7 +94,7 @@ namespace Fluqi.Widget.jAccordion {
 		/// <summary>
 		/// Collapses all accordion panels (only possible when collapsible is true).
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#method-activate for details.</remarks>
+		/// <remarks>See https://jqueryui.com/demos/accordion/#method-activate for details.</remarks>
 		public void CollapseAll() {
 			this.RenderMethodCall("active", "false");
 		}

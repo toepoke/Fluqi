@@ -282,13 +282,13 @@ namespace Fluqi.Tests
 		  var resp = new MockWriter();
 			var ctl = TestHelper.SetupSimpleAutoCompleteObject(resp);
 
-			ctl.Methods.SetSource("http://some.url");
+			ctl.Methods.SetSource("https://some.url");
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#ac\").autocomplete(\"option\",\"source\",\"http://some.url\")", html);
+		  Assert.AreEqual("$(\"#ac\").autocomplete(\"option\",\"source\",\"https://some.url\")", html);
 		}
 
 		[TestMethod]

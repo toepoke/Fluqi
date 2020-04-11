@@ -16,7 +16,7 @@ namespace Fluqi.Core
 #pragma warning disable 1591
 		/// <summary>
 		/// Models the Easing options available as standard with jQuery UI components
-		/// (as defined in the jQuery documentation - http://api.jqueryui.com/easings/)
+		/// (as defined in the jQuery documentation - https://api.jqueryui.com/easings/)
 		/// </summary>
 		public enum eEase: byte {
 			None = 0,

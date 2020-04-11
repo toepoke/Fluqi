@@ -9,7 +9,7 @@ namespace Fluqi.Core
 {
 	/// <summary>
 	/// Models the Icons that comes as standard through jQuery UI (see the Framework Icons section
-	/// at http://jqueryui.com/themeroller/).  Used for displaying icons in the dialog control for instance.
+	/// at https://jqueryui.com/themeroller/).  Used for displaying icons in the dialog control for instance.
 	/// </summary>
 	public class Icons
 	{
@@ -17,7 +17,7 @@ namespace Fluqi.Core
 #pragma warning disable 1591
 		/// <summary>
 		/// Enumeration for the Icons that come as standard with jQuery UI (see the Framework Icons section
-		/// at http://jqueryui.com/themeroller/).
+		/// at https://jqueryui.com/themeroller/).
 		/// </summary>
 		public enum eIconClass: int {
 			carat_1_n               =   0,

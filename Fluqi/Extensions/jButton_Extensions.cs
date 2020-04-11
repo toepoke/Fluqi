@@ -16,7 +16,7 @@ namespace Fluqi.Extension {
 	{
 
 		/// <summary>
-		/// Creates a Button control (see http://jqueryui.com/demos/button/ for details) that can be 
+		/// Creates a Button control (see https://jqueryui.com/demos/button/ for details) that can be 
 		/// later configured and rendered to the page.
 		/// </summary>
 		/// <param name="html">Html helper (used to get the HttpResponse object to render onto)</param>
@@ -31,7 +31,7 @@ namespace Fluqi.Extension {
 		}
 
 		/// <summary>
-		/// Creates a Button control (see http://jqueryui.com/demos/button/ for details) that can be 
+		/// Creates a Button control (see https://jqueryui.com/demos/button/ for details) that can be 
 		/// later configured and rendered to the page.
 		/// </summary>
 		/// <param name="page">WebForms page to render the control onto</param>

@@ -158,7 +158,7 @@
 			<p>And this shows how we can have a normal ASP.NET button and have it styled by jQuery UI (via Fluqi!)</p>
 			<!-- 
 				Note that Icons won't work with asp:Button as it renders as an input HTML element, for further details see 
-				http://jqueryui.com/demos/button/#overview
+				https://jqueryui.com/demos/button/#overview
 			-->
 			<asp:Button ID="btn2" runat="server" Text="ASP.NET button" />
 			<%

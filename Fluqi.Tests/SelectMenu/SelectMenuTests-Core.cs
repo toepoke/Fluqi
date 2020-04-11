@@ -104,7 +104,7 @@ namespace Fluqi.Tests
 				.Items()
 					.Add("Item 1", "1")
 						.ConfigureItem()
-							.WithAttribute("data-style", "background-image: url('http://gravatar.com/avatar/xyz?a=b&x=y')")
+							.WithAttribute("data-style", "background-image: url('https://gravatar.com/avatar/xyz?a=b&x=y')")
 						.Finish()
 					.Finish()
 			;
@@ -115,7 +115,7 @@ namespace Fluqi.Tests
 		  string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.IsTrue(html.Contains("data-style=\"background-image: url(&#39;http://gravatar.com/avatar/xyz?a=b&amp;x=y&#39;)\""));
+		  Assert.IsTrue(html.Contains("data-style=\"background-image: url(&#39;https://gravatar.com/avatar/xyz?a=b&amp;x=y&#39;)\""));
 		}
 
 

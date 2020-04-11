@@ -52,7 +52,7 @@
 					<p>We need to know a few things about you.</p>
 				<%} %>
 				<%using (sidebar.Panels.RenderNextPane()) { %>
-					<p>Tell us about the game <a href="http://toepoke.co.uk">toepoke</a> is going to organise for you.</p>
+					<p>Tell us about the game <a href="https://toepoke.co.uk">toepoke</a> is going to organise for you.</p>
 				<%} %>
 				<%using (sidebar.Panels.RenderNextPane()) { %>
 					<p>Cool, we're done.</p>

@@ -217,9 +217,9 @@ namespace Fluqi.Tests
 			tabs
 				.AsDynamic()
 				.Panes
-				.Add("http://someurl.com/tab1", "Tab 1")
-				.Add("http://someurl.com/tab2", "Tab 2")
-				.Add("http://someurl.com/tab3", "Tab 3")
+				.Add("https://someurl.com/tab1", "Tab 1")
+				.Add("https://someurl.com/tab2", "Tab 2")
+				.Add("https://someurl.com/tab3", "Tab 3")
 			;
 
 			// only testing raw output
@@ -240,13 +240,13 @@ namespace Fluqi.Tests
 				"<div id=\"myTabs\">" + Environment.NewLine +
 				"	<ul>" + Environment.NewLine + 
 				"		<li>" + Environment.NewLine +
-				"			<a href=\"http://someurl.com/tab1\"><span>Tab 1</span></a>" + Environment.NewLine +
+				"			<a href=\"https://someurl.com/tab1\"><span>Tab 1</span></a>" + Environment.NewLine +
 				"		</li>" + Environment.NewLine +
 				"		<li>" + Environment.NewLine +
-				"			<a href=\"http://someurl.com/tab2\"><span>Tab 2</span></a>" + Environment.NewLine +
+				"			<a href=\"https://someurl.com/tab2\"><span>Tab 2</span></a>" + Environment.NewLine +
 				"		</li>" + Environment.NewLine +
 				"		<li>" + Environment.NewLine +
-				"			<a href=\"http://someurl.com/tab3\"><span>Tab 3</span></a>" + Environment.NewLine +
+				"			<a href=\"https://someurl.com/tab3\"><span>Tab 3</span></a>" + Environment.NewLine +
 				"		</li>" + Environment.NewLine +
 				"	</ul>" + Environment.NewLine +
 				"</div>" + Environment.NewLine;
@@ -409,9 +409,9 @@ namespace Fluqi.Tests
 			tabs
 				.AsDynamic()
 				.Panes
-				.Add("http://someurl.com/tab1", "Tab 1")
-				.Add("http://someurl.com/tab2", "Tab 2")
-				.Add("http://someurl.com/tab3", "Tab 3")
+				.Add("https://someurl.com/tab1", "Tab 1")
+				.Add("https://someurl.com/tab2", "Tab 2")
+				.Add("https://someurl.com/tab3", "Tab 3")
 			;
 
 			// only testing raw output

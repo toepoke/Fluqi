@@ -40,13 +40,10 @@
 
 	<h2>1.11.0 - Upgrade to version 1.11.0 of jQuery UI library</h2>
 	<ul>
-		<li>Added the new <a href="http://jqueryui.com/selectmenu/">Selectmenu</a> widget, and associated builder</li>
+		<li>Added the new <a href="https://jqueryui.com/selectmenu/">Selectmenu</a> widget, and associated builder</li>
 	</ul>
 
 	<h2>1.10.3 - Upgrade to latest jQuery and jQuery UI libraries</h2>
-	<p>
-		
-	</p>
 	<ul>
 		<li>
 			<p>
@@ -65,25 +62,25 @@
 
 	<h2>1.9.0 - breaking build</h2>
 	<p>
-		<a href="http://jqueryui.com/">jQuery UI 1.9.0</a> was released a few weeks back.  This brings some major changes
-		including the new <a href="http://jqueryui.com/menu/">menu</a>, <a href="http://jqueryui.com/spinner/">spinner</a>
-		and <a href="http://jqueryui.com/tooltip/">tooltip</a> widgets.  Naturally this version of Fluqi add support
+		<a href="https://jqueryui.com/">jQuery UI 1.9.0</a> was released a few weeks back.  This brings some major changes
+		including the new <a href="https://jqueryui.com/menu/">menu</a>, <a href="https://jqueryui.com/spinner/">spinner</a>
+		and <a href="https://jqueryui.com/tooltip/">tooltip</a> widgets.  Naturally this version of Fluqi add support
 		for these new widgets.
 	</p>
 	<p>
 		As part of this release the jQuery UI team have depreciated quite a few methods.  I've taken the step
 		of removing these entry points to Fluqi rather than mark them as 
-		<a href="http://msdn.microsoft.com/en-us/library/system.obsoleteattribute.aspx">obsolete</a>.  
+		<a href="https://msdn.microsoft.com/en-us/library/system.obsoleteattribute.aspx">obsolete</a>.  
 		This is to discourage users from using something that will disappear later.  Some methods have also 
 		been renamed, and Fluqi has had it's entry points renamed too.
 	</p>
 	<p>
 		If you need to use any of the entry points laid out in the 
-		<a href="http://jqueryui.com/upgrade-guide/1.9">jQuery UI 1.9 Upgrade Guide</a>
+		<a href="https://jqueryui.com/upgrade-guide/1.9">jQuery UI 1.9 Upgrade Guide</a>
 		I suggest you hold fire on version <strong>0.1.6</strong> of Fluqi.
 	</p>
 	<p>
-		In any case I implore you to review the <a href="http://jqueryui.com/upgrade-guide/1.9/">upgrade guide</a>
+		In any case I implore you to review the <a href="https://jqueryui.com/upgrade-guide/1.9/">upgrade guide</a>
 		for jQuery UI <strong>before</strong> upgrading to Fluqi 1.9.0.
 	</p>
 	<p>
@@ -135,14 +132,14 @@
 	<ul>
 		<li>
 			Razor engine requires additional entries in the web.config to include the namespaces. These have now been added.
-			Note this is only present in the <a href="http://nuget.org/packages/fluqi">nuget package</a>, however
+			Note this is only present in the <a href="https://nuget.org/packages/fluqi">nuget package</a>, however
 			it is included in the 0.1.4 release on <a href="https://github.com/toepoke/Fluqi/downloads">github</a>.
 		</li>
 	</ul>
 
 	<h2>0.2.0</h2>
 	<ul>
-		<li>Initial <a href="http://nuget.org/packages/fluqi">nuget package</a> released</li>
+		<li>Initial <a href="https://nuget.org/packages/fluqi">nuget package</a> released</li>
 	</ul>
 
 	<h2>0.1.0</h2>

@@ -339,7 +339,7 @@ namespace Fluqi.Tests
 		  // only testing raw output
 		  menu
 		    .Items()
-		        .Add("toepoke", "http://toepoke.co.uk")
+		        .Add("toepoke", "https://toepoke.co.uk")
 		      .Back()
 		    .Finish()
 		  .Rendering
@@ -354,7 +354,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"http://toepoke.co.uk\">toepoke</a></li>" + 
+		      "<li><a href=\"https://toepoke.co.uk\">toepoke</a></li>" + 
 		    "</ul>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
@@ -399,7 +399,7 @@ namespace Fluqi.Tests
 		  // only testing raw output
 		  menu
 		    .Items()
-		        .Add("toepoke", "http://toepoke.co.uk", Core.Icons.eIconClass.home)
+		        .Add("toepoke", "https://toepoke.co.uk", Core.Icons.eIconClass.home)
 		      .Back()
 		    .Finish()
 		  .Rendering
@@ -414,7 +414,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"http://toepoke.co.uk\"><span class=\"ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
+		      "<li><a href=\"https://toepoke.co.uk\"><span class=\"ui-icon ui-icon-home\"></span>toepoke</a></li>" + 
 		    "</ul>";
 		  Assert.IsTrue(html.Contains(expected));
 		}
@@ -806,7 +806,7 @@ namespace Fluqi.Tests
 		  // only testing raw output
 		  menu
 				.Items()
-					.Add("toepoke", "http://toepoke.co.uk")
+					.Add("toepoke", "https://toepoke.co.uk")
 				.Finish()
 				.Rendering
 					.Compress()
@@ -820,7 +820,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"http://toepoke.co.uk\">toepoke</a></li>" + 
+		      "<li><a href=\"https://toepoke.co.uk\">toepoke</a></li>" + 
 		    "</ul>";
 
 		  Assert.IsTrue(html.Contains(expected));
@@ -937,7 +937,7 @@ namespace Fluqi.Tests
 				.Items()
 					.Add("toepoke")
 						.Configure()
-							.SetTargetURL("http://toepoke.co.uk")
+							.SetTargetURL("https://toepoke.co.uk")
 							.Finish()
 				.Finish()
 				.Rendering
@@ -952,7 +952,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  string expected = 
 		    "<ul id=\"myMenu\">" + 
-		      "<li><a href=\"http://toepoke.co.uk\">toepoke</a></li>" + 
+		      "<li><a href=\"https://toepoke.co.uk\">toepoke</a></li>" + 
 		    "</ul>";
 
 		  Assert.IsTrue(html.Contains(expected));

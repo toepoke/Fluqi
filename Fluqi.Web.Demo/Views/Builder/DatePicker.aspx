@@ -14,7 +14,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="DemoExampleContent" runat="server">
 <p>
 	This section configures the look &amp; feel of the Datepicker control as it initially appears. 
-	This corresponds to the options that appear on the <a href="http://jqueryui.com/demos/datepicker/#options" title="Note not all properties are featured">Datepicker options page</a>.
+	This corresponds to the options that appear on the <a href="https://jqueryui.com/demos/datepicker/#options" title="Note not all properties are featured">Datepicker options page</a>.
 </p>
 <%using (Html.BeginForm("DatePicker", "Builder")) {%>
 	<input type="submit" value="UPDATE" />
@@ -178,7 +178,7 @@
 						.SetCloseText("OK") 
 			);%>;
 
-			// http://stackoverflow.com/questions/715677/trouble-with-jquery-dialog-and-datepicker-plugins
+			// https://stackoverflow.com/questions/715677/trouble-with-jquery-dialog-and-datepicker-plugins
 			$("#ui-datepicker-div").css("z-index", "1003");
 		});
 		$("#isDisabled").click(function() { alert( "IsDisabled reports:\n\n" + <%dt.Methods.IsDisabled();%> ); });

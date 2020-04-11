@@ -30,7 +30,7 @@ namespace Fluqi.Widget.jPushButton
 
 		/// <summary>
 		/// This event doesn't actually exist as part of jQuery UI (no seriously, have a look for yourself
-		/// http://jqueryui.com/demos/button/#events) or at the very least isn't documented.
+		/// https://jqueryui.com/demos/button/#events) or at the very least isn't documented.
 		/// But it's a button, chances are you want an event, so we're adding one just for you :)
 		/// </summary>
 		/// <remarks>This is a Fluqi created event, no associated jQuery UI documentation</remarks>

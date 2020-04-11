@@ -43,14 +43,14 @@ namespace Fluqi.Widget.jAccordion
 		/// <summary>
 		/// Flags whether the "disabled" flag is on or off (default is "false").
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-disabled for details</remarks>
+		/// <remarks>See https://jqueryui.com/demos/accordion/#option-disabled for details</remarks>
 		protected internal bool Disabled { get; set; }
 
 
 		/// <summary>
 		/// Stores the animation to be used when opening/closing panels (default is "slide")
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-animated for details</remarks>
+		/// <remarks>See https://jqueryui.com/demos/accordion/#option-animated for details</remarks>
 		protected internal string Animate { get; set; }
 
 		/// <summary>
@@ -61,13 +61,13 @@ namespace Fluqi.Widget.jAccordion
 		/// <summary>
 		/// Stores whether the panels are initialised with the collapsible option on or off (default is "false").
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-collapsible for more details</remarks>
+		/// <remarks>See https://jqueryui.com/demos/accordion/#option-collapsible for more details</remarks>
 		protected internal bool Collapsible { get; set; }
 		
 		/// <summary>
 		/// Stores the event [override] to be used when opening/closing panels (default is "click").
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-event for details</remarks>
+		/// <remarks>See https://jqueryui.com/demos/accordion/#option-event for details</remarks>
 		protected internal string Event { get; set; }
 	
 		/// <summary>
@@ -76,7 +76,7 @@ namespace Fluqi.Widget.jAccordion
 		/// We recommend using the icons native to the jQuery UI CSS Framework manipulated 
 		/// by jQuery UI ThemeRoller
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-icons for more details</remarks>
+		/// <remarks>See https://jqueryui.com/demos/accordion/#option-icons for more details</remarks>
 		protected internal string HeaderIconClass { get; set; }
 			
 		/// <summary>
@@ -85,7 +85,7 @@ namespace Fluqi.Widget.jAccordion
 		/// We recommend using the icons native to the jQuery UI CSS Framework manipulated 
 		/// by jQuery UI ThemeRoller
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/accordion/#option-icons for more details</remarks>
+		/// <remarks>See https://jqueryui.com/demos/accordion/#option-icons for more details</remarks>
 		protected internal string activeHeaderIconClass { get; set; }
 
 	} // Options

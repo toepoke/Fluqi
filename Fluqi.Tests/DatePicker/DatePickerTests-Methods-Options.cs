@@ -200,13 +200,13 @@ namespace Fluqi.Tests
 		  var resp = new MockWriter();
 			var ctl = TestHelper.SetupSimpleDatePickerObject(resp);
 
-		  ctl.Methods.SetButtonImage("http://someurl.jpg");
+		  ctl.Methods.SetButtonImage("https://someurl.jpg");
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#dt\").datepicker(\"option\",\"buttonImage\",\"http://someurl.jpg\")", html);
+		  Assert.AreEqual("$(\"#dt\").datepicker(\"option\",\"buttonImage\",\"https://someurl.jpg\")", html);
 		}
 
 		[TestMethod]

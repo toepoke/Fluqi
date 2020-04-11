@@ -45,7 +45,7 @@ namespace Fluqi.Models
 			mnu
 				.WithStyle("z-index", "1000")
 				.Items()
-					.Add("Home", "http://fluqi.apphb.com", Core.Icons.eIconClass.home)
+					.Add("Home", "https://fluqi.apphb.com", Core.Icons.eIconClass.home)
 					.AddDivider()
 					.Add("File", Core.Icons.eIconClass.disk)
 						.SubMenu()

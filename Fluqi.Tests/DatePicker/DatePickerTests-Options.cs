@@ -182,7 +182,7 @@ namespace Fluqi.Tests
 		  // only testing raw output
 		  ac
 				.Options
-					.SetButtonImage("http://example.com/my-date-picker-image.png")
+					.SetButtonImage("https://example.com/my-date-picker-image.png")
 					.Finish()
 				.Rendering
 			    .Compress()
@@ -197,7 +197,7 @@ namespace Fluqi.Tests
 		  string expected = 
 		    "<script type=\"text/javascript\">" + 
 		      "$(document).ready( function() {" + 
-		        "$(\"#dt\").datepicker({buttonImage: \"http://example.com/my-date-picker-image.png\"})" + 
+		        "$(\"#dt\").datepicker({buttonImage: \"https://example.com/my-date-picker-image.png\"})" + 
 		      ";});" + 
 		    "</script>";
 		  Assert.IsTrue(html.Contains(expected));

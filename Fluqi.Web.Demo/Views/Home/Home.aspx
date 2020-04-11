@@ -12,7 +12,7 @@
 		<li><a href="#source">Download</a></li>
 		<li><%=Html.ActionLink("Builder", "Accordion", "Builder")%></li>
 		<li><%=Html.ActionLink("Change Log", "History", "Home")%></li>
-		<li><a href="http://www.twitter.com/toepoke_co_uk" title="For updates, follow toepoke_co_uk">Follow</a></li>
+		<li><a href="https://www.twitter.com/toepoke_co_uk" title="For updates, follow toepoke_co_uk">Follow</a></li>
 	</ul>
 </asp:Content>
 
@@ -23,15 +23,15 @@
 	<div class="intro-box">
 		<h1>Fluqi</h1>
 		<p>
-			The <a href="http://jqueryui.com/demos/">jQuery UI widgets</a> are brilliant.  They speed up web development	
+			The <a href="https://jqueryui.com/demos/">jQuery UI widgets</a> are brilliant.  They speed up web development	
 			no end with those easy to use controls.  The downside is remembering all the HTML mark-up and widget options!
 		</p>
 		<p>
 			I don't know about you but when I was developing my 
-			<a href="http://toepoke.co.uk" title="Organise your 5-a-side kickabout easily with toepoke">5-a-side management website</a> 
-			I was forever going to the <a href="http://jqueryui.com/demos/">excellent jQuery UI documentation</a> to read 
+			<a href="https://toepoke.co.uk" title="Organise your 5-a-side kickabout easily with toepoke">5-a-side management website</a> 
+			I was forever going to the <a href="https://jqueryui.com/demos/">excellent jQuery UI documentation</a> to read 
 			up on the HTML and settings required to achieve what I wanted.  
-			Take this <a href="http://jqueryui.com/demos/accordion/">accordion</a> widget for instance ... hands up who knows the
+			Take this <a href="https://jqueryui.com/demos/accordion/">accordion</a> widget for instance ... hands up who knows the
 			mark-up and JavaScript <span title="OK, maybe you do, but I don't :)" style="cursor: help">off the top of their head?</span>
 		</p>
 	</div>
@@ -100,7 +100,7 @@
 	<h1>What is Fluqi?</h1>
 	<p>
 		<%=Html.ActionLink("Fluqi", "Home", "Home")%> was devised with the simple aim of making it easier to integrate
-		<a href="http://jqueryui.com/demos/">jQuery UI widgets</a> into websites.  
+		<a href="https://jqueryui.com/demos/">jQuery UI widgets</a> into websites.  
 		<%=Html.ActionLink("Fluqi", "Home", "Home")%> helps in two ways; Firstly with a widget builder for setting the various 
 		options, and secondly with a .NET <abbr title="Application Programming Interface">API</abbr>.
 	</p>
@@ -108,7 +108,7 @@
 	<p>
 		The <%=Html.ActionLink("Widget builder", "Accordion", "Builder")%> is a simple website you can use
 		to configure your widget (tabs control, date picker, etc) no matter what 
-		<a href="http://en.wikipedia.org/wiki/Server-side_scripting">server-side technology</a>
+		<a href="https://en.wikipedia.org/wiki/Server-side_scripting">server-side technology</a>
 		you're using.
 	</p>
 	<p>
@@ -118,29 +118,29 @@
 
 	<h2 id="dotNet">Fluent Interface</h2>
 	<p>
-		<%=Html.ActionLink("Fluqi", "Home", "Home")%> itself is an <a href="http://www.asp.net">.NET</a> library for configuring the jQuery UI
+		<%=Html.ActionLink("Fluqi", "Home", "Home")%> itself is an <a href="https://www.asp.net">.NET</a> library for configuring the jQuery UI
 		widgets programmatically with a fluent interface.  So how does it work?
 	</p>
 		<p>
-			Let's say for example you want to use the <a href="http://jqueryui.com/demos/datepicker/">Datepicker widget</a>, 
+			Let's say for example you want to use the <a href="https://jqueryui.com/demos/datepicker/">Datepicker widget</a>, 
 			but not just with the default settings.  We also want:
 		</p>
 		<ul>
 			<li>
-				<a href="http://jqueryui.com/demos/datepicker/#option-numberOfMonths">Two</a> months shown at a time,
+				<a href="https://jqueryui.com/demos/datepicker/#option-numberOfMonths">Two</a> months shown at a time,
 			</li>
 			<li>
-				With a <a href="http://jqueryui.com/demos/datepicker/#option-duration">slow</a> 
-				<a href="http://jqueryui.com/demos/datepicker/#option-showAnim">explosion</a> effect when the picker opens, and
+				With a <a href="https://jqueryui.com/demos/datepicker/#option-duration">slow</a> 
+				<a href="https://jqueryui.com/demos/datepicker/#option-showAnim">explosion</a> effect when the picker opens, and
 			</li>
 			<li>
-				We want the <a href="http://jqueryui.com/demos/datepicker/#option-showButtonPanel">button panel</a>
+				We want the <a href="https://jqueryui.com/demos/datepicker/#option-showButtonPanel">button panel</a>
 			showing too.
 			</li>
 		</ul>
 		<p>
-			I know what you're thinking ... I'll fire up <a href="http://www.google.co.uk/chrome">my favourite browser</a>, 
-			<a href="http://jqueryui.com/demos/datepicker/">look up the settings</a> and start copy &amp; pasting.  
+			I know what you're thinking ... I'll fire up <a href="https://www.google.co.uk/chrome">my favourite browser</a>, 
+			<a href="https://jqueryui.com/demos/datepicker/">look up the settings</a> and start copy &amp; pasting.  
 			With <%=Html.ActionLink("Fluqi", "Home", "Home")%> we just open our MVC View (or WebForm) and just type:
 		</p>
 		<pre class="brush: c#">
@@ -221,7 +221,7 @@ dt.GetStartUpScript(false)
 	<h2 style="margin-top: 1.5em">External JavaScript</h2>
 	<p>
 		Next on the <i class="italic">
-		<a href="http://developer.yahoo.com/performance/rules.html">&ldquo;I'm liking this, but it isn't exactly best practice&rdquo;</i></a> 
+		<a href="https://developer.yahoo.com/performance/rules.html">&ldquo;I'm liking this, but it isn't exactly best practice&rdquo;</i></a> 
 		list is the fact that the examples above are all inline JavaScript on the same page as the HTML.  Whilst this is arguably OK if we're
 		only using a single widget, it can soon become quite large, increasing the download footprint to our users.
 	</p>
@@ -238,9 +238,9 @@ Bundle.JavaScript()
 	.Render("~/_assets/fluqi-#.js")
 </pre>
 	<p>
-		I won't detail <a href="http://www.codethinked.com/squishit-the-friendly-aspnet-javascript-and-css-squisher">SquishIt</a>
+		I won't detail <a href="https://www.codethinked.com/squishit-the-friendly-aspnet-javascript-and-css-squisher">SquishIt</a>
 		here, but to summarise the above snippet takes the JavaScript for building our date-picker, 
-		<a href="http://en.wikipedia.org/wiki/Minification_(programming)">minimises</a> the code and writes the result
+		<a href="https://en.wikipedia.org/wiki/Minification_(programming)">minimises</a> the code and writes the result
 		to an <strong>_assets</strong> folder.  When the page is delivered to the browser the above is replaced with 
 		a normal link to the JavaScript, but to the compressed version.
 	</p>
@@ -251,7 +251,7 @@ Bundle.JavaScript()
 	<h1>Getting Started</h1>
 	<p>
 		To get Fluqi up and running with ASP.NET is really simple.  The easiest way is to install the 
-		<a href="http://nuget.org/packages/fluqi">NuGet package</a>.  If this isn't possible, the manual steps 
+		<a href="https://nuget.org/packages/fluqi">NuGet package</a>.  If this isn't possible, the manual steps 
 		are pretty easy too.
 	</p>
 	<ol>
@@ -302,7 +302,7 @@ Bundle.JavaScript()
 			<h2><%=Html.ActionLink("Altogether", "Wizard", "Demo")%></h2>
 			<p>
 				Single page demo using <strong><%=Html.ActionLink("Fluqi", "Home", "Home")%></strong>
-				to build a pseudo application with many <a href="http://jqueryui.com/demos/">widgets</a>
+				to build a pseudo application with many <a href="https://jqueryui.com/demos/">widgets</a>
 				working together.
 			</p>
 			<%=Html.ActionLink("Wizard Demo", "Wizard", "Demo", null, new {@class = "align-right", @style="margin-top: 3em"})%>
@@ -311,11 +311,11 @@ Bundle.JavaScript()
 			<h2><a href="<%=Url.Content("~/WebForms/QuickDemo.aspx")%>">WebForms</a></h2>
 			<p>
 				Not into ASP.NET MVC?  No problem, you can use <%=Html.ActionLink("Fluqi", "Home", "Home")%>
-				in <a href="http://www.asp.net/web-forms">WebForms</a> too.
+				in <a href="https://www.asp.net/web-forms">WebForms</a> too.
 			</p>
 			<p class="footnote">
-				We're all about <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progress enhacement</a> <%=Html.ActionLink("here", "Home", "Home")%>.
-				If you're wanting <a href="http://www.asp.net/web-forms/videos/building-35-applications/submit-and-postback">postbacks</a>,
+				We're all about <a href="https://en.wikipedia.org/wiki/Progressive_enhancement">progress enhacement</a> <%=Html.ActionLink("here", "Home", "Home")%>.
+				If you're wanting <a href="https://www.asp.net/web-forms/videos/building-35-applications/submit-and-postback">postbacks</a>,
 				check out <a href="https://github.com/appendto/juiceui/">JuiceUI</a>.				
 			</p>
 			<a href="<%=Url.Content("~/WebForms/QuickDemo.aspx")%>" class="align-right">WebForms Demo</a>
@@ -349,9 +349,9 @@ Bundle.JavaScript()
 <section id="share">
 	<h1>Share</h1>
 	<ul class="link-list social">
-		<li class="facebook"><a href='http://www.facebook.com/sharer.php?u=<%=Url.Home()%>&t=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Facebook</a></li>
-		<li class="twitter"><a href='http://twitter.com/intent/tweet?status=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk : <%=Url.Home()%>'>Twitter</a></li>
-		<li class="delicious"><a href='http://del.icio.us/post?url=<%=Url.Home()%>&title=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Delicious</a></li>
+		<li class="facebook"><a href='https://www.facebook.com/sharer.php?u=<%=Url.Home()%>&t=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Facebook</a></li>
+		<li class="twitter"><a href='https://twitter.com/intent/tweet?status=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk : <%=Url.Home()%>'>Twitter</a></li>
+		<li class="delicious"><a href='https://del.icio.us/post?url=<%=Url.Home()%>&title=Wow, finding jQuery UI development even easier with Fluqi by @toepoke_co_uk'>Delicious</a></li>
 	</ul>
 	<%Html.RenderPartial("Disqus");%>
 </section>

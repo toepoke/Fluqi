@@ -99,7 +99,7 @@ namespace Fluqi.Widget.jAutoComplete {
 		/// <summary>
 		/// Returns the .ui-autocomplete element.
 		/// </summary>
-		/// <remarks>See http://jqueryui.com/demos/autocomplete/#method-widget for details.</remarks>
+		/// <remarks>See https://jqueryui.com/demos/autocomplete/#method-widget for details.</remarks>
 		public void Widget() {
 			base.RenderMethodCall("widget");
 		}	

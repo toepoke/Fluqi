@@ -16,7 +16,7 @@ namespace Fluqi.Core
 #pragma warning disable 1591
 		/// <summary>
 		/// Models the Animation options available as standard with jQuery UI components
-		/// (as defined in the jQuery documentation - http://docs.jquery.com/UI/Effects/effect#option-effect)
+		/// (as defined in the jQuery documentation - https://docs.jquery.com/UI/Effects/effect#option-effect)
 		/// </summary>
 		public enum eAnimation: byte {
 			None = 0,

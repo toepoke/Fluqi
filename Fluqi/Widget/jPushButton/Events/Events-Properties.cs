@@ -26,7 +26,7 @@ namespace Fluqi.Widget.jPushButton
 
 		/// <summary>
 		/// This event doesn't actually exist as part of jQuery UI (no seriously, have a look for yourself
-		/// http://api.jqueryui.com/button/) or at the very least isn't documented.
+		/// https://api.jqueryui.com/button/) or at the very least isn't documented.
 		/// But it's a button, chances are you want an event, so we're adding one just for you :)
 		/// </summary>
 		protected internal string ClickEvent { get; set; }

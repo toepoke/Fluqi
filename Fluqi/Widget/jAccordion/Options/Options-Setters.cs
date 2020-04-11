@@ -159,7 +159,7 @@ namespace Fluqi.Widget.jAccordion
 		/// </summary>
 		/// <remarks>
 		/// Overload for specifying icons through an enumeration (so you get the itellisense when finding them).
-		/// See http://api.jqueryui.com/accordion/#option-icons for details
+		/// See https://api.jqueryui.com/accordion/#option-icons for details
 		/// </remarks>
 		public Options SetIcons(Core.Icons.eIconClass headerIconClass, Core.Icons.eIconClass activeHeaderIconClass) {
 			this.HeaderIconClass = Core.Icons.ByEnum(headerIconClass);

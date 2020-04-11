@@ -110,6 +110,6 @@
 </p>
 <p>
 	Finally, you can use an animated gif as part of your progress bar through CSS.  For
-	details please see the <a href="http://jqueryui.com/demos/progressbar/#animated">jQuery UI website</a>.
+	details please see the <a href="https://jqueryui.com/demos/progressbar/#animated">jQuery UI website</a>.
 </p>
 </asp:Content>
