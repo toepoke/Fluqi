@@ -20,8 +20,13 @@ C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\obj\Debug\ResolveAssemblyReference.cache
 C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\obj\Debug\Fluqi.dll
 C:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\obj\Debug\Fluqi.pdb
 S:\Dropbox\Projects\Fluqi\Fluqi\Fluqi\bin\Debug\Fluqi.XML
+S:\Dropbox\Git\repo\Fluqi\Fluqi\bin\Debug\Fluqi.XML
 S:\Dropbox\Git\repo\Fluqi\Fluqi\bin\Debug\Fluqi.dll
 S:\Dropbox\Git\repo\Fluqi\Fluqi\bin\Debug\Fluqi.pdb
+S:\Dropbox\Git\repo\Fluqi\Fluqi\bin\Debug\System.Web.Mvc.dll
+S:\Dropbox\Git\repo\Fluqi\Fluqi\bin\Debug\System.Web.Mvc.xml
+S:\Dropbox\Git\repo\Fluqi\Fluqi\obj\Debug\Fluqi.csprojAssemblyReference.cache
+S:\Dropbox\Git\repo\Fluqi\Fluqi\obj\Debug\Fluqi.csproj.CoreCompileInputs.cache
+S:\Dropbox\Git\repo\Fluqi\Fluqi\obj\Debug\Fluqi.csproj.CopyComplete
 S:\Dropbox\Git\repo\Fluqi\Fluqi\obj\Debug\Fluqi.dll
 S:\Dropbox\Git\repo\Fluqi\Fluqi\obj\Debug\Fluqi.pdb
-S:\Dropbox\Git\repo\Fluqi\Fluqi\bin\Debug\Fluqi.XML

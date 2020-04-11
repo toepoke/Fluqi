@@ -46,10 +46,13 @@ S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Tests.dll.config
 S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Tests.dll
 S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Tests.pdb
 S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.dll
-S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Web.Demo.dll
-S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.Web.Demo.pdb
+S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\System.Web.Mvc.dll
 S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.pdb
 S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\Fluqi.xml
+S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\bin\Debug\System.Web.Mvc.xml
+S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.csprojAssemblyReference.cache
+S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.csproj.CoreCompileInputs.cache
+S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.csproj.CopyComplete
 S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.dll
 S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.pdb
-S:\Dropbox\Git\repo\Fluqi\Fluqi.Tests\obj\Debug\Fluqi.Tests.csprojResolveAssemblyReference.cache
