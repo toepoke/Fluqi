@@ -232,7 +232,7 @@ namespace Fluqi.Tests
 		      .SetRenderCSS(true)
 		    .Finish()
 		    .Panels
-		      .Add("<a href=\"http://blog.toepoke.co.uk\" id=\"blog-link-id\">blog</a>")
+		      .Add("<a href=\"https://toepoke.github.io\" id=\"blog-link-id\">blog</a>")
 						.Configure()
 							.Header
 								.WithID("blog-header-id")
@@ -251,7 +251,7 @@ namespace Fluqi.Tests
 		  // Assert
 		  Assert.IsTrue(html.Contains("<div id=\"myAccordion\" class=\"ui-accordion ui-widget ui-helper-reset ui-accordion-icons\""));
 		  Assert.IsTrue(html.Contains("<h3 id=\"blog-header-id\" class=\"ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top\""));
-		  Assert.IsTrue(html.Contains("<a href=\"http://blog.toepoke.co.uk\" id=\"blog-link-id\">blog</a>"));
+		  Assert.IsTrue(html.Contains("<a href=\"https://toepoke.github.io\" id=\"blog-link-id\">blog</a>"));
 		}		
 
 		

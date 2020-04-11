@@ -327,7 +327,7 @@ Bundle.JavaScript()
 <section id="articles">
 	<h1>Articles</h1>
 	<ul>
-		<li><a href="http://blog.toepoke.co.uk/enhancing-the-non-javascript-user-experience">Enhancing the non-JS user experience with Fluqi</a></li>
+		<li><a href="https://toepoke.github.io/2012/02/27/enhancing-the-non-javascript-user-experience.html">Enhancing the non-JS user experience with Fluqi</a></li>
 		<li>Wanting PostBack support with jQuery UI and WebForms? <a href="http://juiceui.com/">Check out JuiceUI as well</a>.</li>
 	</ul>
 	<p>
