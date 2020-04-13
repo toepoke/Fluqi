@@ -335,8 +335,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\jq\jquery-1.10.2.js" />
-    <Content Include="Scripts\jq\jquery-ui-1.11.0.js" />
+    <Content Include="Scripts\jq\jquery-3.5.0.js" />
+    <Content Include="Scripts\jq\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />

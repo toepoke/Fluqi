@@ -38,6 +38,12 @@
 	</div>
 	<div class="clearfix"></div>
 
+	<h2>1.12.1 - Upgrade to version 1.12.1 of jQuery UI library</h2>
+	<ul>
+		<li>Updated to latest version of jQuery UI - 1.12.1</li>
+		<li>Updated to latest version of jQuery - 3.5.0</li>
+	</ul>
+
 	<h2>1.11.0 - Upgrade to version 1.11.0 of jQuery UI library</h2>
 	<ul>
 		<li>Added the new <a href="https://jqueryui.com/selectmenu/">Selectmenu</a> widget, and associated builder</li>
