@@ -10,6 +10,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EE49EF35-5A08-4697-99E7-64287A227DA9}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		Fluqi.nuspec = Fluqi.nuspec
+		license.txt = license.txt
+		nuget.pack.cmd = nuget.pack.cmd
+		ProductVersion.cs = ProductVersion.cs
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Fluqi.Web.Demo\Demo.csproj", "{C26B0FBD-BC95-4058-8885-681CC9DB42BC}"

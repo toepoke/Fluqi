@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>Fluqi</id>
+		<version>1.12.1</version>
+		<authors>Franz Junge</authors>
+		<owners>Franz Junge</owners>
+		<projectUrl>http://fluqi.apphb.com/</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<license type="file">license.txt</license>
+		<description>Ease jQuery UI development with the Fluqi fluent interface library.</description>
+		<releaseNotes>Upgraded to be in sync with the recent release of jQuery UI 12.1.0</releaseNotes>
+		<copyright>Copyright 2020</copyright>
+		<tags>jQuery jQueryUI ASP.NET MVC plugins</tags>
+		<dependencies>
+			<group targetFramework=".NETFramework4.6.2" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="license.txt" target="" />
+		<file src="Fluqi\bin\Debug\Fluqi.dll" target="lib\net462" />
+		<file src="Fluqi\bin\Debug\Fluqi.pdb" target="lib\net462" />
+		<file src="Fluqi\bin\Debug\Fluqi.xml" target="lib\net462" />
+	</files>
+</package>
+
+
+<!--
+These came from metadata
+<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+		<dependencies>
+			<dependency id="SampleDependency" version="1.0" />
+		</dependencies>
+-->
