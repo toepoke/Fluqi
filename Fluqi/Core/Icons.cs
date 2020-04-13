@@ -212,7 +212,7 @@ namespace Fluqi.Core
 
 			if (iconIndex < lbound && iconIndex > ubound) {
 				throw new ArgumentException(
-					string.Format("{0} is not a valid index, icons between {1}..{2} only are supported.", iconIndex, lbound, ubound)
+					string.Format("{0} is not a valid index, icon between {1}..{2} only are supported.", iconIndex, lbound, ubound)
 				);
 			}
 

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using Fluqi.Extension;
 using Fluqi.Extension.Helpers;
+using static Fluqi.Core.IconPosition;
 
 namespace Fluqi.Widget.jPushButton
 {
@@ -32,22 +33,16 @@ namespace Fluqi.Widget.jPushButton
 		protected internal bool Text { get; set; }
 
 		/// <summary>
-		/// Icons to display, with or without text (see text option). The primary icon is 
-		/// displayed by default on the left of the label text, the secondary by default is on the right. 
-		/// Value for the primary and secondary properties must be a classname (String), eg. "ui-icon-gear". 
-		/// For using only one icon: icons: {primary:'ui-icon-locked'}. 
-		/// For using two icons: icons: {primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}
+		/// Icon to display, with or without text (see text option). 
 		/// </summary>
-		protected internal string PrimaryIconClass { get; set; }
+		protected internal string Icon { get; set; }
 
 		/// <summary>
-		/// Icons to display, with or without text (see text option). The primary icon is 
-		/// displayed by default on the left of the label text, the secondary by default is on the right. 
-		/// Value for the primary and secondary properties must be a classname (String), eg. "ui-icon-gear". 
-		/// For using only one icon: icons: {primary:'ui-icon-locked'}. 
-		/// For using two icons: icons: {primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}
+		/// Where to display the icon: Valid values are "beginning", "end", "top" and "bottom". 
+		/// In a left-to-right (LTR) display, "beginning" refers to the left, in a right-to-left 
+		/// (RTL, e.g. in Hebrew or Arabic), it refers to the right.
 		/// </summary>
-		protected internal string SecondaryIconClass { get; set; }
+		protected internal string IconPosition { get; set; }
 
 	} // Options
 

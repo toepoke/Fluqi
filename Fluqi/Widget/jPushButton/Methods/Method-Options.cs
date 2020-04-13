@@ -20,7 +20,7 @@ namespace Fluqi.Widget.jPushButton {
 
 		/// <summary>
 		/// Whether to show any text 
-		/// - when set to false (display no text), icons (see icons option) must be enabled, otherwise it'll be ignored.
+		/// - when set to false (display no text), icon (see icon option) must be enabled, otherwise it'll be ignored.
 		/// </summary>
 		/// <param name="newValue">New text setting</param>
 		public void SetText(bool newValue) {
@@ -28,40 +28,54 @@ namespace Fluqi.Widget.jPushButton {
 		}
 
 		/// <summary>
-		/// Returns [in JavaScript] the current "icons" setting.
+		/// Returns [in JavaScript] the current "icon" setting.
 		/// </summary>
 		public void GetIcons() {
-			this.RenderGetOptionCall("icons");
-		}
-				
-		/// <summary>
-		/// Icons to display, with or without text (see text option). The primary icon is displayed by 
-		/// default on the left of the label text, the secondary by default is on the right. 
-		/// Value for the primary and secondary properties must be a classname (String), 
-		/// eg. "ui-icon-gear". For using only one icon: icons: {primary:'ui-icon-locked'}. 
-		/// For using two icons: icons: {primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}
-		/// </summary>
-		/// <param name="primary">new unselected header setting</param>
-		/// <param name="secondary">new selected header setting</param>
-		public void SetIcons(string primary, string secondary) {
-			primary = primary ?? "";
-			secondary = secondary ?? "";
-			this.RenderSetOptionCall("icons", 
-				string.Format("{{ primary: '{0}', secondary: '{1}' }}", primary, secondary) 
-			);
+			this.RenderGetOptionCall("icon");
 		}
 
 		/// <summary>
-		/// Icons to use for headers. Icons may be specified for 'header' and 'activeHeader', 
-		/// and we recommend using the icons native to the jQuery UI CSS Framework manipulated by jQuery UI ThemeRoller
+		/// Icon to display, with or without text (see text option). 
 		/// </summary>
-		/// <param name="primary">new unselected header setting</param>
-		/// <param name="secondary">new selected header setting</param>
-		public void SetIcons(Core.Icons.eIconClass primary, Core.Icons.eIconClass secondary) {
-			string prim = Core.Icons.ByEnum(primary);
-			string sec = Core.Icons.ByEnum(secondary);
+		/// <param name="icon">new unselected header setting</param>
+		public void SetIcon(string icon) {
+			icon = icon ?? "";
+			this.RenderSetOptionCall("icon", icon.InSingleQuotes());
+		}
 
-			this.SetIcons(prim, sec);
+		/// <summary>
+		/// Icon to display, with or without text (see text option). 
+		/// </summary>
+		/// <param name="icon">new unselected header setting</param>
+		public void SetIcon(Core.Icons.eIconClass icon) {
+			string iconStr = Core.Icons.ByEnum(icon);
+			this.RenderSetOptionCall("icon", iconStr.InSingleQuotes());
+		}
+
+		/// <summary>
+		/// Icon to display, with or without text (see text option). Icon is displayed 
+		/// as per <paramref name="iconPosition"/> parameter.
+		/// </summary>
+		/// <param name="icon">new unselected header setting</param>
+		/// <param name="iconPosition">new selected header setting</param>
+		public void SetIcon(string icon, string iconPosition) {
+			icon = icon ?? "";
+			iconPosition = iconPosition ?? "";
+			this.RenderSetOptionCall("icon", icon);
+			this.RenderSetOptionCall("iconPosition", iconPosition);
+		}
+
+		/// <summary>
+		/// Icon to use for headers. Icon may be specified for 'header' and 'activeHeader', 
+		/// and we recommend using the icon native to the jQuery UI CSS Framework manipulated by jQuery UI ThemeRoller
+		/// </summary>
+		/// <param name="icon">new unselected header setting</param>
+		/// <param name="iconPosition">new selected header setting</param>
+		public void SetIcon(Core.Icons.eIconClass icon, Core.IconPosition.eIconPosition iconPosition) {
+			string prim = Core.Icons.ByEnum(icon);
+			string sec = Core.IconPosition.ByEnum(iconPosition);
+
+			this.SetIcon(prim, sec);
 		}
 
 		/// <summary>

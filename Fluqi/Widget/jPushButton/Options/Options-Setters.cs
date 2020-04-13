@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using Fluqi.Extension;
 using Fluqi.Extension.Helpers;
+using static Fluqi.Core.IconPosition;
 
 namespace Fluqi.Widget.jPushButton
 {
@@ -47,12 +48,12 @@ namespace Fluqi.Widget.jPushButton
 		/// For using only one icon: icons: {primary:'ui-icon-locked'}. 
 		/// For using two icons: icons: {primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}
 		/// </summary>
-		/// <param name="primaryIcon">New setting</param>
-		/// <param name="secondaryIcon">New setting</param>
+		/// <param name="icon">New setting</param>
+		/// <param name="iconPosition">New setting</param>
 		/// <returns>Options object for chainability</returns>
-		public Options SetIcons(string primaryIcon, string secondaryIcon) {
-			this.PrimaryIconClass = primaryIcon ?? "";
-			this.SecondaryIconClass = secondaryIcon ?? "";
+		public Options SetIcon(string icon, string iconPosition) {
+			this.Icon = icon ?? "";
+			this.IconPosition = iconPosition ?? "";
 			return this;
 		}
 
@@ -63,10 +64,10 @@ namespace Fluqi.Widget.jPushButton
 		/// Value for the primary and secondary properties must be a classname (String), eg. "ui-icon-gear". 
 		/// For using only one icon: icons: {primary:'ui-icon-locked'}. 
 		/// </summary>
-		/// <param name="primaryIcon">New setting</param>
+		/// <param name="icon">New setting</param>
 		/// <returns>Options object for chainability</returns>
-		public Options SetIcons(string primaryIcon) {
-			this.PrimaryIconClass = primaryIcon ?? "";
+		public Options SetIcon(string icon) {
+			this.Icon = icon ?? "";
 			return this;
 		}
 
@@ -77,10 +78,10 @@ namespace Fluqi.Widget.jPushButton
 		/// Value for the primary and secondary properties must be a classname (String), eg. "ui-icon-gear". 
 		/// For using only one icon: icons: {primary:'ui-icon-locked'}. 
 		/// </summary>
-		/// <param name="primaryIconClass">New setting</param>
+		/// <param name="iconClass">New setting</param>
 		/// <returns>Options object for chainability</returns>
-		public Options SetIcons(Core.Icons.eIconClass primaryIconClass) {
-			this.PrimaryIconClass = Core.Icons.ByEnum(primaryIconClass);
+		public Options SetIcon(Core.Icons.eIconClass iconClass) {
+			this.Icon = Core.Icons.ByEnum(iconClass);
 			return this;
 		}
 
@@ -92,12 +93,12 @@ namespace Fluqi.Widget.jPushButton
 		/// For using only one icon: icons: {primary:'ui-icon-locked'}. 
 		/// For using two icons: icons: {primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}
 		/// </summary>
-		/// <param name="primaryIconClass">New setting</param>
-		/// <param name="secondaryIconClass">New setting</param>
+		/// <param name="icon">New setting</param>
+		/// <param name="iconPosition">New setting</param>
 		/// <returns>Options object for chainability</returns>
-		public Options SetIcons(Core.Icons.eIconClass primaryIconClass, Core.Icons.eIconClass secondaryIconClass) {
-			this.PrimaryIconClass = Core.Icons.ByEnum(primaryIconClass);
-			this.SecondaryIconClass = Core.Icons.ByEnum(secondaryIconClass);
+		public Options SetIcon(Core.Icons.eIconClass icon, Core.IconPosition.eIconPosition iconPosition) {
+			this.Icon = Core.Icons.ByEnum(icon);
+			this.IconPosition = Core.IconPosition.IconPositionToString(iconPosition);
 			return this;
 		}
 		

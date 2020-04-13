@@ -23,6 +23,19 @@ namespace Fluqi.Web.Demo.Helpers {
 					
 			return new SelectList(dict, "Key", "Value");
 		}
+
+		public static SelectList IconPositionListNames() {
+			List<string> items = Fluqi.Core.IconPosition.ToList();
+			// prompt for select
+			items.Insert(0, "");
+			Dictionary<string, string> dict = 
+				items.ToDictionary(
+					v => (v == "None" ? "" : v.ToLower()),
+					v => v.ToLower()
+				);
+
+			return new SelectList(dict, "Key", "Value");
+		}
 		
 		public static SelectList BrowserEventItems() {
 			List<string> items = Core.BrowserEvent.ToList();

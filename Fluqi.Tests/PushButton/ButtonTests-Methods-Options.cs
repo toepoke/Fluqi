@@ -50,7 +50,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Ensure_GetIcons_Renders_Correctly()
+		public void Ensure_GetIcon_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
@@ -62,39 +62,39 @@ namespace Fluqi.Tests
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#btn\").button(\"option\",\"icons\")", html);
+		  Assert.AreEqual("$(\"#btn\").button(\"option\",\"icon\")", html);
 		}
 
 		[TestMethod]
-		public void Ensure_SetIcons_By_String_Renders_Correctly()
+		public void Ensure_SetIcon_By_String_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
 			var ctl = TestHelper.SetupSimpleButtonObject(resp);
 
-		  ctl.Methods.SetIcons("ui-icon-icon1", "ui-icon-icon2");
+		  ctl.Methods.SetIcon("ui-icon-icon1");
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#btn\").button(\"option\",\"icons\",{ primary: 'ui-icon-icon1', secondary: 'ui-icon-icon2' })", html);
+		  Assert.AreEqual("$(\"#btn\").button(\"option\",\"icon\",'ui-icon-icon1')", html);
 		}
 
 		[TestMethod]
-		public void Ensure_SetIcons_By_Enum_Renders_Correctly()
+		public void Ensure_SetIcon_By_Enum_Renders_Correctly()
 		{
 		  // Arrange
 		  var resp = new MockWriter();
 			var ctl = TestHelper.SetupSimpleButtonObject(resp);
 
-		  ctl.Methods.SetIcons(Core.Icons.eIconClass.alert, Core.Icons.eIconClass.info);
+		  ctl.Methods.SetIcon(Core.Icons.eIconClass.alert);
 
 		  // Act
 			string html = resp.Output.ToString();
 
 		  // Assert
-		  Assert.AreEqual("$(\"#btn\").button(\"option\",\"icons\",{ primary: 'ui-icon-alert', secondary: 'ui-icon-info' })", html);
+		  Assert.AreEqual("$(\"#btn\").button(\"option\",\"icon\",'ui-icon-alert')", html);
 		}
 
 		[TestMethod]

@@ -183,7 +183,7 @@ namespace Fluqi.Widget.jPushButton
 			
 			RenderTagContent(sb);
 
-			RenderClosingTag(sb);			
+			RenderClosingTag(sb);
 
 			if (this.Rendering.AutoScript) {
 				sb.AppendLineIf();

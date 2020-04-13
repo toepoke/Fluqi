@@ -143,7 +143,7 @@ namespace Fluqi.Tests
 		}
 
 		[TestMethod]
-		public void Button_Option_Primary_Icons_Only_ByEnum_Renders_Correctly()
+		public void Button_Option_Icon_Only_ByEnum_Renders_Correctly()
 		{
 			// Arrange
 			var resp = new MockWriter();
@@ -152,7 +152,7 @@ namespace Fluqi.Tests
 			// only testing raw output
 			btn
 				.Options
-					.SetIcons( Core.Icons.eIconClass.alert )
+					.SetIcon( Core.Icons.eIconClass.alert )
 				.Finish()
 				.Rendering
 					.Compress()
@@ -167,14 +167,14 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 				"$(document).ready( function() {" + 
-				"$(\"#btn\").button({icons: { primary: 'ui-icon-alert' }})" + 
+				"$(\"#btn\").button({icon: 'ui-icon-alert'})" + 
 				";});" + 
 				"</script>";
 			Assert.IsTrue(html.Contains(expected));
 		}
 
 		[TestMethod]
-		public void Button_Option_Both_Icons_ByEnum_Renders_Correctly()
+		public void Button_Option_Icon_ByEnum_With_Position_ByEnum_Renders_Correctly()
 		{
 			// Arrange
 			var resp = new MockWriter();
@@ -183,7 +183,7 @@ namespace Fluqi.Tests
 			// only testing raw output
 			btn
 				.Options
-					.SetIcons( Core.Icons.eIconClass.alert, Core.Icons.eIconClass.note )
+					.SetIcon( Core.Icons.eIconClass.alert, Core.IconPosition.eIconPosition.Top )
 				.Finish()
 				.Rendering
 					.Compress()
@@ -198,7 +198,7 @@ namespace Fluqi.Tests
 		  string expected = 
 		    "<script type=\"text/javascript\">" + 
 		      "$(document).ready( function() {" + 
-		        "$(\"#btn\").button({icons: { primary: 'ui-icon-alert', secondary: 'ui-icon-note' }})" + 
+		        "$(\"#btn\").button({icon: 'ui-icon-alert',iconPosition: 'top'})" + 
 		      ";});" + 
 		    "</script>";
 		  Assert.IsTrue(html.Contains(expected));
@@ -214,7 +214,7 @@ namespace Fluqi.Tests
 			// only testing raw output
 			btn
 				.Options
-					.SetIcons( "ui-icon-alert", "ui-icon-note" )
+					.SetIcon( "ui-icon-alert", "beginning" )
 					.Finish()
 				.Rendering
 					.Compress()
@@ -229,7 +229,7 @@ namespace Fluqi.Tests
 		  string expected = 
 		    "<script type=\"text/javascript\">" + 
 		      "$(document).ready( function() {" + 
-		        "$(\"#btn\").button({icons: { primary: 'ui-icon-alert', secondary: 'ui-icon-note' }})" + 
+		        "$(\"#btn\").button({icon: 'ui-icon-alert',iconPosition: 'beginning'})" + 
 		      ";});" + 
 		    "</script>";
 		  Assert.IsTrue(html.Contains(expected));
@@ -245,7 +245,7 @@ namespace Fluqi.Tests
 			// only testing raw output
 			btn
 				.Options
-					.SetIcons( "ui-icon-alert" )
+					.SetIcon( "ui-icon-alert" )
 					.Finish()
 				.Rendering
 					.Compress()
@@ -260,7 +260,7 @@ namespace Fluqi.Tests
 			string expected = 
 				"<script type=\"text/javascript\">" + 
 				"$(document).ready( function() {" + 
-				"$(\"#btn\").button({icons: { primary: 'ui-icon-alert' }})" + 
+				"$(\"#btn\").button({icon: 'ui-icon-alert'})" + 
 				";});" + 
 				"</script>";
 			Assert.IsTrue(html.Contains(expected));

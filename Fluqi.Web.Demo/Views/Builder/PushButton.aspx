@@ -14,7 +14,7 @@
 	var showIcons1 = Html.CreateButton("showIcons1", "...")
 		.Rendering.SetPrettyRender(true).Finish()
 		.Events
-			.SetClickEvent("return openIconsDialog('primaryIcon');")
+			.SetClickEvent("return openIconsDialog('Icon');")
 		.Finish()
 	;
 
@@ -33,8 +33,8 @@
 		<li><%=Html.LabelFor(vm=>vm.disabled)     %><%=Html.CheckBoxFor(vm=>vm.disabled, "Disables the button, in both action and appearance.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.label)        %><%=Html.TextBoxFor(vm=>vm.label, "wide", "Text to appear on the button.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.text)         %><%=Html.CheckBoxFor(vm=>vm.text, "Flags whether to show the text label (only appropriate when icons are enabled).")%></li>
-		<li><%=Html.LabelFor(vm=>vm.primaryIcon)  %><%=Html.DropDownTipListFor(vm=>vm.primaryIcon, List.IconListNames(), "Icon to appear at the left of the button (before any text); For example 'ui-icon-plusthick'.")%><%showIcons1.Render();%></li>
-		<li><%=Html.LabelFor(vm=>vm.secondaryIcon)%><%=Html.DropDownTipListFor(vm=>vm.secondaryIcon, List.IconListNames(), "Icon to appear at the right of the button (after any text); For example 'ui-icon-minusthick'.")%><%showIcons2.Render();%></li>
+		<li><%=Html.LabelFor(vm=>vm.Icon)         %><%=Html.DropDownTipListFor(vm=>vm.Icon, List.IconListNames(), "Icon to appear at the left of the button (before any text); For example 'ui-icon-plusthick'.")%><%showIcons1.Render();%></li>
+		<li><%=Html.LabelFor(vm=>vm.IconPosition) %><%=Html.DropDownTipListFor(vm=>vm.IconPosition, List.IconPositionListNames(), "Where icon show be position in the button.")%></li>
 		<li><%=Html.LabelFor(vm=>vm.renderAs)     %><%=Html.DropDownTipListFor(vm=>vm.renderAs, List.ButtonOptions(), "How to render the button, hyperlink, button, reset, etc (.Render method must be used for this option to take place).")%></li>
 	</ul>
 

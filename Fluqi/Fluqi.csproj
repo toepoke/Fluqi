@@ -78,6 +78,7 @@
     <Compile Include="Core\HeightStyle.cs" />
     <Compile Include="Core\Ease.cs" />
     <Compile Include="Core\Hyperlink.cs" />
+    <Compile Include="Core\IconPosition.cs" />
     <Compile Include="Core\Speed.cs" />
     <Compile Include="Core\Methods.cs" />
     <Compile Include="Core\RenderBase.cs" />

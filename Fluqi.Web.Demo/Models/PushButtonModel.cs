@@ -32,16 +32,16 @@ namespace Fluqi.Models
 		public PushButtonModel() : base() {
 			this.disabled = false;
 			this.text = true;
-			this.primaryIcon = "";
-			this.secondaryIcon = "";
+			this.Icon = "";
+			this.IconPosition = "";
 			this.label = "Fluqi!";
 			this.renderAs = Core.ButtonType.ButtonTypeToString(Core.ButtonType.eButtonType.Button);
 		}
 
 		public bool disabled { get; set; }
 		public bool text { get; set; }
-		public string primaryIcon { get; set; }
-		public string secondaryIcon { get; set; }
+		public string Icon { get; set; }
+		public string IconPosition { get; set; }
 		public string label { get; set; }
 		public string renderAs { get; set; }
 		
@@ -53,7 +53,7 @@ namespace Fluqi.Models
 				.Options
 					.SetDisabled(this.disabled)
 					.SetText(this.text)
-					.SetIcons(this.primaryIcon, this.secondaryIcon)
+					.SetIcon(this.Icon, this.IconPosition)
 				.Finish()
 			;
 
@@ -129,8 +129,11 @@ namespace Fluqi.Models
 			if (!this.text)
 				sb.AppendTabsLineIf(".SetText(false)");
 			// icons must be set as a pair
-			if (!string.IsNullOrEmpty(this.primaryIcon) || !string.IsNullOrEmpty(this.secondaryIcon)) {
-				sb.AppendTabsFormatLineIf(".SetIcons(\"{0}\", \"{1}\")", this.primaryIcon, this.secondaryIcon);
+			if (!string.IsNullOrEmpty(this.Icon)) {
+				sb.AppendTabsFormatLineIf(".SetIcon(\"{0}\")", this.Icon);
+			}
+			if (!string.IsNullOrEmpty(this.IconPosition)) {
+				sb.AppendTabsFormatLineIf(".SetIconPosition(\"{0}\")", this.IconPosition);
 			}
 
 			return sb.ToString();
