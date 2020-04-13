@@ -69,12 +69,14 @@
 					</li>
 					<li>
 						<%=Html.LabelFor(m=>m.DateOfBirth)%>
+						<div>
 						<%=Html.TextBoxFor(m=>m.DateOfBirth, new {@class = "wide"})%>
+						</div>
 					</li>
 					<li>
-						<div id="sldr"></div>
 						<%=Html.LabelFor(m=>m.Age)%>
 						<%=Html.TextBoxFor(m=>m.Age)%>
+						<div id="sldr"></div>
 					</li>
 				</ul>
 			<% } %>

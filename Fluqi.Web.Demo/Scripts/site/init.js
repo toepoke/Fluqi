@@ -1,6 +1,6 @@
 
 /* Nivo Slider */
-$(window).load(function() {
+$(window).on('load', function() {
 
     $('#slider').nivoSlider({directionNavHide:false, pauseTime: 5000});
 

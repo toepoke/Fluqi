@@ -43,7 +43,7 @@ ul.horizontal li {
 li {
 	 list-style-type: none;
 }
-li input, li select {
+li {
 	margin-bottom: 20px;
 }
 li label {
