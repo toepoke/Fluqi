@@ -2,3 +2,5 @@ Fluqi is a little .NET library to help build web applications using the jQuery U
 
 More details and demos here: 
 	http://fluqi.apphb.com/
+
+> Fluqi is now in [maintenance mode](https://blog.jqueryui.com/2022/07/jquery-ui-1-13-2-released/), mimicing the status of [jQuery UI](https://blog.jqueryui.com/2022/07/jquery-ui-1-13-2-released/) itself.
