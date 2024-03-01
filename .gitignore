@@ -361,3 +361,5 @@ deployment/*
 **/*.*.FileListAbsolute.txt
 # custom ignores
 
+/Fluqi/obj/Debug/*
+/Fluqi/obj/Debug/Fluqi.csproj.FileListAbsolute.txt
