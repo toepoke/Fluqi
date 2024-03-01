@@ -38,6 +38,17 @@
 	</div>
 	<div class="clearfix"></div>
 
+	<h2>1.13.2 - Dependency upgrades</h2>
+	<ul>
+		<li>.NET Dependency upgrades</li>
+		<li>jQuery UI to 1.13.2</li>
+		<li>jQuery UI to 3.7.1</li>
+		<li>
+			Fluqi is now in maintenance mode, mirroring the <a href="https://blog.jqueryui.com/2022/07/jquery-ui-1-13-2-released/">jQuery UI</a>
+			library itself.
+		</li>
+	</ul>
+
 	<h2>1.12.1 - Upgrade to version 1.12.1 of jQuery UI library</h2>
 	<ul>
 		<li>Updated to latest version of jQuery UI - 1.12.1</li>
