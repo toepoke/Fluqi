@@ -146,7 +146,7 @@
 			<%
 				var btn1 = this.CreateButton("btn1", "Fluqi created link")
 					.Options
-						.SetIcons(Fluqi.Core.Icons.eIconClass.locked, Fluqi.Core.Icons.eIconClass.unlocked)
+						.SetIcon(Fluqi.Core.Icons.eIconClass.locked, Fluqi.Core.IconPosition.eIconPosition.End)
 					.Finish()
 					.Events
 						.SetClickEvent("alert('Click from a Fluqi rendered created and rendered link!'); return false;")
